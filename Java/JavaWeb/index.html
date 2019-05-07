@@ -113,7 +113,7 @@
 <meta property="og:site_name" content="SkyWalker的博客">
 <meta property="og:description" content="一、Servlet1.    ServletResoponse 设置响应格式123ServletResponse response = new ServletResponse();response.setContentType(&quot;application/msword&quot;);//设置响应类型为word文档。//具体可以在tomcat/config/web.xml中查找需要格式对应的值">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-07T03:43:02.333Z">
+<meta property="og:updated_time" content="2019-05-07T09:33:40.217Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaWeb学习笔记">
 <meta name="twitter:description" content="一、Servlet1.    ServletResoponse 设置响应格式123ServletResponse response = new ServletResponse();response.setContentType(&quot;application/msword&quot;);//设置响应类型为word文档。//具体可以在tomcat/config/web.xml中查找需要格式对应的值">
@@ -446,7 +446,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  526
+                  1.2k
                 </span>
               
 
@@ -462,7 +462,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1
+                  4
                 </span>
               
             </div>
@@ -540,6 +540,42 @@
 <p>​    ⑨    exception：一定的条件下才可以用。（只有主动声明了isErrorPage=”true”的时候，才可以使用。）</p>
 <p>​    加粗为开发时常用对象。</p>
 <p>​    pageContext，request，session，application对属性的作用域范围从小到大。</p>
+<h4 id="3-JSP表达式"><a href="#3-JSP表达式" class="headerlink" title="3.JSP表达式"></a>3.JSP表达式</h4><p>​    JSP表达式（expression）提供了将一个java变量或表达式的计算结果输出到客户端的简化方式，他将要输出的变量或表达式直接封装在&lt;%= 和 %&gt;中。</p>
+<p>​    JSP注释的格式：&lt;%– JSP注释 –%&gt;</p>
+<p>​    HTML注释的格式：\&lt;!– HTML注释 –></p>
+<p><strong><em>区别</em> :     </strong></p>
+<p>​         <strong>JSP注释可以阻止Java代码的执行，而HTML注释surround with &lt;% Java代码 %&gt;时，不能阻止Java代码的执行。</strong></p>
+<h4 id="4-域对象的属性操作"><a href="#4-域对象的属性操作" class="headerlink" title="4.域对象的属性操作"></a>4.域对象的属性操作</h4><p>​    ①    和属性相关的方法：</p>
+<p>​        Object getAttribute(String name)：获取指定的属性</p>
+<p>​        Enumeration getAttributeNames()：获取所有的属性的名字组成的Enumeration对象</p>
+<p>​        void removeAttribute(String name)：移除指定的属性</p>
+<p>​        void setAttribute(String name, Object obj)：设置属性</p>
+<p>​    ②    pageContext，request，session，application对象都有这些方法。这四个对象也成为域对象。</p>
+<p>​    ③    pageContext：属性的作用范围仅限于当前JSP页面。（在Servlet中无法得到pageContext对象。）</p>
+<p>​        request：属性的作用范围仅限于同一个请求。</p>
+<p>​        session：属性的作用范围限于一次会话。（会话：浏览器打开直到关闭称之为一次会话。（会话在此期间不失效。））</p>
+<p>​        application：属性的作用范围限于当前Web应用。是范围最大的属性作用范围，只要在一处设置属性，在其他各处的JSP或Servlet中都可以获取到。</p>
+<h4 id="5-请求的转发和重定向"><a href="#5-请求的转发和重定向" class="headerlink" title="5.请求的转发和重定向"></a>5.请求的转发和重定向</h4><p>​    ①    调用HttpServletRequest的getRequestDispatcher(String path)方法获取RequestDispatcher对象。调用方法时，需要传入要转发的地址。</p>
+<p>​    ②    *<em>调用HttpServletRequest的forward（request，response）进行请求的转发。</em></p>
+<p>​    ③    *<em>调用sendRedirect(String path)进行请求的重定向。</em></p>
+<p>​    ④    转发与重定向的区别：</p>
+<p>​               <em> **本质区别：请求的转发只发出了 </em>一次<em>  请求，而重定向则发出了 </em>两次*  请求。**</p>
+<p>​        具体：</p>
+<p>​        <1></1></p>
+<p>​            请求的转发：地址栏是初次发出请求的地址。</p>
+<p>​            请求的重定向：地址栏不再是初次发出的请求地址，地址栏为最后响应的那个地址。</p>
+<p>​        <2></2></p>
+<p>​            请求的转发：在最终的Servlet中，request对象和中转的那个request<strong>是</strong>同一个对象。</p>
+<p>​            请求的重定向：在最终的Servlet中，request对象和中转的那个request<strong>不是</strong>同一个对象。</p>
+<p>​        <3></3></p>
+<p>​            请求的转发：只能转发到当前Web应用的资源（内部资源）。</p>
+<p>​            请求的重定向：可以重定向到任何资源。</p>
+<p>​        <4></4></p>
+<p>​            请求的转发：“ / ”  代表的是当前Web应用（localhost:port/WebApps）的根目录。</p>
+<p>​            请求的重定向：“ / ” 代表的是当前Web站点（localhost:port）的根目录。</p>
+<h4 id="6-JSP指令"><a href="#6-JSP指令" class="headerlink" title="6.JSP指令"></a>6.JSP指令</h4><p>​    ①include</p>
+<p>​    ②page</p>
+<p>​    ③taglib</p>
 
       
     </div>
@@ -598,7 +634,7 @@
   <p><span>本文标题:</span><a href="/Java/JavaWeb/">JavaWeb学习笔记</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 SkyWalker 的个人博客">SkyWalker</a></p>
   <p><span>发布时间:</span>2019年05月07日 - 11:05</p>
-  <p><span>最后更新:</span>2019年05月07日 - 11:05</p>
+  <p><span>最后更新:</span>2019年05月07日 - 17:05</p>
   <p><span>原始链接:</span><a href="/Java/JavaWeb/" title="JavaWeb学习笔记">http://SkyWalkerKKKK.cn/Java/JavaWeb/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://SkyWalkerKKKK.cn/Java/JavaWeb/" aria-label="复制成功！"></i></span>
   </p>
@@ -661,6 +697,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/HTML-CSS/HTML-CSS/" rel="prev" title="HTML/CSS学习笔记">
+                HTML/CSS学习笔记 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -749,7 +789,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -760,7 +800,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -771,7 +811,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -820,7 +860,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、Servlet"><span class="nav-number">1.</span> <span class="nav-text">一、Servlet</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-ServletResoponse-设置响应格式"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">1.    ServletResoponse 设置响应格式</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#二、JSP"><span class="nav-number">2.</span> <span class="nav-text">二、JSP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-JSP运行原理"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">1. JSP运行原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-JSP八大内置对象（实际上9个）"><span class="nav-number">2.0.0.2.</span> <span class="nav-text">2. JSP八大内置对象（实际上9个）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#①-request：HttpServletRequest的一个对象。"><span class="nav-number">2.0.0.2.1.</span> <span class="nav-text">①    request：HttpServletRequest的一个对象。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#③-pageContext：页面的上下文，是PageContext的一个对象。可以从该对象中获取到其他8个隐含对象。亦可以从中获取到当前页面的其他信息。（学习自定义标签时使用他。在JSP页面上很少直接使用他。）"><span class="nav-number">2.0.0.2.2.</span> <span class="nav-text">③    pageContext：页面的上下文，是PageContext的一个对象。可以从该对象中获取到其他8个隐含对象。亦可以从中获取到当前页面的其他信息。（学习自定义标签时使用他。在JSP页面上很少直接使用他。）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#④-session：代表浏览器和服务器的一次会话，是HttpSession的一个对象。"><span class="nav-number">2.0.0.2.3.</span> <span class="nav-text">④    session：代表浏览器和服务器的一次会话，是HttpSession的一个对象。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#⑤-application：代表当前Web应用。是ServletContext的一个对象。（可以获取初始化参数等。）"><span class="nav-number">2.0.0.2.4.</span> <span class="nav-text">⑤    application：代表当前Web应用。是ServletContext的一个对象。（可以获取初始化参数等。）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#⑦-out：JspWriter对象。调用out-println-可以直接把字符串打印到浏览器上。（在两次out-println-时，中间不会换行，需要添加-lt-br-标签。）"><span class="nav-number">2.0.0.2.5.</span> <span class="nav-text">⑦    out：JspWriter对象。调用out.println()可以直接把字符串打印到浏览器上。（在两次out.println()时，中间不会换行，需要添加\&lt;br&gt;标签。）</span></a></li></ol></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、Servlet"><span class="nav-number">1.</span> <span class="nav-text">一、Servlet</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-ServletResoponse-设置响应格式"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">1.    ServletResoponse 设置响应格式</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#二、JSP"><span class="nav-number">2.</span> <span class="nav-text">二、JSP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-JSP运行原理"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">1. JSP运行原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-JSP八大内置对象（实际上9个）"><span class="nav-number">2.0.0.2.</span> <span class="nav-text">2. JSP八大内置对象（实际上9个）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#①-request：HttpServletRequest的一个对象。"><span class="nav-number">2.0.0.2.1.</span> <span class="nav-text">①    request：HttpServletRequest的一个对象。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#③-pageContext：页面的上下文，是PageContext的一个对象。可以从该对象中获取到其他8个隐含对象。亦可以从中获取到当前页面的其他信息。（学习自定义标签时使用他。在JSP页面上很少直接使用他。）"><span class="nav-number">2.0.0.2.2.</span> <span class="nav-text">③    pageContext：页面的上下文，是PageContext的一个对象。可以从该对象中获取到其他8个隐含对象。亦可以从中获取到当前页面的其他信息。（学习自定义标签时使用他。在JSP页面上很少直接使用他。）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#④-session：代表浏览器和服务器的一次会话，是HttpSession的一个对象。"><span class="nav-number">2.0.0.2.3.</span> <span class="nav-text">④    session：代表浏览器和服务器的一次会话，是HttpSession的一个对象。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#⑤-application：代表当前Web应用。是ServletContext的一个对象。（可以获取初始化参数等。）"><span class="nav-number">2.0.0.2.4.</span> <span class="nav-text">⑤    application：代表当前Web应用。是ServletContext的一个对象。（可以获取初始化参数等。）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#⑦-out：JspWriter对象。调用out-println-可以直接把字符串打印到浏览器上。（在两次out-println-时，中间不会换行，需要添加-lt-br-标签。）"><span class="nav-number">2.0.0.2.5.</span> <span class="nav-text">⑦    out：JspWriter对象。调用out.println()可以直接把字符串打印到浏览器上。（在两次out.println()时，中间不会换行，需要添加\&lt;br&gt;标签。）</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-JSP表达式"><span class="nav-number">2.0.0.3.</span> <span class="nav-text">3.JSP表达式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-域对象的属性操作"><span class="nav-number">2.0.0.4.</span> <span class="nav-text">4.域对象的属性操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-请求的转发和重定向"><span class="nav-number">2.0.0.5.</span> <span class="nav-text">5.请求的转发和重定向</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-JSP指令"><span class="nav-number">2.0.0.6.</span> <span class="nav-text">6.JSP指令</span></a></li></ol></li></div>
             
 
           </div>
@@ -873,7 +913,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共562字</span>
+  <span class="post-count">博客全站共1.9k字</span>
 </div>
 
 
