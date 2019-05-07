@@ -1,51 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-  
-    
-    <entry>
-      <title>JavaWeb学习笔记</title>
-      <link href="/Java/JavaWeb/"/>
-      <url>/Java/JavaWeb/</url>
-      
-        <content type="html"><![CDATA[<h1 id="一、Servlet"><a href="#一、Servlet" class="headerlink" title="一、Servlet"></a>一、Servlet</h1><h4 id="1-ServletResoponse-设置响应格式"><a href="#1-ServletResoponse-设置响应格式" class="headerlink" title="1.    ServletResoponse 设置响应格式"></a>1.    ServletResoponse 设置响应格式</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ServletResponse response = <span class="keyword">new</span> ServletResponse();</span><br><span class="line">response.setContentType(<span class="string">"application/msword"</span>);<span class="comment">//设置响应类型为word文档。</span></span><br><span class="line"><span class="comment">//具体可以在tomcat/config/web.xml中查找需要格式对应的值</span></span><br></pre></td></tr></table></figure><a id="more"></a><hr><h1 id="二、JSP"><a href="#二、JSP" class="headerlink" title="二、JSP"></a>二、JSP</h1><h4 id="1-JSP运行原理"><a href="#1-JSP运行原理" class="headerlink" title="1. JSP运行原理"></a>1. JSP运行原理</h4><p>​    JSP是简Servlet编写的一种技术，他将Java代码和HTML语句混合在同一个文件中编写。只对网页中的要动态产生的内容才用Java代码来编写，而对固定不变的静态内容才用普通静态HTML页面的方式编写。</p><p>​    JSP继承了HttpJspBase类，而HttpJspBase又继承了HttpServlet，即jsp间接继承了HttpServlet，即JSP本质上就是一个Servlet。</p><h4 id="2-JSP八大内置对象（实际上9个）"><a href="#2-JSP八大内置对象（实际上9个）" class="headerlink" title="2. JSP八大内置对象（实际上9个）"></a>2. JSP八大内置对象（实际上9个）</h4><table><thead><tr><th style="text-align:center">类名</th><th style="text-align:center">对象实例名（可直接调用）</th></tr></thead><tbody><tr><td style="text-align:center">HttpServletRequest</td><td style="text-align:center">request</td></tr><tr><td style="text-align:center">HttpServletResoponse</td><td style="text-align:center">response</td></tr><tr><td style="text-align:center">PageContext</td><td style="text-align:center">pageContext</td></tr><tr><td style="text-align:center">HttpSession</td><td style="text-align:center">session</td></tr><tr><td style="text-align:center">ServletContext</td><td style="text-align:center">application</td></tr><tr><td style="text-align:center">ServletConfig</td><td style="text-align:center">config</td></tr><tr><td style="text-align:center">JspWriter</td><td style="text-align:center">out</td></tr><tr><td style="text-align:center">Object</td><td style="text-align:center">page</td></tr><tr><td style="text-align:center"><strong><em>Exception</em></strong></td><td style="text-align:center"><strong><em>exception</em></strong></td></tr></tbody></table><h5 id="①-request：HttpServletRequest的一个对象。"><a href="#①-request：HttpServletRequest的一个对象。" class="headerlink" title="①    request：HttpServletRequest的一个对象。"></a>①    request：HttpServletRequest的一个对象。</h5><p>​    ②    response：HttpServletResponse的一个对象（在JSP页面中几乎不会调用response的任何方法）。</p><h5 id="③-pageContext：页面的上下文，是PageContext的一个对象。可以从该对象中获取到其他8个隐含对象。亦可以从中获取到当前页面的其他信息。（学习自定义标签时使用他。在JSP页面上很少直接使用他。）"><a href="#③-pageContext：页面的上下文，是PageContext的一个对象。可以从该对象中获取到其他8个隐含对象。亦可以从中获取到当前页面的其他信息。（学习自定义标签时使用他。在JSP页面上很少直接使用他。）" class="headerlink" title="③    pageContext：页面的上下文，是PageContext的一个对象。可以从该对象中获取到其他8个隐含对象。亦可以从中获取到当前页面的其他信息。（学习自定义标签时使用他。在JSP页面上很少直接使用他。）"></a>③    pageContext：页面的上下文，是PageContext的一个对象。可以从该对象中获取到其他8个隐含对象。亦可以从中获取到当前页面的其他信息。（学习自定义标签时使用他。在JSP页面上很少直接使用他。）</h5><h5 id="④-session：代表浏览器和服务器的一次会话，是HttpSession的一个对象。"><a href="#④-session：代表浏览器和服务器的一次会话，是HttpSession的一个对象。" class="headerlink" title="④    session：代表浏览器和服务器的一次会话，是HttpSession的一个对象。"></a>④    session：代表浏览器和服务器的一次会话，是HttpSession的一个对象。</h5><h5 id="⑤-application：代表当前Web应用。是ServletContext的一个对象。（可以获取初始化参数等。）"><a href="#⑤-application：代表当前Web应用。是ServletContext的一个对象。（可以获取初始化参数等。）" class="headerlink" title="⑤    application：代表当前Web应用。是ServletContext的一个对象。（可以获取初始化参数等。）"></a>⑤    application：代表当前Web应用。是ServletContext的一个对象。（可以获取初始化参数等。）</h5><p>​    ⑥    config：当前JSP对应的Servlet的ServletConfig对象。（开发时几乎不使用。若需要访问当前JSP配置的初始化参数，需要通过映射的地址才可以。）</p><h5 id="⑦-out：JspWriter对象。调用out-println-可以直接把字符串打印到浏览器上。（在两次out-println-时，中间不会换行，需要添加-lt-br-标签。）"><a href="#⑦-out：JspWriter对象。调用out-println-可以直接把字符串打印到浏览器上。（在两次out-println-时，中间不会换行，需要添加-lt-br-标签。）" class="headerlink" title="⑦    out：JspWriter对象。调用out.println()可以直接把字符串打印到浏览器上。（在两次out.println()时，中间不会换行，需要添加\&lt;br>标签。）"></a>⑦    out：JspWriter对象。调用out.println()可以直接把字符串打印到浏览器上。（在两次out.println()时，中间不会换行，需要添加\&lt;br>标签。）</h5><p>​    ⑧    page：指向当前JSP对应的Servlet对象的引用，但为Object类型，只能调用Object类的方法（几乎不使用。）</p><p>​    ⑨    exception：一定的条件下才可以用。（只有主动声明了isErrorPage=”true”的时候，才可以使用。）</p><p>​    加粗为开发时常用对象。</p><p>​    pageContext，request，session，application对属性的作用域范围从小到大。</p>]]></content>
-      
-      
+<search>
+  <entry>
+    <title><![CDATA[JavaWeb学习笔记]]></title>
+    <url>%2FJava%2FJavaWeb%2F</url>
+    <content type="text"><![CDATA[一、Servlet1. ServletResoponse 设置响应格式123ServletResponse response = new ServletResponse();response.setContentType("application/msword");//设置响应类型为word文档。//具体可以在tomcat/config/web.xml中查找需要格式对应的值 二、JSP1. JSP运行原理​ JSP是简Servlet编写的一种技术，他将Java代码和HTML语句混合在同一个文件中编写。只对网页中的要动态产生的内容才用Java代码来编写，而对固定不变的静态内容才用普通静态HTML页面的方式编写。 ​ JSP继承了HttpJspBase类，而HttpJspBase又继承了HttpServlet，即jsp间接继承了HttpServlet，即JSP本质上就是一个Servlet。 2. JSP八大内置对象（实际上9个） 类名 对象实例名（可直接调用） HttpServletRequest request HttpServletResoponse response PageContext pageContext HttpSession session ServletContext application ServletConfig config JspWriter out Object page Exception exception ① request：HttpServletRequest的一个对象。​ ② response：HttpServletResponse的一个对象（在JSP页面中几乎不会调用response的任何方法）。 ③ pageContext：页面的上下文，是PageContext的一个对象。可以从该对象中获取到其他8个隐含对象。亦可以从中获取到当前页面的其他信息。（学习自定义标签时使用他。在JSP页面上很少直接使用他。）④ session：代表浏览器和服务器的一次会话，是HttpSession的一个对象。⑤ application：代表当前Web应用。是ServletContext的一个对象。（可以获取初始化参数等。）​ ⑥ config：当前JSP对应的Servlet的ServletConfig对象。（开发时几乎不使用。若需要访问当前JSP配置的初始化参数，需要通过映射的地址才可以。） ⑦ out：JspWriter对象。调用out.println()可以直接把字符串打印到浏览器上。（在两次out.println()时，中间不会换行，需要添加\&lt;br>标签。）​ ⑧ page：指向当前JSP对应的Servlet对象的引用，但为Object类型，只能调用Object类的方法（几乎不使用。） ​ ⑨ exception：一定的条件下才可以用。（只有主动声明了isErrorPage=”true”的时候，才可以使用。） ​ 加粗为开发时常用对象。 ​ pageContext，request，session，application对属性的作用域范围从小到大。]]></content>
       <categories>
-          
-          <category> Java </category>
-          
+        <category>Java</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> -JavaWeb -JSP -Java </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>我的第一篇文章</title>
-      <link href="/%E7%94%9F%E6%B4%BB/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/"/>
-      <url>/%E7%94%9F%E6%B4%BB/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</url>
-      
-        <content type="html"><![CDATA[<p>Hello Everyone！这是我的第一篇文章。</p><p>在老铁的帮助下，我慢慢开始摸索代码世界……</p><p>自己加油吧。</p><p>Keep Going！</p>]]></content>
-      
-      
+      <tags>
+        <tag>-JavaWeb -JSP -Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[我的第一篇文章]]></title>
+    <url>%2F%E7%94%9F%E6%B4%BB%2F%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0%2F</url>
+    <content type="text"><![CDATA[Hello Everyone！这是我的第一篇文章。 在老铁的帮助下，我慢慢开始摸索代码世界…… 自己加油吧。 Keep Going！]]></content>
       <categories>
-          
-          <category> 生活 </category>
-          
+        <category>生活</category>
       </categories>
-      
-      
-    </entry>
-    
-    
-  
-  
+  </entry>
 </search>
