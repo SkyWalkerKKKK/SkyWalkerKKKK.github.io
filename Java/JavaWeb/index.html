@@ -113,7 +113,7 @@
 <meta property="og:site_name" content="SkyWalker的博客">
 <meta property="og:description" content="ServletServletResoponse 设置响应格式123ServletResponse response = new ServletResponse();response.setContentType(&quot;application/msword&quot;);//设置响应类型为word文档。//具体可以在tomcat/config/web.xml中查找需要格式对应的值">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-07T17:18:51.531Z">
+<meta property="og:updated_time" content="2019-05-07T17:37:24.655Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaWeb学习笔记">
 <meta name="twitter:description" content="ServletServletResoponse 设置响应格式123ServletResponse response = new ServletResponse();response.setContentType(&quot;application/msword&quot;);//设置响应类型为word文档。//具体可以在tomcat/config/web.xml中查找需要格式对应的值">
@@ -552,7 +552,7 @@
 <li><font color="red"> ④    session：代表浏览器和服务器的一次会话，是HttpSession的一个对象。</font></li>
 <li><font color="red">⑤    application：代表当前Web应用。是ServletContext的一个对象。（可以获取初始化参数等。）</font></li>
 <li>⑥    config：当前JSP对应的Servlet的ServletConfig对象。（开发时几乎不使用。若需要访问当前JSP配置的初始化参数，需要通过映射的地址才可以。）</li>
-<li><font color="red">⑦    out：JspWriter对象。调用out.println()可以直接把字符串打印到浏览器上。（在两次out.println()时，中间不会换行，需要添加\<br>标签。）</font></li>
+<li><font color="red">⑦    out：JspWriter对象。调用out.println()可以直接把字符串打印到浏览器上。（在两次out.println()时，中间不会换行，需要添加&lt;br>标签。）</font></li>
 <li>⑧    page：指向当前JSP对应的Servlet对象的引用，但为Object类型，只能调用Object类的方法（几乎不使用。）</li>
 <li><p>⑨    exception：一定的条件下才可以用。（只有主动声明了isErrorPage=”true”的时候，才可以使用。）</p>
 <blockquote>
@@ -590,10 +590,8 @@
 <li>void setAttribute(String name, Object obj)：设置属性</li>
 </ul>
 </blockquote>
-</li>
-<li><p>②    pageContext，request，session，application对象都有这些方法。这四个对象也成为域对象。</p>
-</li>
-<li><p>③    作用范围</p>
+<p>   ②    pageContext，request，session，application对象都有这些方法。这四个对象也成为域对象。</p>
+<p>   ③    作用范围</p>
 <blockquote>
 <ul>
 <li>pageContext：属性的作用范围仅限于当前JSP页面。（在Servlet中无法得到pageContext对象。）</li>
@@ -609,12 +607,9 @@
 <h2 id="请求的转发和重定向"><a href="#请求的转发和重定向" class="headerlink" title="请求的转发和重定向"></a>请求的转发和重定向</h2><blockquote>
 <ul>
 <li><p>①    调用HttpServletRequest的getRequestDispatcher(String path)方法获取RequestDispatcher对象。调用方法时，需要传入要转发的地址。</p>
-</li>
-<li><p><strong>②    调用 HttpServletRequest的 forward（request，response）<em>进行请求的转发</em>。</strong></p>
-</li>
-<li><p><strong>③    调用sendRedirect(String path) <em>进行请求的重定向</em>。</strong></p>
-</li>
-<li><p>④    转发与重定向的区别：</p>
+<p>   <strong>②    调用 HttpServletRequest的 forward（request，response）<em>进行请求的转发</em>。</strong></p>
+<p>   <strong>③    调用sendRedirect(String path) <em>进行请求的重定向</em>。</strong></p>
+<p>   ④    转发与重定向的区别：</p>
 <blockquote>
 <ul>
 <li><p><strong>本质区别：请求的转发只发出了 <em>一次</em>  请求，而重定向则发出了 <em>两次</em>  请求。</strong>    </p>
@@ -1066,7 +1061,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共2.8k字</span>
+  <span class="post-count">博客全站共2.9k字</span>
 </div>
 
 
