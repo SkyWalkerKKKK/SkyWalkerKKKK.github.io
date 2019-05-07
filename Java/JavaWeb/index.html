@@ -113,7 +113,7 @@
 <meta property="og:site_name" content="SkyWalker的博客">
 <meta property="og:description" content="ServletServletResoponse 设置响应格式123ServletResponse response = new ServletResponse();response.setContentType(&quot;application/msword&quot;);//设置响应类型为word文档。//具体可以在tomcat/config/web.xml中查找需要格式对应的值">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-07T17:42:17.293Z">
+<meta property="og:updated_time" content="2019-05-07T17:44:34.316Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaWeb学习笔记">
 <meta name="twitter:description" content="ServletServletResoponse 设置响应格式123ServletResponse response = new ServletResponse();response.setContentType(&quot;application/msword&quot;);//设置响应类型为word文档。//具体可以在tomcat/config/web.xml中查找需要格式对应的值">
@@ -546,15 +546,15 @@
 </table>
 <blockquote>
 <ul>
-<li><font color="red">①request：HttpServletRequest的一个对象。</font> </li>
-<li>②response：HttpServletResponse的一个对象（在JSP页面中几乎不会调用response的任何方法）。 </li>
-<li><font color="red">③pageContext：页面的上下文，是PageContext的一个对象。可以从该对象中获取到其他8个隐含对象。亦可以从中获取到当前页面的其他信息。（学习自定义标签时使用他。在JSP页面上很少直接使用他。）</font> </li>
-<li><font color="red"> ④session：代表浏览器和服务器的一次会话，是HttpSession的一个对象。</font> </li>
-<li><font color="red">⑤application：代表当前Web应用。是ServletContext的一个对象。（可以获取初始化参数等。）</font> </li>
-<li>⑥config：当前JSP对应的Servlet的ServletConfig对象。（开发时几乎不使用。若需要访问当前JSP配置的初始化参数，需要通过映射的地址才可以。） </li>
-<li><font color="red">⑦out：JspWriter对象。调用out.println()可以直接把字符串打印到浏览器上。（在两次out.println()时，中间不会换行，需要添加HTML的换行标签。）</font>  </li>
-<li>⑧page：指向当前JSP对应的Servlet对象的引用，但为Object类型，只能调用Object类的方法（几乎不使用。） </li>
-<li><p>⑨exception：一定的条件下才可以用。（只有主动声明了isErrorPage=”true”的时候，才可以使用。） </p>
+<li><font color="red">① request：HttpServletRequest的一个对象。</font> </li>
+<li>② response：HttpServletResponse的一个对象（在JSP页面中几乎不会调用response的任何方法）。 </li>
+<li><font color="red">③ pageContext：页面的上下文，是PageContext的一个对象。可以从该对象中获取到其他8个隐含对象。亦可以从中获取到当前页面的其他信息。（学习自定义标签时使用他。在JSP页面上很少直接使用他。）</font> </li>
+<li><font color="red"> ④ session：代表浏览器和服务器的一次会话，是HttpSession的一个对象。</font> </li>
+<li><font color="red">⑤ application：代表当前Web应用。是ServletContext的一个对象。（可以获取初始化参数等。）</font> </li>
+<li>⑥ config：当前JSP对应的Servlet的ServletConfig对象。（开发时几乎不使用。若需要访问当前JSP配置的初始化参数，需要通过映射的地址才可以。） </li>
+<li><font color="red">⑦ out：JspWriter对象。调用out.println()可以直接把字符串打印到浏览器上。（在两次out.println()时，中间不会换行，需要添加HTML的换行标签&lt;br>。）</font>  </li>
+<li>⑧ page：指向当前JSP对应的Servlet对象的引用，但为Object类型，只能调用Object类的方法（几乎不使用。） </li>
+<li><p>⑨ exception：一定的条件下才可以用。（只有主动声明了isErrorPage=”true”的时候，才可以使用。） </p>
 <blockquote>
 <ul>
 <li><strong>标红均为开发时常用对象。</strong><blockquote>
