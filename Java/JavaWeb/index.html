@@ -113,7 +113,7 @@
 <meta property="og:site_name" content="SkyWalker的博客">
 <meta property="og:description" content="ServletServletResoponse 设置响应格式123ServletResponse response = new ServletResponse();response.setContentType(&quot;application/msword&quot;);//设置响应类型为word文档。//具体可以在tomcat/config/web.xml中查找需要格式对应的值">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-07T17:44:34.316Z">
+<meta property="og:updated_time" content="2019-05-27T17:28:44.242Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaWeb学习笔记">
 <meta name="twitter:description" content="ServletServletResoponse 设置响应格式123ServletResponse response = new ServletResponse();response.setContentType(&quot;application/msword&quot;);//设置响应类型为word文档。//具体可以在tomcat/config/web.xml中查找需要格式对应的值">
@@ -451,7 +451,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  2.1k
+                  2.3k
                 </span>
               
 
@@ -725,6 +725,30 @@
 <h2 id="中文乱码"><a href="#中文乱码" class="headerlink" title="中文乱码"></a>中文乱码</h2><font color="blue" size="5">编码格式 = 解码格式即可解决乱码问题。</font>
 
 
+
+
+
+
+
+<h1 id="MVC设计模式"><a href="#MVC设计模式" class="headerlink" title="MVC设计模式"></a>MVC设计模式</h1><p>MVC即Model-View-Controller。模型-视图-控制器。</p>
+<h2 id="模型（Model）"><a href="#模型（Model）" class="headerlink" title="模型（Model）"></a>模型（Model）</h2><ul>
+<li>模型是应用程序的主体部分。模型表示业务数据和业务逻辑。</li>
+<li>一个模型能为多个视图提供数据。</li>
+<li>由于应用于模型的代码只需要写一次就可以被多个视图重用，所以提高了代码的可重用性。</li>
+</ul>
+<h2 id="视图（View）"><a href="#视图（View）" class="headerlink" title="视图（View）"></a>视图（View）</h2><ul>
+<li>视图是用户看到并与之交互的界面，作用如下：<ul>
+<li>视图向用户显示相关的数据。</li>
+<li>接受用户的输入。</li>
+<li>不进行任何实际的业务处理。</li>
+</ul>
+</li>
+</ul>
+<h2 id="控制器（Controller）"><a href="#控制器（Controller）" class="headerlink" title="控制器（Controller）"></a>控制器（Controller）</h2><ul>
+<li>控制器接受用户的输入并调用模型和视图去完成用户的需求。</li>
+<li>控制器接受请求并决定调用哪个模型组建去处理请求，然后决定调用哪个视图来显示模型处理返回的数据。</li>
+</ul>
+
       
     </div>
     
@@ -782,7 +806,7 @@
   <p><span>本文标题:</span><a href="/Java/JavaWeb/">JavaWeb学习笔记</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 SkyWalker 的个人博客">SkyWalker</a></p>
   <p><span>发布时间:</span>2019年05月07日 - 11:05</p>
-  <p><span>最后更新:</span>2019年05月08日 - 01:05</p>
+  <p><span>最后更新:</span>2019年05月28日 - 01:05</p>
   <p><span>原始链接:</span><a href="/Java/JavaWeb/" title="JavaWeb学习笔记">http://SkyWalkerKKKK.cn/Java/JavaWeb/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://SkyWalkerKKKK.cn/Java/JavaWeb/" aria-label="复制成功！"></i></span>
   </p>
@@ -937,7 +961,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -959,7 +983,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1008,7 +1032,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Servlet"><span class="nav-number">1.</span> <span class="nav-text">Servlet</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ServletResoponse-设置响应格式"><span class="nav-number">1.1.</span> <span class="nav-text">ServletResoponse 设置响应格式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JSP"><span class="nav-number">2.</span> <span class="nav-text">JSP</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JSP运行原理"><span class="nav-number">2.1.</span> <span class="nav-text">JSP运行原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSP八大内置对象（实际上9个）"><span class="nav-number">2.2.</span> <span class="nav-text">JSP八大内置对象（实际上9个）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSP表达式"><span class="nav-number">2.3.</span> <span class="nav-text">JSP表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#域对象的属性操作"><span class="nav-number">2.4.</span> <span class="nav-text">域对象的属性操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#请求的转发和重定向"><span class="nav-number">2.5.</span> <span class="nav-text">请求的转发和重定向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSP指令"><span class="nav-number">2.6.</span> <span class="nav-text">JSP指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSP标签"><span class="nav-number">2.7.</span> <span class="nav-text">JSP标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中文乱码"><span class="nav-number">2.8.</span> <span class="nav-text">中文乱码</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Servlet"><span class="nav-number">1.</span> <span class="nav-text">Servlet</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ServletResoponse-设置响应格式"><span class="nav-number">1.1.</span> <span class="nav-text">ServletResoponse 设置响应格式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JSP"><span class="nav-number">2.</span> <span class="nav-text">JSP</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JSP运行原理"><span class="nav-number">2.1.</span> <span class="nav-text">JSP运行原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSP八大内置对象（实际上9个）"><span class="nav-number">2.2.</span> <span class="nav-text">JSP八大内置对象（实际上9个）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSP表达式"><span class="nav-number">2.3.</span> <span class="nav-text">JSP表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#域对象的属性操作"><span class="nav-number">2.4.</span> <span class="nav-text">域对象的属性操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#请求的转发和重定向"><span class="nav-number">2.5.</span> <span class="nav-text">请求的转发和重定向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSP指令"><span class="nav-number">2.6.</span> <span class="nav-text">JSP指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSP标签"><span class="nav-number">2.7.</span> <span class="nav-text">JSP标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中文乱码"><span class="nav-number">2.8.</span> <span class="nav-text">中文乱码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MVC设计模式"><span class="nav-number">3.</span> <span class="nav-text">MVC设计模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模型（Model）"><span class="nav-number">3.1.</span> <span class="nav-text">模型（Model）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#视图（View）"><span class="nav-number">3.2.</span> <span class="nav-text">视图（View）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#控制器（Controller）"><span class="nav-number">3.3.</span> <span class="nav-text">控制器（Controller）</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1061,7 +1085,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共2.9k字</span>
+  <span class="post-count">博客全站共3.8k字</span>
 </div>
 
 
