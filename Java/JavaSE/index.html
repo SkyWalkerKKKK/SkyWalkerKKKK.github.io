@@ -113,10 +113,13 @@
 <meta property="og:site_name" content="SkyWalker的博客">
 <meta property="og:description" content="环境变量的配置 右键 “我的电脑” – “属性” – “高级系统设置” – “高级” – “环境变量” 打开环境变量设置。 新建系统变量“JAVA_HOME”，值的内容为JDK的根目录。 在“Path”环境变量的值中，增加“%JAVA_HOME%\bin;”  此时再使用cmd即可直接使用javac和java命令。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-26T15:56:55.788Z">
+<meta property="og:image" content="c:/Users/SkyWalker/Desktop/数组内存图.bmp">
+<meta property="og:image" content="c:/Users/SkyWalker/Desktop/super内存图.bmp">
+<meta property="og:updated_time" content="2019-06-29T09:05:44.781Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaSE">
 <meta name="twitter:description" content="环境变量的配置 右键 “我的电脑” – “属性” – “高级系统设置” – “高级” – “环境变量” 打开环境变量设置。 新建系统变量“JAVA_HOME”，值的内容为JDK的根目录。 在“Path”环境变量的值中，增加“%JAVA_HOME%\bin;”  此时再使用cmd即可直接使用javac和java命令。">
+<meta name="twitter:image" content="c:/Users/SkyWalker/Desktop/数组内存图.bmp">
 
 
 
@@ -451,7 +454,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  745
+                  2.1k
                 </span>
               
 
@@ -467,7 +470,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  2
+                  8
                 </span>
               
             </div>
@@ -525,8 +528,117 @@
 <li><p>switch语句格式可以很灵活：前后顺序可以颠倒，而且break语句还可以省略。</p>
 <ul>
 <li>匹配哪一个case就从哪一个位置向下执行，直到遇到了break或者switch的整体结束为止。</li>
+<li></li>
 </ul>
 </li>
+</ul>
+<h1 id="数组的定义"><a href="#数组的定义" class="headerlink" title="数组的定义"></a>数组的定义</h1><ul>
+<li>方式1：<ul>
+<li>动态初始化：数据类型[] 数组名称 = new 数据类型[数组长度];</li>
+</ul>
+</li>
+<li>方式2：<ul>
+<li>标准的静态初始化：数据类型[] 数组名称 = new 数据类型[] { 元素1, 元素2, … };</li>
+</ul>
+</li>
+<li>方式3：<ul>
+<li>省略的静态初始化：数据类型[] 数组名称 = { 元素1, 元素2, … };</li>
+</ul>
+</li>
+</ul>
+<p>注意事项：</p>
+<ol>
+<li>静态初始化没有直接指定长度，但是仍然会自动推算得到长度。</li>
+<li>静态初始化标准格式可以拆分成为两个步骤。</li>
+<li>动态初始化也可以拆分成为两个步骤。</li>
+<li>静态初始化一旦使用省略格式，就不能拆分成为两个步骤了。</li>
+</ol>
+<p>使用建议：<br>如果不确定数组当中的具体内容，用动态初始化；否则，已经确定了具体的内容，用静态初始化。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo03</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 省略格式的静态初始化</span></span><br><span class="line">        <span class="keyword">int</span>[] arrayA = &#123; <span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span> &#125;;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 静态初始化的标准格式，可以拆分成为两个步骤</span></span><br><span class="line">        <span class="keyword">int</span>[] arrayB;</span><br><span class="line">        arrayB = <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; <span class="number">11</span>, <span class="number">21</span>, <span class="number">31</span> &#125;;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 动态初始化也可以拆分成为两个步骤</span></span><br><span class="line">        <span class="keyword">int</span>[] arrayC;</span><br><span class="line">        arrayC = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>];</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 静态初始化的省略格式，不能拆分成为两个步骤。</span></span><br><span class="line"><span class="comment">//        int[] arrayD;</span></span><br><span class="line"><span class="comment">//        arrayD = &#123; 10, 20, 30 &#125;;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>数组中的内存图</p>
+<p><img src="C:\Users\SkyWalker\Desktop\数组内存图.bmp" alt="数组内存图"></p>
+<h1 id="集成开发环境IntelliJ-IDEA"><a href="#集成开发环境IntelliJ-IDEA" class="headerlink" title="集成开发环境IntelliJ IDEA"></a>集成开发环境IntelliJ IDEA</h1><p>IDE（Integrated Development Environment）集成开发环境。</p>
+<p>IDEA牛逼。。。OK就这样233</p>
+<!-- 双元班内容 -->
+<hr>
+<h1 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h1><ul>
+<li>格式：public class 子类名 extends 父类名 { }</li>
+<li>范例：public class Zi extends Fu { }</li>
+<li>代码范例：</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//创建对象，调用方法</span></span><br><span class="line">        Fu f = <span class="keyword">new</span> Fu();</span><br><span class="line">        f.show();</span><br><span class="line">        </span><br><span class="line">        Zi z = <span class="keyword">new</span> Zi();</span><br><span class="line">        z.method();</span><br><span class="line">        z.show();<span class="comment">//调用继承于父类的show方法</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Fu</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">show</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"父类的show方法"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Zi</span> <span class="keyword">extends</span> <span class="title">Fu</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"子类的method方法"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><span style="color:red">注意：父类的构造器无法继承下来，如需调用，使用super关键字即可。</span></p>
+<h2 id="继承的好处与弊端"><a href="#继承的好处与弊端" class="headerlink" title="继承的好处与弊端"></a>继承的好处与弊端</h2><ul>
+<li>好处：<ul>
+<li>提高了代码的<span style="color : red"> 复用性</span>（多个类相同的成员可以放到同一个类中）</li>
+<li>提高了代码的<span style="color : red"> 维护性</span>（如果方法的代码需要修改，修改一处即可）</li>
+</ul>
+</li>
+<li>弊端：<ul>
+<li>继承让类与类之间产生了关系，类的耦合性增强了，当父类发生变化时子类实现也不得不跟着变化，削弱了子类的独立性</li>
+</ul>
+</li>
+</ul>
+<p>继承体现的关系：<span style="color : red; font-size: 25px "> is a </span></p>
+<h2 id="继承中成员变量的访问特点"><a href="#继承中成员变量的访问特点" class="headerlink" title="继承中成员变量的访问特点"></a>继承中成员变量的访问特点</h2><p>通过子类对象访问一个变量 ，遵循<span style="color : red; font-size: 25px ">就近原则</span>：</p>
+<ol>
+<li>先找局部范围</li>
+<li>再找子类成员范围</li>
+<li>再找父类成员范围</li>
+<li>如果都没有就报错(不考虑父亲的父亲…) </li>
+</ol>
+<h2 id="继承中成员方法的访问特点"><a href="#继承中成员方法的访问特点" class="headerlink" title="继承中成员方法的访问特点"></a>继承中成员方法的访问特点</h2><p>与成员变量的“就近原则”类似。</p>
+<ol>
+<li>再找子类成员范围</li>
+<li>再找父类成员范围</li>
+<li>如果都没有就报错(不考虑父亲的父亲…) </li>
+</ol>
+<h2 id="继承中构造函数的访问特点"><a href="#继承中构造函数的访问特点" class="headerlink" title="继承中构造函数的访问特点"></a>继承中构造函数的访问特点</h2><ul>
+<li>子类会继承父类的数据，可能还会使用父类的数据。所以子类初始化之前，一定要先完成父类的初始化。</li>
+<li>每一个子类构造方法的第一条语句默认都是：super();</li>
+<li>如果想要控制子类的构造方法调用父类的哪一个构造方法，使用super进行调用即可。</li>
+</ul>
+<p>示例代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo03</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Zi z = <span class="keyword">new</span> Zi();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Fu</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Fu</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Fu的无参"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Fu</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Fu的有参"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Zi</span> <span class="keyword">extends</span> <span class="title">Fu</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Zi</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="comment">//        super();//调用父类的无参构造函数</span></span><br><span class="line">        <span class="keyword">super</span>(<span class="number">10</span>);<span class="comment">//调用父类的有参构造函数</span></span><br><span class="line">        System.out.println(<span class="string">"Zi的无参"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Zi</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//默认调用super();即无参构造函数，可以使用super(int值)显式调用父类的有参构造函数</span></span><br><span class="line">        <span class="keyword">super</span>(<span class="number">10</span>);</span><br><span class="line">        System.out.println(<span class="string">"Zi的有参"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Super内存图"><a href="#Super内存图" class="headerlink" title="Super内存图"></a>Super内存图</h2><ul>
+<li>对象在堆内存中，会单独存在一块super区域，用来存放父类的数据</li>
+</ul>
+<p><img src="C:\Users\SkyWalker\Desktop\super内存图.bmp" alt="super内存图"></p>
+<h2 id="方法重写"><a href="#方法重写" class="headerlink" title="方法重写"></a>方法重写</h2><ul>
+<li>在重写方法时，可以在声明前加入@Override注解，可以帮助我们检查我们要重写的方法声明是否错误</li>
+<li>父类中私有的方法不能被重写</li>
+<li>子类的方法的声明和父类的方法的声明一般一致，但是有些地方可以不一致，遵循以下原则：<ul>
+<li>一大：子类重写的方法的权限修饰符必须大于或者等于父类方法的权限修饰符<ul>
+<li>private &lt; default &lt; protected &lt; public </li>
+</ul>
+</li>
+<li>两同：<ul>
+<li>方法名必须相同</li>
+<li>参数列表必须相同</li>
+</ul>
+</li>
+<li>两小：<ul>
+<li><strong><em>子类重写的方法的返回值类型必须小于等于父类方法的返回值类型（针对的是引用类型，一般小于说的是子类与父类的关系，对基本类型无效）</em></strong></li>
+<li>子类重写的方法抛出的异常必须小于等于或者少于等于父类的方法抛出的异常，如果父类方法没有抛出异常，则子类重写之后的方法绝对不能抛出异常</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="继承的注意事项"><a href="#继承的注意事项" class="headerlink" title="继承的注意事项"></a>继承的注意事项</h2><ul>
+<li>Java中的类只支持<span style="color : red">单</span>继承，不支持<span style="color : red">多</span>继承（一个类只能有一个父类）</li>
+<li>Java中的类支持<span style="color : red">多层</span>继承</li>
+</ul>
+<h1 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h1><ul>
+<li>final修饰符：<ul>
+<li>修饰方法：该方法无法被重写</li>
+<li>修饰变量：该变量无法被赋值</li>
+<li>修饰类：该类无法被继承</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>static修饰符：<br>- </li>
 </ul>
 
       
@@ -586,7 +698,7 @@
   <p><span>本文标题:</span><a href="/Java/JavaSE/">JavaSE</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 SkyWalker 的个人博客">SkyWalker</a></p>
   <p><span>发布时间:</span>2019年06月26日 - 23:06</p>
-  <p><span>最后更新:</span>2019年06月26日 - 23:06</p>
+  <p><span>最后更新:</span>2019年06月29日 - 17:06</p>
   <p><span>原始链接:</span><a href="/Java/JavaSE/" title="JavaSE">http://SkyWalkerKKKK.cn/Java/JavaSE/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://SkyWalkerKKKK.cn/Java/JavaSE/" aria-label="复制成功！"></i></span>
   </p>
@@ -808,7 +920,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#环境变量的配置"><span class="nav-number">1.</span> <span class="nav-text">环境变量的配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JDK9的JShell的简单使用"><span class="nav-number">2.</span> <span class="nav-text">JDK9的JShell的简单使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#编译器的两点优化（对于变量的赋值）"><span class="nav-number">3.</span> <span class="nav-text">编译器的两点优化（对于变量的赋值）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一个优化"><span class="nav-number">3.1.</span> <span class="nav-text">第一个优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二个优化"><span class="nav-number">3.2.</span> <span class="nav-text">第二个优化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#switch语句使用的注意事项"><span class="nav-number">4.</span> <span class="nav-text">switch语句使用的注意事项</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#环境变量的配置"><span class="nav-number">1.</span> <span class="nav-text">环境变量的配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JDK9的JShell的简单使用"><span class="nav-number">2.</span> <span class="nav-text">JDK9的JShell的简单使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#编译器的两点优化（对于变量的赋值）"><span class="nav-number">3.</span> <span class="nav-text">编译器的两点优化（对于变量的赋值）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一个优化"><span class="nav-number">3.1.</span> <span class="nav-text">第一个优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二个优化"><span class="nav-number">3.2.</span> <span class="nav-text">第二个优化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#switch语句使用的注意事项"><span class="nav-number">4.</span> <span class="nav-text">switch语句使用的注意事项</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组的定义"><span class="nav-number">5.</span> <span class="nav-text">数组的定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#集成开发环境IntelliJ-IDEA"><span class="nav-number">6.</span> <span class="nav-text">集成开发环境IntelliJ IDEA</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#继承"><span class="nav-number">7.</span> <span class="nav-text">继承</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#继承的好处与弊端"><span class="nav-number">7.1.</span> <span class="nav-text">继承的好处与弊端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承中成员变量的访问特点"><span class="nav-number">7.2.</span> <span class="nav-text">继承中成员变量的访问特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承中成员方法的访问特点"><span class="nav-number">7.3.</span> <span class="nav-text">继承中成员方法的访问特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承中构造函数的访问特点"><span class="nav-number">7.4.</span> <span class="nav-text">继承中构造函数的访问特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Super内存图"><span class="nav-number">7.5.</span> <span class="nav-text">Super内存图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法重写"><span class="nav-number">7.6.</span> <span class="nav-text">方法重写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承的注意事项"><span class="nav-number">7.7.</span> <span class="nav-text">继承的注意事项</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修饰符"><span class="nav-number">8.</span> <span class="nav-text">修饰符</span></a></li></ol></div>
             
 
           </div>
@@ -861,7 +973,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共3.8k字</span>
+  <span class="post-count">博客全站共5.2k字</span>
 </div>
 
 
