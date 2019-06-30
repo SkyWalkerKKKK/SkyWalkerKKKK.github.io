@@ -362,6 +362,425 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://SkyWalkerKKKK.cn/Java/JavaSE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="SkyWalker">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1557167236181&di=a0d810af38b2c9d9159d63e898b41e50&imgtype=0&src=http%3A%2F%2Fimg.hao661.com%2Fqq.hao661.com%2Fuploads%2Fallimg%2F180715%2F144142A95-6.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SkyWalker的博客">
+    </span>
+
+    
+      <header class="post-header">
+       
+        
+          <i class="fa fa-thumb-tack"></i>
+          <font color="7D26CD">置顶</font>
+        
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Java/JavaSE/" itemprop="url">JavaSE</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建时间" itemprop="dateCreated datePublished" datetime="2019-06-26T23:10:18+08:00">
+                2019-06-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  3k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  11
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="环境变量的配置"><a href="#环境变量的配置" class="headerlink" title="环境变量的配置"></a>环境变量的配置</h1><ul>
+<li>右键 “我的电脑” – “属性” – “高级系统设置” – “高级” – “环境变量” 打开环境变量设置。</li>
+<li>新建系统变量“JAVA_HOME”，值的内容为JDK的根目录。</li>
+<li>在“Path”环境变量的值中，增加“%JAVA_HOME%\bin;”</li>
+</ul>
+<p>此时再使用cmd即可直接使用javac和java命令。</p>
+<h1 id="JDK9的JShell的简单使用"><a href="#JDK9的JShell的简单使用" class="headerlink" title="JDK9的JShell的简单使用"></a>JDK9的JShell的简单使用</h1><p>直接在cmd中输入jshell，回车，即可启动JShell。</p>
+<p>JShell一般用于极其简单、轻量的情况。</p>
+<h1 id="编译器的两点优化（对于变量的赋值）"><a href="#编译器的两点优化（对于变量的赋值）" class="headerlink" title="编译器的两点优化（对于变量的赋值）"></a>编译器的两点优化（对于变量的赋值）</h1><h2 id="第一个优化"><a href="#第一个优化" class="headerlink" title="第一个优化"></a>第一个优化</h2><p>对于byte/short/char三种类型来说，如果右侧赋值的数值没有超过范围，那么javac编译器将会自动隐含地为我们补上一个(byte)(short)(char)。</p>
+<ul>
+<li>如果没有超过左侧的范围，编译器补上强转。</li>
+<li>如果右侧超过了左侧范围，那么直接编译器报错。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo01</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 右侧确实是一个int数字，但是没有超过左侧的范围，就是正确的。</span></span><br><span class="line">        <span class="comment">// int --&gt; byte, 不是自动类型转换</span></span><br><span class="line">        <span class="keyword">byte</span> num1 = <span class="comment">/*(byte)*/</span>  <span class="number">30</span>; <span class="comment">// 右侧没有超过左侧范围</span></span><br><span class="line">        System.out.println(num1); <span class="comment">// 30</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">// byte num2 = 128; // 右侧超过了左侧的范围，编译器报错</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">// int --&gt; char, 没有超过范围</span></span><br><span class="line">        <span class="comment">// 编译器将会自动补上一个隐含的(char)</span></span><br><span class="line">        <span class="keyword">char</span> c1 = <span class="comment">/*(char)*/</span> <span class="number">65</span>;</span><br><span class="line">        System.out.println(c1); <span class="comment">// A</span></span><br><span class="line">    &#125;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="第二个优化"><a href="#第二个优化" class="headerlink" title="第二个优化"></a>第二个优化</h2><p>在给变量进行赋值的时候，如果右侧的表达式当中全部都是常量，没有任何变量，那么编译器javac将会直接将若干个常量表达式计算得到结果。</p>
+<p><span style="font-size : 25px">short result = 5 + 8; // 等号右边全部都是常量，没有任何变量参与运算</span></p>
+<p>编译之后，得到的.class字节码文件当中相当于【直接就是】：</p>
+<p>short result = 13;</p>
+<p>右侧的常量结果数值，没有超过左侧范围，所以正确。</p>
+<p><span style="color:red">这称为“编译器的常量优化”</span></p>
+<p>但是注意：一旦表达式当中有变量参与，那么就不能进行这种优化了。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo02</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">short</span> num1 = <span class="number">10</span>; <span class="comment">// 正确写法，右侧没有超过左侧范围</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">short</span> a = <span class="number">5</span>; </span><br><span class="line">        <span class="keyword">short</span> b = <span class="number">8</span>; </span><br><span class="line">        <span class="comment">// short + short --&gt; int + int --&gt; int </span></span><br><span class="line">        <span class="comment">// short result = a + b; // 错误写法！左侧需要是int类型</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 右侧不用变量，而是采用常量，而且只有两个常量，没有别人</span></span><br><span class="line">        <span class="keyword">short</span> result = <span class="number">5</span> + <span class="number">8</span>; </span><br><span class="line">        System.out.println(result);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">short</span> result2 = <span class="number">5</span> + a + <span class="number">8</span>; <span class="comment">// 结果应该是18，但是编译器报错</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/Java/JavaSE/#更多" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+
+
+
+
+    
+
+    
+
+    
+
+<div>
+      
+</div>
+
+
+    <div>
+       
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://SkyWalkerKKKK.cn/Java/JavaSE-Error-Log/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="SkyWalker">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1557167236181&di=a0d810af38b2c9d9159d63e898b41e50&imgtype=0&src=http%3A%2F%2Fimg.hao661.com%2Fqq.hao661.com%2Fuploads%2Fallimg%2F180715%2F144142A95-6.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SkyWalker的博客">
+    </span>
+
+    
+      <header class="post-header">
+       
+        
+          <i class="fa fa-thumb-tack"></i>
+          <font color="7D26CD">置顶</font>
+        
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Java/JavaSE-Error-Log/" itemprop="url">JavaSE Error Log</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建时间" itemprop="dateCreated datePublished" datetime="2019-06-29T21:08:05+08:00">
+                2019-06-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  1.1k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  4
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="Java中protected方法访问权限的问题"><a href="#Java中protected方法访问权限的问题" class="headerlink" title="Java中protected方法访问权限的问题"></a>Java中protected方法访问权限的问题</h1><p>在cn.skywalker.test05包下的Student类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.skywalker.test05;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> SkyWalker</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span> 2019 - 06 - 29 - 19:40</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">display</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"display....."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在cn.skywalker.test06包下的Test类：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.skywalker.test06;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cn.skywalker.test05.Student;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> SkyWalker</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span> 2019 - 06 - 29 - 20:13</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> <span class="keyword">extends</span> <span class="title">Student</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Student student = <span class="keyword">new</span> Student();</span><br><span class="line"><span class="comment">//        student.display();</span></span><br><span class="line">        <span class="comment">//在不同包实例化Student类对象，该对象对Student类中声明的protected方法的调用不属于本类调用</span></span><br><span class="line"></span><br><span class="line">        Test t = <span class="keyword">new</span> Test();</span><br><span class="line">        t.display();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里我用cn.skywalker.test06包下的Test类继承了cn.skywalker.test05包下的Student类，但是在Test类中的main()函数中实例化了一个Student对象，该对象却无法调用Student类中使用protected修饰的方法。</p>
+<p>这里再给出《java in a nutshell》中的一段话：</p>
+<p>protected access requires a little more elaboration. Suppose class A declares a protected field x and is extended by a class B, which is defined in a different package (this last point is important). Class B inherits the protected field x, and its code can access that field in the current instance of B or in any other instances of B that the code can refer to. This does not mean, however, that the code of class B can start reading the protected fields of arbitrary instances of A! If an object is an instance of A but is not an instance of B, its fields are obviously not inherited by B, and the code of class B cannot read them.</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/Java/JavaSE-Error-Log/#更多" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+
+
+
+
+    
+
+    
+
+    
+
+<div>
+      
+</div>
+
+
+    <div>
+       
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://SkyWalkerKKKK.cn/Java/JavaWeb/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -491,210 +910,63 @@
       
         
           <h1 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h1><h2 id="ServletResoponse-设置响应格式"><a href="#ServletResoponse-设置响应格式" class="headerlink" title="ServletResoponse 设置响应格式"></a>ServletResoponse 设置响应格式</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ServletResponse response = <span class="keyword">new</span> ServletResponse();</span><br><span class="line">response.setContentType(<span class="string">"application/msword"</span>);<span class="comment">//设置响应类型为word文档。</span></span><br><span class="line"><span class="comment">//具体可以在tomcat/config/web.xml中查找需要格式对应的值</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a>JSP</h1><h2 id="JSP运行原理"><a href="#JSP运行原理" class="headerlink" title="JSP运行原理"></a>JSP运行原理</h2><blockquote>
+<ul>
+<li>JSP是简Servlet编写的一种技术，他将Java代码和HTML语句混合在同一个文件中编写。只对网页中的要动态产生的内容才用Java代码来编写，而对固定不变的静态内容才用普通静态HTML页面的方式编写。</li>
+<li>JSP继承了HttpJspBase类，而HttpJspBase又继承了HttpServlet，即jsp间接继承了HttpServlet，即JSP本质上就是一个Servlet。</li>
+</ul>
+</blockquote>
+<hr>
+<h2 id="JSP八大内置对象（实际上9个）"><a href="#JSP八大内置对象（实际上9个）" class="headerlink" title="JSP八大内置对象（实际上9个）"></a>JSP八大内置对象（实际上9个）</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">类名</th>
+<th style="text-align:center">对象实例名（可直接调用）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">HttpServletRequest</td>
+<td style="text-align:center">request</td>
+</tr>
+<tr>
+<td style="text-align:center">HttpServletResoponse</td>
+<td style="text-align:center">response</td>
+</tr>
+<tr>
+<td style="text-align:center">PageContext</td>
+<td style="text-align:center">pageContext</td>
+</tr>
+<tr>
+<td style="text-align:center">HttpSession</td>
+<td style="text-align:center">session</td>
+</tr>
+<tr>
+<td style="text-align:center">ServletContext</td>
+<td style="text-align:center">application</td>
+</tr>
+<tr>
+<td style="text-align:center">ServletConfig</td>
+<td style="text-align:center">config</td>
+</tr>
+<tr>
+<td style="text-align:center">JspWriter</td>
+<td style="text-align:center">out</td>
+</tr>
+<tr>
+<td style="text-align:center">Object</td>
+<td style="text-align:center">page</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong><em>Exception</em></strong></td>
+<td style="text-align:center"><strong><em>exception</em></strong></td>
+</tr>
+</tbody>
+</table>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/Java/JavaWeb/#更多" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-
-
-
-
-    
-
-    
-
-    
-
-<div>
-      
-</div>
-
-
-    <div>
-       
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://SkyWalkerKKKK.cn/Java/JavaSE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="SkyWalker">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1557167236181&di=a0d810af38b2c9d9159d63e898b41e50&imgtype=0&src=http%3A%2F%2Fimg.hao661.com%2Fqq.hao661.com%2Fuploads%2Fallimg%2F180715%2F144142A95-6.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="SkyWalker的博客">
-    </span>
-
-    
-      <header class="post-header">
-       
-        
-          <i class="fa fa-thumb-tack"></i>
-          <font color="7D26CD">置顶</font>
-        
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/Java/JavaSE/" itemprop="url">JavaSE</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建时间" itemprop="dateCreated datePublished" datetime="2019-06-26T23:10:18+08:00">
-                2019-06-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  2.1k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  8
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="环境变量的配置"><a href="#环境变量的配置" class="headerlink" title="环境变量的配置"></a>环境变量的配置</h1><ul>
-<li>右键 “我的电脑” – “属性” – “高级系统设置” – “高级” – “环境变量” 打开环境变量设置。</li>
-<li>新建系统变量“JAVA_HOME”，值的内容为JDK的根目录。</li>
-<li>在“Path”环境变量的值中，增加“%JAVA_HOME%\bin;”</li>
-</ul>
-<p>此时再使用cmd即可直接使用javac和java命令。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/Java/JavaSE/#更多" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1387,7 +1659,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1409,7 +1681,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1495,7 +1767,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共5.2k字</span>
+  <span class="post-count">博客全站共7.1k字</span>
 </div>
 
 
