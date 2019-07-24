@@ -114,8 +114,9 @@
 <meta property="og:description" content="环境变量的配置 右键 “我的电脑” – “属性” – “高级系统设置” – “高级” – “环境变量” 打开环境变量设置。 新建系统变量“JAVA_HOME”，值的内容为JDK的根目录。 在“Path”环境变量的值中，增加“%JAVA_HOME%\bin;”  此时再使用cmd即可直接使用javac和java命令。 JDK9的JShell的简单使用直接在cmd中输入jshell，回车，即可启动JS">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="c:/Users/SkyWalker/folder/source/images/数组内存图.bmp">
+<meta property="og:image" content="c:/Users/SkyWalker/folder/source/images/JVM内存图">
 <meta property="og:image" content="c:/Users/SkyWalker/folder/source/images/super内存图.bmp">
-<meta property="og:updated_time" content="2019-06-30T07:59:34.330Z">
+<meta property="og:updated_time" content="2019-07-09T02:27:07.422Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaSE">
 <meta name="twitter:description" content="环境变量的配置 右键 “我的电脑” – “属性” – “高级系统设置” – “高级” – “环境变量” 打开环境变量设置。 新建系统变量“JAVA_HOME”，值的内容为JDK的根目录。 在“Path”环境变量的值中，增加“%JAVA_HOME%\bin;”  此时再使用cmd即可直接使用javac和java命令。 JDK9的JShell的简单使用直接在cmd中输入jshell，回车，即可启动JS">
@@ -454,7 +455,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  3k
+                  6.9k
                 </span>
               
 
@@ -470,7 +471,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  11
+                  26
                 </span>
               
             </div>
@@ -531,6 +532,10 @@
 </ul>
 </li>
 </ul>
+<p>关于switch的穿透代码示例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Debug01</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">switch</span> (a) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                System.out.println(<span class="string">"1."</span>);</span><br><span class="line">            <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">            <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                <span class="comment">// switch的穿透，所以会执行下面的输出语句。</span></span><br><span class="line">                System.out.println(<span class="string">"default."</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>代码的运行结果为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.</span><br><span class="line">default.</span><br></pre></td></tr></table></figure>
 <h1 id="数组的定义"><a href="#数组的定义" class="headerlink" title="数组的定义"></a>数组的定义</h1><ul>
 <li>方式1：<ul>
 <li>动态初始化：数据类型[] 数组名称 = new 数据类型[数组长度];</li>
@@ -556,8 +561,73 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo03</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 省略格式的静态初始化</span></span><br><span class="line">        <span class="keyword">int</span>[] arrayA = &#123; <span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span> &#125;;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 静态初始化的标准格式，可以拆分成为两个步骤</span></span><br><span class="line">        <span class="keyword">int</span>[] arrayB;</span><br><span class="line">        arrayB = <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; <span class="number">11</span>, <span class="number">21</span>, <span class="number">31</span> &#125;;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 动态初始化也可以拆分成为两个步骤</span></span><br><span class="line">        <span class="keyword">int</span>[] arrayC;</span><br><span class="line">        arrayC = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>];</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 静态初始化的省略格式，不能拆分成为两个步骤。</span></span><br><span class="line"><span class="comment">//        int[] arrayD;</span></span><br><span class="line"><span class="comment">//        arrayD = &#123; 10, 20, 30 &#125;;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>数组中的内存图</p>
 <p><img src="C:\Users\SkyWalker\folder\source\images\数组内存图.bmp" alt="数组内存图"></p>
+<h1 id="Random类"><a href="#Random类" class="headerlink" title="Random类"></a>Random类</h1><ul>
+<li><p>作用：用于产生一个随机数</p>
+</li>
+<li><p>所属包：java.util.Random</p>
+</li>
+<li><p>格式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Random random = <span class="keyword">new</span> Random();</span><br><span class="line"><span class="keyword">int</span> number = random.nextInt(<span class="keyword">int</span> index);  <span class="comment">// 获取数据的范围：[0,index) 左闭右开的一个区间。</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>拓展：</p>
+<ul>
+<li><p>Math类下的static double random()方法的返回值为double。值为正号，大于等于 0.0 ，小于 1.0 。 即获取数据的范围：[0.0, 1.0) 左闭右开的一个区间。</p>
+</li>
+<li><p>常用案例：</p>
+<ul>
+<li><p>生成一个1~100的随机数字</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> num = (<span class="keyword">int</span>)(Math.random() * <span class="number">100</span>) + <span class="number">1</span>;	<span class="comment">// 使用Math类下的random()静态方法</span></span><br><span class="line"></span><br><span class="line">Random r = <span class="keyword">new</span> Random();</span><br><span class="line"><span class="keyword">int</span> num1 = r.nextInt(<span class="number">100</span>) + <span class="number">1</span>;	<span class="comment">// 使用Random类生成</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="方法重载的注意点"><a href="#方法重载的注意点" class="headerlink" title="方法重载的注意点"></a>方法重载的注意点</h1><ul>
+<li><p>与返回值类型无关</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MethodDemo</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">fn</span><span class="params">(<span class="keyword">int</span> a)</span></span>&#123;</span><br><span class="line">        <span class="comment">//method body</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">fn</span><span class="params">(<span class="keyword">int</span> a)</span></span>&#123;</span><br><span class="line">        <span class="comment">//method body</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面的代码不构成方法的重载：因为形参列表相同。虽然返回值类型不同，但方法重载与返回值类型无关。</p>
+</li>
+</ul>
 <h1 id="集成开发环境IntelliJ-IDEA"><a href="#集成开发环境IntelliJ-IDEA" class="headerlink" title="集成开发环境IntelliJ IDEA"></a>集成开发环境IntelliJ IDEA</h1><p>IDE（Integrated Development Environment）集成开发环境。</p>
 <p>IDEA牛逼。。。OK就这样233</p>
+<h2 id="IDEA中Debug的使用"><a href="#IDEA中Debug的使用" class="headerlink" title="IDEA中Debug的使用"></a>IDEA中Debug的使用</h2><h3 id="如何加断点"><a href="#如何加断点" class="headerlink" title="如何加断点"></a>如何加断点</h3><p>选择要设置断点的代码行，在行号的区域后面单击鼠标左键即可。</p>
+<h3 id="如何运行加了断点的程序"><a href="#如何运行加了断点的程序" class="headerlink" title="如何运行加了断点的程序"></a>如何运行加了断点的程序</h3><p>在代码区域右键Debug执行。</p>
+<h3 id="看哪里"><a href="#看哪里" class="headerlink" title="看哪里"></a>看哪里</h3><p>看Debugger窗口</p>
+<h3 id="点哪里"><a href="#点哪里" class="headerlink" title="点哪里"></a>点哪里</h3><p>点Step Into（F7）这个箭头，也可以直接按F7，运行完之后，点击Stop结束。</p>
+<h3 id="如何删除断点"><a href="#如何删除断点" class="headerlink" title="如何删除断点"></a>如何删除断点</h3><p>选择要删除的断点，单击鼠标左键即可。</p>
+<p>如果是多个断点，可以每一个再点击一次，也可以一次性全部删除。</p>
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>如果数据来自于键盘输入（Scanner），一定要记住输入数据，不然就不能继续往下查看了。</p>
+<h1 id="Java中的内存分配"><a href="#Java中的内存分配" class="headerlink" title="Java中的内存分配"></a>Java中的内存分配</h1><h2 id="JVM简介"><a href="#JVM简介" class="headerlink" title="JVM简介"></a>JVM简介</h2><blockquote>
+<p>Java虚拟机（Java Virtual Machine 简称JVM）是运行所有Java程序的抽象计算机，是Java语言的运行环境，它是Java 最具吸引力的特性之一。Java虚拟机有自己完善的硬体架构，如处理器、堆栈、寄存器等，还具有相应的指令系统。JVM屏蔽了与具体操作系统平台相关的信息，使得Java程序只需生成在Java虚拟机上运行的目标代码（字节码），就可以在多种平台上不加修改地运行。 </p>
+<p>一个运行时的Java虚拟机实例的天职是：负责运行一个java程序。当启动一个Java程序时，一个虚拟机实例也就诞生了。当该程序关闭退出，这个虚拟机实例也就随之消亡。如果同一台计算机上同时运行三个Java程序，将得到三个Java虚拟机实例。每个Java程序都运行于它自己的Java虚拟机实例中。 </p>
+</blockquote>
+<p>JVM的体系结构包含几个主要的子系统和内存区：</p>
+<ul>
+<li><strong>垃圾回收器（Garbage Collection）：</strong>负责回收堆内存（Heap）中没有被使用的对象，即这些对象已经没有被引用了。              </li>
+</ul>
+<ul>
+<li><strong>类装载子系统（ClassLoader Sub-System）：</strong>除了要定位和导入二进制class文件外，还必须负责验证被导入类的正确性，为类变量分配并初始化内存，以及帮助解析符号引用。             </li>
+</ul>
+<ul>
+<li><strong>执行引擎（Execution Engine）：</strong>负责执行那些包含在被装载类的方法中的指令。    </li>
+</ul>
+<ul>
+<li><strong>运行时数据区（Java Memory Allocation Area）：</strong>又叫虚拟机内存或者Java内存，虚拟机运行时需要从整个计算机内存划分一块内存区域存储许多东西。例如：字节码、从已装载的class文件中得到的其他信息、程序创建的对象、传递给方法的参数，返回值、局部变量等等。</li>
+</ul>
+<p><img src="C:\Users\SkyWalker\folder\source\images\JVM内存图" alt="1562120489462"></p>
+<h2 id="Java内存分区"><a href="#Java内存分区" class="headerlink" title="Java内存分区"></a>Java内存分区</h2><p>从上节知道，运行时数据区即是java内存，而且数据区要存储的东西比较多，如果不对这块内存区域进行划分管理，会显得比较杂乱无章。 根据存储数据的不同，java内存通常被划分为5个区域：<span style="color:red;font-size:25px">程序计数器（Program Count Register）、本地方法栈（Native Stack）、方法区（Method Area）、栈（Stack）、堆（Heap）</span>。  </p>
+<ul>
+<li><strong>程序计数器（Program Count Register）：</strong>又叫程序寄存器。JVM支持多个线程同时运行，当每一个新线程被创建时，它都将得到它自己的PC寄存器（程序计数器）。如果线程正在执行的是一个Java方法（非native），那么PC寄存器的值将总是指向下一条将被执行的指令，如果方法是 native的，程序计数器寄存器的值不会被定义。 JVM的程序计数器寄存器的宽度足够保证可以持有一个返回地址或者native的指针。    </li>
+</ul>
+<ul>
+<li><strong>栈（Stack）：</strong>又叫堆栈。JVM为每个新创建的线程都分配一个栈。也就是说,对于一个Java程序来说，它的运行就是通过对栈的操作来完成的。栈以帧为单位保存线程的状态。JVM对栈只进行两种操作：以帧为单位的压栈和出栈操作。我们知道,某个线程正在执行的方法称为此线程的当前方法。我们可能不知道，当前方法使用的帧称为当前帧。当线程激活一个Java方法，JVM就会在线程的 Java堆栈里新压入一个帧，这个帧自然成为了当前帧。在此方法执行期间，这个帧将用来保存参数、局部变量、中间计算过程和其他数据。从Java的这种分配机制来看,堆栈又可以这样理解：栈(Stack)是操作系统在建立某个进程时或者线程(在支持多线程的操作系统中是线程)为这个线程建立的存储区域，该区域具有先进后出的特性。</li>
+</ul>
+<ul>
+<li><strong>方法区（Method Area）：</strong>当虚拟机装载一个class文件时，它会从这个class文件包含的二进制数据中解析类型信息，然后把这些类型信息（包括类信息、常量、静态变量等）放到方法区中，该内存区域被所有线程共享，如下图所示。本地方法区存在一块特殊的内存区域，叫常量池（Constant Pool），这块内存将与String类型的分析密切相关。 </li>
+</ul>
+<ul>
+<li><strong>堆（Heap）：</strong>Java堆（Java Heap）是Java虚拟机所管理的内存中最大的一块。Java堆是被所有线程共享的一块内存区域。在此区域的唯一目的就是存放对象实例，几乎所有的对象实例都是在这里分配内存，但是这个对象的引用却是在栈（Stack）中分配。因此，执行String s = new String(“s”)时，需要从两个地方分配内存：在堆中为String对象分配内存，在栈中为引用（这个堆对象的内存地址，即指针）分配内存。</li>
+</ul>
 <!-- 双元班内容 -->
 <hr>
 <h1 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h1><ul>
@@ -751,6 +821,387 @@
 <p>要么子类也是抽象类 </p>
 </li>
 </ul>
+<h1 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h1><ul>
+<li><p>概念：就是在一个类中定义一个类</p>
+</li>
+<li><p>格式 ：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> 类名</span>&#123;</span><br><span class="line">	修饰符 <span class="class"><span class="keyword">class</span> 类名</span>&#123;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>​    </p>
+</li>
+</ul>
+<h2 id="内部类的访问特点"><a href="#内部类的访问特点" class="headerlink" title="内部类的访问特点"></a>内部类的访问特点</h2><ul>
+<li>内部类可以直接访问外部类的成员，包括私有</li>
+<li><p>外部类要访问内部类的成员，必须创建对象</p>
+</li>
+<li><p>分类</p>
+<ul>
+<li>成员内部类</li>
+<li>局部内部类</li>
+<li>匿名内部类</li>
+</ul>
+</li>
+</ul>
+<h1 id="常用API"><a href="#常用API" class="headerlink" title="常用API"></a>常用API</h1><h2 id="java-util-Arrays"><a href="#java-util-Arrays" class="headerlink" title="java.util.Arrays"></a>java.util.Arrays</h2><ul>
+<li><p>static String toString(int[] a)  ：将指定给定数组以指定格式的字符串返回 [元素1, 元素2, 元素3]</p>
+<p>如果直接打印一个数组，其实得到的是地址值（字符数组除外）</p>
+</li>
+<li><p>static void sort(int[] a)  ：将指定的数组元素进行排序，默认升序排列</p>
+</li>
+</ul>
+<h2 id="java-util-Math"><a href="#java-util-Math" class="headerlink" title="java.util.Math"></a>java.util.Math</h2><ul>
+<li>pow()</li>
+<li>abs()</li>
+<li>ceil()</li>
+<li>floor()</li>
+<li>max()</li>
+<li>min()</li>
+<li>random()</li>
+<li>round()</li>
+</ul>
+<h2 id="java-lang-Object"><a href="#java-lang-Object" class="headerlink" title="java.lang.Object"></a>java.lang.Object</h2><ul>
+<li>toString()</li>
+<li>equals()</li>
+</ul>
+<h2 id="java-lang-System"><a href="#java-lang-System" class="headerlink" title="java.lang.System"></a>java.lang.System</h2><ul>
+<li>exit()</li>
+<li>currentTimeMillis()</li>
+</ul>
+<h2 id="java-util-Date"><a href="#java-util-Date" class="headerlink" title="java.util.Date"></a>java.util.Date</h2><ul>
+<li>void setTime(long millis)</li>
+<li>long getTime()</li>
+<li>Date()：代表的当前系统时间</li>
+<li>Date(long millis)：代表基准时间+毫秒值落到的时间</li>
+</ul>
+<h2 id="java-text-SimpleDateFormat"><a href="#java-text-SimpleDateFormat" class="headerlink" title="java.text.SimpleDateFormat"></a>java.text.SimpleDateFormat</h2><ul>
+<li>SimpleDateFormat(String str)</li>
+<li>String format(Date d)</li>
+<li>Date parse(String str)</li>
+</ul>
+<h2 id="java-util-Calendar"><a href="#java-util-Calendar" class="headerlink" title="java.util.Calendar"></a>java.util.Calendar</h2><ul>
+<li>get(int field)</li>
+<li>void set(int year, int month, int date)</li>
+<li>setTime(Date date)</li>
+<li>add(int field,int amount)</li>
+<li>注意：<ul>
+<li>月份是从0~11 ，0表示1月，1表示2月，以此类推…</li>
+<li>星期是从1-7，1表示星期日，2表示星期一，以此类推…</li>
+</ul>
+</li>
+</ul>
+<h1 id="包装类"><a href="#包装类" class="headerlink" title="包装类"></a>包装类</h1><ul>
+<li><p>基本类型包装类的作用</p>
+<p>将基本数据类型封装成对象的好处在于可以在对象中定义更多的功能方法操作该数据</p>
+</li>
+<li><p>基本类型对应的包装类</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>基本数据类型</th>
+<th>包装类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>byte</td>
+<td>Byte</td>
+</tr>
+<tr>
+<td>short</td>
+<td>Short</td>
+</tr>
+<tr>
+<td>int</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>long</td>
+<td>Long</td>
+</tr>
+<tr>
+<td>float</td>
+<td>Float</td>
+</tr>
+<tr>
+<td>double</td>
+<td>Double</td>
+</tr>
+<tr>
+<td>char</td>
+<td>Character</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>Boolean</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Integer经典使用案例（String与int类型转换）"><a href="#Integer经典使用案例（String与int类型转换）" class="headerlink" title="Integer经典使用案例（String与int类型转换）"></a>Integer经典使用案例（String与int类型转换）</h2><ul>
+<li><p>int —&gt; String</p>
+<ul>
+<li><p>方式一：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> num = <span class="number">100</span>;</span><br><span class="line">String s1 = num + <span class="string">""</span>;</span><br><span class="line">System.out.println(s1);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>方式二：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> num = <span class="number">100</span>;</span><br><span class="line">String s2 = String.valueOf(num);</span><br><span class="line">System.out.println(s2);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>方式三：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> num = <span class="number">100</span>;</span><br><span class="line">String s3 = Integer.toString(num);</span><br><span class="line">System.out.println(s3);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>String —&gt; int</p>
+<ul>
+<li><p>方式一：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String s = <span class="string">"100"</span>;</span><br><span class="line">Integer i = Integer.valueOf(s);</span><br><span class="line"><span class="keyword">int</span> x = i.intValue();</span><br><span class="line">System.out.println(x);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>方式二：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String s = <span class="string">"100"</span>;</span><br><span class="line"><span class="keyword">int</span> y = Integer.parseInt(s);</span><br><span class="line">System.out.println(s);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<p>案例：</p>
+<ul>
+<li><p>需求：有一个字符串：“91 27 46 38 50”，请写程序实现最终输出结果是：“27 38 46 50 91”</p>
+</li>
+<li><p>思路：</p>
+<ul>
+<li><p>定义一个字符串</p>
+<ul>
+<li><p>把字符串中的数字数据存储到一个int类型的数组中</p>
+</li>
+<li><p>得到字符串中每一个数字数据？</p>
+<p>public String[] split(String regex)</p>
+</li>
+<li><p>定义一个int数组，把 String[] 数组中的每一个元素存储到 int 数组中</p>
+<p>public static int parseInt(String s)</p>
+</li>
+</ul>
+</li>
+<li><p>对 int 数组进行排序</p>
+</li>
+<li>把排序后的int数组中的元素进行拼接得到一个字符串，这里拼接采用StringBuilder来实现</li>
+<li>输出结果</li>
+</ul>
+</li>
+<li><p>代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">IntegerTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//定义一个字符串</span></span><br><span class="line">        String s = <span class="string">"91 27 46 38 50"</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//把字符串中的数字数据存储到一个int类型的数组中</span></span><br><span class="line">        String[] strArray = s.split(<span class="string">" "</span>);</span><br><span class="line">        <span class="keyword">int</span> arr[] = <span class="keyword">new</span> <span class="keyword">int</span>[strArray.length];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">            arr[i] = Integer.parseInt(strArray[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//对 int 数组进行排序</span></span><br><span class="line">        Arrays.sort(arr);</span><br><span class="line">        <span class="comment">//把排序后的int数组中的元素进行拼接得到一个字符串，这里拼接采用StringBuilder来实现</span></span><br><span class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (i == arr.length - <span class="number">1</span>) &#123;</span><br><span class="line">                sb.append(arr[i]);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                sb.append(arr[i]).append(<span class="string">" "</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//输出结果</span></span><br><span class="line">        System.out.println(sb);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="Integer的注意点："><a href="#Integer的注意点：" class="headerlink" title="Integer的注意点："></a>Integer的注意点：</h2><p>在自动装箱与自动拆箱的过程中，同样的赋值语句，可能对应不同的地址。例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Integer i1 = Integer.valueOf(<span class="number">100</span>);</span><br><span class="line">Integer i2 = Integer.valueOf(<span class="number">100</span>);</span><br><span class="line">System.out.println(i1 == i2); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line">Integer i3 = Integer.valueOf(<span class="number">200</span>);</span><br><span class="line">Integer i4 = Integer.valueOf(<span class="number">200</span>);</span><br><span class="line">System.out.println(i3 == i4); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<p>然后我们扒Integer的源码，发现：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Integer <span class="title">valueOf</span><span class="params">(<span class="keyword">int</span> i)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (i &gt;= IntegerCache.low &amp;&amp; i &lt;= IntegerCache.high)</span><br><span class="line">        <span class="keyword">return</span> IntegerCache.cache[i + (-IntegerCache.low)];</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Integer(i);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">IntegerCache</span> </span>&#123;</span><br><span class="line">        <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> low = -<span class="number">128</span>;</span><br><span class="line">        <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> high;</span><br><span class="line">        <span class="keyword">static</span> <span class="keyword">final</span> Integer cache[];</span><br><span class="line">    <span class="keyword">int</span> h = <span class="number">127</span>;</span><br><span class="line">    high = h;</span><br><span class="line">    <span class="comment">//然后是其他部分的源码，不再赘述，只取部分说明</span></span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h1><h2 id="异常的概念"><a href="#异常的概念" class="headerlink" title="异常的概念"></a>异常的概念</h2><ul>
+<li>程序在编译或者运行的过程中出现的错误</li>
+<li>Java中的异常指的都是异常类</li>
+</ul>
+<h2 id="异常类的体系"><a href="#异常类的体系" class="headerlink" title="异常类的体系"></a>异常类的体系</h2><blockquote>
+<p>Throwable</p>
+<blockquote>
+<ul>
+<li><p>Error：不研究</p>
+</li>
+<li><p>Exception</p>
+<ul>
+<li><blockquote>
+<p>编译时异常（检查异常）：Exception下除了RuntimeException及其子类之外的都是编译时异常</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>运行时异常（非检查异常）：RuntimeException及其子类都是运行时异常</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+</blockquote>
+<h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><blockquote>
+<p> 集合的体系结构：</p>
+<blockquote>
+<p>单列集合：</p>
+<ul>
+<li><p>Collection接口</p>
+<blockquote>
+<p>List接口：可以存储重复元素、存取有序、有索引可以根据索引操作元素</p>
+<ul>
+<li>ArrayList类</li>
+<li>LinkedList类</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>Set接口：不可以存储重复元素、存取无序、无索引不可以根据索引操作元素</p>
+<ul>
+<li>HashSet类</li>
+<li>TreeSet类</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<p>双列集合：</p>
+<ul>
+<li><p>Map接口</p>
+<blockquote>
+<ul>
+<li>HashMap类</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+</blockquote>
+<h2 id="单列集合Collection"><a href="#单列集合Collection" class="headerlink" title="单列集合Collection"></a>单列集合Collection</h2><p>常用方法：</p>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>boolean add(E e)</td>
+<td>添加元素</td>
+</tr>
+<tr>
+<td>boolean remove(Object o)</td>
+<td>从集合中移除指定的元素</td>
+</tr>
+<tr>
+<td>void   clear()</td>
+<td>清空集合中的元素</td>
+</tr>
+<tr>
+<td>boolean contains(Object o)</td>
+<td>判断集合中是否存在指定的元素</td>
+</tr>
+<tr>
+<td>boolean isEmpty()</td>
+<td>判断集合是否为空</td>
+</tr>
+<tr>
+<td>int   size()</td>
+<td>集合的长度，也就是集合中元素的个数</td>
+</tr>
+</tbody>
+</table>
+<h3 id="List接口"><a href="#List接口" class="headerlink" title="List接口"></a>List接口</h3><p>存储的数据是可重复的、与添加顺序一致的（存取有序）</p>
+<ul>
+<li><p>ArrayList集合</p>
+<p>​    底层是数组结构实现，查询快、增删慢</p>
+</li>
+<li><p>LinkedList集合</p>
+<p>​    底层是链表结构实现，查询慢、增删快</p>
+</li>
+</ul>
+<p>ArrayList特有的常用方法：</p>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>void add(int index,E   element)</td>
+<td>在此集合中的指定位置插入指定的元素</td>
+</tr>
+<tr>
+<td>E remove(int   index)</td>
+<td>删除指定索引处的元素，返回被删除的元素</td>
+</tr>
+<tr>
+<td>E set(int index,E   element)</td>
+<td>修改指定索引处的元素，返回被修改的元素</td>
+</tr>
+<tr>
+<td>E get(int   index)</td>
+<td>返回指定索引处的元素</td>
+</tr>
+</tbody>
+</table>
+<p>List中，使用迭代器Iterator可能会导致并发修改异常的情况：</p>
+<ul>
+<li><p>出现的原因</p>
+<p>​    迭代器遍历的过程中，通过集合对象修改了集合中的元素<span style="color:red;font-size:25px"> （添加和删除）</span>，造成了迭代器获取元素中判断预期修改值和实际修改值不一致，则会出现：ConcurrentModificationException</p>
+</li>
+<li><p>解决的方案</p>
+<p>​    用for循环遍历，然后用集合对象做对应的操作即可</p>
+</li>
+<li><p>示例代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ListDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//创建集合对象</span></span><br><span class="line">        List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//添加元素</span></span><br><span class="line">        list.add(<span class="string">"hello"</span>);</span><br><span class="line">        list.add(<span class="string">"world"</span>);</span><br><span class="line">        list.add(<span class="string">"java"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//遍历集合，得到每一个元素，看有没有"world"这个元素，如果有，我就添加一个"javaee"元素，请写代码实现</span></span><br><span class="line"><span class="comment">//        Iterator&lt;String&gt; it = list.iterator();</span></span><br><span class="line"><span class="comment">//        while (it.hasNext()) &#123;</span></span><br><span class="line"><span class="comment">//            String s = it.next();</span></span><br><span class="line"><span class="comment">//            if(s.equals("world")) &#123;</span></span><br><span class="line"><span class="comment">//                list.add("javaee");</span></span><br><span class="line"><span class="comment">//            &#125;</span></span><br><span class="line"><span class="comment">//        &#125;</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;list.size(); i++) &#123;</span><br><span class="line">            String s = list.get(i);</span><br><span class="line">            <span class="keyword">if</span>(s.equals(<span class="string">"world"</span>)) &#123;</span><br><span class="line">                list.add(<span class="string">"javaee"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//输出集合对象</span></span><br><span class="line">        System.out.println(list);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>列表迭代器</p>
+<ul>
+<li><p>ListIterator介绍</p>
+<ul>
+<li>通过List集合的listIterator()方法得到，所以说它是List集合特有的迭代器</li>
+<li>用于允许程序员沿任一方向遍历的列表迭代器，在迭代期间修改列表，并获取列表中迭代器的当前位置</li>
+</ul>
+</li>
+<li><p>示例代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ListIteratorDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//创建集合对象</span></span><br><span class="line">        List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//添加元素</span></span><br><span class="line">        list.add(<span class="string">"hello"</span>);</span><br><span class="line">        list.add(<span class="string">"world"</span>);</span><br><span class="line">        list.add(<span class="string">"java"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//获取列表迭代器</span></span><br><span class="line">        ListIterator&lt;String&gt; lit = list.listIterator();</span><br><span class="line">        <span class="keyword">while</span> (lit.hasNext()) &#123;</span><br><span class="line">            String s = lit.next();</span><br><span class="line">            <span class="keyword">if</span>(s.equals(<span class="string">"world"</span>)) &#123;</span><br><span class="line">                lit.add(<span class="string">"javaee"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        System.out.println(list);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>LinkedList集合的特有功能</p>
+<ul>
+<li><p>特有方法</p>
+<p>| 方法名                    | 说明                             |<br>| ————————- | ——————————– |<br>| public void addFirst(E e) | 在该列表开头插入指定的元素       |<br>| public void addLast(E e)  | 将指定的元素追加到此列表的末尾   |<br>| public E getFirst()       | 返回此列表中的第一个元素         |<br>| public   E getLast()      | 返回此列表中的最后一个元素       |<br>| public E removeFirst()    | 从此列表中删除并返回第一个元素   |<br>| public   E removeLast()   | 从此列表中删除并返回最后一个元素 |</p>
+</li>
+</ul>
+<h3 id="Set接口"><a href="#Set接口" class="headerlink" title="Set接口"></a>Set接口</h3><p>方法与List接口几乎一模一样。</p>
+<p>存储的数据是不可重复的、不保证与添加顺序一致的（存取无序）。</p>
+<h2 id="双列集合Map"><a href="#双列集合Map" class="headerlink" title="双列集合Map"></a>双列集合Map</h2><p>Map集合的特点</p>
+<ul>
+<li>键值对映射关系</li>
+<li>一个键对应一个值</li>
+<li>键不能重复，值可以重复</li>
+<li>元素存取无序</li>
+</ul>
+<p>方法介绍</p>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>V   put(K key,V   value)</td>
+<td>添加元素</td>
+</tr>
+<tr>
+<td>V   remove(Object key)</td>
+<td>根据键删除键值对元素</td>
+</tr>
+<tr>
+<td>void   clear()</td>
+<td>移除所有的键值对元素</td>
+</tr>
+<tr>
+<td>boolean containsKey(Object key)</td>
+<td>判断集合是否包含指定的键</td>
+</tr>
+<tr>
+<td>boolean containsValue(Object value)</td>
+<td>判断集合是否包含指定的值</td>
+</tr>
+<tr>
+<td>boolean isEmpty()</td>
+<td>判断集合是否为空</td>
+</tr>
+<tr>
+<td>int size()</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -809,7 +1260,7 @@
   <p><span>本文标题:</span><a href="/Java/JavaSE/">JavaSE</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 SkyWalker 的个人博客">SkyWalker</a></p>
   <p><span>发布时间:</span>2019年06月26日 - 23:06</p>
-  <p><span>最后更新:</span>2019年06月30日 - 15:06</p>
+  <p><span>最后更新:</span>2019年07月09日 - 10:07</p>
   <p><span>原始链接:</span><a href="/Java/JavaSE/" title="JavaSE">http://SkyWalkerKKKK.cn/Java/JavaSE/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://SkyWalkerKKKK.cn/Java/JavaSE/" aria-label="复制成功！"></i></span>
   </p>
@@ -1035,7 +1486,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#环境变量的配置"><span class="nav-number">1.</span> <span class="nav-text">环境变量的配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JDK9的JShell的简单使用"><span class="nav-number">2.</span> <span class="nav-text">JDK9的JShell的简单使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#编译器的两点优化（对于变量的赋值）"><span class="nav-number">3.</span> <span class="nav-text">编译器的两点优化（对于变量的赋值）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一个优化"><span class="nav-number">3.1.</span> <span class="nav-text">第一个优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二个优化"><span class="nav-number">3.2.</span> <span class="nav-text">第二个优化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#switch语句使用的注意事项"><span class="nav-number">4.</span> <span class="nav-text">switch语句使用的注意事项</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组的定义"><span class="nav-number">5.</span> <span class="nav-text">数组的定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#集成开发环境IntelliJ-IDEA"><span class="nav-number">6.</span> <span class="nav-text">集成开发环境IntelliJ IDEA</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#继承"><span class="nav-number">7.</span> <span class="nav-text">继承</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#继承的好处与弊端"><span class="nav-number">7.1.</span> <span class="nav-text">继承的好处与弊端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承中成员变量的访问特点"><span class="nav-number">7.2.</span> <span class="nav-text">继承中成员变量的访问特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承中成员方法的访问特点"><span class="nav-number">7.3.</span> <span class="nav-text">继承中成员方法的访问特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承中构造函数的访问特点"><span class="nav-number">7.4.</span> <span class="nav-text">继承中构造函数的访问特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Super内存图"><span class="nav-number">7.5.</span> <span class="nav-text">Super内存图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法重写"><span class="nav-number">7.6.</span> <span class="nav-text">方法重写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承的注意事项"><span class="nav-number">7.7.</span> <span class="nav-text">继承的注意事项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#final、static修饰符"><span class="nav-number">7.8.</span> <span class="nav-text">final、static修饰符</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多态"><span class="nav-number">8.</span> <span class="nav-text">多态</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#多态中成员访问的特点"><span class="nav-number">8.1.</span> <span class="nav-text">多态中成员访问的特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多态的好处与弊端"><span class="nav-number">8.2.</span> <span class="nav-text">多态的好处与弊端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多态的转型（引用类型的转换）"><span class="nav-number">8.3.</span> <span class="nav-text">多态的转型（引用类型的转换）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#抽象类"><span class="nav-number">9.</span> <span class="nav-text">抽象类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#抽象类的特点"><span class="nav-number">9.1.</span> <span class="nav-text">抽象类的特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#抽象类的成员特点"><span class="nav-number">9.2.</span> <span class="nav-text">抽象类的成员特点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#接口"><span class="nav-number">10.</span> <span class="nav-text">接口</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#接口的特点"><span class="nav-number">10.1.</span> <span class="nav-text">接口的特点</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#环境变量的配置"><span class="nav-number">1.</span> <span class="nav-text">环境变量的配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JDK9的JShell的简单使用"><span class="nav-number">2.</span> <span class="nav-text">JDK9的JShell的简单使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#编译器的两点优化（对于变量的赋值）"><span class="nav-number">3.</span> <span class="nav-text">编译器的两点优化（对于变量的赋值）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一个优化"><span class="nav-number">3.1.</span> <span class="nav-text">第一个优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二个优化"><span class="nav-number">3.2.</span> <span class="nav-text">第二个优化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#switch语句使用的注意事项"><span class="nav-number">4.</span> <span class="nav-text">switch语句使用的注意事项</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组的定义"><span class="nav-number">5.</span> <span class="nav-text">数组的定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Random类"><span class="nav-number">6.</span> <span class="nav-text">Random类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方法重载的注意点"><span class="nav-number">7.</span> <span class="nav-text">方法重载的注意点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#集成开发环境IntelliJ-IDEA"><span class="nav-number">8.</span> <span class="nav-text">集成开发环境IntelliJ IDEA</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#IDEA中Debug的使用"><span class="nav-number">8.1.</span> <span class="nav-text">IDEA中Debug的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何加断点"><span class="nav-number">8.1.1.</span> <span class="nav-text">如何加断点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何运行加了断点的程序"><span class="nav-number">8.1.2.</span> <span class="nav-text">如何运行加了断点的程序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#看哪里"><span class="nav-number">8.1.3.</span> <span class="nav-text">看哪里</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#点哪里"><span class="nav-number">8.1.4.</span> <span class="nav-text">点哪里</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何删除断点"><span class="nav-number">8.1.5.</span> <span class="nav-text">如何删除断点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意事项"><span class="nav-number">8.1.6.</span> <span class="nav-text">注意事项</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java中的内存分配"><span class="nav-number">9.</span> <span class="nav-text">Java中的内存分配</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JVM简介"><span class="nav-number">9.1.</span> <span class="nav-text">JVM简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java内存分区"><span class="nav-number">9.2.</span> <span class="nav-text">Java内存分区</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#继承"><span class="nav-number">10.</span> <span class="nav-text">继承</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#继承的好处与弊端"><span class="nav-number">10.1.</span> <span class="nav-text">继承的好处与弊端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承中成员变量的访问特点"><span class="nav-number">10.2.</span> <span class="nav-text">继承中成员变量的访问特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承中成员方法的访问特点"><span class="nav-number">10.3.</span> <span class="nav-text">继承中成员方法的访问特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承中构造函数的访问特点"><span class="nav-number">10.4.</span> <span class="nav-text">继承中构造函数的访问特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Super内存图"><span class="nav-number">10.5.</span> <span class="nav-text">Super内存图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法重写"><span class="nav-number">10.6.</span> <span class="nav-text">方法重写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承的注意事项"><span class="nav-number">10.7.</span> <span class="nav-text">继承的注意事项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#final、static修饰符"><span class="nav-number">10.8.</span> <span class="nav-text">final、static修饰符</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多态"><span class="nav-number">11.</span> <span class="nav-text">多态</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#多态中成员访问的特点"><span class="nav-number">11.1.</span> <span class="nav-text">多态中成员访问的特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多态的好处与弊端"><span class="nav-number">11.2.</span> <span class="nav-text">多态的好处与弊端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多态的转型（引用类型的转换）"><span class="nav-number">11.3.</span> <span class="nav-text">多态的转型（引用类型的转换）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#抽象类"><span class="nav-number">12.</span> <span class="nav-text">抽象类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#抽象类的特点"><span class="nav-number">12.1.</span> <span class="nav-text">抽象类的特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#抽象类的成员特点"><span class="nav-number">12.2.</span> <span class="nav-text">抽象类的成员特点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#接口"><span class="nav-number">13.</span> <span class="nav-text">接口</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#接口的特点"><span class="nav-number">13.1.</span> <span class="nav-text">接口的特点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#内部类"><span class="nav-number">14.</span> <span class="nav-text">内部类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#内部类的访问特点"><span class="nav-number">14.1.</span> <span class="nav-text">内部类的访问特点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用API"><span class="nav-number">15.</span> <span class="nav-text">常用API</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#java-util-Arrays"><span class="nav-number">15.1.</span> <span class="nav-text">java.util.Arrays</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java-util-Math"><span class="nav-number">15.2.</span> <span class="nav-text">java.util.Math</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java-lang-Object"><span class="nav-number">15.3.</span> <span class="nav-text">java.lang.Object</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java-lang-System"><span class="nav-number">15.4.</span> <span class="nav-text">java.lang.System</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java-util-Date"><span class="nav-number">15.5.</span> <span class="nav-text">java.util.Date</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java-text-SimpleDateFormat"><span class="nav-number">15.6.</span> <span class="nav-text">java.text.SimpleDateFormat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java-util-Calendar"><span class="nav-number">15.7.</span> <span class="nav-text">java.util.Calendar</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#包装类"><span class="nav-number">16.</span> <span class="nav-text">包装类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Integer经典使用案例（String与int类型转换）"><span class="nav-number">16.1.</span> <span class="nav-text">Integer经典使用案例（String与int类型转换）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Integer的注意点："><span class="nav-number">16.2.</span> <span class="nav-text">Integer的注意点：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#异常"><span class="nav-number">17.</span> <span class="nav-text">异常</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#异常的概念"><span class="nav-number">17.1.</span> <span class="nav-text">异常的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异常类的体系"><span class="nav-number">17.2.</span> <span class="nav-text">异常类的体系</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#集合"><span class="nav-number">18.</span> <span class="nav-text">集合</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#单列集合Collection"><span class="nav-number">18.1.</span> <span class="nav-text">单列集合Collection</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#List接口"><span class="nav-number">18.1.1.</span> <span class="nav-text">List接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Set接口"><span class="nav-number">18.1.2.</span> <span class="nav-text">Set接口</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#双列集合Map"><span class="nav-number">18.2.</span> <span class="nav-text">双列集合Map</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1088,7 +1539,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共7.1k字</span>
+  <span class="post-count">博客全站共11.6k字</span>
 </div>
 
 
