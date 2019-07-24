@@ -113,7 +113,7 @@
 <meta property="og:site_name" content="SkyWalker的博客">
 <meta property="og:description" content="Java中protected方法访问权限的问题在cn.skywalker.test05包下的Student类： 123456789101112package cn.skywalker.test05;/** * @author SkyWalker * @create 2019 - 06 - 29 - 19:40 */public class Student &amp;#123;    protected v">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-03T03:32:02.627Z">
+<meta property="og:updated_time" content="2019-07-19T08:16:08.155Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaSE Error Log">
 <meta name="twitter:description" content="Java中protected方法访问权限的问题在cn.skywalker.test05包下的Student类： 123456789101112package cn.skywalker.test05;/** * @author SkyWalker * @create 2019 - 06 - 29 - 19:40 */public class Student &amp;#123;    protected v">
@@ -451,7 +451,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1.7k
+                  2.2k
                 </span>
               
 
@@ -467,7 +467,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  7
+                  9
                 </span>
               
             </div>
@@ -580,6 +580,15 @@
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String s1 = <span class="string">"ab"</span>;</span><br><span class="line">String s2 = <span class="string">"abc"</span>;</span><br><span class="line">String s3 = s1 + <span class="string">"c"</span>;</span><br><span class="line">System.out.println(s3 == s2); <span class="comment">//false</span></span><br><span class="line">System.out.println(s3.equals(s2)); <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String s1 = <span class="string">"a"</span> + <span class="string">"b"</span> + <span class="string">"c"</span>;</span><br><span class="line">String s2 = <span class="string">"abc"</span>;</span><br><span class="line">System.out.println(s1 == s2);<span class="comment">//true</span></span><br><span class="line">System.out.println(s1.equals(s2));<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<h1 id="java网络编程Socket文件上传过程中的中文乱码问题"><a href="#java网络编程Socket文件上传过程中的中文乱码问题" class="headerlink" title="java网络编程Socket文件上传过程中的中文乱码问题"></a>java网络编程Socket文件上传过程中的中文乱码问题</h1><p>文件上传功能的实现</p>
+<p>要求</p>
+<p>1、开启文件上传服务器后，侦听TCP连接，若有新连接，则创建一条新的线程去处理连接。</p>
+<p>2、文件上传的流程：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">（1）   客户端要求用户录入一个文件路径。客户端对路径进行合理性判断。</span><br><span class="line"></span><br><span class="line">    （2）</span><br><span class="line">        第一次通信：</span><br><span class="line">            如果路径正确，则客户端将文件名（getName()方法）发送给服务器。服务器进行接收。</span><br><span class="line"></span><br><span class="line">    （3）</span><br><span class="line">        第二次通信：</span><br><span class="line">            服务器接收到文件名后，判断给定的目录中是否存在该文件（exists()方法），</span><br><span class="line">            如果不存在，则反馈false;如果存在则反馈true。</span><br><span class="line">            客户端等待反馈结果。</span><br><span class="line"></span><br><span class="line">    （4）</span><br><span class="line">        第三次通信（文件复制的核心部分）：</span><br><span class="line">            if (反馈为false) &#123;</span><br><span class="line">                客户端：将文件读入，通过socket输出流传递</span><br><span class="line">                服务器端：通过socket输入流接收，将文件写出</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                提示文件已存在，上传失败</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">    （5）</span><br><span class="line">        第四次通信：</span><br><span class="line">            复制成功后，服务器反馈复制成功信息。</span><br></pre></td></tr></table></figure>
+<p>问题解决很简单（突然感觉自己好蠢）：</p>
+<p>不要使用windows自带的鼠标右键新建-&gt;新建文本文档。因为会默认使用GBK格式。</p>
+<p>需要使用一些UTF-8编码格式的或者其他格式的都可以识别，只要编码解码格式相同，就不会出现乱码问题。</p>
+<h1 id="关于java中true和false是否为Object类型的问题"><a href="#关于java中true和false是否为Object类型的问题" class="headerlink" title="关于java中true和false是否为Object类型的问题"></a>关于java中true和false是否为Object类型的问题</h1><p>在调用方法时，形参要求的是Object类型，我传了一个false进去，没报错也运行出来了，然后就有点小疑惑，仔细想了想，想到了boolean的包装类Boolean。在参数传进去的时候，应该是把false当作一个Boolean类型了。</p>
 
       
     </div>
@@ -638,7 +647,7 @@
   <p><span>本文标题:</span><a href="/Java/JavaSE-Error-Log/">JavaSE Error Log</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 SkyWalker 的个人博客">SkyWalker</a></p>
   <p><span>发布时间:</span>2019年06月29日 - 21:06</p>
-  <p><span>最后更新:</span>2019年07月03日 - 11:07</p>
+  <p><span>最后更新:</span>2019年07月19日 - 16:07</p>
   <p><span>原始链接:</span><a href="/Java/JavaSE-Error-Log/" title="JavaSE Error Log">http://SkyWalkerKKKK.cn/Java/JavaSE-Error-Log/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://SkyWalkerKKKK.cn/Java/JavaSE-Error-Log/" aria-label="复制成功！"></i></span>
   </p>
@@ -701,6 +710,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/Database/MySQL/" rel="prev" title="MySQL">
+                MySQL <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -789,7 +802,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -800,7 +813,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -860,7 +873,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java中protected方法访问权限的问题"><span class="nav-number">1.</span> <span class="nav-text">Java中protected方法访问权限的问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用同名局部变量的问题"><span class="nav-number">2.</span> <span class="nav-text">使用同名局部变量的问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#局部变量使用范围问题"><span class="nav-number">3.</span> <span class="nav-text">局部变量使用范围问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多态中关于变量的使用"><span class="nav-number">4.</span> <span class="nav-text">多态中关于变量的使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于println-与toString-的联系"><span class="nav-number">5.</span> <span class="nav-text">关于println()与toString()的联系</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#String类型的深度解析"><span class="nav-number">6.</span> <span class="nav-text">String类型的深度解析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#String的本质"><span class="nav-number">6.1.</span> <span class="nav-text">String的本质</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java中protected方法访问权限的问题"><span class="nav-number">1.</span> <span class="nav-text">Java中protected方法访问权限的问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用同名局部变量的问题"><span class="nav-number">2.</span> <span class="nav-text">使用同名局部变量的问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#局部变量使用范围问题"><span class="nav-number">3.</span> <span class="nav-text">局部变量使用范围问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多态中关于变量的使用"><span class="nav-number">4.</span> <span class="nav-text">多态中关于变量的使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于println-与toString-的联系"><span class="nav-number">5.</span> <span class="nav-text">关于println()与toString()的联系</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#String类型的深度解析"><span class="nav-number">6.</span> <span class="nav-text">String类型的深度解析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#String的本质"><span class="nav-number">6.1.</span> <span class="nav-text">String的本质</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#java网络编程Socket文件上传过程中的中文乱码问题"><span class="nav-number">7.</span> <span class="nav-text">java网络编程Socket文件上传过程中的中文乱码问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于java中true和false是否为Object类型的问题"><span class="nav-number">8.</span> <span class="nav-text">关于java中true和false是否为Object类型的问题</span></a></li></ol></div>
             
 
           </div>
@@ -913,7 +926,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共11.6k字</span>
+  <span class="post-count">博客全站共25.1k字</span>
 </div>
 
 
