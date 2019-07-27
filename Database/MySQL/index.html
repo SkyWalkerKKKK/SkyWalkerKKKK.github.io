@@ -112,7 +112,7 @@
 <meta property="og:site_name" content="SkyWalker的博客">
 <meta property="og:description" content="数据库的基本概念 数据库的英文单词： DataBase 简称 ： DB 什么数据库？ 用于存储和管理数据的仓库。   数据库的特点：  持久化存储数据的。其实数据库就是一个文件系统  方便存储和管理数据  使用了统一的方式操作数据库 – SQL  常见的关系型数据库软件   Oracle MySQL SQL Server DB2      MySQL数据库软件 安装 如果勾选Enable root">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-27T07:42:25.407Z">
+<meta property="og:updated_time" content="2019-07-27T08:07:40.164Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL">
 <meta name="twitter:description" content="数据库的基本概念 数据库的英文单词： DataBase 简称 ： DB 什么数据库？ 用于存储和管理数据的仓库。   数据库的特点：  持久化存储数据的。其实数据库就是一个文件系统  方便存储和管理数据  使用了统一的方式操作数据库 – SQL  常见的关系型数据库软件   Oracle MySQL SQL Server DB2      MySQL数据库软件 安装 如果勾选Enable root">
@@ -450,7 +450,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  5.1k
+                  5.3k
                 </span>
               
 
@@ -466,7 +466,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  20
+                  21
                 </span>
               
             </div>
@@ -1180,12 +1180,35 @@
 <li><p>开启事务</p>
 <p>start    transaction;</p>
 </li>
-<li><p>回滚</p>
+<li><p>回滚：如果事务中至少有一个操作失败，就可以回滚</p>
 <p>rollback;</p>
 </li>
-<li><p>提交事务</p>
+<li><p>提交事务：如果事务中的多个操作全部成功，就可以提交事务</p>
 <p>commit;</p>
 </li>
+</ul>
+</li>
+<li><p>事务的提交方式</p>
+<ul>
+<li><p>自动提交</p>
+<p>MySQL默认就是自动提交，执行一条DML语句就自动提交一次。</p>
+<p>查询默认的提交方式：</p>
+<p><code>select @@autocommit;     -- 1：自动提交    0：手动提交</code></p>
+<p>修改默认的提交方式：</p>
+<p><code>set @@autocommit = 0;    -- 修改默认提交方式为手动提交</code></p>
+</li>
+<li><p>手动提交</p>
+<p>如果自己开启了事务，被事务管理的sql执行完之后，需要手动提交</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">start</span> <span class="keyword">transaction</span>;</span><br><span class="line">...</span><br><span class="line"><span class="keyword">commit</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>事务的四大特征</p>
+<ul>
+<li>原子性：是不可分个的最小操作单位，要么同时成功，要么同时失败。</li>
+<li>持久性：当事务提交或者回滚后，数据库会持久化的保存数据。</li>
+<li>隔离性：多个事务之间，相互独立。</li>
+<li>一致性：事务操作前后，数据总量不变。</li>
 </ul>
 </li>
 </ul>
@@ -1247,7 +1270,7 @@
   <p><span>本文标题:</span><a href="/Database/MySQL/">MySQL</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 SkyWalker 的个人博客">SkyWalker</a></p>
   <p><span>发布时间:</span>2019年07月21日 - 09:07</p>
-  <p><span>最后更新:</span>2019年07月27日 - 15:07</p>
+  <p><span>最后更新:</span>2019年07月27日 - 16:07</p>
   <p><span>原始链接:</span><a href="/Database/MySQL/" title="MySQL">http://SkyWalkerKKKK.cn/Database/MySQL/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://SkyWalkerKKKK.cn/Database/MySQL/" aria-label="复制成功！"></i></span>
   </p>
@@ -1516,7 +1539,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共28.2k字</span>
+  <span class="post-count">博客全站共28.4k字</span>
 </div>
 
 
