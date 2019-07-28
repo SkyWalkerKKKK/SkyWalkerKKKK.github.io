@@ -113,7 +113,7 @@
 <meta property="og:site_name" content="SkyWalker的博客">
 <meta property="og:description" content="数据库的基本概念 数据库的英文单词： DataBase 简称 ： DB 什么数据库？ 用于存储和管理数据的仓库。   数据库的特点：  持久化存储数据的。其实数据库就是一个文件系统  方便存储和管理数据  使用了统一的方式操作数据库 – SQL  常见的关系型数据库软件   Oracle MySQL SQL Server DB2      MySQL数据库软件 安装 如果勾选Enable root">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-27T11:14:41.078Z">
+<meta property="og:updated_time" content="2019-07-27T11:57:06.550Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL">
 <meta name="twitter:description" content="数据库的基本概念 数据库的英文单词： DataBase 简称 ： DB 什么数据库？ 用于存储和管理数据的仓库。   数据库的特点：  持久化存储数据的。其实数据库就是一个文件系统  方便存储和管理数据  使用了统一的方式操作数据库 – SQL  常见的关系型数据库软件   Oracle MySQL SQL Server DB2      MySQL数据库软件 安装 如果勾选Enable root">
@@ -451,7 +451,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  6.1k
+                  6.2k
                 </span>
               
 
@@ -918,6 +918,8 @@
 <li>公式：起始索引 = （当前的页码 - 1） *  每页显示的条数</li>
 <li>limit是一个MySQL“方言”</li>
 </ul>
+<p><span style="color:red;font-size:25px">注意点：</span></p>
+<p>limit a,b 在sql语句最后，表示从索引为a的记录开始查询，最多查询b条记录，<span style="color:red;font-size:25px">a可以省略，如果不写，则默认从索引为0的记录开始查询</span></p>
 <h2 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h2><ul>
 <li>概念：对表中的数据进行限定，保证数据的正确性、有效性和完整性。</li>
 <li>分类：<ul>
@@ -1190,7 +1192,7 @@
 </li>
 </ul>
 <h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><ul>
-<li><p>概念：Transaction，相当于是一个容器（盒子），可以将一个操作的多个步骤（SQL代码）装起来之后，形成了一个不可分割的最小整体（原子性），这个整体要么都成功，要么都失败。</p>
+<li><p>概念：Transaction，相当于是一个容器（盒子），可以将一个操作的多个步骤（SQL代码）装起来之后，形成了一个不可分割的最小整体（原子性），这个操作整体要么都成功，要么都失败。</p>
 </li>
 <li><p>使用场景：例如转账操作。</p>
 </li>
@@ -1440,6 +1442,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/uncategorized/JavaScript/" rel="prev" title="JavaScript">
+                JavaScript <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -1527,7 +1533,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1549,7 +1555,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1651,7 +1657,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共29.2k字</span>
+  <span class="post-count">博客全站共31.8k字</span>
 </div>
 
 

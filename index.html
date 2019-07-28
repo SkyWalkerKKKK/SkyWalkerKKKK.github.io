@@ -362,6 +362,218 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://SkyWalkerKKKK.cn/Java/JDBC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="SkyWalker">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1557167236181&di=a0d810af38b2c9d9159d63e898b41e50&imgtype=0&src=http%3A%2F%2Fimg.hao661.com%2Fqq.hao661.com%2Fuploads%2Fallimg%2F180715%2F144142A95-6.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SkyWalker的博客">
+    </span>
+
+    
+      <header class="post-header">
+       
+        
+          <i class="fa fa-thumb-tack"></i>
+          <font color="7D26CD">置顶</font>
+        
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Java/JDBC/" itemprop="url">JDBC</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建时间" itemprop="dateCreated datePublished" datetime="2019-07-28T08:44:01+08:00">
+                2019-07-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  2.1k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  9
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="JDBC概述"><a href="#JDBC概述" class="headerlink" title="JDBC概述"></a>JDBC概述</h1><ul>
+<li><p>概念：Java DataBase Connectivity  Java 数据库连接， Java语言操作数据库。</p>
+</li>
+<li><p>JDBC本质：其实是官方（sun公司）定义的一套操作所有关系型数据库的规则，即接口。各个数据库厂商去实现这套接口，提供数据库驱动jar包。我们可以使用这套接口（JDBC）编程，真正执行的代码是驱动jar包中的实现类。</p>
+</li>
+<li><p>JDBC底层使用了网络编程技术，将Java代码中的SQL代码发送给服务器的数据库，执行完再返回结果给Java代码。</p>
+</li>
+<li><p>使用JDBC的准备</p>
+<ul>
+<li>因为底层是网络编程技术，所以网络三要素（IP，协议，端口）都要指明。</li>
+<li>还要指明使用哪个数据库、用户名、密码。</li>
+</ul>
+</li>
+<li><p>快速入门：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">步骤：</span><br><span class="line">		<span class="number">1</span>. 导入驱动jar包 mysql-connector-java-<span class="number">5.1</span>.37-bin.jar</span><br><span class="line">			<span class="number">1</span>.复制mysql-connector-java-<span class="number">5.1</span>.37-bin.jar到项目的libs目录下</span><br><span class="line">			<span class="number">2</span>.右键--&gt;Add As Library</span><br><span class="line">		<span class="number">2</span>. 注册驱动</span><br><span class="line">		<span class="number">3</span>. 获取数据库连接对象 Connection</span><br><span class="line">		<span class="number">4</span>. 定义sql</span><br><span class="line">		<span class="number">5</span>. 获取执行sql语句的对象 Statement</span><br><span class="line">		<span class="number">6</span>. 执行sql，接受返回结果</span><br><span class="line">		<span class="number">7</span>. 处理结果</span><br><span class="line">		<span class="number">8</span>. 释放资源</span><br><span class="line"></span><br><span class="line">代码实现：</span><br><span class="line">	  	<span class="comment">//1.导入驱动jar包</span></span><br><span class="line">        <span class="comment">//2.注册驱动</span></span><br><span class="line">        Class.forName(<span class="string">"com.mysql.jdbc.Driver"</span>);</span><br><span class="line">        <span class="comment">//3.获取数据库连接对象</span></span><br><span class="line">        Connection conn = DriverManager.getConnection(<span class="string">"jdbc:mysql://localhost:3306/db3"</span>, <span class="string">"root"</span>, <span class="string">"root"</span>);</span><br><span class="line">        <span class="comment">//4.定义sql语句</span></span><br><span class="line">        String sql = <span class="string">"update account set balance = 500 where id = 1"</span>;</span><br><span class="line">        <span class="comment">//5.获取执行sql的对象 Statement</span></span><br><span class="line">        Statement stmt = conn.createStatement();</span><br><span class="line">        <span class="comment">//6.执行sql</span></span><br><span class="line">        <span class="keyword">int</span> count = stmt.executeUpdate(sql);</span><br><span class="line">        <span class="comment">//7.处理结果</span></span><br><span class="line">        System.out.println(count);</span><br><span class="line">        <span class="comment">//8.释放资源</span></span><br><span class="line">        stmt.close();</span><br><span class="line">        conn.close();</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/Java/JDBC/#更多" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+
+
+
+
+    
+
+    
+
+    
+
+<div>
+      
+</div>
+
+
+    <div>
+       
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://SkyWalkerKKKK.cn/Database/MySQL/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -452,7 +664,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  6.1k
+                  6.2k
                 </span>
               
 
@@ -1070,6 +1282,670 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://SkyWalkerKKKK.cn/uncategorized/redis/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="SkyWalker">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1557167236181&di=a0d810af38b2c9d9159d63e898b41e50&imgtype=0&src=http%3A%2F%2Fimg.hao661.com%2Fqq.hao661.com%2Fuploads%2Fallimg%2F180715%2F144142A95-6.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SkyWalker的博客">
+    </span>
+
+    
+      <header class="post-header">
+       
+        
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/uncategorized/redis/" itemprop="url">redis</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建时间" itemprop="dateCreated datePublished" datetime="2019-07-27T19:32:28+08:00">
+                2019-07-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  0
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+
+
+
+
+    
+
+    
+
+    
+
+<div>
+      
+</div>
+
+
+    <div>
+       
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://SkyWalkerKKKK.cn/uncategorized/jQuery3-0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="SkyWalker">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1557167236181&di=a0d810af38b2c9d9159d63e898b41e50&imgtype=0&src=http%3A%2F%2Fimg.hao661.com%2Fqq.hao661.com%2Fuploads%2Fallimg%2F180715%2F144142A95-6.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SkyWalker的博客">
+    </span>
+
+    
+      <header class="post-header">
+       
+        
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/uncategorized/jQuery3-0/" itemprop="url">jQuery3.0</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建时间" itemprop="dateCreated datePublished" datetime="2019-07-27T19:32:17+08:00">
+                2019-07-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  0
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+
+
+
+
+    
+
+    
+
+    
+
+<div>
+      
+</div>
+
+
+    <div>
+       
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://SkyWalkerKKKK.cn/uncategorized/BootStrap/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="SkyWalker">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1557167236181&di=a0d810af38b2c9d9159d63e898b41e50&imgtype=0&src=http%3A%2F%2Fimg.hao661.com%2Fqq.hao661.com%2Fuploads%2Fallimg%2F180715%2F144142A95-6.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SkyWalker的博客">
+    </span>
+
+    
+      <header class="post-header">
+       
+        
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/uncategorized/BootStrap/" itemprop="url">BootStrap</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建时间" itemprop="dateCreated datePublished" datetime="2019-07-27T19:29:48+08:00">
+                2019-07-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  0
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+
+
+
+
+    
+
+    
+
+    
+
+<div>
+      
+</div>
+
+
+    <div>
+       
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://SkyWalkerKKKK.cn/uncategorized/JavaScript/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="SkyWalker">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1557167236181&di=a0d810af38b2c9d9159d63e898b41e50&imgtype=0&src=http%3A%2F%2Fimg.hao661.com%2Fqq.hao661.com%2Fuploads%2Fallimg%2F180715%2F144142A95-6.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SkyWalker的博客">
+    </span>
+
+    
+      <header class="post-header">
+       
+        
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/uncategorized/JavaScript/" itemprop="url">JavaScript</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建时间" itemprop="dateCreated datePublished" datetime="2019-07-27T19:29:35+08:00">
+                2019-07-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  0
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+
+
+
+
+    
+
+    
+
+    
+
+<div>
+      
+</div>
+
+
+    <div>
+       
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://SkyWalkerKKKK.cn/markdown/markdown语法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1295,7 +2171,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/HTML-CSS/HTML-CSS/" itemprop="url">HTML/CSS学习笔记</a></h1>
+                <a class="post-title-link" href="/HTML-CSS/HTML-CSS/" itemprop="url">HTML/CSS</a></h1>
         
 
         <div class="post-meta">
@@ -1361,7 +2237,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  256
+                  656
                 </span>
               
 
@@ -1377,7 +2253,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1
+                  2
                 </span>
               
             </div>
@@ -1399,7 +2275,75 @@
 
       
         
-          <h1 id="HTML-CSS笔记"><a href="#HTML-CSS笔记" class="headerlink" title="HTML/CSS笔记"></a>HTML/CSS笔记</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span>              <span class="comment">&lt;!--这是根标签 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>这里是标题<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        这里是页面体</span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+          <h1 id="软件架构"><a href="#软件架构" class="headerlink" title="软件架构"></a>软件架构</h1><ul>
+<li>C/S（Client/Server）：客户端/服务器端<ul>
+<li>在用户本地有一个客户端程序，在远程有一个服务器端程序</li>
+<li>如：QQ，迅雷…</li>
+<li>优点<ul>
+<li>用户体验好</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>开发、安装、部署、维护麻烦</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>B/S（Browser/Server）：浏览器/服务器端<ul>
+<li>只需要一个浏览器，用户通过不同的网址（URL），客户访问不同的服务器端程序</li>
+<li>优点<ul>
+<li>开发、安装、部署、维护简单</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>如果应用过大，用户的体验可能会受到影响</li>
+<li>对硬件要求过高</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="B-S架构详解"><a href="#B-S架构详解" class="headerlink" title="B/S架构详解"></a>B/S架构详解</h1><ul>
+<li><p>资源分类：</p>
+<ol>
+<li><p>静态资源</p>
+<ul>
+<li><p>使用静态网页开发技术发布的资源。</p>
+</li>
+<li><p>特点：</p>
+<ul>
+<li><p>所有用户访问，得到的结果是一样的。</p>
+</li>
+<li><p>如：文本，图片，音频，视频，HTML，CSS，JavaScript</p>
+</li>
+<li><p>如果用户请求的是静态资源，那么服务器会直接将静态资源发送给浏览器。浏览器中内置了静态资源的解析引擎，可以展示静态资源</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>动态资源</p>
+<ul>
+<li>使用动态网页及时发布的资源。</li>
+<li>特点：<ul>
+<li>所有用户访问，得到的结果可能不一样</li>
+<li>如：jsp/servlet，php，asp…</li>
+<li>如果用户请求的是动态资源，那么服务器会执行动态资源，转换为静态资源，再发送给浏览器</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<p>我们要学习动态资源，必须先学习静态资源！</p>
+<p>静态资源：</p>
+<ul>
+<li>HTML：用于搭建基础网页，展示页面的内容</li>
+<li>CSS：用于美化页面，布局页面</li>
+<li>JavaScript：控制页面的元素，让页面有一些动态的效果</li>
+</ul>
+<h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span>              <span class="comment">&lt;!--这是根标签 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>这里是标题<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        这里是页面体</span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <hr>
           <!--noindex-->
           <div class="post-button text-center">
@@ -1455,448 +2399,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://SkyWalkerKKKK.cn/Java/JavaWeb/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="SkyWalker">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1557167236181&di=a0d810af38b2c9d9159d63e898b41e50&imgtype=0&src=http%3A%2F%2Fimg.hao661.com%2Fqq.hao661.com%2Fuploads%2Fallimg%2F180715%2F144142A95-6.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="SkyWalker的博客">
-    </span>
-
-    
-      <header class="post-header">
-       
-        
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/Java/JavaWeb/" itemprop="url">JavaWeb学习笔记</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建时间" itemprop="dateCreated datePublished" datetime="2019-05-07T11:29:12+08:00">
-                2019-05-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  2.3k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  8
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h1><h2 id="ServletResoponse-设置响应格式"><a href="#ServletResoponse-设置响应格式" class="headerlink" title="ServletResoponse 设置响应格式"></a>ServletResoponse 设置响应格式</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ServletResponse response = <span class="keyword">new</span> ServletResponse();</span><br><span class="line">response.setContentType(<span class="string">"application/msword"</span>);<span class="comment">//设置响应类型为word文档。</span></span><br><span class="line"><span class="comment">//具体可以在tomcat/config/web.xml中查找需要格式对应的值</span></span><br></pre></td></tr></table></figure>
-<hr>
-<h1 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a>JSP</h1><h2 id="JSP运行原理"><a href="#JSP运行原理" class="headerlink" title="JSP运行原理"></a>JSP运行原理</h2><blockquote>
-<ul>
-<li>JSP是简Servlet编写的一种技术，他将Java代码和HTML语句混合在同一个文件中编写。只对网页中的要动态产生的内容才用Java代码来编写，而对固定不变的静态内容才用普通静态HTML页面的方式编写。</li>
-<li>JSP继承了HttpJspBase类，而HttpJspBase又继承了HttpServlet，即jsp间接继承了HttpServlet，即JSP本质上就是一个Servlet。</li>
-</ul>
-</blockquote>
-<hr>
-<h2 id="JSP八大内置对象（实际上9个）"><a href="#JSP八大内置对象（实际上9个）" class="headerlink" title="JSP八大内置对象（实际上9个）"></a>JSP八大内置对象（实际上9个）</h2><table>
-<thead>
-<tr>
-<th style="text-align:center">类名</th>
-<th style="text-align:center">对象实例名（可直接调用）</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">HttpServletRequest</td>
-<td style="text-align:center">request</td>
-</tr>
-<tr>
-<td style="text-align:center">HttpServletResoponse</td>
-<td style="text-align:center">response</td>
-</tr>
-<tr>
-<td style="text-align:center">PageContext</td>
-<td style="text-align:center">pageContext</td>
-</tr>
-<tr>
-<td style="text-align:center">HttpSession</td>
-<td style="text-align:center">session</td>
-</tr>
-<tr>
-<td style="text-align:center">ServletContext</td>
-<td style="text-align:center">application</td>
-</tr>
-<tr>
-<td style="text-align:center">ServletConfig</td>
-<td style="text-align:center">config</td>
-</tr>
-<tr>
-<td style="text-align:center">JspWriter</td>
-<td style="text-align:center">out</td>
-</tr>
-<tr>
-<td style="text-align:center">Object</td>
-<td style="text-align:center">page</td>
-</tr>
-<tr>
-<td style="text-align:center"><strong><em>Exception</em></strong></td>
-<td style="text-align:center"><strong><em>exception</em></strong></td>
-</tr>
-</tbody>
-</table>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/Java/JavaWeb/#更多" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-
-
-
-
-    
-
-    
-
-    
-
-<div>
-      
-</div>
-
-
-    <div>
-       
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://SkyWalkerKKKK.cn/生活/我的第一篇文章/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="SkyWalker">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1557167236181&di=a0d810af38b2c9d9159d63e898b41e50&imgtype=0&src=http%3A%2F%2Fimg.hao661.com%2Fqq.hao661.com%2Fuploads%2Fallimg%2F180715%2F144142A95-6.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="SkyWalker的博客">
-    </span>
-
-    
-      <header class="post-header">
-       
-        
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/生活/我的第一篇文章/" itemprop="url">我的第一篇文章</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建时间" itemprop="dateCreated datePublished" datetime="2019-05-06T17:42:39+08:00">
-                2019-05-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/生活/" itemprop="url" rel="index">
-                    <span itemprop="name">生活</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  36
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Hello Everyone！这是我的第一篇文章。</p>
-<p>在老铁的帮助下，我慢慢开始摸索代码世界……</p>
-<p>自己加油吧。</p>
-<p>Keep Going！</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-
-
-
-
-    
-
-    
-
-    
-
-<div>
-      
-</div>
-
-
-    <div>
-       
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -1945,7 +2454,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1967,7 +2476,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2053,7 +2562,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共29.2k字</span>
+  <span class="post-count">博客全站共31.8k字</span>
 </div>
 
 
