@@ -113,7 +113,7 @@
 <meta property="og:site_name" content="SkyWalker的博客">
 <meta property="og:description" content="JDBC概述 概念：Java DataBase Connectivity  Java 数据库连接， Java语言操作数据库。  JDBC本质：其实是官方（sun公司）定义的一套操作所有关系型数据库的规则，即接口。各个数据库厂商去实现这套接口，提供数据库驱动jar包。我们可以使用这套接口（JDBC）编程，真正执行的代码是驱动jar包中的实现类。  JDBC底层使用了网络编程技术，将Java代码中的S">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-28T10:23:17.305Z">
+<meta property="og:updated_time" content="2019-07-28T10:31:07.560Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JDBC">
 <meta name="twitter:description" content="JDBC概述 概念：Java DataBase Connectivity  Java 数据库连接， Java语言操作数据库。  JDBC本质：其实是官方（sun公司）定义的一套操作所有关系型数据库的规则，即接口。各个数据库厂商去实现这套接口，提供数据库驱动jar包。我们可以使用这套接口（JDBC）编程，真正执行的代码是驱动jar包中的实现类。  JDBC底层使用了网络编程技术，将Java代码中的S">
@@ -524,21 +524,21 @@
 </ol>
 </li>
 </ul>
-<pre><code>两种注册驱动的方式：
+<pre><code>- 两种注册驱动的方式：
 
-1、Class.forName(&quot;com.mysql.jdbc.Driver&quot;);
+  1、Class.forName(&quot;com.mysql.jdbc.Driver&quot;);
 
-2、DriverManager.registerDriver(new Driver());
+  2、DriverManager.registerDriver(new Driver());
 
-***&lt;span style=&quot;color:red&quot;&gt;两者的区别：&lt;/span&gt;***
+  ***&lt;span style=&quot;color:red&quot;&gt;两者的区别：&lt;/span&gt;***
 
-方式一只会注册一次驱动，触发Driver类中的静态代码块执行。
+  方式一只会注册一次驱动，触发Driver类中的静态代码块执行。
 
-而方式二会注册两次驱动。在内存中生成两个不同的Driver对象。
+  而方式二会注册两次驱动。在内存中生成两个不同的Driver对象。
 
 
 
-&lt;span style=&quot;color:red&quot;&gt;注意：mysql5之后的驱动jar包可以省略注册驱动的步骤。&lt;/span&gt;
+  &lt;span style=&quot;color:red&quot;&gt;注意：mysql5之后的驱动jar包可以省略注册驱动的步骤。&lt;/span&gt;
 </code></pre><ol start="2">
 <li><p>获取数据库连接：</p>
 <ul>
