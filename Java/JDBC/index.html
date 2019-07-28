@@ -113,7 +113,7 @@
 <meta property="og:site_name" content="SkyWalker的博客">
 <meta property="og:description" content="JDBC概述 概念：Java DataBase Connectivity  Java 数据库连接， Java语言操作数据库。  JDBC本质：其实是官方（sun公司）定义的一套操作所有关系型数据库的规则，即接口。各个数据库厂商去实现这套接口，提供数据库驱动jar包。我们可以使用这套接口（JDBC）编程，真正执行的代码是驱动jar包中的实现类。  JDBC底层使用了网络编程技术，将Java代码中的S">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-28T10:31:07.560Z">
+<meta property="og:updated_time" content="2019-07-28T11:05:08.595Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JDBC">
 <meta name="twitter:description" content="JDBC概述 概念：Java DataBase Connectivity  Java 数据库连接， Java语言操作数据库。  JDBC本质：其实是官方（sun公司）定义的一套操作所有关系型数据库的规则，即接口。各个数据库厂商去实现这套接口，提供数据库驱动jar包。我们可以使用这套接口（JDBC）编程，真正执行的代码是驱动jar包中的实现类。  JDBC底层使用了网络编程技术，将Java代码中的S">
@@ -451,7 +451,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  2.1k
+                  2k
                 </span>
               
 
@@ -467,7 +467,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  9
+                  8
                 </span>
               
             </div>
@@ -524,22 +524,7 @@
 </ol>
 </li>
 </ul>
-<pre><code>- 两种注册驱动的方式：
-
-  1、Class.forName(&quot;com.mysql.jdbc.Driver&quot;);
-
-  2、DriverManager.registerDriver(new Driver());
-
-  ***&lt;span style=&quot;color:red&quot;&gt;两者的区别：&lt;/span&gt;***
-
-  方式一只会注册一次驱动，触发Driver类中的静态代码块执行。
-
-  而方式二会注册两次驱动。在内存中生成两个不同的Driver对象。
-
-
-
-  &lt;span style=&quot;color:red&quot;&gt;注意：mysql5之后的驱动jar包可以省略注册驱动的步骤。&lt;/span&gt;
-</code></pre><ol start="2">
+<ol start="2">
 <li><p>获取数据库连接：</p>
 <ul>
 <li>方法：static Connection getConnection(String url, String user, String password)</li>
@@ -557,6 +542,13 @@
 </ul>
 </li>
 </ol>
+<p><span style="color:red;font-size:25px">两种注册驱动的方式（面试题）：</span></p>
+<p>1、Class.forName(“com.mysql.jdbc.Driver”);</p>
+<p>2、DriverManager.registerDriver(new Driver());</p>
+<p><strong><em><span style="color:red">两者的区别：</span></em></strong></p>
+<p>方式一只会注册一次驱动，触发Driver类中的静态代码块执行。</p>
+<p>而方式二会注册两次驱动。在内存中生成两个不同的Driver对象。</p>
+<p><span style="color:red">注意：mysql5之后的驱动jar包可以省略注册驱动的步骤。</span></p>
 <h2 id="Connection：数据库连接对象"><a href="#Connection：数据库连接对象" class="headerlink" title="Connection：数据库连接对象"></a>Connection：数据库连接对象</h2><ul>
 <li>功能：<ol>
 <li>获取执行sql 的对象<ul>
@@ -760,7 +752,7 @@
   <p><span>本文标题:</span><a href="/Java/JDBC/">JDBC</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 SkyWalker 的个人博客">SkyWalker</a></p>
   <p><span>发布时间:</span>2019年07月28日 - 08:07</p>
-  <p><span>最后更新:</span>2019年07月28日 - 18:07</p>
+  <p><span>最后更新:</span>2019年07月28日 - 19:07</p>
   <p><span>原始链接:</span><a href="/Java/JDBC/" title="JDBC">http://SkyWalkerKKKK.cn/Java/JDBC/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://SkyWalkerKKKK.cn/Java/JDBC/" aria-label="复制成功！"></i></span>
   </p>
@@ -1039,7 +1031,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共31.8k字</span>
+  <span class="post-count">博客全站共31.7k字</span>
 </div>
 
 
