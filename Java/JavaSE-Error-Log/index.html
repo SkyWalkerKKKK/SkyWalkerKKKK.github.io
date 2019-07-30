@@ -113,7 +113,7 @@
 <meta property="og:site_name" content="SkyWalker的博客">
 <meta property="og:description" content="Java中protected方法访问权限的问题在cn.skywalker.test05包下的Student类： 123456789101112package cn.skywalker.test05;/** * @author SkyWalker * @create 2019 - 06 - 29 - 19:40 */public class Student &amp;#123;    protected v">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-27T08:07:17.439Z">
+<meta property="og:updated_time" content="2019-07-28T11:50:33.112Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaSE Error Log">
 <meta name="twitter:description" content="Java中protected方法访问权限的问题在cn.skywalker.test05包下的Student类： 123456789101112package cn.skywalker.test05;/** * @author SkyWalker * @create 2019 - 06 - 29 - 19:40 */public class Student &amp;#123;    protected v">
@@ -451,7 +451,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  2.2k
+                  2.8k
                 </span>
               
 
@@ -467,7 +467,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  9
+                  11
                 </span>
               
             </div>
@@ -589,6 +589,33 @@
 <p>不要使用windows自带的鼠标右键新建-&gt;新建文本文档。因为会默认使用GBK格式。</p>
 <p>需要使用一些UTF-8编码格式的或者其他格式的都可以识别，只要编码解码格式相同，就不会出现乱码问题。</p>
 <h1 id="关于java中true和false是否为Object类型的问题"><a href="#关于java中true和false是否为Object类型的问题" class="headerlink" title="关于java中true和false是否为Object类型的问题"></a>关于java中true和false是否为Object类型的问题</h1><p>在调用方法时，形参要求的是Object类型，我传了一个false进去，没报错也运行出来了，然后就有点小疑惑，仔细想了想，想到了boolean的包装类Boolean。在参数传进去的时候，应该是把false当作一个Boolean类型了。</p>
+<h1 id="Scanner类中next-和nextLine-的区别"><a href="#Scanner类中next-和nextLine-的区别" class="headerlink" title="Scanner类中next()和nextLine()的区别"></a>Scanner类中next()和nextLine()的区别</h1><p>对于键盘录入对象Scanner对象的两个录入字符串方法的区别<br>Scanner sc = new Scanner(System.in);<br>sc.next()和 sc.nextLine();的区别<br>next() 对于录入的字符串碰到空格就会停止录入<br>nextLine()会把整行字符串全部录入<br>并且sc.next() 在录入字符串后会在尾部加一个 \r\n</p>
+<p>因而sc.nextLine()会录入 \r\n 而导致原来nextLine要录入的字符串没有录入</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//例1：</span></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">nextAndNextLine</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        System.out.println(“请输入第一个字符串”);</span><br><span class="line">        String a = sc.next();</span><br><span class="line">        System.out.println(“请输入第二个字符串”);</span><br><span class="line">        String b = sc.nextLine();</span><br><span class="line">        System.out.println(“字符串<span class="number">1</span>:” + a);</span><br><span class="line">        System.out.println(“字符串<span class="number">2</span>:” + b);</span><br><span class="line">        sc.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<p>请输入第一个字符串</p>
+<p>abc</p>
+<p>请输入第二个字符串</p>
+<p>字符串1：abc</p>
+<p>字符串2：</p>
+<p>这里我们可以看出来我们本来要录入两个字符串，<strong>但是只录入和打印了一个字符串</strong>，这个原因是next()方法会在尾部加一个换行符，windows系统的换行符是\r\n,因而后面的nextLine()方法将\r\n录入进去，从而造成第二次没有录入字符串的情况。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//例2：</span></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">nextAndNextLine</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        System.out.println(“请输入第一个字符串”);</span><br><span class="line">        String a = sc.nextLine();</span><br><span class="line">        System.out.println(“请输入第二个字符串”);</span><br><span class="line">        String b = sc.next();</span><br><span class="line">        System.out.println(“字符串<span class="number">1</span>:” + a);</span><br><span class="line">        System.out.println(“字符串<span class="number">2</span>:” + b);</span><br><span class="line">        sc.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<p>请输入第一个字符串</p>
+<p>abc</p>
+<p>请输入第二个字符串</p>
+<p>字符串1：abc</p>
+<p>字符串2：abc</p>
+<p>这时候我们可以看到,键盘允许你录入两个数据,并且正确的输出了两个数据。这里我们可以看出nextLine()方法后面并不会加默认的符号，<strong>因此我建议录入字符串尽量用nextLine方法</strong>。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//例3：</span></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">nextAndNextLine</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        System.out.println(“请输入第一个字符串”);</span><br><span class="line">        String a = sc.nextLine();</span><br><span class="line">        System.out.println(“请输入第二个字符串”);</span><br><span class="line">        String b = sc.next();</span><br><span class="line">        System.out.println(“字符串<span class="number">1</span>:” + a);</span><br><span class="line">        System.out.println(“字符串<span class="number">2</span>:” + b);</span><br><span class="line">        sc.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<p>请输入第一个字符串</p>
+<p>abc</p>
+<p>请输入第二个字符串</p>
+<p>ab  c</p>
+<p>字符串1：abc</p>
+<p>字符串2：ab</p>
+<p>这里我们可以看出来，next()方法碰到空格就会停止录入,因此只录入abc，而nextLine()方法会将这行字符串全部录入。<strong>因此建议用nextLine()方法录入字符串</strong>。</p>
 
       
     </div>
@@ -647,7 +674,7 @@
   <p><span>本文标题:</span><a href="/Java/JavaSE-Error-Log/">JavaSE Error Log</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 SkyWalker 的个人博客">SkyWalker</a></p>
   <p><span>发布时间:</span>2019年06月29日 - 21:06</p>
-  <p><span>最后更新:</span>2019年07月27日 - 16:07</p>
+  <p><span>最后更新:</span>2019年07月28日 - 19:07</p>
   <p><span>原始链接:</span><a href="/Java/JavaSE-Error-Log/" title="JavaSE Error Log">http://SkyWalkerKKKK.cn/Java/JavaSE-Error-Log/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://SkyWalkerKKKK.cn/Java/JavaSE-Error-Log/" aria-label="复制成功！"></i></span>
   </p>
@@ -873,7 +900,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java中protected方法访问权限的问题"><span class="nav-number">1.</span> <span class="nav-text">Java中protected方法访问权限的问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用同名局部变量的问题"><span class="nav-number">2.</span> <span class="nav-text">使用同名局部变量的问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#局部变量使用范围问题"><span class="nav-number">3.</span> <span class="nav-text">局部变量使用范围问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多态中关于变量的使用"><span class="nav-number">4.</span> <span class="nav-text">多态中关于变量的使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于println-与toString-的联系"><span class="nav-number">5.</span> <span class="nav-text">关于println()与toString()的联系</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#String类型的深度解析"><span class="nav-number">6.</span> <span class="nav-text">String类型的深度解析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#String的本质"><span class="nav-number">6.1.</span> <span class="nav-text">String的本质</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#java网络编程Socket文件上传过程中的中文乱码问题"><span class="nav-number">7.</span> <span class="nav-text">java网络编程Socket文件上传过程中的中文乱码问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于java中true和false是否为Object类型的问题"><span class="nav-number">8.</span> <span class="nav-text">关于java中true和false是否为Object类型的问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java中protected方法访问权限的问题"><span class="nav-number">1.</span> <span class="nav-text">Java中protected方法访问权限的问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用同名局部变量的问题"><span class="nav-number">2.</span> <span class="nav-text">使用同名局部变量的问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#局部变量使用范围问题"><span class="nav-number">3.</span> <span class="nav-text">局部变量使用范围问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多态中关于变量的使用"><span class="nav-number">4.</span> <span class="nav-text">多态中关于变量的使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于println-与toString-的联系"><span class="nav-number">5.</span> <span class="nav-text">关于println()与toString()的联系</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#String类型的深度解析"><span class="nav-number">6.</span> <span class="nav-text">String类型的深度解析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#String的本质"><span class="nav-number">6.1.</span> <span class="nav-text">String的本质</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#java网络编程Socket文件上传过程中的中文乱码问题"><span class="nav-number">7.</span> <span class="nav-text">java网络编程Socket文件上传过程中的中文乱码问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于java中true和false是否为Object类型的问题"><span class="nav-number">8.</span> <span class="nav-text">关于java中true和false是否为Object类型的问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Scanner类中next-和nextLine-的区别"><span class="nav-number">9.</span> <span class="nav-text">Scanner类中next()和nextLine()的区别</span></a></li></ol></div>
             
 
           </div>
@@ -926,7 +953,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共31.7k字</span>
+  <span class="post-count">博客全站共33.4k字</span>
 </div>
 
 

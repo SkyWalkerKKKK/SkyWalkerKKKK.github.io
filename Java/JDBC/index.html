@@ -113,7 +113,7 @@
 <meta property="og:site_name" content="SkyWalker的博客">
 <meta property="og:description" content="JDBC概述 概念：Java DataBase Connectivity  Java 数据库连接， Java语言操作数据库。  JDBC本质：其实是官方（sun公司）定义的一套操作所有关系型数据库的规则，即接口。各个数据库厂商去实现这套接口，提供数据库驱动jar包。我们可以使用这套接口（JDBC）编程，真正执行的代码是驱动jar包中的实现类。  JDBC底层使用了网络编程技术，将Java代码中的S">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-28T11:05:08.595Z">
+<meta property="og:updated_time" content="2019-07-30T09:40:12.529Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JDBC">
 <meta name="twitter:description" content="JDBC概述 概念：Java DataBase Connectivity  Java 数据库连接， Java语言操作数据库。  JDBC本质：其实是官方（sun公司）定义的一套操作所有关系型数据库的规则，即接口。各个数据库厂商去实现这套接口，提供数据库驱动jar包。我们可以使用这套接口（JDBC）编程，真正执行的代码是驱动jar包中的实现类。  JDBC底层使用了网络编程技术，将Java代码中的S">
@@ -451,7 +451,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  2k
+                  3k
                 </span>
               
 
@@ -467,7 +467,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  8
+                  13
                 </span>
               
             </div>
@@ -533,6 +533,7 @@
 <li>语法：jdbc:mysql://ip地址(域名):端口号/数据库名称</li>
 <li>例子：jdbc:mysql://localhost:3306/student</li>
 <li>细节：如果连接的是本机mysql服务器，并且mysql服务默认端口是3306，则url可以简写为：jdbc:mysql:///数据库名称</li>
+<li><span style="color:red;">可以在URL后面拼接?characterEncoding=utf8来指定使用UTF-8编码处理数据</span></li>
 </ul>
 </li>
 <li>user：用户名</li>
@@ -570,12 +571,16 @@
 <ul>
 <li><p>执行sql</p>
 <ul>
-<li><p>boolean execute(String sql) ：可以执行任意的sql 了解 </p>
+<li><p>boolean execute(String sql) ：可以执行任意的sql</p>
+<p>返回值：<span style="color:red">如果第一个结果为 ResultSet 对象，则返回 true；如果其为更新计数或者不存在任何结果，则返回 false  </span></p>
 </li>
 <li><p>int executeUpdate(String sql) ：执行DML（insert、update、delete）语句、DDL(create，alter、drop)语句</p>
-<p>返回值：影响的行数，可以通过这个影响的行数判断DML语句是否执行成功 返回值&gt;0的则执行成功，反之，则失败。</p>
+<p>返回值：</p>
+<p>(1) 对于 SQL 数据操作语言 (DML) 语句，返回行计数</p>
+<p> (2) 对于什么都不返回的 SQL 语句，返回 0 </p>
 </li>
 <li><p>ResultSet executeQuery(String sql)  ：执行DQL（select)语句</p>
+<p>返回值：包含给定查询所生成数据的 ResultSet 对象；永远不能为 null </p>
 </li>
 </ul>
 </li>
@@ -694,6 +699,97 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.sql.Connection;</span><br><span class="line"><span class="keyword">import</span> java.sql.PreparedStatement;</span><br><span class="line"><span class="keyword">import</span> java.sql.SQLException;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> SkyWalker</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span> 2019 - 07 - 28 - 17:28</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Connection conn = <span class="keyword">null</span>;</span><br><span class="line">        PreparedStatement ps1 = <span class="keyword">null</span>;</span><br><span class="line">        PreparedStatement ps2 = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            conn = JDBCUtils.getConnection();</span><br><span class="line">            <span class="comment">//开启事务</span></span><br><span class="line">            conn.setAutoCommit(<span class="keyword">false</span>);</span><br><span class="line">            String sql1 = <span class="string">"update account set balance = balance - ? where `name` = ?"</span>;</span><br><span class="line">            String sql2 = <span class="string">"update account set balance = balance + ? where `name` = ?"</span>;</span><br><span class="line">            ps1 = conn.prepareStatement(sql1);</span><br><span class="line">            ps2 = conn.prepareStatement(sql2);</span><br><span class="line">            <span class="comment">// jack 给 skywalker 转账500</span></span><br><span class="line">            ps1.setDouble(<span class="number">1</span>, <span class="number">500</span>);</span><br><span class="line">            ps1.setString(<span class="number">2</span>, <span class="string">"jack"</span>);</span><br><span class="line">            ps2.setDouble(<span class="number">1</span>, <span class="number">500</span>);</span><br><span class="line">            ps2.setString(<span class="number">2</span>, <span class="string">"skywalker"</span>);</span><br><span class="line">            <span class="comment">//开始执行事务的操作</span></span><br><span class="line">            ps1.executeUpdate();</span><br><span class="line">            <span class="comment">//手动制造了一个异常，若不进行回滚操作，则数据库中的数据会发生问题。事务的一致性无法保持。</span></span><br><span class="line">            <span class="keyword">int</span> i = <span class="number">3</span> / <span class="number">0</span>;</span><br><span class="line">            ps2.executeUpdate();</span><br><span class="line">            <span class="comment">//事务完成后，提交事务</span></span><br><span class="line">            conn.commit();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            <span class="comment">//事务未完成，回滚事务</span></span><br><span class="line">            <span class="keyword">if</span> (conn != <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    conn.rollback();</span><br><span class="line">                &#125; <span class="keyword">catch</span> (Exception e1) &#123;</span><br><span class="line">                    e1.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            JDBCUtils.release(conn, ps1, <span class="keyword">null</span>);</span><br><span class="line">            <span class="keyword">if</span> (ps2 != <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    ps2.close();</span><br><span class="line">                &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
+<h1 id="数据库连接池"><a href="#数据库连接池" class="headerlink" title="数据库连接池"></a>数据库连接池</h1><ul>
+<li><p>概念：其实就是一个容器（集合），存放数据库连接的容器。</p>
+<p>当系统初始化好后，容器被创建，容器中会申请一些连接对象，当用户来访问数据库时，从容器中获取连接对象，用户访问完之后，会将连接对象归还给容器。</p>
+</li>
+<li><p>好处：</p>
+<ol>
+<li>节约资源</li>
+<li>用户访问高效</li>
+<li>方便对连接进行统一管理</li>
+</ol>
+</li>
+<li><p>连接池的实现：</p>
+<ol>
+<li>标准接口：DataSource   javax.sql包下的<ul>
+<li>获取连接：getConnection()</li>
+<li>归还连接：Connection.close()。如果连接对象Connection是从连接池中获取的，那么调用Connection.close()方法，则不会再关闭连接了。而是归还连接</li>
+</ul>
+</li>
+<li>一般我们不去实现它，有数据库厂商来实现</li>
+</ol>
+</li>
+<li><p>分类：</p>
+<ul>
+<li>C3P0<ol>
+<li>导包</li>
+<li>定义配置文件<ul>
+<li>可以是properties形式的，也可以是xml形式的</li>
+<li>需要将配置文件放在src下</li>
+</ul>
+</li>
+<li>创建核心对象，数据库连接池对象 ComboPooledDataSource</li>
+<li>调用getConnction()方法获取连接</li>
+</ol>
+</li>
+<li>Druid<ol>
+<li>导包</li>
+<li>定义配置文件<ul>
+<li>是properties形式的</li>
+<li>可以叫任意名称</li>
+<li>可以放在任意目录下</li>
+</ul>
+</li>
+<li>手动加载配置文件</li>
+<li>获取数据库连接池对象：通过工厂类来获取 DruidDataSourceFactory</li>
+<li>调用getConnction()方法获取连接</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="Spring-JDBC"><a href="#Spring-JDBC" class="headerlink" title="Spring JDBC"></a>Spring JDBC</h1><ul>
+<li><p>Spring框架对JDBC的简单封装。提供了一个JDBCTemplate对象简化JDBC的开发。</p>
+</li>
+<li><p>步骤：</p>
+<ol>
+<li><p>导入jar包</p>
+</li>
+<li><p>创建JdbcTemplate对象。依赖于数据源DataSource</p>
+<p><code>JdbcTemplate template = new JdbcTemplate(ds);</code></p>
+</li>
+<li><p>调用JdbcTemplate的方法来完成CRUD的操作</p>
+<ul>
+<li>update():执行DML语句。增、删、改语句</li>
+<li>queryForMap():查询结果将结果集封装为map集合，将列名作为key，将值作为value 将这条记录封装为一个map集合<ul>
+<li>注意：这个方法查询的结果集长度只能是1</li>
+</ul>
+</li>
+<li>queryForList():查询结果将结果集封装为list集合<ul>
+<li>注意：将每一条记录封装为一个Map集合，再将Map集合装载到List集合中</li>
+</ul>
+</li>
+<li>query():查询结果，将结果封装为JavaBean对象<ul>
+<li>query的参数：RowMapper</li>
+<li>一般我们使用BeanPropertyRowMapper实现类。可以完成数据到JavaBean的自动封装</li>
+<li>new BeanPropertyRowMapper&lt;类型&gt;(类型.class)</li>
+</ul>
+</li>
+<li>queryForObject：查询结果，将结果封装为对象<ul>
+<li>一般用于聚合函数的查询</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li><p>对于Spring JDBC的练习：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cn.skywalker.Druid.JDBCUtils;</span><br><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"><span class="keyword">import</span> org.springframework.jdbc.core.BeanPropertyRowMapper;</span><br><span class="line"><span class="keyword">import</span> org.springframework.jdbc.core.JdbcTemplate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cn.skywalker.domain.Employee;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> SkyWalker</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span> 2019 - 07 - 30 - 15:24</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> JdbcTemplate template = <span class="keyword">new</span> JdbcTemplate(JDBCUtils.getDataSource());</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 将编号为1011的工资更新为7500</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test01</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        template.update(<span class="string">"update emp set salary = ? where id = ?"</span>, <span class="number">7500</span>, <span class="number">1011</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 添加一条记录</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test02</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        template.update(<span class="string">"insert into emp(id,ename,dept_id) values (?,?,?)"</span>, <span class="number">1015</span>, <span class="string">"张飞"</span>, <span class="number">20</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 删除刚才的记录</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test03</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        template.update(<span class="string">"delete from emp where id = ?"</span>, <span class="number">1015</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 4.查询id为1001的记录，将其封装为Map集合</span></span><br><span class="line"><span class="comment">     * 注意：这个方法查询的结果集长度只能是1</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test04</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        Map&lt;String, Object&gt; map = template.queryForMap(<span class="string">"select * from emp where id = ?"</span>, <span class="number">1001</span>);</span><br><span class="line">        System.out.println(map);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 5. 查询所有记录，将其封装为List</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test05</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        List&lt;Map&lt;String, Object&gt;&gt; list = template.queryForList(<span class="string">"select * from emp"</span>);</span><br><span class="line">        <span class="keyword">for</span> (Map&lt;String, Object&gt; map : list) &#123;</span><br><span class="line">            System.out.println(map);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 6. 查询所有记录，将其封装为Emp对象的List集合</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test06</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        List&lt;Employee&gt; emplist = template.query(<span class="string">"select * from emp"</span>, <span class="keyword">new</span> BeanPropertyRowMapper&lt;Employee&gt;(Employee.class));</span><br><span class="line">        <span class="keyword">for</span> (Employee emp : emplist) &#123;</span><br><span class="line">            System.out.println(emp);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 7. 查询总记录数</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test07</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        Integer count = template.queryForObject(<span class="string">"select count(*) from emp"</span>, Integer.class);</span><br><span class="line">        System.out.println(count);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 8. 查询id为1008的员工，封装为Emp对象</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test08</span><span class="params">()</span></span>&#123;</span><br><span class="line">        Employee employee = template.queryForObject(<span class="string">"select * from emp where id = ?"</span>, <span class="keyword">new</span> BeanPropertyRowMapper&lt;Employee&gt;(Employee.class), <span class="number">1008</span>);</span><br><span class="line">        System.out.println(employee);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 
       
     </div>
@@ -752,7 +848,7 @@
   <p><span>本文标题:</span><a href="/Java/JDBC/">JDBC</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 SkyWalker 的个人博客">SkyWalker</a></p>
   <p><span>发布时间:</span>2019年07月28日 - 08:07</p>
-  <p><span>最后更新:</span>2019年07月28日 - 19:07</p>
+  <p><span>最后更新:</span>2019年07月30日 - 17:07</p>
   <p><span>原始链接:</span><a href="/Java/JDBC/" title="JDBC">http://SkyWalkerKKKK.cn/Java/JDBC/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://SkyWalkerKKKK.cn/Java/JDBC/" aria-label="复制成功！"></i></span>
   </p>
@@ -978,7 +1074,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JDBC概述"><span class="nav-number">1.</span> <span class="nav-text">JDBC概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#DriverManager：驱动管理对象"><span class="nav-number">1.1.</span> <span class="nav-text">DriverManager：驱动管理对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Connection：数据库连接对象"><span class="nav-number">1.2.</span> <span class="nav-text">Connection：数据库连接对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Statement：执行sql的对象"><span class="nav-number">1.3.</span> <span class="nav-text">Statement：执行sql的对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ResultSet：结果集对象-封装查询结果"><span class="nav-number">1.4.</span> <span class="nav-text">ResultSet：结果集对象,封装查询结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PreparedStatement：执行sql的对象"><span class="nav-number">1.5.</span> <span class="nav-text">PreparedStatement：执行sql的对象</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#抽取JDBC工具类-：-JDBCUtils"><span class="nav-number">2.</span> <span class="nav-text">抽取JDBC工具类 ： JDBCUtils</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JDBC控制事务"><span class="nav-number">3.</span> <span class="nav-text">JDBC控制事务</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JDBC概述"><span class="nav-number">1.</span> <span class="nav-text">JDBC概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#DriverManager：驱动管理对象"><span class="nav-number">1.1.</span> <span class="nav-text">DriverManager：驱动管理对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Connection：数据库连接对象"><span class="nav-number">1.2.</span> <span class="nav-text">Connection：数据库连接对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Statement：执行sql的对象"><span class="nav-number">1.3.</span> <span class="nav-text">Statement：执行sql的对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ResultSet：结果集对象-封装查询结果"><span class="nav-number">1.4.</span> <span class="nav-text">ResultSet：结果集对象,封装查询结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PreparedStatement：执行sql的对象"><span class="nav-number">1.5.</span> <span class="nav-text">PreparedStatement：执行sql的对象</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#抽取JDBC工具类-：-JDBCUtils"><span class="nav-number">2.</span> <span class="nav-text">抽取JDBC工具类 ： JDBCUtils</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JDBC控制事务"><span class="nav-number">3.</span> <span class="nav-text">JDBC控制事务</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据库连接池"><span class="nav-number">4.</span> <span class="nav-text">数据库连接池</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring-JDBC"><span class="nav-number">5.</span> <span class="nav-text">Spring JDBC</span></a></li></ol></div>
             
 
           </div>
@@ -1031,7 +1127,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共31.7k字</span>
+  <span class="post-count">博客全站共33.4k字</span>
 </div>
 
 
