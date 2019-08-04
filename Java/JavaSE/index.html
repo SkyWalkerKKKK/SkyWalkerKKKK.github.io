@@ -113,15 +113,15 @@
 <meta property="og:site_name" content="SkyWalker的博客">
 <meta property="og:description" content="环境变量的配置 右键 “我的电脑” – “属性” – “高级系统设置” – “高级” – “环境变量” 打开环境变量设置。 新建系统变量“JAVA_HOME”，值的内容为JDK的根目录。 在“Path”环境变量的值中，增加“%JAVA_HOME%\bin;”  此时再使用cmd即可直接使用javac和java命令。 JDK9的JShell的简单使用直接在cmd中输入jshell，回车，即可启动JS">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://skywalkerkkkk.cn/Java/images/数组内存图.bmp">
-<meta property="og:image" content="http://skywalkerkkkk.cn/Java/images/JVM内存图">
-<meta property="og:image" content="http://skywalkerkkkk.cn/Java/images/super内存图.bmp">
-<meta property="og:image" content="http://skywalkerkkkk.cn/Java/images/线程生命周期.jpg">
-<meta property="og:updated_time" content="2019-08-02T08:16:08.735Z">
+<meta property="og:image" content="https://graph.baidu.com/resource/1119214339bcab819210301564882439.jpg">
+<meta property="og:image" content="https://graph.baidu.com/resource/111ebc68a2d4fce2e66d701564882538.jpg">
+<meta property="og:image" content="https://graph.baidu.com/resource/111182e9d9ba5387c035301564882978.jpg">
+<meta property="og:image" content="https://graph.baidu.com/resource/11173606cfb6caff9282501564883082.jpg">
+<meta property="og:updated_time" content="2019-08-04T01:45:05.077Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaSE">
 <meta name="twitter:description" content="环境变量的配置 右键 “我的电脑” – “属性” – “高级系统设置” – “高级” – “环境变量” 打开环境变量设置。 新建系统变量“JAVA_HOME”，值的内容为JDK的根目录。 在“Path”环境变量的值中，增加“%JAVA_HOME%\bin;”  此时再使用cmd即可直接使用javac和java命令。 JDK9的JShell的简单使用直接在cmd中输入jshell，回车，即可启动JS">
-<meta name="twitter:image" content="http://skywalkerkkkk.cn/Java/images/数组内存图.bmp">
+<meta name="twitter:image" content="https://graph.baidu.com/resource/1119214339bcab819210301564882439.jpg">
 
 
 
@@ -561,7 +561,8 @@
 <p>使用建议：<br>如果不确定数组当中的具体内容，用动态初始化；否则，已经确定了具体的内容，用静态初始化。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo03</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 省略格式的静态初始化</span></span><br><span class="line">        <span class="keyword">int</span>[] arrayA = &#123; <span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span> &#125;;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 静态初始化的标准格式，可以拆分成为两个步骤</span></span><br><span class="line">        <span class="keyword">int</span>[] arrayB;</span><br><span class="line">        arrayB = <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; <span class="number">11</span>, <span class="number">21</span>, <span class="number">31</span> &#125;;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 动态初始化也可以拆分成为两个步骤</span></span><br><span class="line">        <span class="keyword">int</span>[] arrayC;</span><br><span class="line">        arrayC = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>];</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 静态初始化的省略格式，不能拆分成为两个步骤。</span></span><br><span class="line"><span class="comment">//        int[] arrayD;</span></span><br><span class="line"><span class="comment">//        arrayD = &#123; 10, 20, 30 &#125;;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>数组中的内存图</p>
-<p><img src="..\images\数组内存图.bmp" alt="数组内存图"></p>
+<!-- ![数组内存图](..\images\数组内存图.bmp) -->
+<p><img src="https://graph.baidu.com/resource/1119214339bcab819210301564882439.jpg" alt="数组内存图"></p>
 <h1 id="Random类"><a href="#Random类" class="headerlink" title="Random类"></a>Random类</h1><ul>
 <li><p>作用：用于产生一个随机数</p>
 </li>
@@ -619,7 +620,7 @@
 <ul>
 <li><strong>运行时数据区（Java Memory Allocation Area）：</strong>又叫虚拟机内存或者Java内存，虚拟机运行时需要从整个计算机内存划分一块内存区域存储许多东西。例如：字节码、从已装载的class文件中得到的其他信息、程序创建的对象、传递给方法的参数，返回值、局部变量等等。</li>
 </ul>
-<p><img src="..\images\JVM内存图" alt="1562120489462"></p>
+<p><img src="https://graph.baidu.com/resource/111ebc68a2d4fce2e66d701564882538.jpg" alt="1562120489462"></p>
 <h2 id="Java内存分区"><a href="#Java内存分区" class="headerlink" title="Java内存分区"></a>Java内存分区</h2><p>从上节知道，运行时数据区即是java内存，而且数据区要存储的东西比较多，如果不对这块内存区域进行划分管理，会显得比较杂乱无章。 根据存储数据的不同，java内存通常被划分为5个区域：<span style="color:red;font-size:25px">程序计数器（Program Count Register）、本地方法栈（Native Stack）、方法区（Method Area）、栈（Stack）、堆（Heap）</span>。  </p>
 <ul>
 <li><strong>程序计数器（Program Count Register）：</strong>又叫程序寄存器。JVM支持多个线程同时运行，当每一个新线程被创建时，它都将得到它自己的PC寄存器（程序计数器）。如果线程正在执行的是一个Java方法（非native），那么PC寄存器的值将总是指向下一条将被执行的指令，如果方法是 native的，程序计数器寄存器的值不会被定义。 JVM的程序计数器寄存器的宽度足够保证可以持有一个返回地址或者native的指针。    </li>
@@ -677,7 +678,7 @@
 <h2 id="Super内存图"><a href="#Super内存图" class="headerlink" title="Super内存图"></a>Super内存图</h2><ul>
 <li>对象在堆内存中，会单独存在一块super区域，用来存放父类的数据</li>
 </ul>
-<p><img src="..\images\super内存图.bmp" alt="super内存图"></p>
+<p><img src="https://graph.baidu.com/resource/111182e9d9ba5387c035301564882978.jpg" alt="super内存图"></p>
 <h2 id="方法重写"><a href="#方法重写" class="headerlink" title="方法重写"></a>方法重写</h2><ul>
 <li>在重写方法时，可以在声明前加入@Override注解，可以帮助我们检查我们要重写的方法声明是否错误</li>
 <li>父类中私有的方法不能被重写</li>
@@ -1533,7 +1534,7 @@
 <p>| 方法名                         | 说明                                                         |<br>| —————————— | ———————————————————— |<br>| static void sleep(long millis) | 使当前正在执行的线程停留（暂停执行）指定的毫秒数             |<br>| void join()                    | 等待这个线程死亡（如果某个线程调用了此方法，则其他并发的线程必须等待这个线程死亡后才有机会调用） |<br>| void setDaemon(boolean on)     | 将此线程标记为守护线程，当运行的线程都是守护线程时，Java虚拟机将退出 |</p>
 </li>
 </ul>
-<h3 id="线程的生命周期"><a href="#线程的生命周期" class="headerlink" title="线程的生命周期"></a>线程的生命周期</h3><p><img src="..\images\线程生命周期.jpg" alt="线程生命周期"></p>
+<h3 id="线程的生命周期"><a href="#线程的生命周期" class="headerlink" title="线程的生命周期"></a>线程的生命周期</h3><p><img src="https://graph.baidu.com/resource/11173606cfb6caff9282501564883082.jpg" alt="线程生命周期"></p>
 <h2 id="线程同步"><a href="#线程同步" class="headerlink" title="线程同步"></a>线程同步</h2><h3 id="卖票"><a href="#卖票" class="headerlink" title="卖票"></a>卖票</h3><ul>
 <li><p>案例需求</p>
 <p>某电影院目前正在上映国产大片，共有100张票，而它有3个窗口卖票，请设计一个程序模拟该电影院卖票</p>
@@ -1918,16 +1919,12 @@
 <li><p>如何将集合或者数组转为Stream流对象（集合/数组-&gt;Stream流）</p>
 <ul>
 <li><p>单列集合<br>通过Collection接口的默认方法stream()，比如：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">    Stream&lt;String&gt; listStream = list.stream();</span><br><span class="line">    </span><br><span class="line">Set&lt;String&gt; set = <span class="keyword">new</span> HashSet&lt;String&gt;();</span><br><span class="line">    Stream&lt;String&gt; setStream = set.stream();</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">    Stream&lt;String&gt; listStream = list.stream();</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ul>
-<ul>
-<li><p>双列集合<br>不能直接转为Stream流对象，需要先转为单列集合，然后再调用stream()方法转为流对象，比如：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String,Integer&gt; map = <span class="keyword">new</span> HashMap&lt;String, Integer&gt;();</span><br><span class="line"></span><br><span class="line">  Stream&lt;String&gt; keyStream = map.keySet().stream();</span><br><span class="line"></span><br><span class="line">  Stream&lt;Integer&gt; valueStream = map.values().stream();</span><br><span class="line"></span><br><span class="line">  Stream&lt;Map.Entry&lt;String, Integer&gt;&gt; entryStream = map.entrySet().stream();</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+<p>Set<string> set = new HashSet<string>();<br>    Stream<string> setStream = set.stream();<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">- 双列集合</span><br><span class="line">  不能直接转为Stream流对象，需要先转为单列集合，然后再调用stream()方法转为流对象，比如：</span><br><span class="line">  </span><br><span class="line">  ```java</span><br><span class="line">  Map&lt;String,Integer&gt; map = new HashMap&lt;String, Integer&gt;();</span><br><span class="line">  </span><br><span class="line">    Stream&lt;String&gt; keyStream = map.keySet().stream();</span><br><span class="line">  </span><br><span class="line">    Stream&lt;Integer&gt; valueStream = map.values().stream();</span><br><span class="line">  </span><br><span class="line">    Stream&lt;Map.Entry&lt;String, Integer&gt;&gt; entryStream = map.entrySet().stream();</span><br></pre></td></tr></table></figure></string></string></string></p>
 <ul>
 <li><p>数组<br>通过Stream接口的静态方法of(T… values)，比如：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">  String[] strArray = &#123;<span class="string">"hello"</span>,<span class="string">"world"</span>,<span class="string">"java"</span>&#125;;</span><br><span class="line">  Stream&lt;String&gt; strArrayStream = Stream.of(strArray);</span><br><span class="line">  或者</span><br><span class="line">Stream&lt;String&gt; strArrayStream2 = Stream.of(<span class="string">"hello"</span>, <span class="string">"world"</span>, <span class="string">"java"</span>);</span><br></pre></td></tr></table></figure>
@@ -2169,7 +2166,7 @@
   <p><span>本文标题:</span><a href="/Java/JavaSE/">JavaSE</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 SkyWalker 的个人博客">SkyWalker</a></p>
   <p><span>发布时间:</span>2019年06月26日 - 23:06</p>
-  <p><span>最后更新:</span>2019年08月02日 - 16:08</p>
+  <p><span>最后更新:</span>2019年08月04日 - 09:08</p>
   <p><span>原始链接:</span><a href="/Java/JavaSE/" title="JavaSE">http://SkyWalkerKKKK.cn/Java/JavaSE/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://SkyWalkerKKKK.cn/Java/JavaSE/" aria-label="复制成功！"></i></span>
   </p>
@@ -2448,7 +2445,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共37.6k字</span>
+  <span class="post-count">博客全站共37.5k字</span>
 </div>
 
 
