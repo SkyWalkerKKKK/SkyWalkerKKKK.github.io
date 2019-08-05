@@ -113,7 +113,7 @@
 <meta property="og:site_name" content="SkyWalker的博客">
 <meta property="og:description" content="JavaScript基础 概念：一门客户端脚本语言  运行在客户端浏览器中的。每一个浏览器都有JavaScript的解析引擎 脚本语言：不需要编译，直接就可以被浏览器解析执行了   功能：可以来增强用户和html页面的交互过程，可以来控制html元素，让页面有一些动态的效果，增强用户的体验。   JavaScript发展史 1992年，Nombase公司，开发出第一门客户端脚本语言，专门用于表单的">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-05T13:22:02.343Z">
+<meta property="og:updated_time" content="2019-08-05T13:41:54.967Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript">
 <meta name="twitter:description" content="JavaScript基础 概念：一门客户端脚本语言  运行在客户端浏览器中的。每一个浏览器都有JavaScript的解析引擎 脚本语言：不需要编译，直接就可以被浏览器解析执行了   功能：可以来增强用户和html页面的交互过程，可以来控制html元素，让页面有一些动态的效果，增强用户的体验。   JavaScript发展史 1992年，Nombase公司，开发出第一门客户端脚本语言，专门用于表单的">
@@ -451,7 +451,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  3.7k
+                  4.1k
                 </span>
               
 
@@ -467,7 +467,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  14
+                  16
                 </span>
               
             </div>
@@ -727,6 +727,17 @@
 </li>
 </ol>
 </li>
+</ul>
+<pre><code>&lt;span style = &quot;color:red; font-size:25px&quot;&gt;定义方式3的参数详解：&lt;/span&gt;
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// i：执行对大小写不敏感匹配；</span></span><br><span class="line"></span><br><span class="line">&lt;script text=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">　　<span class="keyword">var</span> txt = <span class="string">'Hello World!'</span></span><br><span class="line">　　<span class="keyword">var</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'hello'</span>, <span class="string">'i'</span>);</span><br><span class="line">　　<span class="keyword">if</span>(reg.test(txt)) &#123;</span><br><span class="line">　　　　<span class="built_in">console</span>.log(txt.match(reg));</span><br><span class="line">　　&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// g：执行全局匹配（查找所有匹配项而非找到第一个匹配项后停止）；</span></span><br><span class="line"></span><br><span class="line">&lt;script text=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    <span class="keyword">var</span> txt = <span class="string">'This is just a test.'</span>;</span><br><span class="line">    <span class="keyword">var</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'is'</span>, <span class="string">'g'</span>);<span class="comment">//区分大小写</span></span><br><span class="line">    <span class="keyword">var</span> reg01 = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'is'</span>, <span class="string">'gi'</span>);<span class="comment">//不区分大小写</span></span><br><span class="line">    <span class="keyword">if</span>(reg.test(txt)) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(txt.match(reg));<span class="comment">//["is", "is"]</span></span><br><span class="line">        <span class="built_in">console</span>.log(txt.match(reg).length);<span class="comment">//2</span></span><br><span class="line">    &#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// m：执行多行匹配（若不设置该属性，^（$）只与整个被搜索字符串的开始（结尾）位置开始匹配；若设置该属性，^（$）还可以与被搜索字符串的“\r”或“\n”之后位置开始匹配）。</span></span><br><span class="line"></span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    <span class="comment">//以下代码不能够匹配字符串"an"，尽管"an"后面已经换行了，但"an"并不是字符串行的结尾。</span></span><br><span class="line">    <span class="keyword">var</span> txt1 = <span class="string">'This is an\n apple'</span>; </span><br><span class="line">    <span class="keyword">var</span> reg1 = <span class="regexp">/an$/</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(txt1.match(reg1));<span class="comment">//null</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//以下代码能够匹配到字符串"an"</span></span><br><span class="line">    <span class="keyword">var</span> txt2 = <span class="string">'This is an\n apple'</span>;</span><br><span class="line">    <span class="keyword">var</span> reg2 = <span class="regexp">/an$/m</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(txt2.match(reg2));<span class="comment">//["an", index: 8, input: "This is an↵ apple"]</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//以下是多行匹配开头示例</span></span><br><span class="line">    <span class="keyword">var</span> txt3 = <span class="string">'This is an\n apple'</span>;</span><br><span class="line">    <span class="keyword">var</span> reg3 = <span class="regexp">/^\sapp/</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(txt3.match(reg3));<span class="comment">//null</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> txt4 = <span class="string">'This is an\n apple'</span>;</span><br><span class="line">    <span class="keyword">var</span> reg4 = <span class="regexp">/^\sapp/m</span>;<span class="comment">//  /^ app/m</span></span><br><span class="line">    <span class="built_in">console</span>.log(txt4.match(reg4));<span class="comment">//[" app", index: 11, input: "This is an↵ apple"]</span></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+</code></pre><ul>
 <li><p>方法：</p>
 <p>test(字符串)：判断这个字符串是否符合正则表达式<br>例如：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> regx = \^\d&#123;<span class="number">8</span>,<span class="number">12</span>&#125;$\;</span><br><span class="line"><span class="keyword">var</span> qq = “<span class="number">123456789</span>”;</span><br><span class="line"><span class="keyword">var</span> result = regx.test(qq);</span><br><span class="line"><span class="keyword">var</span> result = qq.match(regx); <span class="comment">//了解, 这个方式,是通过字符串的match方法来去判断是否符合某个正则</span></span><br></pre></td></tr></table></figure>
@@ -1266,7 +1277,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共41.6k字</span>
+  <span class="post-count">博客全站共42k字</span>
 </div>
 
 
