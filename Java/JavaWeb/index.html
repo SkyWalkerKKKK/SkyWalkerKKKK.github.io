@@ -116,7 +116,9 @@
 <meta property="og:image" content="http://skywalkerkkkk.cn/images/Tomcat1.jpg">
 <meta property="og:image" content="http://skywalkerkkkk.cn/images/Tomcat2.jpg">
 <meta property="og:image" content="http://skywalkerkkkk.cn/images/Tomcat3.jpg">
-<meta property="og:updated_time" content="2019-08-11T12:22:35.649Z">
+<meta property="og:image" content="http://skywalkerkkkk.cn/images/xml和注解方式的原理.png">
+<meta property="og:image" content="http://skywalkerkkkk.cn/images/virtual_path.png">
+<meta property="og:updated_time" content="2019-08-11T13:27:45.849Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaWeb">
 <meta name="twitter:description" content="Web相关概念 软件架构 C/S架构：客户端/服务器端 B/S架构：浏览器端/服务器端   资源分类 静态资源：所有用户访问后，得到的结果都是一样的，称为静态资源.静态资源可以直接被浏览器解析，如：HTML，CSS，JavaScript等。 动态资源:每个用户访问相同资源后，得到的结果可能不一样。称为动态资源。动态资源被访问后，需要先转换为静态资源，再返回给浏览器，如：servlet，jsp，ph">
@@ -455,7 +457,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  3.3k
+                  4.5k
                 </span>
               
 
@@ -471,7 +473,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  12
+                  16
                 </span>
               
             </div>
@@ -542,7 +544,10 @@
 </ul>
 </blockquote>
 <a id="more"></a>
-<h1 id="Tomcat"><a href="#Tomcat" class="headerlink" title="Tomcat"></a>Tomcat</h1><h2 id="Tomcat的安装和启动以及常见问题"><a href="#Tomcat的安装和启动以及常见问题" class="headerlink" title="Tomcat的安装和启动以及常见问题"></a>Tomcat的安装和启动以及常见问题</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ol>
+<h1 id="Tomcat"><a href="#Tomcat" class="headerlink" title="Tomcat"></a>Tomcat</h1><ul>
+<li>概念：Tomcat是Apache 软件基金会（Apache Software Foundation）的Jakarta 项目中的一个核心项目，由<a href="https://baike.baidu.com/item/Apache/6265" target="_blank" rel="noopener">Apache</a>、Sun 和其他一些公司及个人共同开发而成。由于有了Sun 的参与和支持，最新的Servlet 和JSP 规范总是能在Tomcat 中得到体现，Tomcat 5支持最新的Servlet 2.4 和JSP 2.0 规范。因为Tomcat 技术先进、性能稳定，而且免费，因而深受Java 爱好者的喜爱并得到了部分软件开发商的认可，成为目前比较流行的Web 应用服务器。</li>
+</ul>
+<h2 id="Tomcat的安装和启动以及常见问题"><a href="#Tomcat的安装和启动以及常见问题" class="headerlink" title="Tomcat的安装和启动以及常见问题"></a>Tomcat的安装和启动以及常见问题</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ol>
 <li>下载：<code>http://tomcat.apache.org/</code></li>
 <li>安装：解压压缩包即可。<ul>
 <li>注意：安装目录建议不要有中文和空格</li>
@@ -617,7 +622,92 @@
 <h2 id="将Tomcat配置到idea中"><a href="#将Tomcat配置到idea中" class="headerlink" title="将Tomcat配置到idea中"></a>将Tomcat配置到idea中</h2><p><img src="/images/Tomcat1.jpg" alt="Tomcat集成idea步骤 (1)"></p>
 <p><img src="/images/Tomcat2.jpg" alt="Tomcat集成idea步骤 (2)"></p>
 <p><img src="/images/Tomcat3.jpg" alt="Tomcat集成idea步骤 (3)"></p>
-<h1 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h1><h2 id="Servlet入门，以及执行原理"><a href="#Servlet入门，以及执行原理" class="headerlink" title="Servlet入门，以及执行原理"></a>Servlet入门，以及执行原理</h2><h2 id="Servlet的生命周期"><a href="#Servlet的生命周期" class="headerlink" title="Servlet的生命周期"></a>Servlet的生命周期</h2><h2 id="3-0后的注解编写Servlet"><a href="#3-0后的注解编写Servlet" class="headerlink" title="3.0后的注解编写Servlet"></a>3.0后的注解编写Servlet</h2><h2 id="ServletResoponse-设置响应格式"><a href="#ServletResoponse-设置响应格式" class="headerlink" title="ServletResoponse 设置响应格式"></a>ServletResoponse 设置响应格式</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ServletResponse response = <span class="keyword">new</span> ServletResponse();</span><br><span class="line">response.setContentType(<span class="string">"application/msword"</span>);<span class="comment">//设置响应类型为word文档。</span></span><br><span class="line"><span class="comment">//具体可以在tomcat/config/web.xml中查找需要格式对应的值</span></span><br></pre></td></tr></table></figure>
+<p><span style="color:red; font-size:25px">Tomcat与idea的相关配置</span></p>
+<ol>
+<li>IDEA会为每一个tomcat部署的项目单独建立一份配置文件<ul>
+<li>查看控制台输出的日志信息：Using CATALINA_BASE:   “C:\Users\SkyWalker.IntelliJIdea2018.3\system\tomcat_JavaWeb”</li>
+</ul>
+</li>
+<li>工作空间项目（src源代码目录）    和     tomcat部署的web项目（out字节码文件输出目录）<ul>
+<li>tomcat真正访问的是“tomcat部署的web项目”，”tomcat部署的web项目”对应着”工作空间项目” 的web目录下的所有资源</li>
+<li>WEB-INF目录下的资源不能被浏览器直接访问</li>
+</ul>
+</li>
+<li>断点调试：使用”小虫子”启动 dubug 启动</li>
+</ol>
+<h1 id="动态Web项目的目录结构"><a href="#动态Web项目的目录结构" class="headerlink" title="动态Web项目的目录结构"></a>动态Web项目的目录结构</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">|-- 项目的根目录</span><br><span class="line">	|--- WEB-INF目录</span><br><span class="line">		|----- web.xml：web项目的核心配置文件</span><br><span class="line">		|----- classes目录：放置字节码文件的目录</span><br><span class="line">		|----- lib目录：放置依赖的jar包</span><br></pre></td></tr></table></figure>
+<h1 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h1><ul>
+<li>概念：Servlet（Server Applet）是<a href="https://baike.baidu.com/item/Java/85979" target="_blank" rel="noopener">Java</a> Servlet的简称，称为小服务程序或服务连接器，用Java编写的<a href="https://baike.baidu.com/item/服务器/100571" target="_blank" rel="noopener">服务器</a>端程序，具有独立于平台和<a href="https://baike.baidu.com/item/协议/13020269" target="_blank" rel="noopener">协议</a>的特性，主要功能在于交互式地浏览和生成数据，生成动态<a href="https://baike.baidu.com/item/Web/150564" target="_blank" rel="noopener">Web</a>内容。</li>
+<li>本质：Servlet的本质就是一个接口，我们想要处理逻辑的代码， 必须遵循Servlet的规范，写的代码不是我们自己调用的，而是Tomcat调用的，所以我们得让Tomcat认识我们的代码。</li>
+</ul>
+<h2 id="Servlet入门"><a href="#Servlet入门" class="headerlink" title="Servlet入门"></a>Servlet入门</h2><ol>
+<li>定义一个类实现Servlet的接口</li>
+<li>重写里面的所有的抽象方法</li>
+<li>在service方法中编写逻辑</li>
+<li>在web.xml中配置(或者使用注解配置)</li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>skywalker<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>cn.skywalker.web.servlet.DemoServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>skywalker<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/skywalker<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><span style="color:red; font-size:20px">XML和注解方式的原理</span></p>
+<p><img src="/images/xml和注解方式的原理.png" alt="xml和注解方式的原理"></p>
+<h2 id="虚拟路径"><a href="#虚拟路径" class="headerlink" title="虚拟路径"></a>虚拟路径</h2><p><img src="/images/virtual_path.png" alt="虚拟路径详解"></p>
+<h2 id="Servlet的执行原理"><a href="#Servlet的执行原理" class="headerlink" title="Servlet的执行原理"></a>Servlet的执行原理</h2><ol>
+<li>当服务器接受到客户端浏览器的请求后，会解析请求URL路径，获取访问的Servlet的资源路径</li>
+<li>查找web.xml文件，是否有对应的<code>&lt;url-pattern&gt;</code>标签体内容。</li>
+<li>如果有，则在找到对应的<code>&lt;servlet-class&gt;</code>全类名</li>
+<li>Tomcat会将字节码文件加载进内存，并且创建其对象</li>
+<li>调用其方法</li>
+</ol>
+<h2 id="Servlet的生命周期"><a href="#Servlet的生命周期" class="headerlink" title="Servlet的生命周期"></a>Servlet的生命周期</h2><ol>
+<li><p>被创建：执行init方法，只执行一次</p>
+<ul>
+<li><p>Servlet什么时候被创建？</p>
+<ul>
+<li><p>默认情况下，第一次被访问时，Servlet被创建</p>
+</li>
+<li><p>可以配置执行Servlet的创建时机。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">在&lt;servlet&gt;标签下配置：</span><br><span class="line">1. 第一次被访问时，创建</span><br><span class="line">	&lt;load-on-startup&gt;的值为负数</span><br><span class="line">2. 在服务器启动时，创建</span><br><span class="line">	&lt;load-on-startup&gt;的值为0或正整数</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Servlet的init方法，只执行一次，说明一个Servlet在内存中只存在一个对象，Servlet是单例的</p>
+<ul>
+<li>多个用户同时访问时，可能存在线程安全问题。</li>
+<li>解决：尽量不要在Servlet中定义成员变量。即使定义了成员变量，也不要对修改值</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>提供服务：执行service方法，执行多次</p>
+<ul>
+<li>每次访问Servlet时，Service方法都会被调用一次。</li>
+</ul>
+</li>
+<li><p>被销毁：执行destroy方法，只执行一次</p>
+<ul>
+<li>Servlet被销毁时执行。服务器关闭时，Servlet被销毁</li>
+<li>只有服务器正常关闭时，才会执行destroy方法。</li>
+<li>destroy方法在Servlet被销毁之前执行，一般用于释放资源</li>
+</ul>
+</li>
+</ol>
+<h2 id="3-0后的注解编写Servlet"><a href="#3-0后的注解编写Servlet" class="headerlink" title="3.0后的注解编写Servlet"></a>3.0后的注解编写Servlet</h2><ul>
+<li><p>好处：支持注解配置。可以不需要web.xml了。</p>
+</li>
+<li><p>步骤：</p>
+<ol>
+<li><p>创建JavaEE项目，选择Servlet的版本3.0以上，可以不创建web.xml</p>
+</li>
+<li><p>定义一个类，实现Servlet接口</p>
+</li>
+<li><p>复写方法</p>
+</li>
+<li><p>在类上使用@WebServlet注解，进行配置</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@WebServlet</span>(<span class="string">"资源路径"</span>)<span class="comment">//此注解加在Servlet类前，即可完成对Servlet的配置。相当方便。</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//附上WebServlet注解的源码</span></span><br><span class="line"><span class="meta">@Target</span>(&#123;ElementType.TYPE&#125;)</span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="meta">@Documented</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> WebServlet &#123;</span><br><span class="line">    <span class="function">String <span class="title">name</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;<span class="comment">//相当于&lt;Servlet-name&gt;</span></span><br><span class="line"></span><br><span class="line">    String[] value() <span class="keyword">default</span> &#123;&#125;;<span class="comment">//代表urlPatterns()属性配置</span></span><br><span class="line"></span><br><span class="line">    String[] urlPatterns() <span class="keyword">default</span> &#123;&#125;;<span class="comment">//相当于&lt;url-pattern&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">loadOnStartup</span><span class="params">()</span> <span class="keyword">default</span> -1</span>;<span class="comment">//相当于&lt;load-on-startup&gt;</span></span><br><span class="line"></span><br><span class="line">    WebInitParam[] initParams() <span class="keyword">default</span> &#123;&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">asyncSupported</span><span class="params">()</span> <span class="keyword">default</span> <span class="keyword">false</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function">String <span class="title">smallIcon</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function">String <span class="title">largeIcon</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function">String <span class="title">description</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function">String <span class="title">displayName</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="ServletResoponse-设置响应格式"><a href="#ServletResoponse-设置响应格式" class="headerlink" title="ServletResoponse 设置响应格式"></a>ServletResoponse 设置响应格式</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ServletResponse response = <span class="keyword">new</span> ServletResponse();</span><br><span class="line">response.setContentType(<span class="string">"application/msword"</span>);<span class="comment">//设置响应类型为word文档。</span></span><br><span class="line"><span class="comment">//具体可以在tomcat/config/web.xml中查找需要格式对应的值</span></span><br></pre></td></tr></table></figure>
 <hr>
 <h1 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a>JSP</h1><h2 id="JSP运行原理"><a href="#JSP运行原理" class="headerlink" title="JSP运行原理"></a>JSP运行原理</h2><blockquote>
 <ul>
@@ -934,7 +1024,7 @@
   <p><span>本文标题:</span><a href="/Java/JavaWeb/">JavaWeb</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 SkyWalker 的个人博客">SkyWalker</a></p>
   <p><span>发布时间:</span>2019年05月07日 - 11:05</p>
-  <p><span>最后更新:</span>2019年08月11日 - 20:08</p>
+  <p><span>最后更新:</span>2019年08月11日 - 21:08</p>
   <p><span>原始链接:</span><a href="/Java/JavaWeb/" title="JavaWeb">http://SkyWalkerKKKK.cn/Java/JavaWeb/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://SkyWalkerKKKK.cn/Java/JavaWeb/" aria-label="复制成功！"></i></span>
   </p>
@@ -1160,7 +1250,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Web相关概念"><span class="nav-number">1.</span> <span class="nav-text">Web相关概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Web服务器软件"><span class="nav-number">2.</span> <span class="nav-text">Web服务器软件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tomcat"><span class="nav-number">3.</span> <span class="nav-text">Tomcat</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Tomcat的安装和启动以及常见问题"><span class="nav-number">3.1.</span> <span class="nav-text">Tomcat的安装和启动以及常见问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">3.1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#卸载"><span class="nav-number">3.1.2.</span> <span class="nav-text">卸载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动"><span class="nav-number">3.1.3.</span> <span class="nav-text">启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见问题"><span class="nav-number">3.1.4.</span> <span class="nav-text">常见问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关闭"><span class="nav-number">3.1.5.</span> <span class="nav-text">关闭</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tomcat常见发布项目的方式"><span class="nav-number">3.2.</span> <span class="nav-text">Tomcat常见发布项目的方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将Tomcat配置到idea中"><span class="nav-number">3.3.</span> <span class="nav-text">将Tomcat配置到idea中</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Servlet"><span class="nav-number">4.</span> <span class="nav-text">Servlet</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Servlet入门，以及执行原理"><span class="nav-number">4.1.</span> <span class="nav-text">Servlet入门，以及执行原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Servlet的生命周期"><span class="nav-number">4.2.</span> <span class="nav-text">Servlet的生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-0后的注解编写Servlet"><span class="nav-number">4.3.</span> <span class="nav-text">3.0后的注解编写Servlet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ServletResoponse-设置响应格式"><span class="nav-number">4.4.</span> <span class="nav-text">ServletResoponse 设置响应格式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JSP"><span class="nav-number">5.</span> <span class="nav-text">JSP</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JSP运行原理"><span class="nav-number">5.1.</span> <span class="nav-text">JSP运行原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSP八大内置对象（实际上9个）"><span class="nav-number">5.2.</span> <span class="nav-text">JSP八大内置对象（实际上9个）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSP表达式"><span class="nav-number">5.3.</span> <span class="nav-text">JSP表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#域对象的属性操作"><span class="nav-number">5.4.</span> <span class="nav-text">域对象的属性操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#请求的转发和重定向"><span class="nav-number">5.5.</span> <span class="nav-text">请求的转发和重定向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSP指令"><span class="nav-number">5.6.</span> <span class="nav-text">JSP指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSP标签"><span class="nav-number">5.7.</span> <span class="nav-text">JSP标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中文乱码"><span class="nav-number">5.8.</span> <span class="nav-text">中文乱码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MVC设计模式"><span class="nav-number">6.</span> <span class="nav-text">MVC设计模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模型（Model）"><span class="nav-number">6.1.</span> <span class="nav-text">模型（Model）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#视图（View）"><span class="nav-number">6.2.</span> <span class="nav-text">视图（View）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#控制器（Controller）"><span class="nav-number">6.3.</span> <span class="nav-text">控制器（Controller）</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Web相关概念"><span class="nav-number">1.</span> <span class="nav-text">Web相关概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Web服务器软件"><span class="nav-number">2.</span> <span class="nav-text">Web服务器软件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tomcat"><span class="nav-number">3.</span> <span class="nav-text">Tomcat</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Tomcat的安装和启动以及常见问题"><span class="nav-number">3.1.</span> <span class="nav-text">Tomcat的安装和启动以及常见问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">3.1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#卸载"><span class="nav-number">3.1.2.</span> <span class="nav-text">卸载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动"><span class="nav-number">3.1.3.</span> <span class="nav-text">启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见问题"><span class="nav-number">3.1.4.</span> <span class="nav-text">常见问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关闭"><span class="nav-number">3.1.5.</span> <span class="nav-text">关闭</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tomcat常见发布项目的方式"><span class="nav-number">3.2.</span> <span class="nav-text">Tomcat常见发布项目的方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将Tomcat配置到idea中"><span class="nav-number">3.3.</span> <span class="nav-text">将Tomcat配置到idea中</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#动态Web项目的目录结构"><span class="nav-number">4.</span> <span class="nav-text">动态Web项目的目录结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Servlet"><span class="nav-number">5.</span> <span class="nav-text">Servlet</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Servlet入门"><span class="nav-number">5.1.</span> <span class="nav-text">Servlet入门</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚拟路径"><span class="nav-number">5.2.</span> <span class="nav-text">虚拟路径</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Servlet的执行原理"><span class="nav-number">5.3.</span> <span class="nav-text">Servlet的执行原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Servlet的生命周期"><span class="nav-number">5.4.</span> <span class="nav-text">Servlet的生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-0后的注解编写Servlet"><span class="nav-number">5.5.</span> <span class="nav-text">3.0后的注解编写Servlet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ServletResoponse-设置响应格式"><span class="nav-number">5.6.</span> <span class="nav-text">ServletResoponse 设置响应格式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JSP"><span class="nav-number">6.</span> <span class="nav-text">JSP</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JSP运行原理"><span class="nav-number">6.1.</span> <span class="nav-text">JSP运行原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSP八大内置对象（实际上9个）"><span class="nav-number">6.2.</span> <span class="nav-text">JSP八大内置对象（实际上9个）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSP表达式"><span class="nav-number">6.3.</span> <span class="nav-text">JSP表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#域对象的属性操作"><span class="nav-number">6.4.</span> <span class="nav-text">域对象的属性操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#请求的转发和重定向"><span class="nav-number">6.5.</span> <span class="nav-text">请求的转发和重定向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSP指令"><span class="nav-number">6.6.</span> <span class="nav-text">JSP指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSP标签"><span class="nav-number">6.7.</span> <span class="nav-text">JSP标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中文乱码"><span class="nav-number">6.8.</span> <span class="nav-text">中文乱码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MVC设计模式"><span class="nav-number">7.</span> <span class="nav-text">MVC设计模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模型（Model）"><span class="nav-number">7.1.</span> <span class="nav-text">模型（Model）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#视图（View）"><span class="nav-number">7.2.</span> <span class="nav-text">视图（View）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#控制器（Controller）"><span class="nav-number">7.3.</span> <span class="nav-text">控制器（Controller）</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1213,7 +1303,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共46.8k字</span>
+  <span class="post-count">博客全站共48k字</span>
 </div>
 
 
