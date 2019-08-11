@@ -113,15 +113,16 @@
 <meta property="og:site_name" content="SkyWalker的博客">
 <meta property="og:description" content="环境变量的配置 右键 “我的电脑” – “属性” – “高级系统设置” – “高级” – “环境变量” 打开环境变量设置。 新建系统变量“JAVA_HOME”，值的内容为JDK的根目录。 在“Path”环境变量的值中，增加“%JAVA_HOME%\bin;”  此时再使用cmd即可直接使用javac和java命令。 JDK9的JShell的简单使用直接在cmd中输入jshell，回车，即可启动JS">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://github.com/SkyWalkerKKKK/MyPictureLibrary/blob/master/JVM%E5%86%85%E5%AD%98%E5%9B%BE.bmp">
-<meta property="og:image" content="https://graph.baidu.com/resource/111ebc68a2d4fce2e66d701564882538.jpg">
-<meta property="og:image" content="https://graph.baidu.com/resource/111182e9d9ba5387c035301564882978.jpg">
-<meta property="og:image" content="https://graph.baidu.com/resource/11173606cfb6caff9282501564883082.jpg">
-<meta property="og:updated_time" content="2019-08-04T01:58:57.639Z">
+<meta property="og:image" content="http://skywalkerkkkk.cn/images/array.jpg">
+<meta property="og:image" content="http://skywalkerkkkk.cn/images/JVM.jpg">
+<meta property="og:image" content="http://skywalkerkkkk.cn/images/super.jpg">
+<meta property="og:image" content="http://skywalkerkkkk.cn/images/thread_cycle.jpg">
+<meta property="og:image" content="http://skywalkerkkkk.cn/images/producer&customer.jpg">
+<meta property="og:updated_time" content="2019-08-11T12:47:16.505Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaSE">
 <meta name="twitter:description" content="环境变量的配置 右键 “我的电脑” – “属性” – “高级系统设置” – “高级” – “环境变量” 打开环境变量设置。 新建系统变量“JAVA_HOME”，值的内容为JDK的根目录。 在“Path”环境变量的值中，增加“%JAVA_HOME%\bin;”  此时再使用cmd即可直接使用javac和java命令。 JDK9的JShell的简单使用直接在cmd中输入jshell，回车，即可启动JS">
-<meta name="twitter:image" content="https://github.com/SkyWalkerKKKK/MyPictureLibrary/blob/master/JVM%E5%86%85%E5%AD%98%E5%9B%BE.bmp">
+<meta name="twitter:image" content="http://skywalkerkkkk.cn/images/array.jpg">
 
 
 
@@ -561,8 +562,7 @@
 <p>使用建议：<br>如果不确定数组当中的具体内容，用动态初始化；否则，已经确定了具体的内容，用静态初始化。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo03</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 省略格式的静态初始化</span></span><br><span class="line">        <span class="keyword">int</span>[] arrayA = &#123; <span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span> &#125;;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 静态初始化的标准格式，可以拆分成为两个步骤</span></span><br><span class="line">        <span class="keyword">int</span>[] arrayB;</span><br><span class="line">        arrayB = <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; <span class="number">11</span>, <span class="number">21</span>, <span class="number">31</span> &#125;;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 动态初始化也可以拆分成为两个步骤</span></span><br><span class="line">        <span class="keyword">int</span>[] arrayC;</span><br><span class="line">        arrayC = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>];</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 静态初始化的省略格式，不能拆分成为两个步骤。</span></span><br><span class="line"><span class="comment">//        int[] arrayD;</span></span><br><span class="line"><span class="comment">//        arrayD = &#123; 10, 20, 30 &#125;;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>数组中的内存图</p>
-<!-- ![数组内存图](..\images\数组内存图.bmp) -->
-<p><img src="https://github.com/SkyWalkerKKKK/MyPictureLibrary/blob/master/JVM%E5%86%85%E5%AD%98%E5%9B%BE.bmp" alt="数组内存图"></p>
+<p><img src="/images/array.jpg" alt="数组内存图"></p>
 <h1 id="Random类"><a href="#Random类" class="headerlink" title="Random类"></a>Random类</h1><ul>
 <li><p>作用：用于产生一个随机数</p>
 </li>
@@ -620,7 +620,7 @@
 <ul>
 <li><strong>运行时数据区（Java Memory Allocation Area）：</strong>又叫虚拟机内存或者Java内存，虚拟机运行时需要从整个计算机内存划分一块内存区域存储许多东西。例如：字节码、从已装载的class文件中得到的其他信息、程序创建的对象、传递给方法的参数，返回值、局部变量等等。</li>
 </ul>
-<p><img src="https://graph.baidu.com/resource/111ebc68a2d4fce2e66d701564882538.jpg" alt="1562120489462"></p>
+<p><img src="/images/JVM.jpg" alt="JVM内存图"></p>
 <h2 id="Java内存分区"><a href="#Java内存分区" class="headerlink" title="Java内存分区"></a>Java内存分区</h2><p>从上节知道，运行时数据区即是java内存，而且数据区要存储的东西比较多，如果不对这块内存区域进行划分管理，会显得比较杂乱无章。 根据存储数据的不同，java内存通常被划分为5个区域：<span style="color:red;font-size:25px">程序计数器（Program Count Register）、本地方法栈（Native Stack）、方法区（Method Area）、栈（Stack）、堆（Heap）</span>。  </p>
 <ul>
 <li><strong>程序计数器（Program Count Register）：</strong>又叫程序寄存器。JVM支持多个线程同时运行，当每一个新线程被创建时，它都将得到它自己的PC寄存器（程序计数器）。如果线程正在执行的是一个Java方法（非native），那么PC寄存器的值将总是指向下一条将被执行的指令，如果方法是 native的，程序计数器寄存器的值不会被定义。 JVM的程序计数器寄存器的宽度足够保证可以持有一个返回地址或者native的指针。    </li>
@@ -678,7 +678,7 @@
 <h2 id="Super内存图"><a href="#Super内存图" class="headerlink" title="Super内存图"></a>Super内存图</h2><ul>
 <li>对象在堆内存中，会单独存在一块super区域，用来存放父类的数据</li>
 </ul>
-<p><img src="https://graph.baidu.com/resource/111182e9d9ba5387c035301564882978.jpg" alt="super内存图"></p>
+<p><img src="/images/super.jpg" alt="super内存图"></p>
 <h2 id="方法重写"><a href="#方法重写" class="headerlink" title="方法重写"></a>方法重写</h2><ul>
 <li>在重写方法时，可以在声明前加入@Override注解，可以帮助我们检查我们要重写的方法声明是否错误</li>
 <li>父类中私有的方法不能被重写</li>
@@ -870,9 +870,50 @@
 </ul>
 </li>
 <li><p>3、Math类的常用方法</p>
-<p>| 方法名    方法名                               | 说明                                           |<br>| ———————————————- | ———————————————- |<br>| public static int   abs(int a)                 | 返回参数的绝对值                               |<br>| public static double ceil(double a)            | 返回大于或等于参数的最小double值，等于一个整数 |<br>| public static double floor(double a)           | 返回小于或等于参数的最大double值，等于一个整数 |<br>| public   static int round(float a)             | 按照四舍五入返回最接近参数的int                |<br>| public static int   max(int a,int b)           | 返回两个int值中的较大值                        |<br>| public   static int min(int a,int b)           | 返回两个int值中的较小值                        |<br>| public   static double pow (double a,double b) | 返回a的b次幂的值                               |<br>| public   static double random()                | 返回值为double的正值，[0.0,1.0)                |</p>
 </li>
 </ul>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>public static int   abs(int a)</td>
+<td>返回参数的绝对值</td>
+</tr>
+<tr>
+<td>public static double ceil(double a)</td>
+<td>返回大于或等于参数的最小double值，等于一个整数</td>
+</tr>
+<tr>
+<td>public static double floor(double a)</td>
+<td>返回小于或等于参数的最大double值，等于一个整数</td>
+</tr>
+<tr>
+<td>public   static int round(float a)</td>
+<td>按照四舍五入返回最接近参数的int</td>
+</tr>
+<tr>
+<td>public static int max(int a,int b)</td>
+<td>返回两个int值中的较大值</td>
+</tr>
+<tr>
+<td>public static int min(int a,int b)</td>
+<td>返回两个int值中的较小值</td>
+</tr>
+<tr>
+<td>public static double pow (double a,double b)</td>
+<td>返回a的b次幂的值</td>
+</tr>
+<tr>
+<td>public static double random()</td>
+<td>返回值为double的正值，[0.0,1.0)</td>
+</tr>
+</tbody>
+</table>
 <h2 id="java-lang-Object"><a href="#java-lang-Object" class="headerlink" title="java.lang.Object"></a>java.lang.Object</h2><ul>
 <li>toString()</li>
 <li>equals()</li>
@@ -1182,10 +1223,42 @@
 </ul>
 <p>LinkedList集合的特有功能</p>
 <ul>
-<li><p>特有方法</p>
-<p>| 方法名                    | 说明                             |<br>| ————————- | ——————————– |<br>| public void addFirst(E e) | 在该列表开头插入指定的元素       |<br>| public void addLast(E e)  | 将指定的元素追加到此列表的末尾   |<br>| public E getFirst()       | 返回此列表中的第一个元素         |<br>| public   E getLast()      | 返回此列表中的最后一个元素       |<br>| public E removeFirst()    | 从此列表中删除并返回第一个元素   |<br>| public   E removeLast()   | 从此列表中删除并返回最后一个元素 |</p>
-</li>
+<li>特有方法</li>
 </ul>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>public void addFirst(E e)</td>
+<td>在该列表开头插入指定的元素</td>
+</tr>
+<tr>
+<td>public void addLast(E e)</td>
+<td>将指定的元素追加到此列表的末尾</td>
+</tr>
+<tr>
+<td>public E getFirst()</td>
+<td>返回此列表中的第一个元素</td>
+</tr>
+<tr>
+<td>public   E getLast()</td>
+<td>返回此列表中的最后一个元素</td>
+</tr>
+<tr>
+<td>public E removeFirst()</td>
+<td>从此列表中删除并返回第一个元素</td>
+</tr>
+<tr>
+<td>public   E removeLast()</td>
+<td>从此列表中删除并返回最后一个元素</td>
+</tr>
+</tbody>
+</table>
 <h3 id="Set接口"><a href="#Set接口" class="headerlink" title="Set接口"></a>Set接口</h3><p>方法与List接口几乎一模一样。</p>
 <p>主要实现类有HashSet、TreeSet、LinkedHashSet。</p>
 <p>存储的数据是不可重复的、不保证与添加顺序一致的（存取无序）。</p>
@@ -1336,17 +1409,65 @@
 </li>
 </ul>
 <h3 id="Properties作为Map集合的特有方法"><a href="#Properties作为Map集合的特有方法" class="headerlink" title="Properties作为Map集合的特有方法"></a>Properties作为Map集合的特有方法</h3><ul>
-<li><p>特有方法</p>
-<p>| 方法名                                         | 说明                                                         |<br>| ———————————————- | ———————————————————— |<br>| Object   setProperty(String key, String value) | 设置集合的键和值，都是String类型，底层调用   Hashtable方法 put |<br>| String   getProperty(String key)               | 使用此属性列表中指定的键搜索属性                             |<br>| Set<string>   stringPropertyNames()            | 从该属性列表中返回一个不可修改的键集，其中键及其对应的值是字符串 |</string></p>
-</li>
+<li>特有方法</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Object   setProperty(String key, String value)</code></td>
+<td>设置集合的键和值，都是String类型，底层调用   Hashtable方法 put</td>
+</tr>
+<tr>
+<td><code>String   getProperty(String key)</code></td>
+<td>使用此属性列表中指定的键搜索属性</td>
+</tr>
+<tr>
+<td><code>Set&lt;String&gt;   stringPropertyNames()</code></td>
+<td>从该属性列表中返回一个不可修改的键集，其中键及其对应的值是字符串</td>
+</tr>
+</tbody>
+</table>
+<ul>
 <li><p>示例代码</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PropertiesDemo02</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//创建集合对象</span></span><br><span class="line">        Properties prop = <span class="keyword">new</span> Properties();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//Object setProperty(String key, String value)：设置集合的键和值，都是String类型，底层调用Hashtable方法put</span></span><br><span class="line">        prop.setProperty(<span class="string">"it001"</span>, <span class="string">"lcw"</span>);</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">            Object setProperty(String key, String value) &#123;</span></span><br><span class="line"><span class="comment">                return put(key, value);</span></span><br><span class="line"><span class="comment">            &#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">            Object put(Object key, Object value) &#123;</span></span><br><span class="line"><span class="comment">                return map.put(key, value);</span></span><br><span class="line"><span class="comment">            &#125;</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        prop.setProperty(<span class="string">"it002"</span>, <span class="string">"ld"</span>);</span><br><span class="line">        prop.setProperty(<span class="string">"it003"</span>, <span class="string">"lgl"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//String getProperty(String key)：使用此属性列表中指定的键搜索属性</span></span><br><span class="line"><span class="comment">//        System.out.println(prop.getProperty("it001"));</span></span><br><span class="line"><span class="comment">//        System.out.println(prop.getProperty("it0011"));</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//        System.out.println(prop);</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//Set&lt;String&gt; stringPropertyNames()：从该属性列表中返回一个不可修改的键集，其中键及其对应的值是字符串</span></span><br><span class="line">        Set&lt;String&gt; names = prop.stringPropertyNames();</span><br><span class="line">        <span class="keyword">for</span> (String key : names) &#123;</span><br><span class="line"><span class="comment">//            System.out.println(key);</span></span><br><span class="line">            String value = prop.getProperty(key);</span><br><span class="line">            System.out.println(key + <span class="string">","</span> + value);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="Properties和IO流相结合的方法"><a href="#Properties和IO流相结合的方法" class="headerlink" title="Properties和IO流相结合的方法"></a>Properties和IO流相结合的方法</h3><ul>
-<li><p>和IO流结合的方法</p>
-<p>| 方法名                                          | 说明                                                         |<br>| ———————————————– | ———————————————————— |<br>| void   load(InputStream inStream)               | 从输入字节流读取属性列表（键和元素对）                       |<br>| void   load(Reader reader)                      | 从输入字符流读取属性列表（键和元素对）                       |<br>| void   store(OutputStream out, String comments) | 将此属性列表（键和元素对）写入此   Properties表中，以适合于使用   load(InputStream)方法的格式写入输出字节流 |<br>| void   store(Writer writer, String comments)    | 将此属性列表（键和元素对）写入此   Properties表中，以适合使用   load(Reader)方法的格式写入输出字符流 |</p>
-</li>
+<li>和IO流结合的方法</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>void   load(InputStream inStream)</code></td>
+<td>从输入字节流读取属性列表（键和元素对）</td>
+</tr>
+<tr>
+<td><code>void   load(Reader reader)</code></td>
+<td>从输入字符流读取属性列表（键和元素对）</td>
+</tr>
+<tr>
+<td><code>void   store(OutputStream out, String comments)</code></td>
+<td>将此属性列表（键和元素对）写入此   Properties表中，以适合于使用   load(InputStream)方法的格式写入输出字节流</td>
+</tr>
+<tr>
+<td><code>void   store(Writer writer, String comments)</code></td>
+<td>将此属性列表（键和元素对）写入此   Properties表中，以适合使用   load(Reader)方法的格式写入输出字符流</td>
+</tr>
+</tbody>
+</table>
+<ul>
 <li><p>示例代码</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PropertiesDemo03</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        <span class="comment">//把集合中的数据保存到文件</span></span><br><span class="line"><span class="comment">//        myStore();</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//把文件中的数据加载到集合</span></span><br><span class="line">        myLoad();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">myLoad</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        Properties prop = <span class="keyword">new</span> Properties();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//void load(Reader reader)：</span></span><br><span class="line">        FileReader fr = <span class="keyword">new</span> FileReader(<span class="string">"myOtherStream\\fw.txt"</span>);</span><br><span class="line">        prop.load(fr);</span><br><span class="line">        fr.close();</span><br><span class="line"></span><br><span class="line">        System.out.println(prop);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">myStore</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        Properties prop = <span class="keyword">new</span> Properties();</span><br><span class="line"></span><br><span class="line">        prop.setProperty(<span class="string">"it001"</span>,<span class="string">"lcw"</span>);</span><br><span class="line">        prop.setProperty(<span class="string">"it002"</span>,<span class="string">"ld"</span>);</span><br><span class="line">        prop.setProperty(<span class="string">"it003"</span>,<span class="string">"lgl"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//void store(Writer writer, String comments)：</span></span><br><span class="line">        FileWriter fw = <span class="keyword">new</span> FileWriter(<span class="string">"myOtherStream\\fw.txt"</span>);</span><br><span class="line">        prop.store(fw,<span class="keyword">null</span>);</span><br><span class="line">        fw.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
@@ -1395,11 +1516,40 @@
 </ul>
 </li>
 <li><p>构造方法</p>
-<p>| 方法名                               | 说明                                               |<br>| ———————————— | ————————————————– |<br>| ObjectOutputStream(OutputStream out) | 创建一个写入指定的OutputStream的ObjectOutputStream |</p>
 </li>
-<li><p>序列化对象的方法</p>
-<p>| 方法名                       | 说明                               |<br>| —————————- | ———————————- |<br>| void writeObject(Object obj) | 将指定的对象写入ObjectOutputStream |</p>
-</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ObjectOutputStream(OutputStream out)</code></td>
+<td>创建一个写入指定的OutputStream的ObjectOutputStream</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>序列化对象的方法</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>void writeObject(Object obj)</code></td>
+<td>将指定的对象写入ObjectOutputStream</td>
+</tr>
+</tbody>
+</table>
+<ul>
 <li><p>示例代码</p>
 <ul>
 <li><p>学生类</p>
@@ -1424,11 +1574,40 @@
 </ul>
 </li>
 <li><p>构造方法</p>
-<p>| 方法名                            | 说明                                           |<br>| ——————————— | ———————————————- |<br>| ObjectInputStream(InputStream in) | 创建从指定的InputStream读取的ObjectInputStream |</p>
 </li>
-<li><p>反序列化对象的方法</p>
-<p>| 方法名              | 说明                            |<br>| ——————- | ——————————- |<br>| Object readObject() | 从ObjectInputStream读取一个对象 |</p>
-</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ObjectInputStream(InputStream in)</code></td>
+<td>创建从指定的InputStream读取的ObjectInputStream</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>反序列化对象的方法</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Object readObject()</code></td>
+<td>从ObjectInputStream读取一个对象</td>
+</tr>
+</tbody>
+</table>
+<ul>
 <li><p>示例代码</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ObjectInputStreamDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException, ClassNotFoundException </span>&#123;</span><br><span class="line">        <span class="comment">//ObjectInputStream(InputStream in)：创建从指定的InputStream读取的ObjectInputStream</span></span><br><span class="line">        ObjectInputStream ois = <span class="keyword">new</span> ObjectInputStream(<span class="keyword">new</span> FileInputStream(<span class="string">"myOtherStream\\oos.txt"</span>));</span><br><span class="line"></span><br><span class="line">        <span class="comment">//Object readObject()：从ObjectInputStream读取一个对象</span></span><br><span class="line">        Object obj = ois.readObject();</span><br><span class="line"></span><br><span class="line">        Student s = (Student) obj;</span><br><span class="line">        System.out.println(s.getName() + <span class="string">","</span> + s.getAge());</span><br><span class="line"></span><br><span class="line">        ois.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
@@ -1478,9 +1657,27 @@
 </li>
 </ul>
 <h2 id="实现多线程"><a href="#实现多线程" class="headerlink" title="实现多线程"></a>实现多线程</h2><h3 id="实现多线程方式一：继承Thread类"><a href="#实现多线程方式一：继承Thread类" class="headerlink" title="实现多线程方式一：继承Thread类"></a>实现多线程方式一：继承Thread类</h3><ul>
-<li><p>方法介绍</p>
-<p>| 方法名       | 说明                                        |<br>| ———— | ——————————————- |<br>| void run()   | 在线程开启后，此方法将被调用执行            |<br>| void start() | 使此线程开始执行，Java虚拟机会调用run方法() |</p>
-</li>
+<li>方法介绍</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>void run()</code></td>
+<td>在线程开启后，此方法将被调用执行</td>
+</tr>
+<tr>
+<td><code>void start()</code></td>
+<td>使此线程开始执行，Java虚拟机会调用run方法()</td>
+</tr>
+</tbody>
+</table>
+<ul>
 <li><p>实现步骤</p>
 <ul>
 <li>定义一个类MyThread继承Thread类</li>
@@ -1491,9 +1688,27 @@
 </li>
 </ul>
 <h3 id="实现多线程方式二：实现Runnable接口"><a href="#实现多线程方式二：实现Runnable接口" class="headerlink" title="实现多线程方式二：实现Runnable接口"></a>实现多线程方式二：实现Runnable接口</h3><ul>
-<li><p>Thread构造方法</p>
-<p>| 方法名                               | 说明                   |<br>| ———————————— | ———————- |<br>| Thread(Runnable target)              | 分配一个新的Thread对象 |<br>| Thread(Runnable target, String name) | 分配一个新的Thread对象 |</p>
-</li>
+<li>Thread构造方法</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Thread(Runnable target)</code></td>
+<td>分配一个新的Thread对象</td>
+</tr>
+<tr>
+<td><code>Thread(Runnable target, String name)</code></td>
+<td>分配一个新的Thread对象</td>
+</tr>
+</tbody>
+</table>
+<ul>
 <li><p>实现步骤</p>
 <ul>
 <li>定义一个类MyRunnable实现Runnable接口</li>
@@ -1505,10 +1720,30 @@
 </li>
 </ul>
 <h3 id="设置和获取线程名称"><a href="#设置和获取线程名称" class="headerlink" title="设置和获取线程名称"></a>设置和获取线程名称</h3><ul>
-<li><p>方法介绍</p>
-<p>| 方法名                     | 说明                               |<br>| ————————– | ———————————- |<br>| void  setName(String name) | 将此线程的名称更改为等于参数name   |<br>| String  getName()          | 返回此线程的名称                   |<br>| Thread  currentThread()    | 返回对当前正在执行的线程对象的引用 |</p>
-</li>
+<li>方法介绍</li>
 </ul>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>void  setName(String name)</code></td>
+<td>将此线程的名称更改为等于参数name</td>
+</tr>
+<tr>
+<td><code>String  getName()</code></td>
+<td>返回此线程的名称</td>
+</tr>
+<tr>
+<td><code>Thread  currentThread()</code></td>
+<td>返回对当前正在执行的线程对象的引用</td>
+</tr>
+</tbody>
+</table>
 <h3 id="线程优先级"><a href="#线程优先级" class="headerlink" title="线程优先级"></a>线程优先级</h3><ul>
 <li><p>线程调度</p>
 <ul>
@@ -1526,15 +1761,52 @@
 </ul>
 </li>
 <li><p>优先级相关方法</p>
-<p>| 方法名                                  | 说明                                                         |<br>| ————————————— | ———————————————————— |<br>| final int getPriority()                 | 返回此线程的优先级                                           |<br>| final void setPriority(int newPriority) | 更改此线程的优先级。线程默认优先级是5；线程优先级的范围是：1-10 |</p>
 </li>
 </ul>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>final int getPriority()</code></td>
+<td>返回此线程的优先级</td>
+</tr>
+<tr>
+<td><code>final void setPriority(int newPriority)</code></td>
+<td>更改此线程的优先级。线程默认优先级是5；线程优先级的范围是：1-10</td>
+</tr>
+</tbody>
+</table>
 <h3 id="线程控制"><a href="#线程控制" class="headerlink" title="线程控制"></a>线程控制</h3><ul>
-<li><p>相关方法</p>
-<p>| 方法名                         | 说明                                                         |<br>| —————————— | ———————————————————— |<br>| static void sleep(long millis) | 使当前正在执行的线程停留（暂停执行）指定的毫秒数             |<br>| void join()                    | 等待这个线程死亡（如果某个线程调用了此方法，则其他并发的线程必须等待这个线程死亡后才有机会调用） |<br>| void setDaemon(boolean on)     | 将此线程标记为守护线程，当运行的线程都是守护线程时，Java虚拟机将退出 |</p>
-</li>
+<li>相关方法</li>
 </ul>
-<h3 id="线程的生命周期"><a href="#线程的生命周期" class="headerlink" title="线程的生命周期"></a>线程的生命周期</h3><p><img src="https://graph.baidu.com/resource/11173606cfb6caff9282501564883082.jpg" alt="线程生命周期"></p>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>static void sleep(long millis)</code></td>
+<td>使当前正在执行的线程停留（暂停执行）指定的毫秒数</td>
+</tr>
+<tr>
+<td><code>void join()</code></td>
+<td>等待这个线程死亡（如果某个线程调用了此方法，则其他并发的线程必须等待这个线程死亡后才有机会调用）</td>
+</tr>
+<tr>
+<td><code>void setDaemon(boolean on)</code></td>
+<td>将此线程标记为守护线程，当运行的线程都是守护线程时，Java虚拟机将退出</td>
+</tr>
+</tbody>
+</table>
+<h3 id="线程的生命周期"><a href="#线程的生命周期" class="headerlink" title="线程的生命周期"></a>线程的生命周期</h3><p><img src="/images/thread_cycle.jpg" alt="线程生命周期"></p>
 <h2 id="线程同步"><a href="#线程同步" class="headerlink" title="线程同步"></a>线程同步</h2><h3 id="卖票"><a href="#卖票" class="headerlink" title="卖票"></a>卖票</h3><ul>
 <li><p>案例需求</p>
 <p>某电影院目前正在上映国产大片，共有100张票，而它有3个窗口卖票，请设计一个程序模拟该电影院卖票</p>
@@ -1564,6 +1836,7 @@
 <p>线程执行的随机性导致的</p>
 </li>
 </ul>
+<h3 id="生产者与消费者"><a href="#生产者与消费者" class="headerlink" title="生产者与消费者"></a>生产者与消费者</h3><p><img src="/images/producer&amp;customer.jpg" alt="生产者与消费者"></p>
 <h1 id="网络编程入门"><a href="#网络编程入门" class="headerlink" title="网络编程入门"></a>网络编程入门</h1><h2 id="网络编程概述"><a href="#网络编程概述" class="headerlink" title="网络编程概述"></a>网络编程概述</h2><ul>
 <li><p>计算机网络</p>
 <p>是指将地理位置不同的具有独立功能的多台计算机及其外部设备，通过通信线路连接起来，在网络操作系统，网络管理软件及网络通信协议的管理和协调下，实现资源共享和信息传递的计算机系统</p>
@@ -1602,9 +1875,31 @@
 </ul>
 <h3 id="InetAddress"><a href="#InetAddress" class="headerlink" title="InetAddress"></a>InetAddress</h3><p>InetAddress：此类表示Internet协议（IP）地址</p>
 <ul>
-<li><p>相关方法</p>
-<p>| 方法名                                    | 说明                                                         |<br>| —————————————– | ———————————————————— |<br>| static InetAddress getByName(String host) | 确定主机名称的IP地址。主机名称可以是机器名称，也可以是IP地址 |<br>| String getHostName()                      | 获取此IP地址的主机名                                         |<br>| String getHostAddress()                   | 返回文本显示中的IP地址字符串                                 |</p>
-</li>
+<li>相关方法</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>static InetAddress getByName(String host)</code></td>
+<td>确定主机名称的IP地址。主机名称可以是机器名称，也可以是IP地址</td>
+</tr>
+<tr>
+<td><code>String getHostName()</code></td>
+<td>获取此IP地址的主机名</td>
+</tr>
+<tr>
+<td><code>String getHostAddress()</code></td>
+<td>返回文本显示中的IP地址字符串</td>
+</tr>
+</tbody>
+</table>
+<ul>
 <li><p>代码演示</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InetAddressDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> UnknownHostException </span>&#123;</span><br><span class="line">		<span class="comment">//InetAddress address = InetAddress.getByName("skywalker");</span></span><br><span class="line">        InetAddress address = InetAddress.getByName(<span class="string">"192.168.1.66"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//public String getHostName()：获取此IP地址的主机名</span></span><br><span class="line">        String name = address.getHostName();</span><br><span class="line">        <span class="comment">//public String getHostAddress()：返回文本显示中的IP地址字符串</span></span><br><span class="line">        String ip = address.getHostAddress();</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"主机名："</span> + name);</span><br><span class="line">        System.out.println(<span class="string">"IP地址："</span> + ip);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
@@ -1657,11 +1952,52 @@
 </ul>
 </li>
 <li><p>构造方法</p>
-<p>| 方法名                                                      | 说明                                                 |<br>| ———————————————————– | —————————————————- |<br>| DatagramSocket()                                            | 创建数据报套接字并将其绑定到本机地址上的任何可用端口 |<br>| DatagramPacket(byte[] buf,int len,InetAddress add,int port) | 创建数据包,发送长度为len的数据包到指定主机的指定端口 |</p>
 </li>
-<li><p>相关方法</p>
-<p>| 方法名                         | 说明                   |<br>| —————————— | ———————- |<br>| void send(DatagramPacket p)    | 发送数据报包           |<br>| void close()                   | 关闭数据报套接字       |<br>| void receive(DatagramPacket p) | 从此套接字接受数据报包 |</p>
-</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DatagramSocket()</code></td>
+<td>创建数据报套接字并将其绑定到本机地址上的任何可用端口</td>
+</tr>
+<tr>
+<td><code>DatagramPacket(byte[] buf,int len,InetAddress add,int port)</code></td>
+<td>创建数据包,发送长度为len的数据包到指定主机的指定端口</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>相关方法</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>void send(DatagramPacket p)</code></td>
+<td>发送数据报包</td>
+</tr>
+<tr>
+<td><code>void close()</code></td>
+<td>关闭数据报套接字</td>
+</tr>
+<tr>
+<td><code>void receive(DatagramPacket p)</code></td>
+<td>从此套接字接受数据报包</td>
+</tr>
+</tbody>
+</table>
+<ul>
 <li><p>发送数据的步骤</p>
 <ul>
 <li>创建发送端的Socket对象(DatagramSocket)</li>
@@ -1685,11 +2021,44 @@
 </ul>
 </li>
 <li><p>构造方法</p>
-<p>| 方法名                              | 说明                                            |<br>| ———————————– | ———————————————– |<br>| DatagramPacket(byte[] buf, int len) | 创建一个DatagramPacket用于接收长度为len的数据包 |</p>
 </li>
-<li><p>相关方法</p>
-<p>| 方法名            | 说明                                     |<br>| —————– | —————————————- |<br>| byte[]  getData() | 返回数据缓冲区                           |<br>| int  getLength()  | 返回要发送的数据的长度或接收的数据的长度 |</p>
-</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DatagramPacket(byte[] buf, int len)</code></td>
+<td>创建一个DatagramPacket用于接收长度为len的数据包</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>相关方法</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>byte[]  getData()</code></td>
+<td>返回数据缓冲区</td>
+</tr>
+<tr>
+<td><code>int  getLength()</code></td>
+<td>返回要发送的数据的长度或接收的数据的长度</td>
+</tr>
+</tbody>
+</table>
+<ul>
 <li><p>示例代码</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ReceiveDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        <span class="comment">//创建接收端的Socket对象(DatagramSocket)</span></span><br><span class="line">        DatagramSocket ds = <span class="keyword">new</span> DatagramSocket(<span class="number">12345</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">            <span class="comment">//创建一个数据包，用于接收数据</span></span><br><span class="line">            <span class="keyword">byte</span>[] bys = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</span><br><span class="line">            DatagramPacket dp = <span class="keyword">new</span> DatagramPacket(bys, bys.length);</span><br><span class="line"></span><br><span class="line">            <span class="comment">//调用DatagramSocket对象的方法接收数据</span></span><br><span class="line">            ds.receive(dp);</span><br><span class="line"></span><br><span class="line">            <span class="comment">//解析数据包，并把数据在控制台显示</span></span><br><span class="line">            System.out.println(<span class="string">"数据是："</span> + <span class="keyword">new</span> String(dp.getData(), <span class="number">0</span>,                                             dp.getLength()));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
@@ -1711,22 +2080,87 @@
 </ul>
 </li>
 <li><p>构造方法</p>
-<p>| 方法名                               | 说明                                           |<br>| ———————————— | ———————————————- |<br>| Socket(InetAddress address,int port) | 创建流套接字并将其连接到指定IP指定端口号       |<br>| Socket(String host, int port)        | 创建流套接字并将其连接到指定主机上的指定端口号 |</p>
 </li>
-<li><p>相关方法</p>
-<p>| 方法名                         | 说明                 |<br>| —————————— | ——————– |<br>| InputStream  getInputStream()  | 返回此套接字的输入流 |<br>| OutputStream getOutputStream() | 返回此套接字的输出流 |</p>
-</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Socket(InetAddress address,int port)</code></td>
+<td>创建流套接字并将其连接到指定IP指定端口号</td>
+</tr>
+<tr>
+<td><code>Socket(String host, int port)</code></td>
+<td>创建流套接字并将其连接到指定主机上的指定端口号</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>相关方法</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>InputStream  getInputStream()</code></td>
+<td>返回此套接字的输入流</td>
+</tr>
+<tr>
+<td><code>OutputStream getOutputStream()</code></td>
+<td>返回此套接字的输出流</td>
+</tr>
+</tbody>
+</table>
+<ul>
 <li><p>示例代码</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClientDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        <span class="comment">//创建客户端的Socket对象(Socket)</span></span><br><span class="line">        <span class="comment">//Socket(String host, int port) 创建流套接字并将其连接到指定主机上的指定端口号</span></span><br><span class="line">        Socket s = <span class="keyword">new</span> Socket(<span class="string">"192.168.1.66"</span>,<span class="number">10000</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//获取输出流，写数据</span></span><br><span class="line">        <span class="comment">//OutputStream getOutputStream() 返回此套接字的输出流</span></span><br><span class="line">        OutputStream os = s.getOutputStream();</span><br><span class="line">        os.write(<span class="string">"hello,tcp,我来了"</span>.getBytes());</span><br><span class="line"></span><br><span class="line">        <span class="comment">//释放资源</span></span><br><span class="line">        s.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="TCP接收数据"><a href="#TCP接收数据" class="headerlink" title="TCP接收数据"></a>TCP接收数据</h3><ul>
-<li><p>构造方法</p>
-<p>| 方法名                  | 说明                             |<br>| ———————– | ——————————– |<br>| ServletSocket(int port) | 创建绑定到指定端口的服务器套接字 |</p>
-</li>
-<li><p>相关方法</p>
-<p>| 方法名          | 说明                           |<br>| ————— | —————————— |<br>| Socket accept() | 监听要连接到此的套接字并接受它 |</p>
-</li>
+<li>构造方法</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ServletSocket(int port)</code></td>
+<td>创建绑定到指定端口的服务器套接字</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>相关方法</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Socket accept()</code></td>
+<td>监听要连接到此的套接字并接受它</td>
+</tr>
+</tbody>
+</table>
+<ul>
 <li><p>示例代码</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ServerDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        <span class="comment">//创建服务器端的Socket对象(ServerSocket)</span></span><br><span class="line">        <span class="comment">//ServerSocket(int port) 创建绑定到指定端口的服务器套接字</span></span><br><span class="line">        ServerSocket ss = <span class="keyword">new</span> ServerSocket(<span class="number">10000</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//Socket accept() 侦听要连接到此套接字并接受它</span></span><br><span class="line">        Socket s = ss.accept();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//获取输入流，读数据，并把数据显示在控制台</span></span><br><span class="line">        InputStream is = s.getInputStream();</span><br><span class="line">        <span class="keyword">byte</span>[] bys = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</span><br><span class="line">        <span class="keyword">int</span> len = is.read(bys);</span><br><span class="line">        String data = <span class="keyword">new</span> String(bys,<span class="number">0</span>,len);</span><br><span class="line">        System.out.println(<span class="string">"数据是："</span> + data);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//释放资源</span></span><br><span class="line">        s.close();</span><br><span class="line">        ss.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
@@ -1919,12 +2353,14 @@
 <li><p>如何将集合或者数组转为Stream流对象（集合/数组-&gt;Stream流）</p>
 <ul>
 <li><p>单列集合<br>通过Collection接口的默认方法stream()，比如：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">    Stream&lt;String&gt; listStream = list.stream();</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//list</span></span><br><span class="line">    List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">    Stream&lt;String&gt; listStream = list.stream();</span><br><span class="line">    <span class="comment">//set</span></span><br><span class="line">    Set&lt;String&gt; set = <span class="keyword">new</span> HashSet&lt;String&gt;();</span><br><span class="line">    Stream&lt;String&gt; setStream = set.stream();</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
+<li><p>双列集合<br>不能直接转为Stream流对象，需要先转为单列集合，然后再调用stream()方法转为流对象，比如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String,Integer&gt; map = <span class="keyword">new</span> HashMap&lt;String, Integer&gt;();</span><br><span class="line"></span><br><span class="line">  Stream&lt;String&gt; keyStream = map.keySet().stream();</span><br><span class="line"></span><br><span class="line">  Stream&lt;Integer&gt; valueStream = map.values().stream();</span><br><span class="line"></span><br><span class="line">  Stream&lt;Map.Entry&lt;String, Integer&gt;&gt; entryStream = map.entrySet().stream()</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<p>Set<string> set = new HashSet<string>();<br>    Stream<string> setStream = set.stream();<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">- 双列集合</span><br><span class="line">  不能直接转为Stream流对象，需要先转为单列集合，然后再调用stream()方法转为流对象，比如：</span><br><span class="line">  </span><br><span class="line">  ```java</span><br><span class="line">  Map&lt;String,Integer&gt; map = new HashMap&lt;String, Integer&gt;();</span><br><span class="line">  </span><br><span class="line">    Stream&lt;String&gt; keyStream = map.keySet().stream();</span><br><span class="line">  </span><br><span class="line">    Stream&lt;Integer&gt; valueStream = map.values().stream();</span><br><span class="line">  </span><br><span class="line">    Stream&lt;Map.Entry&lt;String, Integer&gt;&gt; entryStream = map.entrySet().stream();</span><br></pre></td></tr></table></figure></string></string></string></p>
 <ul>
 <li><p>数组<br>通过Stream接口的静态方法of(T… values)，比如：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">  String[] strArray = &#123;<span class="string">"hello"</span>,<span class="string">"world"</span>,<span class="string">"java"</span>&#125;;</span><br><span class="line">  Stream&lt;String&gt; strArrayStream = Stream.of(strArray);</span><br><span class="line">  或者</span><br><span class="line">Stream&lt;String&gt; strArrayStream2 = Stream.of(<span class="string">"hello"</span>, <span class="string">"world"</span>, <span class="string">"java"</span>);</span><br></pre></td></tr></table></figure>
@@ -1936,7 +2372,8 @@
 </li>
 </ul>
 <ul>
-<li>Stream流的收集（Stream流-&gt;集合/数组）<br>收集到集合<pre><code>收集到List集合
+<li><p>Stream流的收集（Stream流-&gt;集合/数组）<br>收集到集合</p>
+<pre><code>收集到List集合
     stream.collect(Collectors.toList());
     比如：
     List&lt;String&gt; names = listStream.collect(Collectors.toList());
@@ -1953,8 +2390,6 @@
             )
     );
 </code></pre></li>
-</ul>
-<ul>
 <li><p>收集到数组</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Stream&lt;String&gt; stream = Stream.of(<span class="string">"hello"</span>, <span class="string">"world"</span>, <span class="string">"java"</span>, <span class="string">"php"</span>, <span class="string">"mysql"</span>);</span><br><span class="line"><span class="comment">// 只要后三个元素</span></span><br><span class="line">Stream&lt;String&gt; skipStream = stream.skip(<span class="number">2</span>);</span><br><span class="line"><span class="comment">//String[] strings = skipStream.toArray(length-&gt;new String[length]);</span></span><br><span class="line">String[] strings = skipStream.toArray(String[]::<span class="keyword">new</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (String s : strings) &#123;</span><br><span class="line">    System.out.println(s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
@@ -2011,9 +2446,27 @@
 <li>类加载器的继承关系：System的父加载器为Platform，而Platform的父加载器为Bootstrap</li>
 </ul>
 <h3 id="ClassLoader-中的两个方法"><a href="#ClassLoader-中的两个方法" class="headerlink" title="ClassLoader 中的两个方法"></a>ClassLoader 中的两个方法</h3><ul>
-<li><p>方法分类</p>
-<p>| 方法名                                    | 说明                       |<br>| —————————————– | ————————– |<br>| static ClassLoader getSystemClassLoader() | 返回用于委派的系统类加载器 |<br>| ClassLoader getParent()                   | 返回父类加载器进行委派     |</p>
-</li>
+<li>方法分类</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>static ClassLoader getSystemClassLoader()</code></td>
+<td>返回用于委派的系统类加载器</td>
+</tr>
+<tr>
+<td><code>ClassLoader getParent()</code></td>
+<td>返回父类加载器进行委派</td>
+</tr>
+</tbody>
+</table>
+<ul>
 <li><p>示例代码</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClassLoaderDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//static ClassLoader getSystemClassLoader()：返回用于委派的系统类加载器</span></span><br><span class="line">        ClassLoader c = ClassLoader.getSystemClassLoader();</span><br><span class="line">        System.out.println(c); <span class="comment">//AppClassLoader</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//ClassLoader getParent()：返回父类加载器进行委派</span></span><br><span class="line">        ClassLoader c2 = c.getParent();</span><br><span class="line">        System.out.println(c2); <span class="comment">//PlatformClassLoader</span></span><br><span class="line"></span><br><span class="line">        ClassLoader c3 = c2.getParent();</span><br><span class="line">        System.out.println(c3); <span class="comment">//null</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
@@ -2166,7 +2619,7 @@
   <p><span>本文标题:</span><a href="/Java/JavaSE/">JavaSE</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 SkyWalker 的个人博客">SkyWalker</a></p>
   <p><span>发布时间:</span>2019年06月26日 - 23:06</p>
-  <p><span>最后更新:</span>2019年08月04日 - 09:08</p>
+  <p><span>最后更新:</span>2019年08月11日 - 20:08</p>
   <p><span>原始链接:</span><a href="/Java/JavaSE/" title="JavaSE">http://SkyWalkerKKKK.cn/Java/JavaSE/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://SkyWalkerKKKK.cn/Java/JavaSE/" aria-label="复制成功！"></i></span>
   </p>
@@ -2321,7 +2774,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2332,7 +2785,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2343,7 +2796,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2392,7 +2845,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#环境变量的配置"><span class="nav-number">1.</span> <span class="nav-text">环境变量的配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JDK9的JShell的简单使用"><span class="nav-number">2.</span> <span class="nav-text">JDK9的JShell的简单使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#编译器的两点优化（对于变量的赋值）"><span class="nav-number">3.</span> <span class="nav-text">编译器的两点优化（对于变量的赋值）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一个优化"><span class="nav-number">3.1.</span> <span class="nav-text">第一个优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二个优化"><span class="nav-number">3.2.</span> <span class="nav-text">第二个优化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#switch语句使用的注意事项"><span class="nav-number">4.</span> <span class="nav-text">switch语句使用的注意事项</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组的定义"><span class="nav-number">5.</span> <span class="nav-text">数组的定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Random类"><span class="nav-number">6.</span> <span class="nav-text">Random类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方法重载的注意点"><span class="nav-number">7.</span> <span class="nav-text">方法重载的注意点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#集成开发环境IntelliJ-IDEA"><span class="nav-number">8.</span> <span class="nav-text">集成开发环境IntelliJ IDEA</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#IDEA中Debug的使用"><span class="nav-number">8.1.</span> <span class="nav-text">IDEA中Debug的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何加断点"><span class="nav-number">8.1.1.</span> <span class="nav-text">如何加断点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何运行加了断点的程序"><span class="nav-number">8.1.2.</span> <span class="nav-text">如何运行加了断点的程序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#看哪里"><span class="nav-number">8.1.3.</span> <span class="nav-text">看哪里</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#点哪里"><span class="nav-number">8.1.4.</span> <span class="nav-text">点哪里</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何删除断点"><span class="nav-number">8.1.5.</span> <span class="nav-text">如何删除断点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意事项"><span class="nav-number">8.1.6.</span> <span class="nav-text">注意事项</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java中的内存分配"><span class="nav-number">9.</span> <span class="nav-text">Java中的内存分配</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JVM简介"><span class="nav-number">9.1.</span> <span class="nav-text">JVM简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java内存分区"><span class="nav-number">9.2.</span> <span class="nav-text">Java内存分区</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#继承"><span class="nav-number">10.</span> <span class="nav-text">继承</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#继承的好处与弊端"><span class="nav-number">10.1.</span> <span class="nav-text">继承的好处与弊端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承中成员变量的访问特点"><span class="nav-number">10.2.</span> <span class="nav-text">继承中成员变量的访问特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承中成员方法的访问特点"><span class="nav-number">10.3.</span> <span class="nav-text">继承中成员方法的访问特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承中构造函数的访问特点"><span class="nav-number">10.4.</span> <span class="nav-text">继承中构造函数的访问特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Super内存图"><span class="nav-number">10.5.</span> <span class="nav-text">Super内存图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法重写"><span class="nav-number">10.6.</span> <span class="nav-text">方法重写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承的注意事项"><span class="nav-number">10.7.</span> <span class="nav-text">继承的注意事项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#final、static修饰符"><span class="nav-number">10.8.</span> <span class="nav-text">final、static修饰符</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多态"><span class="nav-number">11.</span> <span class="nav-text">多态</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#多态中成员访问的特点"><span class="nav-number">11.1.</span> <span class="nav-text">多态中成员访问的特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多态的好处与弊端"><span class="nav-number">11.2.</span> <span class="nav-text">多态的好处与弊端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多态的转型（引用类型的转换）"><span class="nav-number">11.3.</span> <span class="nav-text">多态的转型（引用类型的转换）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#抽象类"><span class="nav-number">12.</span> <span class="nav-text">抽象类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#抽象类的特点"><span class="nav-number">12.1.</span> <span class="nav-text">抽象类的特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#抽象类的成员特点"><span class="nav-number">12.2.</span> <span class="nav-text">抽象类的成员特点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#接口"><span class="nav-number">13.</span> <span class="nav-text">接口</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#接口的特点"><span class="nav-number">13.1.</span> <span class="nav-text">接口的特点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#内部类"><span class="nav-number">14.</span> <span class="nav-text">内部类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#内部类的访问特点"><span class="nav-number">14.1.</span> <span class="nav-text">内部类的访问特点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用API"><span class="nav-number">15.</span> <span class="nav-text">常用API</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#工具类设计思想"><span class="nav-number">15.1.</span> <span class="nav-text">工具类设计思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java-util-Arrays"><span class="nav-number">15.2.</span> <span class="nav-text">java.util.Arrays</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java-util-Math"><span class="nav-number">15.3.</span> <span class="nav-text">java.util.Math</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java-lang-Object"><span class="nav-number">15.4.</span> <span class="nav-text">java.lang.Object</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java-lang-System"><span class="nav-number">15.5.</span> <span class="nav-text">java.lang.System</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java-util-Date"><span class="nav-number">15.6.</span> <span class="nav-text">java.util.Date</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java-text-SimpleDateFormat"><span class="nav-number">15.7.</span> <span class="nav-text">java.text.SimpleDateFormat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java-util-Calendar"><span class="nav-number">15.8.</span> <span class="nav-text">java.util.Calendar</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#包装类"><span class="nav-number">16.</span> <span class="nav-text">包装类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Integer经典使用案例（String与int类型转换）"><span class="nav-number">16.1.</span> <span class="nav-text">Integer经典使用案例（String与int类型转换）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Integer的注意点："><span class="nav-number">16.2.</span> <span class="nav-text">Integer的注意点：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#异常"><span class="nav-number">17.</span> <span class="nav-text">异常</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#异常的概念"><span class="nav-number">17.1.</span> <span class="nav-text">异常的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异常类的体系"><span class="nav-number">17.2.</span> <span class="nav-text">异常类的体系</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#集合"><span class="nav-number">18.</span> <span class="nav-text">集合</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#单列集合Collection"><span class="nav-number">18.1.</span> <span class="nav-text">单列集合Collection</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#List接口"><span class="nav-number">18.1.1.</span> <span class="nav-text">List接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Set接口"><span class="nav-number">18.1.2.</span> <span class="nav-text">Set接口</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#双列集合Map"><span class="nav-number">18.2.</span> <span class="nav-text">双列集合Map</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IO"><span class="nav-number">19.</span> <span class="nav-text">IO</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#File类"><span class="nav-number">19.1.</span> <span class="nav-text">File类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IO流的体系【IO重点】"><span class="nav-number">19.2.</span> <span class="nav-text">IO流的体系【IO重点】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Properties（集合与IO相结合）"><span class="nav-number">19.3.</span> <span class="nav-text">Properties（集合与IO相结合）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Properties作为Map集合的使用"><span class="nav-number">19.3.1.</span> <span class="nav-text">Properties作为Map集合的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Properties作为Map集合的特有方法"><span class="nav-number">19.3.2.</span> <span class="nav-text">Properties作为Map集合的特有方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Properties和IO流相结合的方法"><span class="nav-number">19.3.3.</span> <span class="nav-text">Properties和IO流相结合的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#游戏次数案例"><span class="nav-number">19.3.4.</span> <span class="nav-text">游戏次数案例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象序列化流"><span class="nav-number">19.4.</span> <span class="nav-text">对象序列化流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象反序列化流"><span class="nav-number">19.5.</span> <span class="nav-text">对象反序列化流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#serialVersionUID-amp-transient"><span class="nav-number">19.6.</span> <span class="nav-text">serialVersionUID&amp;transient</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多线程"><span class="nav-number">20.</span> <span class="nav-text">多线程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#实现多线程"><span class="nav-number">20.1.</span> <span class="nav-text">实现多线程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实现多线程方式一：继承Thread类"><span class="nav-number">20.1.1.</span> <span class="nav-text">实现多线程方式一：继承Thread类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现多线程方式二：实现Runnable接口"><span class="nav-number">20.1.2.</span> <span class="nav-text">实现多线程方式二：实现Runnable接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置和获取线程名称"><span class="nav-number">20.1.3.</span> <span class="nav-text">设置和获取线程名称</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线程优先级"><span class="nav-number">20.1.4.</span> <span class="nav-text">线程优先级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线程控制"><span class="nav-number">20.1.5.</span> <span class="nav-text">线程控制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线程的生命周期"><span class="nav-number">20.1.6.</span> <span class="nav-text">线程的生命周期</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程同步"><span class="nav-number">20.2.</span> <span class="nav-text">线程同步</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#卖票"><span class="nav-number">20.2.1.</span> <span class="nav-text">卖票</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#卖票案例的问题"><span class="nav-number">20.2.2.</span> <span class="nav-text">卖票案例的问题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网络编程入门"><span class="nav-number">21.</span> <span class="nav-text">网络编程入门</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#网络编程概述"><span class="nav-number">21.1.</span> <span class="nav-text">网络编程概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#网络编程三要素"><span class="nav-number">21.1.1.</span> <span class="nav-text">网络编程三要素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IP地址"><span class="nav-number">21.1.2.</span> <span class="nav-text">IP地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#InetAddress"><span class="nav-number">21.1.3.</span> <span class="nav-text">InetAddress</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#端口和协议"><span class="nav-number">21.1.4.</span> <span class="nav-text">端口和协议</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UDP通信程序"><span class="nav-number">21.2.</span> <span class="nav-text">UDP通信程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#UDP发送数据"><span class="nav-number">21.2.1.</span> <span class="nav-text">UDP发送数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UDP接收数据"><span class="nav-number">21.2.2.</span> <span class="nav-text">UDP接收数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UDP通信程序练习"><span class="nav-number">21.2.3.</span> <span class="nav-text">UDP通信程序练习</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP通信程序"><span class="nav-number">21.3.</span> <span class="nav-text">TCP通信程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP发送数据"><span class="nav-number">21.3.1.</span> <span class="nav-text">TCP发送数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP接收数据"><span class="nav-number">21.3.2.</span> <span class="nav-text">TCP接收数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP通信程序练习"><span class="nav-number">21.3.3.</span> <span class="nav-text">TCP通信程序练习</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lambda-amp-方法引用"><span class="nav-number">22.</span> <span class="nav-text">Lambda&amp;方法引用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#接口新特性"><span class="nav-number">23.</span> <span class="nav-text">接口新特性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数式接口"><span class="nav-number">24.</span> <span class="nav-text">函数式接口</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Supplier"><span class="nav-number">24.1.</span> <span class="nav-text">Supplier</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Consumer"><span class="nav-number">24.2.</span> <span class="nav-text">Consumer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Predicate"><span class="nav-number">24.3.</span> <span class="nav-text">Predicate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Function"><span class="nav-number">24.4.</span> <span class="nav-text">Function</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Stream流"><span class="nav-number">25.</span> <span class="nav-text">Stream流</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#类加载器"><span class="nav-number">26.</span> <span class="nav-text">类加载器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#类加载"><span class="nav-number">26.1.</span> <span class="nav-text">类加载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类加载器-1"><span class="nav-number">26.2.</span> <span class="nav-text">类加载器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#类加载器的作用"><span class="nav-number">26.2.1.</span> <span class="nav-text">类加载器的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JVM的类加载机制"><span class="nav-number">26.2.2.</span> <span class="nav-text">JVM的类加载机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java中的内置类加载器"><span class="nav-number">26.2.3.</span> <span class="nav-text">Java中的内置类加载器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ClassLoader-中的两个方法"><span class="nav-number">26.2.4.</span> <span class="nav-text">ClassLoader 中的两个方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#反射"><span class="nav-number">27.</span> <span class="nav-text">反射</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模块化"><span class="nav-number">28.</span> <span class="nav-text">模块化</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#环境变量的配置"><span class="nav-number">1.</span> <span class="nav-text">环境变量的配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JDK9的JShell的简单使用"><span class="nav-number">2.</span> <span class="nav-text">JDK9的JShell的简单使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#编译器的两点优化（对于变量的赋值）"><span class="nav-number">3.</span> <span class="nav-text">编译器的两点优化（对于变量的赋值）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一个优化"><span class="nav-number">3.1.</span> <span class="nav-text">第一个优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二个优化"><span class="nav-number">3.2.</span> <span class="nav-text">第二个优化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#switch语句使用的注意事项"><span class="nav-number">4.</span> <span class="nav-text">switch语句使用的注意事项</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组的定义"><span class="nav-number">5.</span> <span class="nav-text">数组的定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Random类"><span class="nav-number">6.</span> <span class="nav-text">Random类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方法重载的注意点"><span class="nav-number">7.</span> <span class="nav-text">方法重载的注意点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#集成开发环境IntelliJ-IDEA"><span class="nav-number">8.</span> <span class="nav-text">集成开发环境IntelliJ IDEA</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#IDEA中Debug的使用"><span class="nav-number">8.1.</span> <span class="nav-text">IDEA中Debug的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何加断点"><span class="nav-number">8.1.1.</span> <span class="nav-text">如何加断点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何运行加了断点的程序"><span class="nav-number">8.1.2.</span> <span class="nav-text">如何运行加了断点的程序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#看哪里"><span class="nav-number">8.1.3.</span> <span class="nav-text">看哪里</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#点哪里"><span class="nav-number">8.1.4.</span> <span class="nav-text">点哪里</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何删除断点"><span class="nav-number">8.1.5.</span> <span class="nav-text">如何删除断点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意事项"><span class="nav-number">8.1.6.</span> <span class="nav-text">注意事项</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java中的内存分配"><span class="nav-number">9.</span> <span class="nav-text">Java中的内存分配</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JVM简介"><span class="nav-number">9.1.</span> <span class="nav-text">JVM简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java内存分区"><span class="nav-number">9.2.</span> <span class="nav-text">Java内存分区</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#继承"><span class="nav-number">10.</span> <span class="nav-text">继承</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#继承的好处与弊端"><span class="nav-number">10.1.</span> <span class="nav-text">继承的好处与弊端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承中成员变量的访问特点"><span class="nav-number">10.2.</span> <span class="nav-text">继承中成员变量的访问特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承中成员方法的访问特点"><span class="nav-number">10.3.</span> <span class="nav-text">继承中成员方法的访问特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承中构造函数的访问特点"><span class="nav-number">10.4.</span> <span class="nav-text">继承中构造函数的访问特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Super内存图"><span class="nav-number">10.5.</span> <span class="nav-text">Super内存图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法重写"><span class="nav-number">10.6.</span> <span class="nav-text">方法重写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承的注意事项"><span class="nav-number">10.7.</span> <span class="nav-text">继承的注意事项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#final、static修饰符"><span class="nav-number">10.8.</span> <span class="nav-text">final、static修饰符</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多态"><span class="nav-number">11.</span> <span class="nav-text">多态</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#多态中成员访问的特点"><span class="nav-number">11.1.</span> <span class="nav-text">多态中成员访问的特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多态的好处与弊端"><span class="nav-number">11.2.</span> <span class="nav-text">多态的好处与弊端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多态的转型（引用类型的转换）"><span class="nav-number">11.3.</span> <span class="nav-text">多态的转型（引用类型的转换）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#抽象类"><span class="nav-number">12.</span> <span class="nav-text">抽象类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#抽象类的特点"><span class="nav-number">12.1.</span> <span class="nav-text">抽象类的特点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#抽象类的成员特点"><span class="nav-number">12.2.</span> <span class="nav-text">抽象类的成员特点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#接口"><span class="nav-number">13.</span> <span class="nav-text">接口</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#接口的特点"><span class="nav-number">13.1.</span> <span class="nav-text">接口的特点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#内部类"><span class="nav-number">14.</span> <span class="nav-text">内部类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#内部类的访问特点"><span class="nav-number">14.1.</span> <span class="nav-text">内部类的访问特点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常用API"><span class="nav-number">15.</span> <span class="nav-text">常用API</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#工具类设计思想"><span class="nav-number">15.1.</span> <span class="nav-text">工具类设计思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java-util-Arrays"><span class="nav-number">15.2.</span> <span class="nav-text">java.util.Arrays</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java-util-Math"><span class="nav-number">15.3.</span> <span class="nav-text">java.util.Math</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java-lang-Object"><span class="nav-number">15.4.</span> <span class="nav-text">java.lang.Object</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java-lang-System"><span class="nav-number">15.5.</span> <span class="nav-text">java.lang.System</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java-util-Date"><span class="nav-number">15.6.</span> <span class="nav-text">java.util.Date</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java-text-SimpleDateFormat"><span class="nav-number">15.7.</span> <span class="nav-text">java.text.SimpleDateFormat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java-util-Calendar"><span class="nav-number">15.8.</span> <span class="nav-text">java.util.Calendar</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#包装类"><span class="nav-number">16.</span> <span class="nav-text">包装类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Integer经典使用案例（String与int类型转换）"><span class="nav-number">16.1.</span> <span class="nav-text">Integer经典使用案例（String与int类型转换）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Integer的注意点："><span class="nav-number">16.2.</span> <span class="nav-text">Integer的注意点：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#异常"><span class="nav-number">17.</span> <span class="nav-text">异常</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#异常的概念"><span class="nav-number">17.1.</span> <span class="nav-text">异常的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异常类的体系"><span class="nav-number">17.2.</span> <span class="nav-text">异常类的体系</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#集合"><span class="nav-number">18.</span> <span class="nav-text">集合</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#单列集合Collection"><span class="nav-number">18.1.</span> <span class="nav-text">单列集合Collection</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#List接口"><span class="nav-number">18.1.1.</span> <span class="nav-text">List接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Set接口"><span class="nav-number">18.1.2.</span> <span class="nav-text">Set接口</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#双列集合Map"><span class="nav-number">18.2.</span> <span class="nav-text">双列集合Map</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IO"><span class="nav-number">19.</span> <span class="nav-text">IO</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#File类"><span class="nav-number">19.1.</span> <span class="nav-text">File类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IO流的体系【IO重点】"><span class="nav-number">19.2.</span> <span class="nav-text">IO流的体系【IO重点】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Properties（集合与IO相结合）"><span class="nav-number">19.3.</span> <span class="nav-text">Properties（集合与IO相结合）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Properties作为Map集合的使用"><span class="nav-number">19.3.1.</span> <span class="nav-text">Properties作为Map集合的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Properties作为Map集合的特有方法"><span class="nav-number">19.3.2.</span> <span class="nav-text">Properties作为Map集合的特有方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Properties和IO流相结合的方法"><span class="nav-number">19.3.3.</span> <span class="nav-text">Properties和IO流相结合的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#游戏次数案例"><span class="nav-number">19.3.4.</span> <span class="nav-text">游戏次数案例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象序列化流"><span class="nav-number">19.4.</span> <span class="nav-text">对象序列化流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象反序列化流"><span class="nav-number">19.5.</span> <span class="nav-text">对象反序列化流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#serialVersionUID-amp-transient"><span class="nav-number">19.6.</span> <span class="nav-text">serialVersionUID&amp;transient</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多线程"><span class="nav-number">20.</span> <span class="nav-text">多线程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#实现多线程"><span class="nav-number">20.1.</span> <span class="nav-text">实现多线程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实现多线程方式一：继承Thread类"><span class="nav-number">20.1.1.</span> <span class="nav-text">实现多线程方式一：继承Thread类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现多线程方式二：实现Runnable接口"><span class="nav-number">20.1.2.</span> <span class="nav-text">实现多线程方式二：实现Runnable接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置和获取线程名称"><span class="nav-number">20.1.3.</span> <span class="nav-text">设置和获取线程名称</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线程优先级"><span class="nav-number">20.1.4.</span> <span class="nav-text">线程优先级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线程控制"><span class="nav-number">20.1.5.</span> <span class="nav-text">线程控制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线程的生命周期"><span class="nav-number">20.1.6.</span> <span class="nav-text">线程的生命周期</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程同步"><span class="nav-number">20.2.</span> <span class="nav-text">线程同步</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#卖票"><span class="nav-number">20.2.1.</span> <span class="nav-text">卖票</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#卖票案例的问题"><span class="nav-number">20.2.2.</span> <span class="nav-text">卖票案例的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生产者与消费者"><span class="nav-number">20.2.3.</span> <span class="nav-text">生产者与消费者</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网络编程入门"><span class="nav-number">21.</span> <span class="nav-text">网络编程入门</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#网络编程概述"><span class="nav-number">21.1.</span> <span class="nav-text">网络编程概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#网络编程三要素"><span class="nav-number">21.1.1.</span> <span class="nav-text">网络编程三要素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IP地址"><span class="nav-number">21.1.2.</span> <span class="nav-text">IP地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#InetAddress"><span class="nav-number">21.1.3.</span> <span class="nav-text">InetAddress</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#端口和协议"><span class="nav-number">21.1.4.</span> <span class="nav-text">端口和协议</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UDP通信程序"><span class="nav-number">21.2.</span> <span class="nav-text">UDP通信程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#UDP发送数据"><span class="nav-number">21.2.1.</span> <span class="nav-text">UDP发送数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UDP接收数据"><span class="nav-number">21.2.2.</span> <span class="nav-text">UDP接收数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UDP通信程序练习"><span class="nav-number">21.2.3.</span> <span class="nav-text">UDP通信程序练习</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP通信程序"><span class="nav-number">21.3.</span> <span class="nav-text">TCP通信程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP发送数据"><span class="nav-number">21.3.1.</span> <span class="nav-text">TCP发送数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP接收数据"><span class="nav-number">21.3.2.</span> <span class="nav-text">TCP接收数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP通信程序练习"><span class="nav-number">21.3.3.</span> <span class="nav-text">TCP通信程序练习</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lambda-amp-方法引用"><span class="nav-number">22.</span> <span class="nav-text">Lambda&amp;方法引用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#接口新特性"><span class="nav-number">23.</span> <span class="nav-text">接口新特性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数式接口"><span class="nav-number">24.</span> <span class="nav-text">函数式接口</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Supplier"><span class="nav-number">24.1.</span> <span class="nav-text">Supplier</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Consumer"><span class="nav-number">24.2.</span> <span class="nav-text">Consumer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Predicate"><span class="nav-number">24.3.</span> <span class="nav-text">Predicate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Function"><span class="nav-number">24.4.</span> <span class="nav-text">Function</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Stream流"><span class="nav-number">25.</span> <span class="nav-text">Stream流</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#类加载器"><span class="nav-number">26.</span> <span class="nav-text">类加载器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#类加载"><span class="nav-number">26.1.</span> <span class="nav-text">类加载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类加载器-1"><span class="nav-number">26.2.</span> <span class="nav-text">类加载器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#类加载器的作用"><span class="nav-number">26.2.1.</span> <span class="nav-text">类加载器的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JVM的类加载机制"><span class="nav-number">26.2.2.</span> <span class="nav-text">JVM的类加载机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java中的内置类加载器"><span class="nav-number">26.2.3.</span> <span class="nav-text">Java中的内置类加载器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ClassLoader-中的两个方法"><span class="nav-number">26.2.4.</span> <span class="nav-text">ClassLoader 中的两个方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#反射"><span class="nav-number">27.</span> <span class="nav-text">反射</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模块化"><span class="nav-number">28.</span> <span class="nav-text">模块化</span></a></li></ol></div>
             
 
           </div>
@@ -2445,7 +2898,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共42k字</span>
+  <span class="post-count">博客全站共46.8k字</span>
 </div>
 
 
