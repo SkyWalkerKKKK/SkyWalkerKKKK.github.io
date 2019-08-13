@@ -118,7 +118,8 @@
 <meta property="og:image" content="http://skywalkerkkkk.cn/images/Tomcat3.jpg">
 <meta property="og:image" content="http://skywalkerkkkk.cn/images/xml和注解方式的原理.png">
 <meta property="og:image" content="http://skywalkerkkkk.cn/images/virtual_path.png">
-<meta property="og:updated_time" content="2019-08-13T12:34:39.815Z">
+<meta property="og:image" content="http://skywalkerkkkk.cn/images/request重要的几个功能.png">
+<meta property="og:updated_time" content="2019-08-13T12:50:02.654Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaWeb">
 <meta name="twitter:description" content=".imp{         color:red;     }     Web相关概念 软件架构 C/S架构：客户端/服务器端 B/S架构：浏览器端/服务器端   资源分类 静态资源：所有用户访问后，得到的结果都是一样的，称为静态资源.静态资源可以直接被浏览器解析，如：HTML，CSS，JavaScript等。 动态资源:每个用户访问相同资源后，得到的结果可能不一样。称为动态资源。动态资源">
@@ -720,7 +721,7 @@
 <ul>
 <li>状态码都是3位数字 </li>
 <li>分类：<ol>
-<li>1xx：服务器就收客户端消息，但没有接受完成，等待一段时间后，发送1xx多状态码</li>
+<li>1xx：服务器就收客户端消息，但没有接收完成，等待一段时间后，发送1xx多状态码</li>
 <li>2xx：成功。代表：200</li>
 <li>3xx：重定向。代表：302(重定向)，304(访问缓存)</li>
 <li>4xx：客户端错误。代表：404（请求路径没有对应的资源），405：(请求方式没有对应的doXxx方法)</li>
@@ -1035,6 +1036,7 @@
 </blockquote>
 <hr>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	规则：判断定义的路径是给谁用的？判断请求将来从哪儿发出</span></span><br><span class="line"><span class="comment">		1.给客户端浏览器使用：需要加虚拟目录(项目的访问路径)</span></span><br><span class="line"><span class="comment">			* 建议虚拟目录动态获取：request.getContextPath()</span></span><br><span class="line"><span class="comment">			* 常用位置：&lt;a&gt;，&lt;form&gt;，重定向...</span></span><br><span class="line"><span class="comment">		2.给服务器使用：不需要加虚拟目录</span></span><br><span class="line"><span class="comment">			* 转发路径</span></span><br><span class="line"><span class="comment">			</span></span><br><span class="line"><span class="comment">	tip：jsp建议使用.</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<p><img src="/images/request重要的几个功能.png" alt="request重要的几个功能"></p>
 <h1 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a>JSP</h1><h2 id="JSP运行原理"><a href="#JSP运行原理" class="headerlink" title="JSP运行原理"></a>JSP运行原理</h2><blockquote>
 <ul>
 <li>JSP是简Servlet编写的一种技术，他将Java代码和HTML语句混合在同一个文件中编写。只对网页中的要动态产生的内容才用Java代码来编写，而对固定不变的静态内容才用普通静态HTML页面的方式编写。</li>
