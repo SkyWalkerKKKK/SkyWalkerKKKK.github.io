@@ -123,7 +123,7 @@
 <meta property="og:image" content="http://skywalkerkkkk.cn/images/Session原理.jpg">
 <meta property="og:image" content="http://skywalkerkkkk.cn/images/MVC开发模式.jpg">
 <meta property="og:image" content="http://skywalkerkkkk.cn/images/三层架构.jpg">
-<meta property="og:updated_time" content="2019-08-20T13:43:27.738Z">
+<meta property="og:updated_time" content="2019-08-20T13:49:16.273Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaWeb">
 <meta name="twitter:description" content=".imp{         color:red;     }     Web相关概念 软件架构 C/S架构：客户端/服务器端 B/S架构：浏览器端/服务器端   资源分类 静态资源：所有用户访问后，得到的结果都是一样的，称为静态资源.静态资源可以直接被浏览器解析，如：HTML，CSS，JavaScript等。 动态资源:每个用户访问相同资源后，得到的结果可能不一样。称为动态资源。动态资">
@@ -920,14 +920,42 @@
 </li>
 <li><p>其他功能</p>
 <ol>
-<li><p>获取请求参数通用方式：不论get还是post请求方式都可以使用下列方法来获取请求参数</p>
-<p>| Modifier and Type                          | Method and Description       |<br>| —————————————— | —————————- |<br>| <code>String getParameter(String name)</code>         | 根据参数名称获取参数值       |<br>| <code>String[] getParameterValues(String name)</code> | 根据参数名称获取参数值的数组 |<br>| <code>Enumeration&lt;String&gt; getParameterNames()</code>  | 获取所有请求的参数名称       |<br>| <code>Map&lt;String,String[]&gt; getParameterMap()</code>   | 获取所有参数的map集合        |</p>
-<p>中文乱码问题：</p>
-<ul>
-<li>get方式：tomcat 8 已经将get方式乱码问题解决了</li>
-<li>post方式：会乱码<br>解决：在获取参数前，设置request的编码<code>request.setCharacterEncoding(&quot;utf-8&quot;);</code></li>
-</ul>
+<li>获取请求参数通用方式：不论get还是post请求方式都可以使用下列方法来获取请求参数</li>
+</ol>
 </li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Modifier and Type</th>
+<th>Method and Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>String getParameter(String name)</code></td>
+<td>根据参数名称获取参数值</td>
+</tr>
+<tr>
+<td><code>String[] getParameterValues(String name)</code></td>
+<td>根据参数名称获取参数值的数组</td>
+</tr>
+<tr>
+<td><code>Enumeration&lt;String&gt; getParameterNames()</code></td>
+<td>获取所有请求的参数名称</td>
+</tr>
+<tr>
+<td><code>Map&lt;String,String[]&gt; getParameterMap()</code></td>
+<td>获取所有参数的map集合</td>
+</tr>
+</tbody>
+</table>
+<pre><code>中文乱码问题：
+
+- get方式：tomcat 8 已经将get方式乱码问题解决了
+- post方式：会乱码
+  解决：在获取参数前，设置request的编码`request.setCharacterEncoding(&quot;utf-8&quot;);`
+</code></pre><ol start="2">
 <li><p>请求转发：一种在服务器内部的资源跳转方式</p>
 <ul>
 <li>步骤：<ol>
@@ -950,14 +978,34 @@
 <li><p>request域：代表一次请求的范围，一般用于请求转发的多个资源中共享数据</p>
 </li>
 <li><p>方法：</p>
-<p>| Modifier and Type                           | Method and Description |<br>| ——————————————- | ———————- |<br>| <code>void setAttribute(String name,Object obj)</code> | 设置属性               |<br>| <code>Object getAttitude(String name)</code>           | 获取属性               |<br>| <code>void removeAttribute(String name)</code>         | 移除属性               |</p>
 </li>
 </ul>
 </li>
-<li><p>获取ServletContext<br><code>ServletContext getServletContext()</code></p>
-</li>
 </ol>
-</li>
+<table>
+<thead>
+<tr>
+<th>Modifier and Type</th>
+<th>Method and Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>void setAttribute(String name,Object obj)</code></td>
+<td>设置属性</td>
+</tr>
+<tr>
+<td><code>Object getAttitude(String name)</code></td>
+<td>获取属性</td>
+</tr>
+<tr>
+<td><code>void removeAttribute(String name)</code></td>
+<td>移除属性</td>
+</tr>
+</tbody>
+</table>
+<ol start="4">
+<li>获取ServletContext<br><code>ServletContext getServletContext()</code></li>
 </ol>
 <h2 id="Response"><a href="#Response" class="headerlink" title="Response"></a>Response</h2><blockquote>
 <ul>
