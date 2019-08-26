@@ -113,7 +113,7 @@
 <meta property="og:site_name" content="SkyWalker的博客">
 <meta property="og:description" content=".imp{         color:red;     }     .lg{     font-size:25px; }         JQuery基础  jQuery是一个快速、简洁的JavaScript框架，是继Prototype之后又一个优秀的JavaScript代码库（或JavaScript框架）。jQuery设计的宗旨    是“write Less，Do More”，">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-24T11:49:51.535Z">
+<meta property="og:updated_time" content="2019-08-26T12:44:29.919Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jQuery3.0">
 <meta name="twitter:description" content=".imp{         color:red;     }     .lg{     font-size:25px; }         JQuery基础  jQuery是一个快速、简洁的JavaScript框架，是继Prototype之后又一个优秀的JavaScript代码库（或JavaScript框架）。jQuery设计的宗旨    是“write Less，Do More”，">
@@ -429,7 +429,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1.4k
+                  2k
                 </span>
               
 
@@ -445,7 +445,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  5
+                  7
                 </span>
               
             </div>
@@ -720,6 +720,114 @@
 <li>remove—-&gt;删除自己</li>
 <li>clone —–&gt;克隆一个对象</li>
 </ol>
+<h1 id="JQuery高级"><a href="#JQuery高级" class="headerlink" title="JQuery高级"></a>JQuery高级</h1><h2 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h2><ul>
+<li>三种方式显示和隐藏元素<ol>
+<li>默认方式</li>
+<li>滑动方式</li>
+<li>淡入淡出方式</li>
+</ol>
+</li>
+</ul>
+<h3 id="默认方式"><a href="#默认方式" class="headerlink" title="默认方式"></a>默认方式</h3><ol>
+<li><code>show([speed,[easing],[fn]])</code><ul>
+<li>参数：<ol>
+<li>speed：动画的速度。三个预定义的值(“slow”,”normal”, “fast”)或表示动画时长的毫秒数值(如：1000)</li>
+<li>easing：用来指定切换效果，默认是”swing”，可用参数”linear”<ul>
+<li>swing：动画执行时效果是 先慢，中间快，最后又慢</li>
+<li>linear：动画执行时速度是匀速的</li>
+</ul>
+</li>
+<li>fn：在动画完成时执行的函数，每个元素执行一次。</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><code>hide([speed,[easing],[fn]])</code></li>
+<li><code>toggle([speed],[easing],[fn])</code></li>
+</ol>
+<h3 id="滑动方式"><a href="#滑动方式" class="headerlink" title="滑动方式"></a>滑动方式</h3><ol>
+<li><code>slideDown([speed],[easing],[fn])</code></li>
+<li><code>slideUp([speed,[easing],[fn]])</code></li>
+<li><code>slideToggle([speed],[easing],[fn])</code></li>
+</ol>
+<h3 id="淡入淡出方式"><a href="#淡入淡出方式" class="headerlink" title="淡入淡出方式"></a>淡入淡出方式</h3><ol>
+<li><code>fadeIn([speed],[easing],[fn])</code></li>
+<li><code>fadeOut([speed],[easing],[fn])</code></li>
+<li><code>fadeToggle([speed,[easing],[fn]])</code></li>
+</ol>
+<h2 id="遍历方式"><a href="#遍历方式" class="headerlink" title="遍历方式"></a>遍历方式</h2><h3 id="JS的遍历方式"><a href="#JS的遍历方式" class="headerlink" title="JS的遍历方式"></a>JS的遍历方式</h3><ul>
+<li>for(初始化值;循环结束条件;步长)</li>
+</ul>
+<h3 id="JQ的遍历方式"><a href="#JQ的遍历方式" class="headerlink" title="JQ的遍历方式"></a>JQ的遍历方式</h3><ol>
+<li><p>jq对象.each(callback)</p>
+<ol>
+<li><p>语法</p>
+<blockquote>
+<ul>
+<li>jquery对象.each(function(index,element){});<ol>
+<li>index:就是元素在集合中的索引</li>
+<li>element：就是集合中的每一个元素对象</li>
+<li>this：集合中的每一个元素对象</li>
+</ol>
+</li>
+</ul>
+</blockquote>
+</li>
+<li><p>回调函数的返回值</p>
+<blockquote>
+<ul>
+<li>true:如果当前function返回为false，则结束循环(break)。</li>
+<li>false:如果当前function返回为true，则结束本次循环，继续下次循环(continue)</li>
+</ul>
+</blockquote>
+</li>
+</ol>
+</li>
+<li><p>$.each(object, [callback])</p>
+</li>
+<li><p>for..of: jquery 3.0 版本之后提供的方式</p>
+<ul>
+<li>for(元素对象 of 容器对象)</li>
+</ul>
+</li>
+</ol>
+<h2 id="事件绑定"><a href="#事件绑定" class="headerlink" title="事件绑定"></a>事件绑定</h2><h3 id="jquery标准的绑定方式"><a href="#jquery标准的绑定方式" class="headerlink" title="jquery标准的绑定方式"></a>jquery标准的绑定方式</h3><ol>
+<li>jq对象.事件方法(回调函数)；</li>
+<li>注：如果调用事件方法，不传递回调函数，则会触发浏览器默认行为。<ul>
+<li>表单对象.submit();//让表单提交</li>
+</ul>
+</li>
+</ol>
+<h3 id="on绑定事件-off解除绑定"><a href="#on绑定事件-off解除绑定" class="headerlink" title="on绑定事件/off解除绑定"></a>on绑定事件/off解除绑定</h3><ol>
+<li>jq对象.on(“事件名称”,回调函数)</li>
+<li>jq对象.off(“事件名称”)<ul>
+<li>如果off方法不传递任何参数，则将组件上的所有事件全部解绑</li>
+</ul>
+</li>
+</ol>
+<h3 id="事件切换：toggle"><a href="#事件切换：toggle" class="headerlink" title="事件切换：toggle"></a>事件切换：toggle</h3><ol>
+<li>jq对象.toggle(fn1,fn2…)<ul>
+<li>当单击jq对象对应的组件后，会执行fn1.第二次点击会执行fn2…..</li>
+</ul>
+</li>
+<li>注意：1.9版本 .toggle() 方法删除,jQuery Migrate（迁移）插件可以恢复此功能。</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"../js/jquery-migrate-1.0.0.js"</span> type=<span class="string">"text/javascript"</span> charset=<span class="string">"utf-8"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><blockquote>
+<ul>
+<li>增强JQuery的功能</li>
+</ul>
+</blockquote>
+<h3 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h3><ol>
+<li>$.fn.extend(object) <ul>
+<li>增强通过Jquery获取的对象的功能  $(“#id”)</li>
+</ul>
+</li>
+<li>$.extend(object)<ul>
+<li>增强JQeury对象自身的功能  $/jQuery</li>
+</ul>
+</li>
+</ol>
 
       
     </div>
@@ -778,7 +886,7 @@
   <p><span>本文标题:</span><a href="/uncategorized/jQuery3-0/">jQuery3.0</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 SkyWalker 的个人博客">SkyWalker</a></p>
   <p><span>发布时间:</span>2019年07月27日 - 19:07</p>
-  <p><span>最后更新:</span>2019年08月24日 - 19:08</p>
+  <p><span>最后更新:</span>2019年08月26日 - 20:08</p>
   <p><span>原始链接:</span><a href="/uncategorized/jQuery3-0/" title="jQuery3.0">http://SkyWalkerKKKK.cn/uncategorized/jQuery3-0/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://SkyWalkerKKKK.cn/uncategorized/jQuery3-0/" aria-label="复制成功！"></i></span>
   </p>
@@ -1008,7 +1116,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JQuery基础"><span class="nav-number">1.</span> <span class="nav-text">JQuery基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用步骤"><span class="nav-number">1.1.</span> <span class="nav-text">使用步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JQuery对象和JavaScript对象区别与转换"><span class="nav-number">1.2.</span> <span class="nav-text">JQuery对象和JavaScript对象区别与转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择器"><span class="nav-number">1.3.</span> <span class="nav-text">选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本操作学习"><span class="nav-number">1.3.1.</span> <span class="nav-text">基本操作学习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分类"><span class="nav-number">1.3.2.</span> <span class="nav-text">分类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本选择器"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">基本选择器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#层级选择器"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">层级选择器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性选择器"><span class="nav-number">1.3.2.3.</span> <span class="nav-text">属性选择器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#过滤选择器"><span class="nav-number">1.3.2.4.</span> <span class="nav-text">过滤选择器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#表单过滤选择器"><span class="nav-number">1.3.2.5.</span> <span class="nav-text">表单过滤选择器</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM操作"><span class="nav-number">1.4.</span> <span class="nav-text">DOM操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容操作"><span class="nav-number">1.4.1.</span> <span class="nav-text">内容操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性操作"><span class="nav-number">1.4.2.</span> <span class="nav-text">属性操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CRUD操作"><span class="nav-number">1.4.3.</span> <span class="nav-text">CRUD操作</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JQuery基础"><span class="nav-number">1.</span> <span class="nav-text">JQuery基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用步骤"><span class="nav-number">1.1.</span> <span class="nav-text">使用步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JQuery对象和JavaScript对象区别与转换"><span class="nav-number">1.2.</span> <span class="nav-text">JQuery对象和JavaScript对象区别与转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择器"><span class="nav-number">1.3.</span> <span class="nav-text">选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本操作学习"><span class="nav-number">1.3.1.</span> <span class="nav-text">基本操作学习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分类"><span class="nav-number">1.3.2.</span> <span class="nav-text">分类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本选择器"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">基本选择器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#层级选择器"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">层级选择器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性选择器"><span class="nav-number">1.3.2.3.</span> <span class="nav-text">属性选择器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#过滤选择器"><span class="nav-number">1.3.2.4.</span> <span class="nav-text">过滤选择器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#表单过滤选择器"><span class="nav-number">1.3.2.5.</span> <span class="nav-text">表单过滤选择器</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM操作"><span class="nav-number">1.4.</span> <span class="nav-text">DOM操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内容操作"><span class="nav-number">1.4.1.</span> <span class="nav-text">内容操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性操作"><span class="nav-number">1.4.2.</span> <span class="nav-text">属性操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CRUD操作"><span class="nav-number">1.4.3.</span> <span class="nav-text">CRUD操作</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JQuery高级"><span class="nav-number">2.</span> <span class="nav-text">JQuery高级</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#动画"><span class="nav-number">2.1.</span> <span class="nav-text">动画</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#默认方式"><span class="nav-number">2.1.1.</span> <span class="nav-text">默认方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#滑动方式"><span class="nav-number">2.1.2.</span> <span class="nav-text">滑动方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#淡入淡出方式"><span class="nav-number">2.1.3.</span> <span class="nav-text">淡入淡出方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遍历方式"><span class="nav-number">2.2.</span> <span class="nav-text">遍历方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JS的遍历方式"><span class="nav-number">2.2.1.</span> <span class="nav-text">JS的遍历方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JQ的遍历方式"><span class="nav-number">2.2.2.</span> <span class="nav-text">JQ的遍历方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件绑定"><span class="nav-number">2.3.</span> <span class="nav-text">事件绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#jquery标准的绑定方式"><span class="nav-number">2.3.1.</span> <span class="nav-text">jquery标准的绑定方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#on绑定事件-off解除绑定"><span class="nav-number">2.3.2.</span> <span class="nav-text">on绑定事件/off解除绑定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件切换：toggle"><span class="nav-number">2.3.3.</span> <span class="nav-text">事件切换：toggle</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插件"><span class="nav-number">2.4.</span> <span class="nav-text">插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实现方式"><span class="nav-number">2.4.1.</span> <span class="nav-text">实现方式</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -1061,7 +1169,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共61.6k字</span>
+  <span class="post-count">博客全站共62.2k字</span>
 </div>
 
 
