@@ -490,8 +490,7 @@
 
       
         
-          
-            <!-- font-color is red when class="imp" -->
+          <!-- font-color is red when class="imp" -->
 <!-- font-size is 25px when class="lg" -->
 <style>
     .imp{
@@ -514,265 +513,14 @@
 </li>
 </ul>
 </blockquote>
-<h2 id="什么是NoSQL"><a href="#什么是NoSQL" class="headerlink" title="什么是NoSQL"></a>什么是NoSQL</h2><p></p><p>&nbsp;&nbsp;&nbsp;&nbsp;NoSQL(NoSQL = Not Only SQL)，意即“不仅仅是SQL”，是一项全新的数据库理念，泛指非关系型的数据库。</p><p></p>
-<p></p><p>&nbsp;&nbsp;&nbsp;&nbsp;随着互联网web2.0网站的兴起，传统的关系数据库在应付web2.0网站，特别是超大规模和高并发的SNS类型的web2.0纯动态网站已经显得力不从心，暴露了很多难以克服的问题，而非关系型的数据库则由于其本身的特点得到了非常迅速的发展。NoSQL数据库的产生就是为了解决大规模数据集合多重数据种类带来的挑战，尤其是大数据应用难题。</p><p></p>
-<h3 id="NOSQL和关系型数据库比较"><a href="#NOSQL和关系型数据库比较" class="headerlink" title="NOSQL和关系型数据库比较"></a>NOSQL和关系型数据库比较</h3><p>优点：</p>
-<ol>
-<li>成本：nosql数据库简单易部署，基本都是开源软件，不需要像使用oracle那样花费大量成本购买使用，相比关系型数据库价格便宜。</li>
-<li>查询速度：nosql数据库将数据存储于缓存之中，关系型数据库将数据存储在硬盘中，自然查询速度远不及nosql数据库。</li>
-<li>存储数据的格式：nosql的存储格式是key,value形式、文档形式、图片形式等等，所以可以存储基础类型以及对象或者是集合等各种格式，而数据库则只支持基础类型。</li>
-<li>扩展性：关系型数据库有类似join这样的多表查询机制的限制导致扩展很艰难。</li>
-</ol>
-<p>缺点：</p>
-<ol>
-<li>维护的工具和资料有限，因为nosql是属于新的技术，不能和关系型数据库10几年的技术同日而语。</li>
-<li>不提供对sql的支持，如果不支持sql这样的工业标准，将产生一定用户的学习和使用成本。</li>
-<li>不提供关系型数据库对事务的处理。</li>
-</ol>
-<h3 id="非关系型数据库的优势"><a href="#非关系型数据库的优势" class="headerlink" title="非关系型数据库的优势"></a>非关系型数据库的优势</h3><ol>
-<li>性能NOSQL是基于键值对的，可以想象成表中的主键和值的对应关系，而且不需要经过SQL层的解析，所以性能非常高。</li>
-<li>可扩展性同样也是因为基于键值对，数据之间没有耦合性，所以非常容易水平扩展。</li>
-</ol>
-<h3 id="关系型数据库的优势"><a href="#关系型数据库的优势" class="headerlink" title="关系型数据库的优势"></a>关系型数据库的优势</h3><ol>
-<li>复杂查询可以用SQL语句方便的在一个表以及多个表之间做非常复杂的数据查询。</li>
-<li>事务支持使得对于安全性能很高的数据访问要求得以实现。对于这两类数据库，对方的优势就是自己的弱势，反之亦然。</li>
-</ol>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p></p><p>&nbsp;&nbsp;&nbsp;&nbsp;关系型数据库与NoSQL数据库并非对立而是互补的关系，即通常情况下使用关系型数据库，在适合使用NoSQL的时候使用NoSQL数据库，让NoSQL数据库对关系型数据库的不足进行弥补。一般会将数据存储在关系型数据库中，在nosql数据库中备份存储关系型数据库的数据。</p><p></p>
-<h2 id="主流的NoSQL产品"><a href="#主流的NoSQL产品" class="headerlink" title="主流的NoSQL产品"></a>主流的NoSQL产品</h2><h3 id="键值-Key-Value-存储数据库"><a href="#键值-Key-Value-存储数据库" class="headerlink" title="键值(Key-Value)存储数据库"></a>键值(Key-Value)存储数据库</h3><ol>
-<li>相关产品： Tokyo Cabinet/Tyrant、Redis、Voldemort、Berkeley DB</li>
-<li>典型应用： 内容缓存，主要用于处理大量数据的高访问负载。 </li>
-<li>数据模型： 一系列键值对</li>
-<li>优势： 快速查询</li>
-<li>劣势： 存储的数据缺少结构化</li>
-</ol>
-<h3 id="列存储数据库"><a href="#列存储数据库" class="headerlink" title="列存储数据库"></a>列存储数据库</h3><ol>
-<li>相关产品：Cassandra, HBase, Riak</li>
-<li>典型应用：分布式的文件系统</li>
-<li>数据模型：以列簇式存储，将同一列数据存在一起</li>
-<li>优势：查找速度快，可扩展性强，更容易进行分布式扩展</li>
-<li>劣势：功能相对局限</li>
-</ol>
-<h3 id="文档型数据库"><a href="#文档型数据库" class="headerlink" title="文档型数据库"></a>文档型数据库</h3><ol>
-<li>相关产品：CouchDB、MongoDB</li>
-<li>典型应用：Web应用（与Key-Value类似，Value是结构化的）</li>
-<li>数据模型： 一系列键值对</li>
-<li>优势：数据结构要求不严格</li>
-<li>劣势： 查询性能不高，而且缺乏统一的查询语法</li>
-</ol>
-<h3 id="图形-Graph-数据库"><a href="#图形-Graph-数据库" class="headerlink" title="图形(Graph)数据库"></a>图形(Graph)数据库</h3><ol>
-<li>相关数据库：Neo4J、InfoGrid、Infinite Graph</li>
-<li>典型应用：社交网络</li>
-<li>数据模型：图结构</li>
-<li>优势：利用图结构相关算法。</li>
-<li>劣势：需要对整个图做计算才能得出结果，不容易做分布式的集群方案。</li>
-</ol>
-<h2 id="什么是Redis"><a href="#什么是Redis" class="headerlink" title="什么是Redis"></a>什么是Redis</h2><p></p><p>&nbsp;&nbsp;&nbsp;&nbsp;Redis是用C语言开发的一个开源的高性能键值对（key-value）数据库，官方提供测试数据，50个并发执行100000个请求,读的速度是110000次/s,写的速度是81000次/s ，且Redis通过提供多种键值数据类型来适应不同场景下的存储需求，目前为止Redis支持的键值数据类型如下：</p><p></p>
-<ol>
-<li>字符串类型 string</li>
-<li>哈希类型 hash</li>
-<li>列表类型 list</li>
-<li>集合类型 set</li>
-<li>有序集合类型 sortedset</li>
-</ol>
-<h3 id="redis的应用场景"><a href="#redis的应用场景" class="headerlink" title="redis的应用场景"></a>redis的应用场景</h3><ol>
-<li>缓存（数据查询、短连接、新闻内容、商品内容等等）</li>
-<li>聊天室的在线好友列表</li>
-<li>任务队列。（秒杀、抢购、12306等等）</li>
-<li>应用排行榜</li>
-<li>网站访问统计</li>
-<li>数据过期处理（可以精确到毫秒</li>
-<li>分布式集群架构中的session分离</li>
-</ol>
-<h1 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h1><ol>
-<li>官网：<a href="https://redis.io" target="_blank" rel="noopener">https://redis.io</a></li>
-<li>中文网：<a href="http://www.redis.net.cn/" target="_blank" rel="noopener">http://www.redis.net.cn/</a></li>
-<li>解压直接可以使用：<ul>
-<li>redis.windows.conf：配置文件</li>
-<li>redis-cli.exe：redis的客户端</li>
-<li>redis-server.exe：redis服务器端</li>
-</ul>
-</li>
-</ol>
-<h1 id="命令操作"><a href="#命令操作" class="headerlink" title="命令操作"></a>命令操作</h1><h2 id="redis的数据结构"><a href="#redis的数据结构" class="headerlink" title="redis的数据结构"></a>redis的数据结构</h2><ul>
-<li>redis存储的是：key,value格式的数据，其中key都是字符串，value有5种不同的数据结构<ul>
-<li>value的数据结构：<ol>
-<li>字符串类型 string</li>
-<li>哈希类型 hash ： map格式</li>
-<li>列表类型 list ： linkedlist格式。支持重复元素</li>
-<li>集合类型 set  ： 不允许重复元素</li>
-<li>有序集合类型 sortedset：不允许重复元素，且元素有顺序</li>
-</ol>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="字符串类型-string"><a href="#字符串类型-string" class="headerlink" title="字符串类型 string"></a>字符串类型 string</h2><ol>
-<li><p>存储： </p>
-<ul>
-<li>set key value<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; set username zhangsan</span><br><span class="line">OK</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>获取：</p>
-<ul>
-<li>get key<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; get username</span><br><span class="line">&quot;zhangsan&quot;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>删除： </p>
-<ul>
-<li>del key<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; del age</span><br><span class="line">(integer) 1</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ol>
-<h2 id="哈希类型-hash"><a href="#哈希类型-hash" class="headerlink" title="哈希类型 hash"></a>哈希类型 hash</h2><ol>
-<li><p>存储： </p>
-<ul>
-<li>hset key field value<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; hset myhash username lisi</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; hset myhash password 123</span><br><span class="line">(integer) 1</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>获取： </p>
-<ul>
-<li>hget key field：获取指定field的value</li>
-<li>hgetall key：获取所有的field和value</li>
-</ul>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; hget myhash username</span><br><span class="line">&quot;lisi&quot;</span><br><span class="line"></span><br><span class="line">-----------------------------------------------</span><br><span class="line"></span><br><span class="line">127.0.0.1:6379&gt; hgetall myhash</span><br><span class="line">1) &quot;username&quot;</span><br><span class="line">2) &quot;lisi&quot;</span><br><span class="line">3) &quot;password&quot;</span><br><span class="line">4) &quot;123&quot;</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>删除： hdel key field<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; hdel myhash username</span><br><span class="line">(integer) 1</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="列表类型-list"><a href="#列表类型-list" class="headerlink" title="列表类型 list"></a>列表类型 list</h2><ul>
-<li>可以添加一个元素到列表的头部（左边）或者尾部（右边）</li>
-</ul>
-<ol>
-<li><p>添加：</p>
-<ul>
-<li><p>lpush key value: 将元素加入列表左表</p>
-</li>
-<li><p>rpush key value：将元素加入列表右边</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; lpush myList a</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; lpush myList b</span><br><span class="line">(integer) 2</span><br><span class="line">127.0.0.1:6379&gt; rpush myList c</span><br><span class="line">(integer) 3</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>获取：</p>
-<ul>
-<li>lrange key start end ：范围获取<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; lrange myList 0 -1</span><br><span class="line">1) &quot;b&quot;</span><br><span class="line">2) &quot;a&quot;</span><br><span class="line">3) &quot;c&quot;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>删除：</p>
-<ul>
-<li>lpop key： 删除列表最左边的元素，并将元素返回</li>
-<li>rpop key： 删除列表最右边的元素，并将元素返回</li>
-</ul>
-</li>
-</ol>
-<h2 id="集合类型-set"><a href="#集合类型-set" class="headerlink" title="集合类型 set"></a>集合类型 set</h2><blockquote>
-<p>set类型不允许重复元素</p>
-</blockquote>
-<hr>
-<ol>
-<li>存储：sadd key value</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; sadd myset a</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; sadd myset a</span><br><span class="line">(integer) 0</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>获取：smembers key:获取set集合中所有元素</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; smembers myset</span><br><span class="line">1) &quot;a&quot;</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>删除：srem key value:删除set集合中的某个元素</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; srem myset a</span><br><span class="line">(integer) 1</span><br></pre></td></tr></table></figure>
-<h2 id="有序集合类型-sortedset"><a href="#有序集合类型-sortedset" class="headerlink" title="有序集合类型 sortedset"></a>有序集合类型 sortedset</h2><blockquote>
-<p>不允许重复元素，且元素有顺序.每个元素都会关联一个double类型的分数。redis正是通过分数来为集合中的成员进行从小到大的排序。</p>
-</blockquote>
-<hr>
-<ol>
-<li>存储：zadd key score value</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; zadd mysort 60 zhangsan</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; zadd mysort 50 lisi</span><br><span class="line">(integer) 1</span><br><span class="line">127.0.0.1:6379&gt; zadd mysort 80 wangwu</span><br><span class="line">(integer) 1</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>获取：zrange key start end [withscores]</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; zrange mysort 0 -1</span><br><span class="line">1) &quot;lisi&quot;</span><br><span class="line">2) &quot;zhangsan&quot;</span><br><span class="line">3) &quot;wangwu&quot;</span><br><span class="line"></span><br><span class="line">127.0.0.1:6379&gt; zrange mysort 0 -1 withscores</span><br><span class="line">1) &quot;zhangsan&quot;</span><br><span class="line">2) &quot;60&quot;</span><br><span class="line">3) &quot;wangwu&quot;</span><br><span class="line">4) &quot;80&quot;</span><br><span class="line">5) &quot;lisi&quot;</span><br><span class="line">6) &quot;500&quot;</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>删除：zrem key value</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1:6379&gt; zrem mysort lisi</span><br><span class="line">(integer) 1</span><br></pre></td></tr></table></figure>
-<h2 id="通用命令"><a href="#通用命令" class="headerlink" title="通用命令"></a>通用命令</h2><ol>
-<li>keys * : 查询所有的键</li>
-<li>type key ： 获取键对应的value的类型</li>
-<li>del key：删除指定的key value</li>
-</ol>
-<h1 id="持久化"><a href="#持久化" class="headerlink" title="持久化"></a>持久化</h1><blockquote>
-<p> redis是一个内存数据库，当redis服务器重启，获取电脑重启，数据会丢失，我们可以将redis内存中的数据持久化保存到硬盘的文件中。</p>
-</blockquote>
-<hr>
-<h2 id="redis持久化机制"><a href="#redis持久化机制" class="headerlink" title="redis持久化机制"></a>redis持久化机制</h2><ol>
-<li>RDB：默认方式，不需要进行配置，默认就使用这种机制</li>
-<li>AOF：日志记录的方式，可以记录每一条命令的操作。可以每一次命令操作后，持久化数据</li>
-</ol>
-<h2 id="RDB"><a href="#RDB" class="headerlink" title="RDB"></a>RDB</h2><blockquote>
-<p>在一定的间隔时间中，检测key的变化情况，然后持久化数据</p>
-</blockquote>
-<hr>
-<ol>
-<li>编辑redis.windwos.conf文件</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#   after 900 sec (15 min) if at least 1 key changed</span><br><span class="line">save 900 1</span><br><span class="line">#   after 300 sec (5 min) if at least 10 keys changed</span><br><span class="line">save 300 10</span><br><span class="line">#   after 60 sec if at least 10000 keys changed</span><br><span class="line">save 60 10000</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>重新启动redis服务器，并指定配置文件名称</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:\redis\windows-64\redis-2.8.9&gt;redis-server.exe redis.windows.conf</span><br></pre></td></tr></table></figure>
-<h2 id="AOF"><a href="#AOF" class="headerlink" title="AOF"></a>AOF</h2><ul>
-<li>编辑redis.windwos.conf文件</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">appendonly no（关闭aof） --&gt; appendonly yes （开启aof）</span><br><span class="line"></span><br><span class="line"># appendfsync always ： 每一次操作都进行持久化</span><br><span class="line">appendfsync everysec ： 每隔一秒进行一次持久化</span><br><span class="line"># appendfsync no	 ： 不进行持久化</span><br></pre></td></tr></table></figure>
-<h1 id="Java客户端-Jedis"><a href="#Java客户端-Jedis" class="headerlink" title="Java客户端 Jedis"></a>Java客户端 Jedis</h1><blockquote>
-<p>一款Java操作redis数据库的工具。</p>
-</blockquote>
-<h2 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h2><ol>
-<li>下载jedis的jar包</li>
-<li>使用</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1. 获取连接</span></span><br><span class="line">Jedis jedis = <span class="keyword">new</span> Jedis(<span class="string">"localhost"</span>,<span class="number">6379</span>);</span><br><span class="line"><span class="comment">//2. 操作</span></span><br><span class="line">jedis.set(<span class="string">"username"</span>,<span class="string">"zhangsan"</span>);</span><br><span class="line"><span class="comment">//3. 关闭连接</span></span><br><span class="line">jedis.close();</span><br></pre></td></tr></table></figure>
-<h2 id="Jedis操作各种redis中的数据结构"><a href="#Jedis操作各种redis中的数据结构" class="headerlink" title="Jedis操作各种redis中的数据结构"></a>Jedis操作各种redis中的数据结构</h2><h3 id="字符串类型String"><a href="#字符串类型String" class="headerlink" title="字符串类型String"></a>字符串类型String</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 操作String的方法</span></span><br><span class="line"><span class="comment">     * 1. public String set(String key, String value)</span></span><br><span class="line"><span class="comment">     * 2. public String get(String key)</span></span><br><span class="line"><span class="comment">     * 3. public Long del(String key)</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Jedis jedis = <span class="keyword">new</span> Jedis();</span><br><span class="line">    jedis.set(<span class="string">"username"</span>, <span class="string">"zhangsan"</span>);</span><br><span class="line">    String username = jedis.get(<span class="string">"username"</span>);</span><br><span class="line">    System.out.println(<span class="string">"username = "</span> + username);</span><br><span class="line">    jedis.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="哈希类型Hash"><a href="#哈希类型Hash" class="headerlink" title="哈希类型Hash"></a>哈希类型Hash</h3><blockquote>
-<p>Hash类型其实是以Map格式存储的（键值对）</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 操作Hash类型的方法</span></span><br><span class="line"><span class="comment">     * 1. public Long hset(String key, String field, String value)</span></span><br><span class="line"><span class="comment">     * 2. public String hget(String key, String field)</span></span><br><span class="line"><span class="comment">     * 3. public Map&lt;String, String&gt; hgetAll(String key)</span></span><br><span class="line"><span class="comment">     * 4. public Long hdel(String key, String... fields)</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testHash</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Jedis jedis = <span class="keyword">new</span> Jedis();</span><br><span class="line">    jedis.hset(<span class="string">"myHash"</span>, <span class="string">"username"</span>, <span class="string">"zhangsan"</span>);</span><br><span class="line">    String username = jedis.hget(<span class="string">"myHash"</span>, <span class="string">"username"</span>);</span><br><span class="line">    System.out.println(<span class="string">"username = "</span> + username);</span><br><span class="line">    jedis.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="列表类型List"><a href="#列表类型List" class="headerlink" title="列表类型List"></a>列表类型List</h3><blockquote>
-<p>LinkedList格式。支持重复元素</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 操作List的方法</span></span><br><span class="line"><span class="comment">     * 1. public Long lpush(String key, String... strings)</span></span><br><span class="line"><span class="comment">     * 2. public String lpop(String key)</span></span><br><span class="line"><span class="comment">     * 3. public Long rpush(String key, String... strings)</span></span><br><span class="line"><span class="comment">     * 4. public String rpop(String key)</span></span><br><span class="line"><span class="comment">     * 5. public List&lt;String&gt; lrange(String key, long start, long end)</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testList</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Jedis jedis = <span class="keyword">new</span> Jedis();</span><br><span class="line">    jedis.lpush(<span class="string">"myList"</span>, <span class="string">"hehe"</span>);</span><br><span class="line">    jedis.rpush(<span class="string">"myList"</span>, <span class="string">"hello"</span>);</span><br><span class="line">    List&lt;String&gt; myList = jedis.lrange(<span class="string">"myList"</span>, <span class="number">0</span>, -<span class="number">1</span>);</span><br><span class="line">    System.out.println(<span class="string">"myList = "</span> + myList);</span><br><span class="line">    jedis.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="集合类型Set"><a href="#集合类型Set" class="headerlink" title="集合类型Set"></a>集合类型Set</h3><blockquote>
-<p>不允许重复元素</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 操作Set的方法</span></span><br><span class="line"><span class="comment">     * 1. public Long sadd(String key, String... members)</span></span><br><span class="line"><span class="comment">     * 2. public Long srem(String key, String... members)</span></span><br><span class="line"><span class="comment">     * 3. public Set&lt;String&gt; smembers(String key)</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testSet</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Jedis jedis = <span class="keyword">new</span> Jedis();</span><br><span class="line">    jedis.sadd(<span class="string">"mySet"</span>, <span class="string">"password"</span>, <span class="string">"hehe"</span>);</span><br><span class="line">    Set&lt;String&gt; mySet = jedis.smembers(<span class="string">"mySet"</span>);</span><br><span class="line">    System.out.println(<span class="string">"mySet = "</span> + mySet);</span><br><span class="line">    jedis.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="有序集合类型SortedSet"><a href="#有序集合类型SortedSet" class="headerlink" title="有序集合类型SortedSet"></a>有序集合类型SortedSet</h3><blockquote>
-<p>不允许重复元素，且元素有序</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 操作SortedSet的方法</span></span><br><span class="line"><span class="comment">     * 1. public Long zadd(String key, double score, String member)</span></span><br><span class="line"><span class="comment">     * 2. public Long zrem(String key, String... members)</span></span><br><span class="line"><span class="comment">     * 3. public Set&lt;String&gt; zrange(String key, long start, long end)</span></span><br><span class="line"><span class="comment">     * 4. public Set&lt;Tuple&gt; zrangeWithScores(String key, long start, long end)</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testSortedSet</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Jedis jedis = <span class="keyword">new</span> Jedis();</span><br><span class="line">    jedis.zadd(<span class="string">"mySortedSet"</span>, <span class="number">666</span>, <span class="string">"hello world!"</span>);</span><br><span class="line">    Long zrem = jedis.zrem(<span class="string">"mySortedSet"</span>, <span class="string">"hello world!"</span>);</span><br><span class="line">    System.out.println(<span class="string">"zrem = "</span> + zrem);</span><br><span class="line">    Set&lt;String&gt; mySortedSet = jedis.zrange(<span class="string">"mySortedSet"</span>, <span class="number">0</span>, -<span class="number">1</span>);</span><br><span class="line">    System.out.println(<span class="string">"mySortedSet = "</span> + mySortedSet);</span><br><span class="line">    Set&lt;Tuple&gt; mySortedSetWithScores = jedis.zrangeWithScores(<span class="string">"mySortedSet"</span>, <span class="number">0</span>, -<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span> (Tuple set : mySortedSetWithScores) &#123;</span><br><span class="line">        String element = set.getElement();</span><br><span class="line">        <span class="keyword">double</span> score = set.getScore();</span><br><span class="line">        System.out.println(element + <span class="string">":"</span> + score);</span><br><span class="line">    &#125;</span><br><span class="line">    jedis.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="通用的操作方法"><a href="#通用的操作方法" class="headerlink" title="通用的操作方法"></a>通用的操作方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 通用的操作方法</span></span><br><span class="line"><span class="comment">     * 1. public Set&lt;String&gt; keys(String pattern)</span></span><br><span class="line"><span class="comment">     * 2. public String type(String key)</span></span><br><span class="line"><span class="comment">     * 3. public Long del(String key)</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testGeneric</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Jedis jedis = <span class="keyword">new</span> Jedis();</span><br><span class="line">    Set&lt;String&gt; keys = jedis.keys(<span class="string">"*"</span>);</span><br><span class="line">    System.out.println(<span class="string">"keys = "</span> + keys);</span><br><span class="line">    String myListType = jedis.type(<span class="string">"myList"</span>);</span><br><span class="line">    System.out.println(<span class="string">"myListType = "</span> + myListType);</span><br><span class="line">    <span class="comment">//先添加一个属性username</span></span><br><span class="line">    jedis.set(<span class="string">"username"</span>, <span class="string">"hehe"</span>);</span><br><span class="line">    Long del = jedis.del(<span class="string">"username"</span>);</span><br><span class="line">    System.out.println(<span class="string">"del number = "</span> + del);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Jedis连接池"><a href="#Jedis连接池" class="headerlink" title="Jedis连接池"></a>Jedis连接池</h2><h3 id="使用步骤-1"><a href="#使用步骤-1" class="headerlink" title="使用步骤"></a>使用步骤</h3><ol>
-<li>导包</li>
-<li>创建JedisPool连接池对象</li>
-<li>调用方法 getResource()方法获取Jedis连接</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//0.创建一个配置对象</span></span><br><span class="line">JedisPoolConfig config = <span class="keyword">new</span> JedisPoolConfig();</span><br><span class="line">config.setMaxTotal(<span class="number">50</span>);</span><br><span class="line">config.setMaxIdle(<span class="number">10</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//1.创建Jedis连接池对象</span></span><br><span class="line">JedisPool jedisPool = <span class="keyword">new</span> JedisPool(config,<span class="string">"localhost"</span>,<span class="number">6379</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//2.获取连接</span></span><br><span class="line">Jedis jedis = jedisPool.getResource();</span><br><span class="line"></span><br><span class="line"><span class="comment">//3. 使用</span></span><br><span class="line">jedis.set(<span class="string">"hehe"</span>,<span class="string">"heihei"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//4. 关闭 归还到连接池中</span></span><br><span class="line">jedis.close();</span><br></pre></td></tr></table></figure>
-<h3 id="连接池工具类"><a href="#连接池工具类" class="headerlink" title="连接池工具类"></a>连接池工具类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JedisPoolUtils</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> JedisPool jedisPool;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span>&#123;</span><br><span class="line">        <span class="comment">//读取配置文件</span></span><br><span class="line">        InputStream is = JedisPoolUtils.class.getClassLoader().getResourceAsStream(<span class="string">"jedis.properties"</span>);</span><br><span class="line">        <span class="comment">//创建Properties对象</span></span><br><span class="line">        Properties pro = <span class="keyword">new</span> Properties();</span><br><span class="line">        <span class="comment">//关联文件</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            pro.load(is);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//获取数据，设置到JedisPoolConfig中</span></span><br><span class="line">        JedisPoolConfig config = <span class="keyword">new</span> JedisPoolConfig();</span><br><span class="line">        config.setMaxTotal(Integer.parseInt(pro.getProperty(<span class="string">"maxTotal"</span>)));</span><br><span class="line">        config.setMaxIdle(Integer.parseInt(pro.getProperty(<span class="string">"maxIdle"</span>)));</span><br><span class="line"></span><br><span class="line">        <span class="comment">//初始化JedisPool</span></span><br><span class="line">        jedisPool = <span class="keyword">new</span> JedisPool(config,pro.getProperty(<span class="string">"host"</span>),Integer.parseInt(pro.getProperty(<span class="string">"port"</span>)));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 获取连接方法</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Jedis <span class="title">getJedis</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> jedisPool.getResource();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 测试jedis连接池工具类</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testMyJedisPoolUtils</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Jedis jedis = JedisPoolUtils.getJedis();</span><br><span class="line">    Set&lt;String&gt; keys = jedis.keys(<span class="string">"*"</span>);</span><br><span class="line">    System.out.println(<span class="string">"keys = "</span> + keys);</span><br><span class="line">    jedis.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><ol>
-<li>使用redis缓存一些不经常发生变化的数据。</li>
-<li>数据库的数据一旦发生改变，则需要更新缓存。</li>
-<li>数据库的表执行 增删改的相关操作，需要将redis缓存数据情况，再次存入。</li>
-<li>在service对应的增删改方法中，将redis数据删除。</li>
-</ol>
-
-          
+<h2 id="什么是NoSQL"><a href="#什么是NoSQL" class="headerlink" title="什么是NoSQL"></a>什么是NoSQL</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;NoSQL(NoSQL = Not Only SQL)，意即“不仅仅是SQL”，是一项全新的数据库理念，泛指非关系型的数据库。</p><br><p>&nbsp;&nbsp;&nbsp;&nbsp;随着互联网web2.0网站的兴起，传统的关系数据库在应付web2.0网站，特别是超大规模和高并发的SNS类型的web2.0纯动态网站已经显得力不从心，暴露了很多难以克服的问题，而非关系型的数据库则由于其本身的特点得到了非常迅速的发展。NoSQL数据库的产生就是为了解决大规模数据集合多重数据种类带来的挑战，尤其是大数据应用难题。</p><br>### NOSQL和关系型数据库比较<br><br>优点：<br><br>1. 成本：nosql数据库简单易部署，基本都是开源软件，不需要像使用oracle那样花费大量成本购买使用，相比关系型数据库价格便宜。<br>2. 查询速度：nosql数据库将数据存储于缓存之中，关系型数据库将数据存储在硬盘中，自然查询速度远不及nosql数据库。<br>3. 存储数据的格式：nosql的存储格式是key,value形式、文档形式、图片形式等等，所以可以存储基础类型以及对象或者是集合等各种格式，而数据库则只支持基础类型。<br>4. 扩展性：关系型数据库有类似join这样的多表查询机制的限制导致扩展很艰难。<br><br>缺点：<br><br>1. 维护的工具和资料有限，因为nosql是属于新的技术，不能和关系型数据库10几年的技术同日而语。<br>2. 不提供对sql的支持，如果不支持sql这样的工业标准，将产生一定用户的学习和使用成本。<br>3. 不提供关系型数据库对事务的处理。<br><br><br><br>### 非关系型数据库的优势<br><br>1. 性能NOSQL是基于键值对的，可以想象成表中的主键和值的对应关系，而且不需要经过SQL层的解析，所以性能非常高。<br>2. 可扩展性同样也是因为基于键值对，数据之间没有耦合性，所以非常容易水平扩展。<br><br><br><br>### 关系型数据库的优势<br><br>1. 复杂查询可以用SQL语句方便的在一个表以及多个表之间做非常复杂的数据查询。<br>2. 事务支持使得对于安全性能很高的数据访问要求得以实现。对于这两类数据库，对方的优势就是自己的弱势，反之亦然。<br><br><br><br>### 总结<br><br><p>&nbsp;&nbsp;&nbsp;&nbsp;关系型数据库与NoSQL数据库并非对立而是互补的关系，即通常情况下使用关系型数据库，在适合使用NoSQL的时候使用NoSQL数据库，让NoSQL数据库对关系型数据库的不足进行弥补。一般会将数据存储在关系型数据库中，在nosql数据库中备份存储关系型数据库的数据。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/Database/redis/#更多" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -961,8 +709,7 @@
 
       
         
-          
-            <!-- font-color is red when class="imp" -->
+          <!-- font-color is red when class="imp" -->
 <!-- font-size is 25px when class="lg" -->
 <style>
     .imp{
@@ -995,94 +742,13 @@
 <li>客户端不需要等待服务器端的响应。在服务器处理请求的过程中，客户端可以进行其他的操作。</li>
 </ol>
 <p><img src="/.cn//同步和异步.bmp" alt="同步和异步"></p>
-<h2 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h2><h3 id="原生JavaScript实现方式"><a href="#原生JavaScript实现方式" class="headerlink" title="原生JavaScript实现方式"></a>原生JavaScript实现方式</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.创建核心对象</span></span><br><span class="line"><span class="keyword">var</span> xmlhttp;</span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">window</span>.XMLHttpRequest)</span><br><span class="line">&#123;<span class="comment">// code for IE7+, Firefox, Chrome, Opera, Safari</span></span><br><span class="line">    xmlhttp=<span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;<span class="comment">// code for IE6, IE5</span></span><br><span class="line">    xmlhttp=<span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//2. 建立连接</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	参数：</span></span><br><span class="line"><span class="comment">		1. 请求方式：GET、POST</span></span><br><span class="line"><span class="comment">			* get方式，请求参数在URL后边拼接。send方法为空参</span></span><br><span class="line"><span class="comment">			* post方式，请求参数在send方法中定义</span></span><br><span class="line"><span class="comment">		2. 请求的URL：</span></span><br><span class="line"><span class="comment">		3. 同步或异步请求：true（异步）或 false（同步）</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">xmlhttp.open(<span class="string">"GET"</span>,<span class="string">"ajaxServlet?username=tom"</span>,<span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//3.发送请求</span></span><br><span class="line">xmlhttp.send();</span><br><span class="line"></span><br><span class="line"><span class="comment">//4.接受并处理来自服务器的响应结果</span></span><br><span class="line"><span class="comment">//获取方式 ：xmlhttp.responseText</span></span><br><span class="line"><span class="comment">//什么时候获取？当服务器响应成功后再获取</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//当xmlhttp对象的就绪状态改变时，触发事件onreadystatechange。</span></span><br><span class="line">xmlhttp.onreadystatechange=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//判断readyState就绪状态是否为4，判断status响应状态码是否为200</span></span><br><span class="line">    <span class="keyword">if</span> (xmlhttp.readyState==<span class="number">4</span> &amp;&amp; xmlhttp.status==<span class="number">200</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//获取服务器的响应结果</span></span><br><span class="line">        <span class="keyword">var</span> responseText = xmlhttp.responseText;</span><br><span class="line">        alert(responseText);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="JQeury实现方式"><a href="#JQeury实现方式" class="headerlink" title="JQeury实现方式"></a>JQeury实现方式</h3><h4 id="ajax"><a href="#ajax" class="headerlink" title="$.ajax()"></a>$.ajax()</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用$.ajax()发送异步请求</span></span><br><span class="line">$.ajax(&#123;</span><br><span class="line">    url:<span class="string">"ajaxServlet1111"</span> , <span class="comment">// 请求路径</span></span><br><span class="line">    type:<span class="string">"POST"</span> , <span class="comment">//请求方式</span></span><br><span class="line">    <span class="comment">//data: "username=jack&amp;age=23",//请求参数</span></span><br><span class="line">    data:&#123;<span class="string">"username"</span>:<span class="string">"jack"</span>,<span class="string">"age"</span>:<span class="number">23</span>&#125;,</span><br><span class="line">    success:<span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">        alert(data);</span><br><span class="line">    &#125;,<span class="comment">//响应成功后的回调函数</span></span><br><span class="line">    error:<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(<span class="string">"出错啦..."</span>)</span><br><span class="line">    &#125;,<span class="comment">//表示如果请求响应出现错误，会执行的回调函数</span></span><br><span class="line"></span><br><span class="line">    dataType:<span class="string">"text"</span><span class="comment">//设置接受到的响应数据的格式</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h4 id="get"><a href="#get" class="headerlink" title="$.get()"></a>$.get()</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$.<span class="keyword">get</span>()：发送<span class="keyword">get</span>请求</span><br><span class="line">	* 语法：$.<span class="keyword">get</span>(url, [data], [callback], [type])</span><br><span class="line">		* 参数：</span><br><span class="line">			* url：请求路径</span><br><span class="line">			* data：请求参数</span><br><span class="line">			* callback：回调函数</span><br><span class="line">			* type：响应结果的类型</span><br></pre></td></tr></table></figure>
-<h4 id="post"><a href="#post" class="headerlink" title="$.post()"></a>$.post()</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$.post()：发送post请求</span><br><span class="line">	* 语法：$.post(url, [data], [callback], [type])</span><br><span class="line">		* 参数：</span><br><span class="line">			* url：请求路径</span><br><span class="line">			* data：请求参数</span><br><span class="line">			* callback：回调函数</span><br><span class="line">			* type：响应结果的类型</span><br></pre></td></tr></table></figure>
-<h2 id="Ajax技术案例"><a href="#Ajax技术案例" class="headerlink" title="Ajax技术案例"></a>Ajax技术案例</h2><h3 id="案例要求"><a href="#案例要求" class="headerlink" title="案例要求"></a>案例要求</h3><p>使用Ajax技术，实现用户名是否存在的验证功能。</p>
-<h3 id="前台页面使用JS实现用户名的校验"><a href="#前台页面使用JS实现用户名的校验" class="headerlink" title="前台页面使用JS实现用户名的校验"></a>前台页面使用JS实现用户名的校验</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义一个函数checkUsername</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkUsername</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//获取span、p标签</span></span><br><span class="line">    <span class="keyword">var</span> $s_user = $(<span class="string">"#s_user"</span>);</span><br><span class="line">    <span class="keyword">var</span> $p_user = $(<span class="string">"#p_user"</span>);</span><br><span class="line">    <span class="comment">//清空span、p标签</span></span><br><span class="line">    $s_user.html(<span class="string">""</span>);</span><br><span class="line">    $p_user.html(<span class="string">""</span>);</span><br><span class="line">    <span class="comment">//1.获取用户名信息</span></span><br><span class="line">    <span class="keyword">var</span> username = $(<span class="string">"#username"</span>).val();</span><br><span class="line">    <span class="comment">//2.定义正则表达式</span></span><br><span class="line">    <span class="keyword">var</span> reg = <span class="regexp">/^\w&#123;6,12&#125;$/</span>;</span><br><span class="line">    <span class="comment">//3.校验</span></span><br><span class="line">    <span class="keyword">var</span> flag = reg.test(username);</span><br><span class="line">    <span class="comment">//4.逻辑判断然后向span、p标签替换内容</span></span><br><span class="line">    <span class="keyword">if</span> (flag) &#123;</span><br><span class="line">        $.post(</span><br><span class="line">            <span class="comment">// 1.传递url</span></span><br><span class="line">            <span class="string">"AjaxCheckUsernameServlet"</span>,</span><br><span class="line">            <span class="comment">// 2.传递data（参数）</span></span><br><span class="line">            &#123;<span class="attr">username</span>: user&#125;,</span><br><span class="line">            <span class="comment">// 3.回调函数</span></span><br><span class="line">            <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">                <span class="keyword">if</span> (data == <span class="string">"true"</span>) &#123;</span><br><span class="line">                    <span class="comment">//数据库中不存在该用户名</span></span><br><span class="line">                    $s_user.html(<span class="string">"&lt;img src='img/gou.png' width='30' height='20'&gt;"</span>);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="comment">//数据库中已存在该用户名</span></span><br><span class="line">                    $p_user.html(<span class="string">"用户名已存在！请重新输入."</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="comment">// 4.返回值类型</span></span><br><span class="line">            <span class="string">"text"</span></span><br><span class="line">        );</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">//不符合正则校验规则</span></span><br><span class="line">        $p_user.html(<span class="string">"用户名格式错误!以任意字符开头结尾，6~12个字符!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="AjaxCheckUsernameServlet的编写"><a href="#AjaxCheckUsernameServlet的编写" class="headerlink" title="AjaxCheckUsernameServlet的编写"></a>AjaxCheckUsernameServlet的编写</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> servlet;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> domain.User;</span><br><span class="line"><span class="keyword">import</span> service.UserService;</span><br><span class="line"><span class="keyword">import</span> service.impl.UserServiceImpl;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.annotation.WebServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> SkyWalker</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span> 2019 - 08 - 23 - 18:56</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@WebServlet</span>(<span class="string">"/AjaxCheckUsernameServlet"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AjaxCheckUsernameServlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        User user = <span class="keyword">new</span> User();</span><br><span class="line">        user.setUname(request.getParameter(<span class="string">"username"</span>));</span><br><span class="line">        UserService service = <span class="keyword">new</span> UserServiceImpl();</span><br><span class="line">        String s = service.userExists(user);</span><br><span class="line">        response.getWriter().write(s);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        doPost(request, response);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="UserServiceImpl的编写"><a href="#UserServiceImpl的编写" class="headerlink" title="UserServiceImpl的编写"></a>UserServiceImpl的编写</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> service.impl;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> dao.UserDao;</span><br><span class="line"><span class="keyword">import</span> domain.User;</span><br><span class="line"><span class="keyword">import</span> service.UserService;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> SkyWalker</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span> 2019 - 08 - 23 - 18:59</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserServiceImpl</span> <span class="keyword">implements</span> <span class="title">UserService</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> UserDao dao = <span class="keyword">new</span> UserDao();</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">userExists</span><span class="params">(User user)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> dao.userExists(user);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="UserDaoImpl的编写"><a href="#UserDaoImpl的编写" class="headerlink" title="UserDaoImpl的编写"></a>UserDaoImpl的编写</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> dao;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> dao.UserDao;</span><br><span class="line"><span class="keyword">import</span> domain.User;</span><br><span class="line"><span class="keyword">import</span> org.springframework.dao.DataAccessException;</span><br><span class="line"><span class="keyword">import</span> org.springframework.jdbc.core.BeanPropertyRowMapper;</span><br><span class="line"><span class="keyword">import</span> org.springframework.jdbc.core.JdbcTemplate;</span><br><span class="line"><span class="keyword">import</span> util.JDBCUtils;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> SkyWalker</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span> 2019 - 08 - 12 - 10:20</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserDaoImpl</span> <span class="keyword">implements</span> <span class="title">UserDao</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> JdbcTemplate template = <span class="keyword">new</span> JdbcTemplate(JDBCUtils.getDataSource());</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">userExists</span><span class="params">(User user)</span> </span>&#123;</span><br><span class="line">        Integer count = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            count = template.queryForObject(<span class="string">"select count(*) from user where uname = ?"</span>, Integer.class, user.getUname());</span><br><span class="line">        &#125; <span class="keyword">catch</span> (DataAccessException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (count != <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"false"</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"true"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="Json"><a href="#Json" class="headerlink" title="Json"></a>Json</h1><blockquote>
-<ul>
-<li>概念：JavaScript Object Notation        JavaScript对象表示法</li>
-</ul>
-</blockquote>
-<hr>
-<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ol>
-<li>json现在多用于存储和交换文本信息的语法</li>
-<li>进行数据的传输</li>
-<li>JSON 比 XML 更小、更快，更易解析</li>
-</ol>
-<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><h3 id="基本规则"><a href="#基本规则" class="headerlink" title="基本规则"></a>基本规则</h3><ol>
-<li>数据在名称/值对中：json数据是由键值对构成的<ul>
-<li>键用引号(单双都行)引起来，也可以不使用引号</li>
-<li>值得取值类型：<ol>
-<li>数字（整数或浮点数）</li>
-<li>字符串（在双引号中）</li>
-<li>逻辑值（true 或 false）</li>
-<li>数组（在方括号中）    <code>{&quot;persons&quot;:[{},{}]}</code></li>
-<li>对象（在花括号中）<code>{&quot;address&quot;:{&quot;province&quot;：&quot;陕西&quot;....}}</code></li>
-<li>null</li>
-</ol>
-</li>
-</ul>
-</li>
-<li>数据由逗号分隔：多个键值对由逗号分隔</li>
-<li>花括号保存对象：使用{}定义json 格式</li>
-<li>方括号保存数组：[]</li>
-</ol>
-<h3 id="获取数据"><a href="#获取数据" class="headerlink" title="获取数据"></a>获取数据</h3><ol>
-<li>json对象.键名</li>
-<li>json对象[“键名”]</li>
-<li>数组对象[索引]</li>
-<li>遍历</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.定义基本格式</span></span><br><span class="line"><span class="keyword">var</span> person = &#123;<span class="string">"name"</span>: <span class="string">"张三"</span>, <span class="attr">age</span>: <span class="number">23</span>, <span class="string">'gender'</span>: <span class="literal">true</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> ps = [</span><br><span class="line">    		&#123;<span class="string">"name"</span>: <span class="string">"张三"</span>, <span class="string">"age"</span>: <span class="number">23</span>, <span class="string">"gender"</span>: <span class="literal">true</span>&#125;,</span><br><span class="line">          	&#123;<span class="string">"name"</span>: <span class="string">"李四"</span>, <span class="string">"age"</span>: <span class="number">24</span>, <span class="string">"gender"</span>: <span class="literal">true</span>&#125;,</span><br><span class="line">          	&#123;<span class="string">"name"</span>: <span class="string">"王五"</span>, <span class="string">"age"</span>: <span class="number">25</span>, <span class="string">"gender"</span>: <span class="literal">false</span>&#125;</span><br><span class="line">         ];</span><br><span class="line"></span><br><span class="line"><span class="comment">//获取person对象中所有的键和值</span></span><br><span class="line"><span class="comment">//for in 循环</span></span><br><span class="line"><span class="comment">/* for(var key in person)&#123;</span></span><br><span class="line"><span class="comment">    //这样的方式获取不行。因为相当于  person."name"</span></span><br><span class="line"><span class="comment">    //alert(key + ":" + person.key);</span></span><br><span class="line"><span class="comment">	alert(key+":"+person[key]);</span></span><br><span class="line"><span class="comment">&#125;*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//获取ps中的所有值</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; ps.length; i++) &#123;</span><br><span class="line">    <span class="keyword">var</span> p = ps[i];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> key <span class="keyword">in</span> p)&#123;</span><br><span class="line">        alert(key+<span class="string">":"</span>+p[key]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="Json数据和Java对象的相互转换"><a href="#Json数据和Java对象的相互转换" class="headerlink" title="Json数据和Java对象的相互转换"></a>Json数据和Java对象的相互转换</h3><blockquote>
-<ul>
-<li>Json解析器：常见的解析器：Jsonlib，Gson，fastjson，jackson</li>
-</ul>
-</blockquote>
-<hr>
-<h4 id="Json转为Java对象"><a href="#Json转为Java对象" class="headerlink" title="Json转为Java对象"></a>Json转为Java对象</h4><ol>
-<li>导入jackson的相关jar包</li>
-<li>创建Jackson核心对象 ObjectMapper</li>
-<li>调用ObjectMapper的相关方法进行转换：<code>readValue(json字符串数据,Class)</code></li>
-</ol>
-<h4 id="Java对象转换Json（使用Jackson）"><a href="#Java对象转换Json（使用Jackson）" class="headerlink" title="Java对象转换Json（使用Jackson）"></a>Java对象转换Json（使用Jackson）</h4><ol>
-<li>导入jackson的相关jar包</li>
-<li>创建Jackson核心对象 ObjectMapper</li>
-<li>调用ObjectMapper的相关方法进行转换<ul>
-<li>转换方法：<ol>
-<li><code>writeValue(参数1，obj);</code><ul>
-<li>参数1：<ul>
-<li>File：将obj对象转换为JSON字符串，并保存到指定的文件中</li>
-<li>Writer：将obj对象转换为JSON字符串，并将json数据填充到字符输出流中</li>
-<li>OutputStream：将obj对象转换为JSON字符串，并将json数据填充到字节输出流中</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><code>writeValueAsString(obj):将对象转为json字符串</code></li>
-</ol>
-</li>
-<li>注解：<ul>
-<li>@JsonIgnore：排除属性。</li>
-<li>@JsonFormat：属性值得格式化，如：<code>@JsonFormat(pattern = &quot;yyyy-MM-dd&quot;)</code></li>
-</ul>
-</li>
-<li>复杂java对象转换<ul>
-<li>List：数组</li>
-<li>Map：对象格式一致</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/JavaScript/Ajax/#更多" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
