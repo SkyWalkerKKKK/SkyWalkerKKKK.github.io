@@ -115,7 +115,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://skywalkerkkkk.cn/Framework/16_SSM框架/images/1567733159033.png">
 <meta property="og:image" content="http://skywalkerkkkk.cn/Framework/16_SSM框架/images/AOP动态代理技术.png">
-<meta property="og:updated_time" content="2019-09-16T06:35:35.940Z">
+<meta property="og:updated_time" content="2019-09-16T07:34:40.481Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SSM框架">
 <meta name="twitter:description" content="概述 SSM（Spring+SpringMVC+MyBatis）框架集由Spring、MyBatis两个开源框架整合而成（SpringMVC是Spring中的部分内容）。常作为数据源较简单的web项目的框架。  什么是框架框架( Framework )是构成一类特定软件可复用设计的一组相互协作的类。框架规定了你的应用的体系结构。它定义了整体结构，类和对象的分割，各部分的主要责任，类和对象怎么协作，">
@@ -454,7 +454,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  10.8k
+                  11k
                 </span>
               
 
@@ -470,7 +470,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  45
+                  46
                 </span>
               
             </div>
@@ -508,7 +508,7 @@
 <p>框架一般处在低层应用平台（如J2EE）和高层业务逻辑之间的<a href="https://baike.baidu.com/item/中间层" target="_blank" rel="noopener">中间层</a>。</p>
 <p>软件为什么要分层？ 为了实现“<a href="https://baike.baidu.com/item/高内聚" target="_blank" rel="noopener">高内聚</a>、低耦合”。把问题划分开来各个解决，易于控制，易于延展，易于分配资源…总之好处很多啦。</p>
 <h2 id="框架和设计模式"><a href="#框架和设计模式" class="headerlink" title="框架和设计模式"></a>框架和设计模式</h2><p>框架、设计模式这两个概念总容易被混淆，其实它们之间还是有区别的。<a href="https://baike.baidu.com/item/构件" target="_blank" rel="noopener">构件</a>通常是代码重用，而设计模式是设计重用，框架则介于两者之间，部分代码重用，部分设计重用，有时分析也可重用。在软件生产中有三种级别的重用：内部重用，即在同一应用中能公共使用的抽象块;代码重用，即将通用模块组合成库或工具集，以便在多个应用和领域都能使用；应用框架的重用，即为专用领域提供通用的或现成的基础结构，以获得最高级别的重用性。</p>
-<p>框架与设计模式虽然相似，但却有着根本的不同。设计模式是对在某种环境中反复出现的问题以及解决该问题的方案的描述，它比框架更抽象；框架可以用代码表示，也能直接执行或复用，而对模式而言只有实例才能用代码表示;设计模式是比框架更小的元素，一个框架中往往含有一个或多个设计模式，框架总是针对某一特定应用领域，但同一模式却可适用于各种应用。可以说，框架是软件，而设计模式是软件的知识。</p>
+<p>框架与设计模式虽然相似，但却有着根本的不同。设计模式是对在某种环境中反复出现的问题以及解决该问题的方案的描述，它比框架更抽象；框架可以用代码表示，也能直接执行或复用，而对模式而言只有实例才能用代码表示；设计模式是比框架更小的元素，一个框架中往往含有一个或多个设计模式，框架总是针对某一特定应用领域，但同一模式却可适用于各种应用。可以说，框架是软件，而设计模式是软件的知识。</p>
 <h2 id="SSM是哪三大框架"><a href="#SSM是哪三大框架" class="headerlink" title="SSM是哪三大框架"></a>SSM是哪三大框架</h2><p><span style="color:red; font-size:25px">SSM     =     Spring     +     SpringMVC     +     MyBatis</span></p>
 <h2 id="为什么是三大框架"><a href="#为什么是三大框架" class="headerlink" title="为什么是三大框架"></a>为什么是三大框架</h2><p>为了便于管理代码，现在流行的是分层开发，分为三层：</p>
 <ol>
@@ -524,7 +524,6 @@
 <li>MyBatis框架解决了持久层（dao层）从数据库中获取数据代码量大、耦合性强的问题。</li>
 <li>Spring框架的作用是整合其他各个框架，相当于一个领导，不干活，只负责管理人与人之前的关系。</li>
 </ol>
-<p>### </p>
 <h1 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h1><blockquote>
 <p>Spring就像是整个项目中装配bean的大工厂，在配置文件中可以指定使用特定的参数去调用实体类的构造方法来实例化对象。也可以称之为项目中的粘合剂。<br>Spring的核心思想是IoC（控制反转），即不再需要程序员去显式地<code>new</code>一个对象，而是让Spring框架帮你来完成这一切。</p>
 </blockquote>
@@ -543,14 +542,14 @@
 <li>编译期不依赖，运行时才依赖。</li>
 </ul>
 <h4 id="思路？"><a href="#思路？" class="headerlink" title="思路？"></a>思路？</h4><ol>
-<li>使用反射来创建对象，而避免使用new关键字。</li>
+<li>使用反射来创建对象，而避免使用<code>new</code>关键字。</li>
 <li>通过读取配置文件来获取要创建的对象全限定类名。</li>
 </ol>
 <h2 id="IOC"><a href="#IOC" class="headerlink" title="IOC"></a>IOC</h2><blockquote>
 <p><strong>控制反转</strong>（Inversion of Control，缩写为<strong>IoC</strong>），是<a href="https://baike.baidu.com/item/面向对象编程" target="_blank" rel="noopener">面向对象编程</a>中的一种设计原则，可以用来减低计算机代码之间的<a href="https://baike.baidu.com/item/耦合度" target="_blank" rel="noopener">耦合度</a>。其中最常见的方式叫做<strong>依赖注入</strong>（Dependency Injection，简称<strong>DI</strong>），还有一种方式叫“依赖查找”（Dependency Lookup）。通过控制反转，对象在被创建的时候，由一个调控系统内所有对象的外界实体将其所依赖的对象的引用传递给它。也可以说，依赖被注入到对象中。</p>
 </blockquote>
 <h3 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h3><blockquote>
-<p>早在2004年，<a href="https://baike.baidu.com/item/Martin Fowler" target="_blank" rel="noopener">Martin Fowler</a>就提出了“哪些方面的控制被反转了？”这个问题。他总结出是依赖对象的获得被反转了，因为大多数应用程序都是由两个或是更多的类通过彼此的合作来实现<a href="https://baike.baidu.com/item/企业逻辑" target="_blank" rel="noopener">企业逻辑</a>，这使得每个对象都需要获取与其合作的对象（也就是它所依赖的对象）的引用。如果这个获取过程要靠自身实现，那么这将导致代码高度<a href="https://baike.baidu.com/item/耦合" target="_blank" rel="noopener">耦合</a>并且难以维护和调试。</p>
+<p>早在2004年，<a href="https://baike.baidu.com/item/Martin Fowler" target="_blank" rel="noopener">Martin Fowler</a>就提出了“哪些方面的控制被反转了？”这个问题。他总结出是依赖对象的获得被反转了，因为大多数应用程序都是由两个或是更多的类通过彼此的合作来实现<a href="https://baike.baidu.com/item/企业逻辑" target="_blank" rel="noopener">企业逻辑</a>，这使得每个对象都需要获取与其合作的对象（也就是它所依赖的对象）的引用。<span style="color:red;font-size:20px">如果这个获取过程要靠自身实现，那么这将导致代码高度<a href="https://baike.baidu.com/item/耦合" target="_blank" rel="noopener">耦合</a>并且难以维护和调试。</span></p>
 </blockquote>
 <h3 id="XML方式配置IOC"><a href="#XML方式配置IOC" class="headerlink" title="XML方式配置IOC"></a>XML方式配置IOC</h3><blockquote>
 <p>XML配置文件的方式可以配置Spring的IOC，需要在XML文件中引入Spring的约束文档，主要通过Bean标签来配置对象。</p>
@@ -610,7 +609,13 @@
 <li>init-method：指定类中的初始化方法名称</li>
 <li>destroy-method：指定类中销毁方法名称</li>
 </ul>
-<h4 id="Bean实例化的三种方式【划重点了】"><a href="#Bean实例化的三种方式【划重点了】" class="headerlink" title="Bean实例化的三种方式【划重点了】"></a><span style="color:red;font-size:25px">Bean实例化的三种方式【划重点了】</span></h4><h5 id="无参构造实例化"><a href="#无参构造实例化" class="headerlink" title="无参构造实例化"></a>无参构造实例化</h5><blockquote>
+<h4 id="Bean实例化的三种方式【划重点了】"><a href="#Bean实例化的三种方式【划重点了】" class="headerlink" title="Bean实例化的三种方式【划重点了】"></a><span style="color:red;font-size:25px">Bean实例化的三种方式【划重点了】</span></h4><p><span style="color:#ff83a9;font-size:20px">首先我先注明一下：下面几乎所有的Spring知识点举例时所用到的情景，都是这样的：</span></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Controller层</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserController</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> UserService userService = <span class="keyword">new</span> UserServiceImpl();</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 方便描述，这里用一个main方法直接进行调用</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        userService.save();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Service层</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserServiceImpl</span> <span class="keyword">implements</span> <span class="title">UserService</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> UserDao userDao = <span class="keyword">new</span> UserDaoImpl();</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Service的save方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">save</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        userDao.save();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Dao层</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserDaoImpl</span> <span class="keyword">implements</span> <span class="title">UserDao</span> </span>&#123;</span><br><span class="line">    <span class="comment">// Dao的save方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">save</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"UserDao save running..."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><span style="color:#ff83a9;font-size:20px">分析：首先，3层架构。然后我们自己去显式的<code>new</code>了UserServiceImpl对象和UserDaoImpl对象。然后自UserController，层层调用，最终完成。</span></p>
+<p><span style="color:#ff83a9;font-size:20px">在下面的知识点中。几乎都是以这个为例子进行说明的。</span></p>
+<h5 id="无参构造实例化"><a href="#无参构造实例化" class="headerlink" title="无参构造实例化"></a>无参构造实例化</h5><blockquote>
 <p>它会根据默认无参构造方法来创建类对象，如果bean中没有默认无参构造函数，将会创建失败</p>
 </blockquote>
 <ul>
@@ -704,12 +709,12 @@
 <h2 id="DI"><a href="#DI" class="headerlink" title="DI"></a>DI</h2><blockquote>
 <p>DI： Dependency Injection，依赖注入。组件不做定位查询，只提供普通的Java方法让容器去决定依赖关系。容器全权负责的组件的装配，它会把符合依赖关系的对象通过JavaBean属性或者<a href="https://baike.baidu.com/item/构造函数" target="_blank" rel="noopener">构造函数</a>传递给需要的对象。通过JavaBean属性注射依赖关系的做法称为设值方法注入(Setter Injection)；将依赖关系作为构造函数参数传入的做法称为<a href="https://baike.baidu.com/item/构造器" target="_blank" rel="noopener">构造器</a>注入（Constructor Injection）。</p>
 <p>在编写程序时，通过控制反转，把对象的创建交给了 Spring，但是代码中不可能出现没有依赖的情况。</p>
-<p>IOC 解耦只是降低他们的依赖关系，但不会消除。例如：业务层仍会调用持久层的方法。</p>
+<p><span style="color:red;font-size:20px">IOC 解耦只是降低他们的依赖关系，但不会消除。例如：业务层仍会调用持久层的方法。</span></p>
 <p>那这种业务层和持久层的依赖关系，在使用 Spring 之后，就让 Spring 来维护了。</p>
 <p>简单的说，就是坐等框架把持久层对象传入业务层，而不用我们自己去获取。</p>
 </blockquote>
 <h3 id="XML方式实现依赖注入"><a href="#XML方式实现依赖注入" class="headerlink" title="XML方式实现依赖注入"></a>XML方式实现依赖注入</h3><h4 id="构造方法注入"><a href="#构造方法注入" class="headerlink" title="构造方法注入"></a>构造方法注入</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- spring的xml配置文件 --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"userDao"</span> <span class="attr">class</span>=<span class="string">"cn.skywalker.dao.impl.UserDaoImpl"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"userService"</span> <span class="attr">class</span>=<span class="string">"cn.skywalker.service.impl.UserServiceImpl"</span>&gt;</span>      		   	</span><br><span class="line">    <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">name</span>=<span class="string">"userDao"</span> <span class="attr">ref</span>=<span class="string">"userDao"</span>&gt;</span><span class="tag">&lt;/<span class="name">constructor-arg</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*    </span></span><br><span class="line"><span class="comment">	1.创建有参构造函数</span></span><br><span class="line"><span class="comment">	2.经过xml的配置后，Spring会为userDao赋值</span></span><br><span class="line"><span class="comment">*/</span> </span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserServiceImpl</span> <span class="keyword">implements</span> <span class="title">UserService</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> UserDao userDao;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">UserServiceImpl</span><span class="params">(UserDao userDao)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.userDao = userDao;  </span><br><span class="line">        &#125; </span><br><span class="line">    <span class="meta">@Override</span>    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">save</span><span class="params">()</span> </span>&#123;      </span><br><span class="line">   		 userDao.save();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*    </span></span><br><span class="line"><span class="comment">	1.创建有参构造函数</span></span><br><span class="line"><span class="comment">	2.经过xml的配置后，Spring会为userDao赋值</span></span><br><span class="line"><span class="comment">*/</span> </span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserServiceImpl</span> <span class="keyword">implements</span> <span class="title">UserService</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> UserDao userDao;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">UserServiceImpl</span><span class="params">(UserDao userDao)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.userDao = userDao;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span>    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">save</span><span class="params">()</span> </span>&#123;      </span><br><span class="line">   		 userDao.save();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="set方法属性注入"><a href="#set方法属性注入" class="headerlink" title="set方法属性注入"></a>set方法属性注入</h4><ul>
 <li>传统的set方法注入</li>
 </ul>
@@ -1182,7 +1187,7 @@
   <p><span>本文标题:</span><a href="/Framework/16_SSM框架/">SSM框架</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 SkyWalker 的个人博客">SkyWalker</a></p>
   <p><span>发布时间:</span>2019年09月06日 - 19:09</p>
-  <p><span>最后更新:</span>2019年09月16日 - 14:09</p>
+  <p><span>最后更新:</span>2019年09月16日 - 15:09</p>
   <p><span>原始链接:</span><a href="/Framework/16_SSM框架/" title="SSM框架">http://SkyWalkerKKKK.cn/Framework/16_SSM框架/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://SkyWalkerKKKK.cn/Framework/16_SSM框架/" aria-label="复制成功！"></i></span>
   </p>
@@ -1463,7 +1468,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共75k字</span>
+  <span class="post-count">博客全站共75.2k字</span>
 </div>
 
 
