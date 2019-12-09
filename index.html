@@ -362,6 +362,217 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://SkyWalkerKKKK.cn/Java/Project/17_项目日志/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="SkyWalker">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1557167236181&di=a0d810af38b2c9d9159d63e898b41e50&imgtype=0&src=http%3A%2F%2Fimg.hao661.com%2Fqq.hao661.com%2Fuploads%2Fallimg%2F180715%2F144142A95-6.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SkyWalker的博客">
+    </span>
+
+    
+      <header class="post-header">
+       
+        
+          <i class="fa fa-thumb-tack"></i>
+          <font color="7D26CD">置顶</font>
+        
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/Java/Project/17_项目日志/" itemprop="url">项目日志</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建时间" itemprop="dateCreated datePublished" datetime="2019-09-25T09:21:59+08:00">
+                2019-09-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/Project/" itemprop="url" rel="index">
+                    <span itemprop="name">Project</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  332
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="关于Vue的v-model使用"><a href="#关于Vue的v-model使用" class="headerlink" title="关于Vue的v-model使用"></a>关于Vue的v-model使用</h1><p>在Vue中，v-model的作用是将value的值双向绑定到模型中，例如：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">v-model</span>=<span class="string">"num"</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="undefined">        el: app,</span></span><br><span class="line"><span class="undefined">        data: &#123;</span></span><br><span class="line"><span class="undefined">            num: 666</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    &#125;);</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>此时，input输入框的value值就会与Vue对象data中的num双向绑定。</p>
+<h1 id="mybatis框架中的selectKey标签"><a href="#mybatis框架中的selectKey标签" class="headerlink" title="mybatis框架中的selectKey标签"></a>mybatis框架中的selectKey标签</h1><p>在mybatis中，提供了selectKey标签获得自增产生的id值。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">--</span> <span class="attr">xml</span>方式获取自增主键 <span class="attr">--</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">insert</span> <span class="attr">id</span>=<span class="string">"add"</span> <span class="attr">parameterType</span>=<span class="string">"cn.skywalker.pojo.User"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">selectKey</span> <span class="attr">resultType</span>=<span class="string">"java.lang.Integer"</span> <span class="attr">order</span>=<span class="string">"AFTER"</span> <span class="attr">keyProperty</span>=<span class="string">"id"</span>&gt;</span></span><br><span class="line">        select LAST_INSERT_ID();</span><br><span class="line">    <span class="tag">&lt;/<span class="name">selectKey</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">insert</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 注解方式获取自增主键</span></span><br><span class="line"><span class="meta">@Insert</span>(<span class="string">"insert into t_order(member_id,orderDate,orderType,orderStatus,setmeal_id) "</span> +</span><br><span class="line">            <span class="string">"values(#&#123;memberId&#125;,#&#123;orderDate&#125;,#&#123;orderType&#125;,#&#123;orderStatus&#125;,#&#123;setmealId&#125;)"</span>)</span><br><span class="line"><span class="meta">@SelectKey</span>(statement = <span class="string">"SELECT LAST_INSERT_ID()"</span>, resultType = Integer.class, before = <span class="keyword">false</span>, keyColumn = <span class="string">"id"</span>, keyProperty = <span class="string">"id"</span>)</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(Order order)</span></span>;</span><br></pre></td></tr></table></figure>
+<h1 id="关于Spring中-Autowired的问题"><a href="#关于Spring中-Autowired的问题" class="headerlink" title="关于Spring中@Autowired的问题"></a>关于Spring中@Autowired的问题</h1><p>在所有使用到dao的地方<span style="color:red; font-size:25px">（包括调用他的service）</span>，都需要进行@Autowired注入，不能new，否则之后的注入就会失败。</p>
+<h1 id="mybatis中传递多个参数注意事项"><a href="#mybatis中传递多个参数注意事项" class="headerlink" title="mybatis中传递多个参数注意事项"></a>mybatis中传递多个参数注意事项</h1><p>在mybatis中如果传递了多个参数的情况下， 取值时，要么使用默认的参数名arg0,arg1… 等等， 要么使用@Param注解，指定参数名称。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Select</span>(<span class="string">"select * from t_ordersetting where orderDate between #&#123;dateBegin&#125; and #&#123;dateEnd&#125;"</span>)</span><br><span class="line"><span class="function">List&lt;OrderSetting&gt; <span class="title">getOrderSettingByMonth</span><span class="params">(@Param(<span class="string">"dateBegin"</span>)</span> String dateBegin,@<span class="title">Param</span><span class="params">(<span class="string">"dateEnd"</span>)</span> String dateEnd)</span>;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+
+
+
+
+    
+
+    
+
+    
+
+<div>
+      
+</div>
+
+
+    <div>
+       
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://SkyWalkerKKKK.cn/Framework/16_SSM框架/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -452,7 +663,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  11k
+                  13.1k
                 </span>
               
 
@@ -468,7 +679,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  46
+                  55
                 </span>
               
             </div>
@@ -659,7 +870,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  0
+                  3.6k
                 </span>
               
 
@@ -675,7 +886,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1
+                  14
                 </span>
               
             </div>
@@ -698,7 +909,139 @@
       
         
           
-            
+            <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h2 id="什么是Nginx"><a href="#什么是Nginx" class="headerlink" title="什么是Nginx"></a>什么是Nginx</h2><p>Nginx 是一款高性能的 http 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器。由俄罗斯的程序设计师伊戈尔·西索夫（Igor Sysoev）所开发，官方测试 nginx 能够支支撑 5 万并发链接，并且 cpu、内存等资源消耗却非常低，运行非常稳定。</p>
+<p><img src="/images/img/image-20191209154350978.png" alt="image-20191209154350978"></p>
+<h2 id="Nginx的应用场景"><a href="#Nginx的应用场景" class="headerlink" title="Nginx的应用场景"></a>Nginx的应用场景</h2><ol>
+<li>http 服务器。Nginx 是一个 http 服务可以独立提供 http 服务。可以做网页静态服务器。</li>
+<li>虚拟主机。可以实现在一台服务器虚拟出多个网站。例如个人网站使用的虚拟主机。</li>
+<li>反向代理，负载均衡。当网站的访问量达到一定程度后，单台服务器不能满足用户的请求时，需要用多台服务器集群可以使用 nginx 做反向代理。并且多台服务器可以平均分担负载，不会因为某台服务器负载高宕机而某台服务器闲置的情况。</li>
+</ol>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="在Linux下安装Nginx"><a href="#在Linux下安装Nginx" class="headerlink" title="在Linux下安装Nginx"></a>在Linux下安装Nginx</h2><p>重新准备一台虚拟机作为服务器。比如IP地址为192.168.66.66。</p>
+<h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><h4 id="安装-gcc-的环境"><a href="#安装-gcc-的环境" class="headerlink" title="安装 gcc 的环境"></a>安装 gcc 的环境</h4><p><code>yum install gcc-c++</code></p>
+<h4 id="第三方的开发包"><a href="#第三方的开发包" class="headerlink" title="第三方的开发包"></a>第三方的开发包</h4><h5 id="PCRE"><a href="#PCRE" class="headerlink" title="PCRE"></a>PCRE</h5><p>PCRE(Perl Compatible Regular Expressions)是一个 Perl 库，包括 perl 兼容的正则表达式库。nginx 的 http 模块使用 pcre 来解析正则表达式，所以需要在 linux 上安装 pcre 库。</p>
+<p><span style="color:red">命令：<code>yum install -y pcre pcre-devel</code></span></p>
+<p>注：pcre-devel 是使用 pcre 开发的一个二次开发库。nginx 也需要此库。</p>
+<h5 id="zlib"><a href="#zlib" class="headerlink" title="zlib"></a>zlib</h5><p>zlib 库提供了很多种压缩和解压缩的方式，nginx 使用 zlib 对 http 包的内容进行 gzip，所以需要在 linux 上安装 zlib 库。</p>
+<p><span style="color:red">命令：<code>yum install -y zlib zlib-devel</code></span></p>
+<h5 id="OpenSSL"><a href="#OpenSSL" class="headerlink" title="OpenSSL"></a>OpenSSL</h5><p>OpenSSL 是一个强大的安全套接字层密码库，囊括主要的密码算法、常用的密钥和证书封装管理功能及 SSL 协议，并提供丰富的应用程序供测试或其它目的使用。nginx 不仅支持http 协议，还支持 https（即在 ssl 协议上传输 http），所以需要在 linux安装 openssl 库。</p>
+<p><span style="color:red">命令：<code>yum install -y openssl openssl-devel</code></span></p>
+<h4 id="Nginx压缩包下载"><a href="#Nginx压缩包下载" class="headerlink" title="Nginx压缩包下载"></a>Nginx压缩包下载</h4><p>官方网站下载 nginx：<a href="http://nginx.org/" target="_blank" rel="noopener">http://nginx.org/</a></p>
+<p>我使用的版本是 1.16.1 版本。</p>
+<h3 id="安装Nginx"><a href="#安装Nginx" class="headerlink" title="安装Nginx"></a>安装Nginx</h3><ol>
+<li><p>把 nginx 的源码包nginx-1.16.1.tar.gz上传到 linux 系统</p>
+</li>
+<li><p>解压缩：<code>tar zxvf nginx-1.16.1.tar.gz</code></p>
+</li>
+<li><p>进入nginx-1.16.1目录  使用 configure 命令创建 Makefile文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">./configure \</span><br><span class="line">--prefix=/usr/local/nginx \</span><br><span class="line">--pid-path=/var/run/nginx/nginx.pid \</span><br><span class="line">--lock-path=/var/lock/nginx.lock \</span><br><span class="line">--error-log-path=/var/log/nginx/error.log \</span><br><span class="line">--http-log-path=/var/log/nginx/access.log \</span><br><span class="line">--with-http_gzip_static_module \</span><br><span class="line">--http-client-body-temp-path=/var/temp/nginx/client \</span><br><span class="line">--http-proxy-temp-path=/var/temp/nginx/proxy \</span><br><span class="line">--http-fastcgi-temp-path=/var/temp/nginx/fastcgi \</span><br><span class="line">--http-uwsgi-temp-path=/var/temp/nginx/uwsgi \</span><br><span class="line">--http-scgi-temp-path=/var/temp/nginx/scgi</span><br></pre></td></tr></table></figure>
+<p>执行后可以看到Makefile文件</p>
+</li>
+<li><p>编译：<code>make</code></p>
+</li>
+<li><p>安装：<code>make install</code></p>
+</li>
+</ol>
+<p><span style="color:red ; font-size: 25px">Tips：</span></p>
+<p>Makefile是一种配置文件， Makefile 一个工程中的源文件不计数，其按类型、功能、模块分别放在若干个目录中，makefile定义了一系列的规则来指定，哪些文件需要先编译，哪些文件需要后编译，哪些文件需要重新编译，甚至于进行更复杂的功能操作，因为 makefile就像一个Shell脚本一样，其中也可以执行操作系统的命令。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">configure参数</span><br><span class="line">./configure \</span><br><span class="line">--prefix=/usr \                                            指向安装目录</span><br><span class="line">--sbin-path=/usr/sbin/nginx \                              指向（执行）程序文件（nginx）</span><br><span class="line">--conf-path=/etc/nginx/nginx.conf \                        指向配置文件</span><br><span class="line">--error-log-path=/var/log/nginx/error.log \                指向log</span><br><span class="line">--http-log-path=/var/log/nginx/access.log \                指向http-log</span><br><span class="line">--pid-path=/var/run/nginx/nginx.pid \                      指向pid</span><br><span class="line">--lock-path=/var/lock/nginx.lock \   （安装文件锁定，防止安装文件被别人利用，或自己误操作。）</span><br><span class="line">--user=nginx \</span><br><span class="line">--group=nginx \</span><br><span class="line">--with-http_ssl_module \ 	 	启用ngx_http_ssl_module支持（使支持https请求，需已安装openssl）</span><br><span class="line">--with-http_flv_module \  		启用ngx_http_flv_module支持（提供寻求内存使用基于时间的偏移量文件）</span><br><span class="line">--with-http_stub_status_module \     启用ngx_http_stub_status_module支持（获取nginx自上次启动以来的工作状态）</span><br><span class="line">--with-http_gzip_static_module \   启用ngx_http_gzip_static_module支持（在线实时压缩输出数据流）</span><br><span class="line">--http-client-body-temp-path=/var/tmp/nginx/client/ \ 	设定http客户端请求临时文件路径</span><br><span class="line">--http-proxy-temp-path=/var/tmp/nginx/proxy/ \ 		设定http代理临时文件路径</span><br><span class="line">--http-fastcgi-temp-path=/var/tmp/nginx/fcgi/ \ 	设定http fastcgi临时文件路径</span><br><span class="line">--http-uwsgi-temp-path=/var/tmp/nginx/uwsgi \ 		设定http uwsgi临时文件路径</span><br><span class="line">--http-scgi-temp-path=/var/tmp/nginx/scgi \ 		设定http scgi临时文件路径</span><br><span class="line">--with-pcre 	启用pcre库</span><br></pre></td></tr></table></figure>
+<h3 id="Nginx启动与访问"><a href="#Nginx启动与访问" class="headerlink" title="Nginx启动与访问"></a>Nginx启动与访问</h3><p>注意：启动nginx 之前，上边将临时文件目录指定为/var/temp/nginx/client， 需要在/var 下创建此目录</p>
+<p><code>mkdir /var/temp/nginx/client -p</code></p>
+<p>进入到Nginx目录下的sbin目录：<code>cd /usr/local/ngiux/sbin</code></p>
+<p>输入命令启动Nginx：<code>./nginx</code></p>
+<p>启动后查看进程：<code>ps aux|grep nginx</code></p>
+<p>地址栏输入虚拟机的IP即可访问（默认为80端口）</p>
+<p>关闭Nginx：<code>./nginx -s stop</code> 或者 <code>./nginx -s quit</code></p>
+<p>重启Nginx：</p>
+<ol>
+<li>先关闭后启动</li>
+<li>刷新配置文件：<code>./nginx -s reload</code></li>
+</ol>
+<h2 id="在Windows-10下安装Nginx"><a href="#在Windows-10下安装Nginx" class="headerlink" title="在Windows 10下安装Nginx"></a>在Windows 10下安装Nginx</h2><ol>
+<li>去官网下载Nginx的压缩包</li>
+<li>解压</li>
+<li>以管理员身份运行该目录下的Nginx.exe</li>
+</ol>
+<p>运行起来之后，在浏览器中输入localhost即可看到Nginx欢迎页面！（Nginx的默认端口是80）</p>
+<p><img src="/images/img/image-20191209161523385.png" alt="image-20191209161523385"></p>
+<p>附带：windows下使用cmd快速操作nginx的命令（需要进入到nginx的根目录下！）</p>
+<ul>
+<li>查看nginx的版本号：<code>nginx -v</code></li>
+<li>启动nginx：<code>start nginx</code></li>
+<li>快速停止或关闭nginx：<code>nginx -s stop</code></li>
+<li>正常停止或关闭nginx：<code>nginx -s quit</code></li>
+<li>配置文件nginx.conf修改重装载命令：<code>nginx -s reload</code></li>
+</ul>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p><span style="color:red ; font-size: 25px">说明：</span>方便起见，我用的是本机部署nginx，如果各位有需要，将ip改成自己的即可！</p>
+<h2 id="功能一：静态网站部署"><a href="#功能一：静态网站部署" class="headerlink" title="功能一：静态网站部署"></a>功能一：静态网站部署</h2><p>将静态页面放至nginx根目录下的html文件夹中即可访问（Linux同）。</p>
+<p>例：</p>
+<p><img src="/images/img/image-20191209161908161.png" alt="image-20191209161908161"></p>
+<h2 id="功能二：配置虚拟主机"><a href="#功能二：配置虚拟主机" class="headerlink" title="功能二：配置虚拟主机"></a>功能二：配置虚拟主机</h2><p>虚拟主机，也叫“网站空间”，就是把一台运行在互联网上的物理服务器划分成多个“虚拟”服务器。虚拟主机技术极大的促进了网络技术的应用和普及。同时虚拟主机的租用服务也成了网络时代的一种新型经济形式。</p>
+<h3 id="端口绑定"><a href="#端口绑定" class="headerlink" title="端口绑定"></a>端口绑定</h3><ol>
+<li><p>上传静态网站</p>
+<p>在nginx根目录中新建两个文件夹：index、regist，并添加 index.html和regist.html。</p>
+<p><img src="/images/img/image-20191209165627773.png" alt="image-20191209165627773"></p>
+</li>
+<li><p>修改Nginx的配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">       listen       10081; # 监听的端口</span><br><span class="line">       server_name  localhost; # 域名或ip</span><br><span class="line">       location / &#123;	# 访问路径配置</span><br><span class="line">           root   index;# 根目录</span><br><span class="line">           index  index.html index.htm; # 默认首页</span><br><span class="line">       &#125;</span><br><span class="line">       error_page   500 502 503 504  /50x.html;	# 错误页面</span><br><span class="line">       location = /50x.html &#123;</span><br><span class="line">           root   html;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">    server &#123;</span><br><span class="line">       listen       10082; # 监听的端口</span><br><span class="line">       server_name  localhost; # 域名或ip</span><br><span class="line">       location / &#123;	# 访问路径配置</span><br><span class="line">           root   regist;# 根目录</span><br><span class="line">           index  regist.html; # 默认首页</span><br><span class="line">       &#125;</span><br><span class="line">       error_page   500 502 503 504  /50x.html;	# 错误页面</span><br><span class="line">       location = /50x.html &#123;</span><br><span class="line">           root   html;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol start="3">
+<li>访问测试</li>
+</ol>
+<p><img src="/images/img/image-20191209165007417.png" alt="image-20191209165007417"></p>
+<h3 id="域名绑定"><a href="#域名绑定" class="headerlink" title="域名绑定"></a>域名绑定</h3><h4 id="什么是域名"><a href="#什么是域名" class="headerlink" title="什么是域名"></a>什么是域名</h4><p><a href="https://baike.baidu.com/item/域名" target="_blank" rel="noopener">域名</a>（<a href="https://baike.baidu.com/item/Domain Name" target="_blank" rel="noopener">Domain Name</a>），是由一串用“点”分隔的<a href="https://baike.baidu.com/item/字符" target="_blank" rel="noopener">字符</a>组成的Internet上某一台计算机或计算机组的名称，用于在数据传输时标识计算机的电子方位（有时也指地理位置，地理上的域名，指代有行政自主权的一个地方区域）。域名是一个<a href="https://baike.baidu.com/item/IP地址" target="_blank" rel="noopener">IP地址</a>上有“面具” 。域名的目的是便于记忆和沟通的一组服务器的地址（<a href="https://baike.baidu.com/item/网站/155722" target="_blank" rel="noopener">网站</a>，电子邮件，<a href="https://baike.baidu.com/item/FTP/13839" target="_blank" rel="noopener">FTP</a>等）。域名作为力所能及难忘的互联网参与者的名称。域名按<a href="https://baike.baidu.com/item/域名系统" target="_blank" rel="noopener">域名系统</a>（DNS）的规则流程组成。在<a href="https://baike.baidu.com/item/DNS/427444" target="_blank" rel="noopener">DNS</a>中注册的任何名称都是域名。域名用于各种网络环境和应用程序特定的命名和寻址目的。通常，域名表示<a href="https://baike.baidu.com/item/互联网协议" target="_blank" rel="noopener">互联网协议</a>（IP）资源，例如用于访问因特网的个人计算机，托管网站的服务器计算机，或网站本身或通过因特网传送的任何其他服务。世界上第一个注册的域名是在1985年1月注册的。</p>
+<h4 id="域名级别"><a href="#域名级别" class="headerlink" title="域名级别"></a>域名级别</h4><h5 id="顶级域名"><a href="#顶级域名" class="headerlink" title="顶级域名"></a>顶级域名</h5><p>顶级域名又分为两类：</p>
+<p>一是国家顶级域名（national top-level domainnames，简称nTLDs），200多个国家都按照ISO3166国家代码分配了顶级域名，例如中国是cn，美国是us，日本是jp等；</p>
+<p>二是国际顶级域名（international top-level domain names，简称iTDs），例如表示工商企业的 .Com .Top，表示网络提供商的.net，表示非盈利组织的.org，表示教育的.edu，以及没有限制的中性域名如.xyz等。大多数域名争议都发生在com的顶级域名下，因为多数公司上网的目的都是为了赢利。但因为自2014年以来新顶级域名的发展，域名争议案件数量增长幅度越来越大[5] 。为加强域名管理，解决域名资源的紧张，Internet协会、Internet分址机构及世界知识产权组织（WIPO）等国际组织经过广泛协商， 在原来三个国际通用顶级域名：（com）的基础上，新增加了7个国际通用顶级域名：firm（公司企业）、store（销售公司或企业）、Web（突出WWW活动的单位）、arts（突出文化、娱乐活动的单位）、rec (突出消遣、娱乐活动的单位）、info(提供信息服务的单位）、nom(个人），并在世界范围内选择新的注册机构来受理域名注册申请。</p>
+<p>例如：baidu.com</p>
+<h5 id="二级域名"><a href="#二级域名" class="headerlink" title="二级域名"></a>二级域名</h5><p>二级域名是指顶级域名之下的域名，在国际顶级域名下，它是指域名注册人的网上名称，例如 ibm，yahoo，microsoft等；在国家顶级域名下，它是表示注册企业类别的符号，例如.top，com，edu，gov，net等。</p>
+<p>中国在国际互联网络信息中心（Inter NIC） 正式注册并运行的顶级域名是CN，这也是中国的一级域名。在顶级域名之下，中国的二级域名又分为类别域名和行政区域名两类。类别域名共7个， 包括用于科研机构的ac；用于工商金融企业的com、top；用于教育机构的edu；用于政府部门的 gov；用于互联网络信息中心和运行中心的net；用于非盈利组织的org。而行政区域名有34个，分别对应于中国各省、自治区和直辖市。</p>
+<p>例如：map.baidu.com</p>
+<h5 id="三级域名"><a href="#三级域名" class="headerlink" title="三级域名"></a>三级域名</h5><p>三级域名用字母（ A～Z，a～z，大小写等）、数字（0～9）和连接符（－）组成， 各级域名之间用实点（.）连接，三级域名的长度不能超过20个字符。如无特殊原因，建议采用申请人的英文名（或者缩写）或者汉语拼音名 （或者缩写） 作为三级域名，以保持域名的清晰性和简洁性。</p>
+<p>例如：</p>
+<p>item.map.baidu.com</p>
+<h4 id="域名与IP绑定"><a href="#域名与IP绑定" class="headerlink" title="域名与IP绑定"></a>域名与IP绑定</h4><p>一个域名对应一个 ip 地址，一个 ip 地址可以被多个域名绑定。</p>
+<p>本地测试可以修改 hosts 文件（C:\Windows\System32\drivers\etc）</p>
+<p>可以配置域名和 ip 的映射关系，如果 hosts 文件中配置了域名和 ip 的对应关系，不需要走dns 服务器。</p>
+<p>localhost    index.skywalkerkkkk.cn</p>
+<p>localhost    regist.skywalkerkkkk.cn</p>
+<p> <img src="/images/img/image-20191209173047387.png" alt="image-20191209173047387"></p>
+<p>做好域名指向后，修改nginx配置文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">       listen       80;</span><br><span class="line">       server_name  index.skywalkerkkkk.cn;</span><br><span class="line"></span><br><span class="line">       location / &#123;</span><br><span class="line">           root   index;</span><br><span class="line">           index  index.html index.htm;</span><br><span class="line">       &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line">       listen       80;</span><br><span class="line">       server_name  regist.skywalkerkkkk.cn;</span><br><span class="line"></span><br><span class="line">       location / &#123;</span><br><span class="line">           root   regist;</span><br><span class="line">           index  regist.html regist.htm;</span><br><span class="line">       &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="功能三：反向代理与负载均衡"><a href="#功能三：反向代理与负载均衡" class="headerlink" title="功能三：反向代理与负载均衡"></a>功能三：反向代理与负载均衡</h2><h3 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h3><h4 id="什么是反向代理"><a href="#什么是反向代理" class="headerlink" title="什么是反向代理"></a>什么是反向代理</h4><p>反向代理（Reverse Proxy）方式是指以<a href="http://baike.baidu.com/item/代理服务器" target="_blank" rel="noopener">代理服务器</a>来接受internet上的连接请求，然后将请求转发给内部网络上的服务器，并将从服务器上得到的结果返回给internet上请求连接的客户端，此时代理服务器对外就表现为一个反向代理服务器。</p>
+<p>首先我们先理解<span style="color:red">正向代理</span>，如下图：</p>
+<p><img src="/images/img/image-20191209173333196.png" alt="image-20191209173333196"></p>
+<p>正向代理是针对你的客户端，而反向代理是针对服务器的，如下图</p>
+<p><img src="/images/img/image-20191209173349089.png" alt="image-20191209173349089"></p>
+<p><img src="/images/img/image-20191209173400745.png" alt="image-20191209173400745"></p>
+<h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><ol>
+<li>将一个web项目部署到tomcat中（ROOT目录），上传到服务器。</li>
+<li>启动tomcat，在浏览器中访问<a href="http://localhost:8080" target="_blank" rel="noopener">http://localhost:8080</a> ，可以看到网站首页。</li>
+</ol>
+<h4 id="配置反向代理"><a href="#配置反向代理" class="headerlink" title="配置反向代理"></a>配置反向代理</h4><ol>
+<li><p>在Nginx主机修改 Nginx配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">upstream tomcat-myweb&#123;</span><br><span class="line">   server localhost:8080;</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br><span class="line">   server &#123;</span><br><span class="line">       listen       80; # 监听的端口</span><br><span class="line">       server_name  www.myweb.com; # 域名或ip</span><br><span class="line">       location / &#123;	# 访问路径配置</span><br><span class="line">           # root   index;# 根目录</span><br><span class="line">    	proxy_pass http://tomcat-myweb;</span><br><span class="line">           index  index.html index.htm; # 默认首页</span><br><span class="line">       &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol start="2">
+<li>重新启动Nginx 然后用浏览器测试：<a href="http://www.myweb.com" target="_blank" rel="noopener">http://www.myweb.com</a>  （此域名须在host文件配置域名指向）</li>
+</ol>
+<h3 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h3><h4 id="什么是负载均衡"><a href="#什么是负载均衡" class="headerlink" title="什么是负载均衡"></a>什么是负载均衡</h4><p>负载均衡 建立在现有网络结构之上，它提供了一种廉价有效透明的方法扩展<a href="http://baike.baidu.com/item/网络设备" target="_blank" rel="noopener">网络设备</a>和<a href="http://baike.baidu.com/item/服务器" target="_blank" rel="noopener">服务器</a>的带宽、增加<a href="http://baike.baidu.com/item/吞吐量" target="_blank" rel="noopener">吞吐量</a>、加强网络数据处理能力、提高网络的灵活性和可用性。</p>
+<p>负载均衡，英文名称为Load Balance，其意思就是分摊到多个操作单元上进行执行，例如Web<a href="http://baike.baidu.com/item/服务器" target="_blank" rel="noopener">服务器</a>、<a href="http://baike.baidu.com/item/FTP服务器" target="_blank" rel="noopener">FTP服务器</a>、<a href="http://baike.baidu.com/item/企业" target="_blank" rel="noopener">企业</a>关键应用服务器和其它关键任务服务器等，从而共同完成工作任务。</p>
+<h4 id="准备工作-1"><a href="#准备工作-1" class="headerlink" title="准备工作"></a>准备工作</h4><ol>
+<li>将刚才的存放工程的tomcat复制三份，修改端口分别为8080 ，8081，8082 。</li>
+<li>分别启动这三个tomcat服务。</li>
+<li>为了能够区分是访问哪个服务器的网站，可以在首页标题加上标记以便区分。</li>
+</ol>
+<h4 id="配置负载均衡"><a href="#配置负载均衡" class="headerlink" title="配置负载均衡"></a>配置负载均衡</h4><p>修改 Nginx配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">upstream tomcat-myweb &#123;</span><br><span class="line">  server localhost:8080;</span><br><span class="line">  server localhost:8081;</span><br><span class="line">  server localhost:8082;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  server &#123;</span><br><span class="line">      listen       80; # 监听的端口</span><br><span class="line">      server_name  www.myweb.com; # 域名或ip</span><br><span class="line">      location / &#123;	# 访问路径配置</span><br><span class="line">          # root   index;# 根目录</span><br><span class="line">   	proxy_pass http://tomcat-myweb;</span><br><span class="line">          index  index.html index.htm; # 默认首页</span><br><span class="line">      &#125;</span><br><span class="line">      error_page   500 502 503 504  /50x.html;	# 错误页面</span><br><span class="line">      location = /50x.html &#123;</span><br><span class="line">          root   html;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>地址栏输入http:// <a href="http://www.myweb.com" target="_blank" rel="noopener">www.myweb.com</a> / 刷新观察每个网页的标题，看是否不同。</p>
+<p>经过测试，三台服务器出现的概率各为33.3333333%，交替显示。</p>
+<p>如果其中一台服务器性能比较好，想让其承担更多的压力，可以设置权重。</p>
+<p>比如想让NO.1出现次数是其它服务器的2倍，则修改配置如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">upstream tomcat-travel &#123;</span><br><span class="line">server localhost:8080;</span><br><span class="line">server localhost:8081 weight=2;</span><br><span class="line">server localhost:8082;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>经过测试，每刷新四次，有两次是8081。</p>
+
           
         
       
@@ -850,7 +1193,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1.6k
+                  2.8k
                 </span>
               
 
@@ -866,7 +1209,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  6
+                  11
                 </span>
               
             </div>
@@ -1057,7 +1400,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  0
+                  5k
                 </span>
               
 
@@ -1073,7 +1416,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1
+                  18
                 </span>
               
             </div>
@@ -1096,7 +1439,219 @@
       
         
           
-            
+            <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h2 id="什么是Maven？"><a href="#什么是Maven？" class="headerlink" title="什么是Maven？"></a>什么是Maven？</h2><blockquote>
+<p>Maven 是一个项目管理工具，它包含了一个 项目对象模型 (POM：Project Object Model)，一组标准集合，一个项目生命周期(Project Lifecycle)，一个依赖管理系统(Dependency Management System)，和用来运行定义在生命周期阶段(phase)中插件(plugin)目标(goal)的逻辑。</p>
+</blockquote>
+<h2 id="Maven能解决什么问题？"><a href="#Maven能解决什么问题？" class="headerlink" title="Maven能解决什么问题？"></a>Maven能解决什么问题？</h2><p>可以用更通俗的方式来说明。我们知道，项目开发不仅仅是写写代码而已，期间会伴随着各种必不可少的事情要做，下面列举几个感受一下：</p>
+<ol>
+<li>我们需要引用各种 jar 包，尤其是比较大的工程，引用的 jar 包往往有几十个乃至上百个， 每用<br>到一种 jar 包，都需要手动引入工程目录，而且经常遇到各种让人抓狂的 jar 包冲突，版本冲突。</li>
+<li>我们辛辛苦苦写好了 Java 文件，可是只懂 0 和 1 的白痴电脑却完全读不懂，需要将它编译成二<br>进制字节码。好歹现在这项工作可以由各种集成开发工具帮我们完成，Eclipse、IDEA 等都可以将代<br>码即时编译。当然，如果你嫌生命漫长，何不铺张，也可以用记事本来敲代码，然后用 javac 命令一<br>个个地去编译，逗电脑玩。</li>
+<li>世界上没有不存在 bug的代码，计算机喜欢 bug就和人们总是喜欢美女帅哥一样。为了追求美为<br>了减少 bug，因此写完了代码，我们还要写一些单元测试，然后一个个的运行来检验代码质量。</li>
+<li>再优雅的代码也是要出来卖的。我们后面还需要把代码与各种配置文件、资源整合到一起，定型<br>打包，如果是 web项目，还需要将之发布到服务器，供人蹂躏。</li>
+</ol>
+<p>试想，如果现在有一种工具，可以把你从上面的繁琐工作中解放出来，能帮你构建工程，管理 jar包，编译代码，还能帮你自动运行单元测试，打包，生成报表，甚至能帮你部署项目，生成 Web 站点，你会心动吗？Maven 就可以解决上面所提到的这些问题。</p>
+<p>由此我们可以知道：maven 是一个<span style=" color : red ">项目管理工具</span>，主要作用是在项目开发阶段对Java项目进行<span style=" color : red ">依赖管理</span>和<span style=" color : red ">项目构建</span>。</p>
+<h2 id="Maven的两个经典作用"><a href="#Maven的两个经典作用" class="headerlink" title="Maven的两个经典作用"></a>Maven的两个经典作用</h2><h3 id="依赖管理"><a href="#依赖管理" class="headerlink" title="依赖管理"></a>依赖管理</h3><p>Maven 的一个核心特性就是依赖管理。当我们涉及到多模块的项目（包含成百个模块或者子项目），管理依赖就变成一项困难的任务。Maven 展示出了它对处理这种情形的高度控制。</p>
+<p>传统的 WEB 项目中，我们必须将工程所依赖的 jar 包复制到工程中，导致了工程的变得很大。那么<br>maven 工程是如何使得工程变得很少呢？</p>
+<p>分析如下：</p>
+<p><img src="/images\img\image-20191204162829257.png" alt="image-20191204162829257"></p>
+<p>通过分析发现：maven 工程中<span style=" color : red ">不直接将 jar 包导入到工程中</span>，而是通过在 pom.xml 文件中<span style=" color : red ">添加所需 jar包的坐标</span>，这样就很好的避免了 jar 直接引入进来，在需要用到 jar 包的时候，只要查找 pom.xml 文<br>件，再通过 pom.xml 文件中的坐标，到一个专门用于”存放 jar 包的仓库”(maven 仓库)中根据坐标从<br>而找到这些 jar 包，再把这些 jar 包拿去运行。</p>
+<p>那么问题来了。。。</p>
+<p>问题一：”存放 jar 包的仓库”长什么样？</p>
+<p>答：存放 jar 包的仓库长什么样，这一点我们后面会分析仓库的分类，也会带大家去看我们的本地的仓库长什么样。</p>
+<p>问题二：通过读取 pom.xml 文件中的坐标，再到仓库中找到 jar 包，会不会很慢？从而导致这种方式不可行！</p>
+<p>答：通过 pom.xml 文件配置要引入的 jar 包的坐标，再读取坐标并到仓库中加载 jar 包，这样我们就可以直接使用 jar 包了，为了解决这个过程中速度慢的问题，maven 中也有索引的概念，通过建立索引，可以大大提高加载 jar 包的速度，使得我们认为 jar 包基本跟放在本地的工程文件中再读取出来的速度是一样的。这个过程就好比我们查阅字典时，为了能够加快查找到内容，书前面的目录就好比是索引，有了这个目录我们就可以方便找到内容了，一样的在 maven 仓库中有了索引我们就可以认为可以快速找到 jar 包。</p>
+<h3 id="项目的一键构建"><a href="#项目的一键构建" class="headerlink" title="项目的一键构建"></a>项目的一键构建</h3><p>我们的项目，往往都要经历编译、测试、运行、打包、安装 ，部署等一系列过程。</p>
+<p>什么是构建？的是项目从编译、测试、运行、打包、安装 ，部署整个过程都交给 maven 进行管理，这个过程称为构建。</p>
+<p>一键构建指的是整个构建过程，使用 maven 一个命令可以轻松完成整个工作。</p>
+<h1 id="Maven的使用"><a href="#Maven的使用" class="headerlink" title="Maven的使用"></a>Maven的使用</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>为了使用 Maven 管理工具，我们首先要到官网去下载它的安装软件。通过百度搜索“Maven“，在下载页面中下载需要的版本即可。</p>
+<p>下载得到的是一个zip压缩文件，将文件解压至一个<span style="color:red">没有中文，没有空格</span>的路径下，比如我的路径为：<code>D:\Environment\maven\apache-maven-3.0.4</code></p>
+<p>解压后目录结构如下：</p>
+<p><img src="/images/img/image-20191204163943344.png" alt="image-20191204163943344"></p>
+<p>bin:存放了 maven 的命令，比如我们前面用到的mvn tomcat:run</p>
+<p>boot:存放了一些 maven 本身的引导程序，如类加载器等</p>
+<p>conf:存放了 maven 的一些配置文件，如 setting.xml 文件</p>
+<p>lib:存放了 maven 本身运行所需的一些 jar 包</p>
+<p>至此我们的 maven 就可以使用了，前提是你的电脑上之前已经安装并配置好了 JDK。</p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><ol>
+<li>电脑上需安装 java 环境，安装 JDK1.7 + 版本 （将JAVA_HOME\bin 配置环境变量 path ）。</li>
+<li>配置 MAVEN_HOME ，变量值就是你的 maven 安装 的路径（bin目录之前一级目录）。</li>
+</ol>
+<p><img src="/images/img/image-20191204164453313.png" alt="image-20191204164453313"></p>
+<ol start="3">
+<li>将系统变量Path中添加：<code>%MAVEN_HOME%\bin;</code></li>
+<li>打开cmd</li>
+<li>通过mvn -v 命令检查maven是否安装成功。如果看到maven的版本号和jdk的版本信息即安装成功。</li>
+</ol>
+<p><img src="/images/img/image-20191204164836615.png" alt="image-20191204164836615"></p>
+<h2 id="idea集成maven"><a href="#idea集成maven" class="headerlink" title="idea集成maven"></a>idea集成maven</h2><p>IntelliJ  IDEA的功能很强大，自然也提供了maven开发的支持，可以将maven的操作集成到编译器中。</p>
+<p>配置步骤如下：</p>
+<p><span style=" color : red ">注意要全局设置！不然每次创建maven工程都需要再次配置，非常麻烦。</span></p>
+<p>全局设置在这里打开：</p>
+<p><img src="/images/img/image-20191209134801892.png" alt="image-20191209134801892"></p>
+<p>idea中在settings里搜索maven，选择本地 maven 安装目录，指定 maven 安装目录下conf文件夹中 settings 配置文件。</p>
+<p><img src="/images/img/image-20191204175922090.png" alt="image-20191204175922090"></p>
+<h2 id="Maven仓库"><a href="#Maven仓库" class="headerlink" title="Maven仓库"></a>Maven仓库</h2><h3 id="仓库的分类"><a href="#仓库的分类" class="headerlink" title="仓库的分类"></a>仓库的分类</h3><p>maven 的工作需要从仓库下载一些 jar 包，如下图所示，本地的项目 A、项目 B 等都会通过 maven软件从远程仓库（可以理解为互联网上的仓库）下载 jar 包并存在本地仓库，本地仓库 就是本地文件夹，当第二次需要此 jar 包时则不再从远程仓库下载，因为本地仓库已经存在了，可以将本地仓库理解为缓存，有了本地仓库就不用每次从远程仓库下载了。</p>
+<ul>
+<li>本地仓库 ：用来存储从远程仓库或中央仓库下载的插件和 jar 包，项目使用一些插件或 jar 包，优先从本地仓库查找。默认本地仓库位置在 ${user.dir}/.m2/repository，${user.dir}表示windows 用户目录。</li>
+<li>远程仓库：如果本地需要插件或者 jar 包，本地仓库没有，默认去远程仓库下载。远程仓库可以在互联网内也可以在局域网内。</li>
+<li>中央仓库 ：在 maven 软件中内置一个远程仓库地址 <a href="http://repo1.maven.org/maven2" target="_blank" rel="noopener">http://repo1.maven.org/maven2</a> ，它是中央仓库，服务于整个互联网，它是由 Maven 团队自己维护，里面存储了非常全的 jar 包，它包含了世界上大部分流行的开源项目构件。</li>
+</ul>
+<h3 id="本地仓库的配置"><a href="#本地仓库的配置" class="headerlink" title="本地仓库的配置"></a>本地仓库的配置</h3><p>在自己电脑上创建一个文件夹（路径还是<span style="color : red">不要有中文，不要有空格！</span>）作为Maven的本地仓库，存放下载的jar包。</p>
+<p>在 MAVE_HOME/conf/settings.xml 文件中配置本地仓库位置（maven 的安装目录下）：</p>
+<p><img src="/images/img/image-20191204165811104.png" alt="image-20191204165811104"></p>
+<h3 id="全局setting与用户setting"><a href="#全局setting与用户setting" class="headerlink" title="全局setting与用户setting"></a>全局setting与用户setting</h3><p>maven 仓库地址、私服等配置信息需要在 setting.xml 文件中配置，分为全局配置和用户配置。</p>
+<p>在 maven 安装目录下的有 conf/setting.xml 文件，此 setting.xml 文件用于 maven 的所有 project项目，它作为 maven 的全局配置。</p>
+<p>如需要个性配置则需要在用户配置中设置，用户配置的 setting.xml 文件默认的位置在：${user.dir}/.m2/settings.xml 目录中,${user.dir} 指windows 中的用户目录。</p>
+<p>maven会先找用户配置，如果找到则以用户配置文件为准，否则使用全局配置文件。</p>
+<h2 id="Maven工程"><a href="#Maven工程" class="headerlink" title="Maven工程"></a>Maven工程</h2><h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h3><p><img src="/images/img/image-20191204172841675.png" alt="image-20191204172841675"></p>
+<p>作为一个 maven 工程，它的 src目录和 pom.xml 是必备的。</p>
+<p>进入 src目录后，我们发现它里面的目录结构如下：</p>
+<p><img src="/images/img/image-20191204172625677.png" alt="image-20191204172625677"></p>
+<p>src/main/java —— 存放项目的.java 文件</p>
+<p>src/main/resources —— 存放项目资源文件，如 spring, hibernate 配置文件</p>
+<p>src/test/java —— 存放所有单元测试.java 文件，如 JUnit 测试类</p>
+<p>src/test/resources —— 测试资源文件</p>
+<p>target —— 项目输出位置，编译后的class 文件会输出到此目录</p>
+<p>pom.xml——maven 项目核心配置文件</p>
+<h3 id="如何运行"><a href="#如何运行" class="headerlink" title="如何运行"></a>如何运行</h3><p>进入 maven 工程目录（当前目录有 pom.xml 文件），运行 tomcat:run 命令。</p>
+<p>如果使用Idea集成好的Maven插件，操作会方便很多。</p>
+<p><img src="/images/img/image-20191204173530015.png" alt="image-20191204173530015"></p>
+<h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><h2 id="一些常用的命令"><a href="#一些常用的命令" class="headerlink" title="一些常用的命令"></a>一些常用的命令</h2><p>我们可以在cmd 中通过一系列的 maven 命令来对我们的 maven-project 工程进行编译、测试、运行、打包、安装、部署。</p>
+<p>常用的生命周期命令（在idea中有良好的界面，体验很棒）：</p>
+<ol>
+<li>clean 是 maven 工程的清理命令，执行 clean 会删除 target 目录及内容。</li>
+<li>compile 是 maven 工程的编译命令，作用是将 src/main/java 下的文件编译为 class 文件输出到target目录下。</li>
+<li>test 是 maven 工程的测试命令 mvn test，会执行src/test/java下的单元测试类。</li>
+<li>package 是 maven 工程的打包命令，对于 java 工程执行 package 打成 jar 包，对于web 工程打成war包。</li>
+<li>install 是 maven 工程的安装命令，执行 install 将 maven 打成 jar 包或 war 包发布到本地仓库。</li>
+</ol>
+<p><img src="/images/img/image-20191204163451830.png" alt="image-20191204163451830"></p>
+<p>不妨每一个方法都测试一下，我们可以发现：<span style="color : red ">当后面的命令执行时，前面的操作过程也都会自动执行。</span></p>
+<h2 id="Maven指令的生命周期"><a href="#Maven指令的生命周期" class="headerlink" title="Maven指令的生命周期"></a>Maven指令的生命周期</h2><p>maven 对项目构建过程分为三套相互独立的生命周期，请注意这里说的是“三套”，而且“相互独立”，这三套生命周期分别是：</p>
+<p>Clean Lifecycle 在进行真正的构建之前进行一些清理工作。</p>
+<p>Default Lifecycle 构建的核心部分，编译，测试，打包，部署等等。</p>
+<p>Site Lifecycle 生成项目报告，站点，发布站点。</p>
+<h2 id="Maven的概念模型"><a href="#Maven的概念模型" class="headerlink" title="Maven的概念模型"></a>Maven的概念模型</h2><p>Maven 包含了一个项目对象模型 (Project Object Model)，一组标准集合，一个项目生命周期(Project<br>Lifecycle)，一个依赖管理系统(Dependency Management System)，和用来运行定义在生命周期阶段(phase)中插件(plugin)目标(goal)的逻辑。</p>
+<p><img src="/images/img/235546_HuP6_2706221.png" alt="img"></p>
+<h3 id="项目对象模型-Project-Object-Model"><a href="#项目对象模型-Project-Object-Model" class="headerlink" title="项目对象模型 (Project Object Model)"></a>项目对象模型 (Project Object Model)</h3><p>一个 maven 工程都有一个 pom.xml 文件，通过 pom.xml 文件定义项目的坐标、项目依赖、项目信息、<br>插件目标等。</p>
+<h3 id="依赖管理系统-Dependency-Management-System"><a href="#依赖管理系统-Dependency-Management-System" class="headerlink" title="依赖管理系统(Dependency Management System)"></a>依赖管理系统(Dependency Management System)</h3><p>通过 maven 的依赖管理对项目所依赖的 jar 包进行统一管理。</p>
+<p>比如：项目依赖 junit4.9，通过在 pom.xml 中定义 junit4.9 的依赖即使用 junit4.9，如下所示是 junit4.9<br>的依赖定义：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 依赖关系 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 此项目运行使用 junit，所以此项目依赖 junit --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- junit 的项目名称 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- junit 的模块名称 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- junit 版本 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.9<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 依赖范围：单元测试时使用 junit --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="一个项目生命周期-Project-Lifecycle"><a href="#一个项目生命周期-Project-Lifecycle" class="headerlink" title="一个项目生命周期(Project Lifecycle)"></a>一个项目生命周期(Project Lifecycle)</h3><p>使用 maven 完成项目的构建，项目构建包括：清理、编译、测试、部署等过程，maven 将这些过程规范为一个生命周期，如下所示是生命周期的各各阶段：</p>
+<p><img src="/images/img/图片1-2019-12-09-13-44.png" alt="20190409111827573"></p>
+<p>maven 通过执行一些简单命令即可实现上边生命周期的各各过程，比如执行 mvn compile 执行编译、<br>执行 mvn clean 执行清理。</p>
+<ul>
+<li><p>一组标准集合</p>
+<p>maven将整个项目管理过程定义一组标准，比如：通过 maven 构建工程有标准的目录结构，有标准的生命周期阶段、依赖管理有标准的坐标定义等。</p>
+</li>
+<li><p>插件(plugin)目标(goal)</p>
+<p>maven 管理项目生命周期过程都是基于插件完成的。</p>
+</li>
+</ul>
+<h1 id="pom-xml的基本配置"><a href="#pom-xml的基本配置" class="headerlink" title="pom.xml的基本配置"></a>pom.xml的基本配置</h1><p>在 pom.xml 中定义坐标，内容包括：groupId、artifactId、version，详细内容如下：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--项目名称，定义为组织名+项目名，类似包名--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>cn.itcast.maven<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 模块名称 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-first<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 当前项目版本号，snapshot 为快照版本即非正式版本，release为正式发布版本 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>0.0.1-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">packaging</span> &gt;</span> ：打包类型</span><br><span class="line">jar：执行 package 会打成 jar 包</span><br><span class="line">war：执行 package 会打成 war 包</span><br><span class="line">pom ：用于 maven 工程的继承，通常父工程设置为 pom</span><br></pre></td></tr></table></figure>
+<p>pom.xml 是 Maven 项目的核心配置文件，位于每个工程的根目录，基本配置如下：</p>
+<p><code>&lt;project &gt;</code>：文件的根节点 .</p>
+<p><code>&lt;modelversion &gt;</code> ： pom.xml 使用的对象模型版本</p>
+<p><code>&lt;groupId &gt;</code>：项目名称，一般写项目的域名</p>
+<p><code>&lt;artifactId &gt;</code> ：模块名称，子项目名或模块名称</p>
+<p><code>&lt;version &gt;</code> ：产品的版本号 .</p>
+<p><code>&lt;packaging &gt;</code> ：打包类型，一般有 jar、war、pom 等</p>
+<p><code>&lt;name &gt;</code>：项目的显示名，常用于 Maven 生成的文档。</p>
+<p><code>&lt;description &gt;</code> ：项目描述，常用于 Maven 生成的文档</p>
+<p><code>&lt;dependencies&gt;</code> ：项目依赖构件配置，配置项目依赖构件的坐标</p>
+<p><code>&lt;build&gt;</code>：项目构建配置，配置编译、运行插件等。</p>
+<h1 id="maven的依赖范围"><a href="#maven的依赖范围" class="headerlink" title="maven的依赖范围"></a>maven的依赖范围</h1><table>
+<thead>
+<tr>
+<th>依赖范围</th>
+<th>对于编译classpath有效</th>
+<th>对于测试classpath有效</th>
+<th>对于运行时classpath有效</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>compile</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>spring-core</td>
+</tr>
+<tr>
+<td>test</td>
+<td>-</td>
+<td>Y</td>
+<td>-</td>
+<td>Junit</td>
+</tr>
+<tr>
+<td>provided</td>
+<td>Y</td>
+<td>Y</td>
+<td>-</td>
+<td>servlet-api</td>
+</tr>
+<tr>
+<td>runtime</td>
+<td>-</td>
+<td>Y</td>
+<td>Y</td>
+<td>JDBC驱动</td>
+</tr>
+<tr>
+<td>system</td>
+<td>Y</td>
+<td>Y</td>
+<td>-</td>
+<td>本地的，maven仓库之外的类库</td>
+</tr>
+</tbody>
+</table>
+<h1 id="依赖传递"><a href="#依赖传递" class="headerlink" title="依赖传递"></a>依赖传递</h1><h2 id="什么是依赖传递"><a href="#什么是依赖传递" class="headerlink" title="什么是依赖传递"></a>什么是依赖传递</h2><p>在maven中，依赖是可以传递的，假设存在三个项目，分别是项目A，项目B以及项目C。假设C依赖B，B依赖A，那么我们可以根据maven项目依赖的特征不难推出项目C也依赖A。</p>
+<p><img src="/images/img/图片3-2019-12-09-14-06.png" alt></p>
+<p><img src="/images/img/image-20191209141225644.png" alt="image-20191209141225644"></p>
+<p>通过上面的图可以看到，我们的web项目直接依赖了spring-webmvc，而spring-webmvc依赖了sping-core、spring-beans等。最终的结果就是在我们的web项目中间接依赖了spring-core、spring-beans等。</p>
+<h2 id="什么是依赖冲突"><a href="#什么是依赖冲突" class="headerlink" title="什么是依赖冲突"></a>什么是依赖冲突</h2><p>由于依赖传递现象的存在， spring-aop依赖 spirng-beans-5.0.5，spring-webmvc依赖 spring-beans-3.0.5，但是发现 spirng-beans-5.0.5 加入到了工程中，而我们希望 spring-beans-3.0.5 加入工程。这就造成了依赖冲突。</p>
+<p><img src="/images/img/image-20191209142250893.png" alt="image-20191209142250893"></p>
+<h2 id="如何解决依赖冲突"><a href="#如何解决依赖冲突" class="headerlink" title="如何解决依赖冲突"></a>如何解决依赖冲突</h2><ol>
+<li><p>使用maven提供的依赖调解原则</p>
+<ul>
+<li><p>第一声明者优先原则。</p>
+</li>
+<li><p>路径近者优先原则。</p>
+</li>
+</ul>
+<p>所以，在 pom 文件中定义依赖，以先声明的依赖为准。其实就是根据坐标导入的顺序来确定最终使用哪个传递过来的依赖。</p>
+</li>
+<li><p>排除依赖</p>
+<p>可以使用exclusions标签将传递过来的依赖排除出去。</p>
+</li>
+<li><p>锁定版本 </p>
+<p>采用直接锁定版本的方法确定依赖jar包的版本，版本锁定后则不考虑依赖的声明顺序或依赖的路径，以锁定的版本为准添加到工程中，此方法在企业开发中经常使用。</p>
+<p>版本锁定的使用方式：</p>
+<p>第一步：在dependencyManagement标签中锁定依赖的版本</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencyManagement</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-webmvc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.0.5.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-aop<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.0.5.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencyManagement</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">注意：</span></span><br><span class="line"><span class="comment">	pom文件中使用dependencyManagement标签进行依赖jar的版本锁定，并不会真正将jar包导入到项目中，只是对这些jar的版本进行锁定。项目中使用到这些jar包时，还需要在dependencies标签中进行声明。</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br></pre></td></tr></table></figure>
+<p>第二步：在dependencies标签中声明需要导入的maven坐标</p>
+</li>
+</ol>
+<h1 id="分模块构建Maven工程"><a href="#分模块构建Maven工程" class="headerlink" title="分模块构建Maven工程"></a>分模块构建Maven工程</h1><p>在现实生活中，汽车厂家进行汽车生产时，由于整个生产过程非常复杂和繁琐，工作量非常大，所以车场都会将整个汽车的部件分开生产，最终再将生产好的部件进行组装，形成一台完整的汽车。</p>
+<p><img src="/images/img/图片12-2019-12-09-14-44.png" alt></p>
+<p><img src="/images/img\图片13-2019-12-09-14-44.png" alt></p>
+<h2 id="maven工程的继承"><a href="#maven工程的继承" class="headerlink" title="maven工程的继承"></a>maven工程的继承</h2><p>在Java语言中，类之间是可以继承的，通过继承，子类就可以引用父类中非private的属性和方法。同样，在maven工程之间也可以继承，子工程继承父工程后，就可以使用在父工程中引入的依赖。继承的目的是为了消除重复代码。</p>
+<p><img src="/images/img/image-20191209144813148.png" alt="image-20191209144813148"></p>
+<p>被继承的maven工程通常称为父工程，父工程的打包方式必须为pom，所以我们区分某个maven工程是否为父工程就看这个工程的打包方式是否为pom。</p>
+<p>继承其他maven父工程的工程通常称为子工程，在pom.xml文件中通过parent标签进行父工程的继承。</p>
+<h2 id="maven工程的聚合"><a href="#maven工程的聚合" class="headerlink" title="maven工程的聚合"></a>maven工程的聚合</h2><p>在maven工程的pom.xml文件中可以使用<code>&lt;modules&gt;</code>标签将其他maven工程聚合到一起，聚合的目的是为了进行统一操作。</p>
+<p>例如拆分后的maven工程有多个，如果要进行打包，就需要针对每个工程分别执行打包命令，操作起来非常繁琐。这时就可以使用<code>&lt;modules&gt;</code>标签将这些工程统一聚合到maven工程中，需要打包的时候，只需要在此工程中执行一次打包命令，其下被聚合的工程就都会被打包了。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>cn.skywalker<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven_parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">modules</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">module</span>&gt;</span>maven_web<span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">module</span>&gt;</span>maven_service<span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">module</span>&gt;</span>maven_dao<span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">module</span>&gt;</span>maven_pojo<span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">modules</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">packaging</span>&gt;</span>pom<span class="tag">&lt;/<span class="name">packaging</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="私服"><a href="#私服" class="headerlink" title="私服"></a>私服</h1><p>maven仓库分为本地仓库和远程仓库，而远程仓库又分为maven中央仓库、其他远程仓库和私服（私有服务器）。其中，中央仓库是由maven官方提供的，而私服就需要我们自己搭建了。</p>
+<p>maven私服就是公司局域网内的maven远程仓库，每个员工的电脑上安装maven软件并且连接maven私服，程序员可以将自己开发的项目打成jar并发布到私服，其它项目组成员就可以从私服下载所依赖的jar。私服还充当一个代理服务器的角色，当私服上没有jar包时会从maven中央仓库自动下载。</p>
+<p>具体操作为：在maven的conf目录下，修改settings.xml，添加<code>&lt;mirror&gt;</code>标签的配置项。</p>
+<p>nexus 可以充当Maven私服。这里不再做过多说明。</p>
+
           
         
       
@@ -2276,221 +2831,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://SkyWalkerKKKK.cn/Front/07_BootStrap/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="SkyWalker">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1557167236181&di=a0d810af38b2c9d9159d63e898b41e50&imgtype=0&src=http%3A%2F%2Fimg.hao661.com%2Fqq.hao661.com%2Fuploads%2Fallimg%2F180715%2F144142A95-6.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="SkyWalker的博客">
-    </span>
-
-    
-      <header class="post-header">
-       
-        
-          <i class="fa fa-thumb-tack"></i>
-          <font color="7D26CD">置顶</font>
-        
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/Front/07_BootStrap/" itemprop="url">BootStrap</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建时间" itemprop="dateCreated datePublished" datetime="2019-07-27T19:29:48+08:00">
-                2019-07-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Front/" itemprop="url" rel="index">
-                    <span itemprop="name">Front</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  933
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  3
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><p><strong>Bootstrap，一个前端开发的框架，来自 Twitter，是目前很受欢迎的前端框架。Bootstrap 是基于 HTML、CSS、JavaScript 的，它简洁灵活，使得 Web 开发更加快捷。</strong></p>
-<h2 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h2><p>一个半成品软件，开发人员可以在框架基础上，在进行开发，简化编码。</p>
-<h2 id="好处"><a href="#好处" class="headerlink" title="好处"></a>好处</h2><ol>
-<li>定义了很多的css样式和js插件。我们开发人员直接可以使用这些样式和插件得到丰富的页面效果。</li>
-<li>响应式布局。<ul>
-<li>同一套页面可以兼容不同分辨率的设备。</li>
-</ul>
-</li>
-</ol>
-<h1 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h1><ol>
-<li>下载Bootstrap</li>
-<li>在项目中将这三个文件夹复制</li>
-<li>创建html页面，引入必要的资源文件</li>
-</ol>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- ie的适配 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ --&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Hello world<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 新 Bootstrap 核心 CSS 文件 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"css/bootstrap.min.css"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 可选的Bootstrap主题文件（一般不用引入） --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"css/bootstrap-theme.min.css"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- jQuery文件。务必在bootstrap.min.js 之前引入 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/jquery-3.2.1.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 最新的 Bootstrap 核心 JavaScript 文件 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/bootstrap.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>hello world!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/Front/07_BootStrap/#更多" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-
-
-
-
-    
-
-    
-
-    
-
-<div>
-      
-</div>
-
-
-    <div>
-       
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2541,7 +2886,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2552,7 +2897,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2563,7 +2908,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2649,7 +2994,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共75.2k字</span>
+  <span class="post-count">博客全站共95.9k字</span>
 </div>
 
 

@@ -105,18 +105,28 @@
 
 
 
-<meta name="description" content="欢迎来到我的博客。">
+<meta name="description" content="简介什么是NginxNginx 是一款高性能的 http 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器。由俄罗斯的程序设计师伊戈尔·西索夫（Igor Sysoev）所开发，官方测试 nginx 能够支支撑 5 万并发链接，并且 cpu、内存等资源消耗却非常低，运行非常稳定。  Nginx的应用场景 http 服务器。Nginx 是一个 http 服务可以独立提供 http 服务">
 <meta name="keywords" content="Tomcat,Nginx,reverse proxy,load balancing">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Nginx">
 <meta property="og:url" content="http://SkyWalkerKKKK.cn/Nginx/15_Nginx/index.html">
 <meta property="og:site_name" content="SkyWalker的博客">
-<meta property="og:description" content="欢迎来到我的博客。">
+<meta property="og:description" content="简介什么是NginxNginx 是一款高性能的 http 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器。由俄罗斯的程序设计师伊戈尔·西索夫（Igor Sysoev）所开发，官方测试 nginx 能够支支撑 5 万并发链接，并且 cpu、内存等资源消耗却非常低，运行非常稳定。  Nginx的应用场景 http 服务器。Nginx 是一个 http 服务可以独立提供 http 服务">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-16T01:33:31.788Z">
+<meta property="og:image" content="http://skywalkerkkkk.cn/images/img/image-20191209154350978.png">
+<meta property="og:image" content="http://skywalkerkkkk.cn/images/img/image-20191209161523385.png">
+<meta property="og:image" content="http://skywalkerkkkk.cn/images/img/image-20191209161908161.png">
+<meta property="og:image" content="http://skywalkerkkkk.cn/images/img/image-20191209165627773.png">
+<meta property="og:image" content="http://skywalkerkkkk.cn/images/img/image-20191209165007417.png">
+<meta property="og:image" content="http://skywalkerkkkk.cn/images/img/image-20191209173047387.png">
+<meta property="og:image" content="http://skywalkerkkkk.cn/images/img/image-20191209173333196.png">
+<meta property="og:image" content="http://skywalkerkkkk.cn/images/img/image-20191209173349089.png">
+<meta property="og:image" content="http://skywalkerkkkk.cn/images/img/image-20191209173400745.png">
+<meta property="og:updated_time" content="2019-12-09T14:57:31.554Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nginx">
-<meta name="twitter:description" content="欢迎来到我的博客。">
+<meta name="twitter:description" content="简介什么是NginxNginx 是一款高性能的 http 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器。由俄罗斯的程序设计师伊戈尔·西索夫（Igor Sysoev）所开发，官方测试 nginx 能够支支撑 5 万并发链接，并且 cpu、内存等资源消耗却非常低，运行非常稳定。  Nginx的应用场景 http 服务器。Nginx 是一个 http 服务可以独立提供 http 服务">
+<meta name="twitter:image" content="http://skywalkerkkkk.cn/images/img/image-20191209154350978.png">
 
 
 
@@ -451,7 +461,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  0
+                  3.6k
                 </span>
               
 
@@ -467,7 +477,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1
+                  14
                 </span>
               
             </div>
@@ -488,7 +498,139 @@
       
 
       
-        
+        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><h2 id="什么是Nginx"><a href="#什么是Nginx" class="headerlink" title="什么是Nginx"></a>什么是Nginx</h2><p>Nginx 是一款高性能的 http 服务器/反向代理服务器及电子邮件（IMAP/POP3）代理服务器。由俄罗斯的程序设计师伊戈尔·西索夫（Igor Sysoev）所开发，官方测试 nginx 能够支支撑 5 万并发链接，并且 cpu、内存等资源消耗却非常低，运行非常稳定。</p>
+<p><img src="/images/img/image-20191209154350978.png" alt="image-20191209154350978"></p>
+<h2 id="Nginx的应用场景"><a href="#Nginx的应用场景" class="headerlink" title="Nginx的应用场景"></a>Nginx的应用场景</h2><ol>
+<li>http 服务器。Nginx 是一个 http 服务可以独立提供 http 服务。可以做网页静态服务器。</li>
+<li>虚拟主机。可以实现在一台服务器虚拟出多个网站。例如个人网站使用的虚拟主机。</li>
+<li>反向代理，负载均衡。当网站的访问量达到一定程度后，单台服务器不能满足用户的请求时，需要用多台服务器集群可以使用 nginx 做反向代理。并且多台服务器可以平均分担负载，不会因为某台服务器负载高宕机而某台服务器闲置的情况。</li>
+</ol>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="在Linux下安装Nginx"><a href="#在Linux下安装Nginx" class="headerlink" title="在Linux下安装Nginx"></a>在Linux下安装Nginx</h2><p>重新准备一台虚拟机作为服务器。比如IP地址为192.168.66.66。</p>
+<h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><h4 id="安装-gcc-的环境"><a href="#安装-gcc-的环境" class="headerlink" title="安装 gcc 的环境"></a>安装 gcc 的环境</h4><p><code>yum install gcc-c++</code></p>
+<h4 id="第三方的开发包"><a href="#第三方的开发包" class="headerlink" title="第三方的开发包"></a>第三方的开发包</h4><h5 id="PCRE"><a href="#PCRE" class="headerlink" title="PCRE"></a>PCRE</h5><p>PCRE(Perl Compatible Regular Expressions)是一个 Perl 库，包括 perl 兼容的正则表达式库。nginx 的 http 模块使用 pcre 来解析正则表达式，所以需要在 linux 上安装 pcre 库。</p>
+<p><span style="color:red">命令：<code>yum install -y pcre pcre-devel</code></span></p>
+<p>注：pcre-devel 是使用 pcre 开发的一个二次开发库。nginx 也需要此库。</p>
+<h5 id="zlib"><a href="#zlib" class="headerlink" title="zlib"></a>zlib</h5><p>zlib 库提供了很多种压缩和解压缩的方式，nginx 使用 zlib 对 http 包的内容进行 gzip，所以需要在 linux 上安装 zlib 库。</p>
+<p><span style="color:red">命令：<code>yum install -y zlib zlib-devel</code></span></p>
+<h5 id="OpenSSL"><a href="#OpenSSL" class="headerlink" title="OpenSSL"></a>OpenSSL</h5><p>OpenSSL 是一个强大的安全套接字层密码库，囊括主要的密码算法、常用的密钥和证书封装管理功能及 SSL 协议，并提供丰富的应用程序供测试或其它目的使用。nginx 不仅支持http 协议，还支持 https（即在 ssl 协议上传输 http），所以需要在 linux安装 openssl 库。</p>
+<p><span style="color:red">命令：<code>yum install -y openssl openssl-devel</code></span></p>
+<h4 id="Nginx压缩包下载"><a href="#Nginx压缩包下载" class="headerlink" title="Nginx压缩包下载"></a>Nginx压缩包下载</h4><p>官方网站下载 nginx：<a href="http://nginx.org/" target="_blank" rel="noopener">http://nginx.org/</a></p>
+<p>我使用的版本是 1.16.1 版本。</p>
+<h3 id="安装Nginx"><a href="#安装Nginx" class="headerlink" title="安装Nginx"></a>安装Nginx</h3><ol>
+<li><p>把 nginx 的源码包nginx-1.16.1.tar.gz上传到 linux 系统</p>
+</li>
+<li><p>解压缩：<code>tar zxvf nginx-1.16.1.tar.gz</code></p>
+</li>
+<li><p>进入nginx-1.16.1目录  使用 configure 命令创建 Makefile文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">./configure \</span><br><span class="line">--prefix=/usr/local/nginx \</span><br><span class="line">--pid-path=/var/run/nginx/nginx.pid \</span><br><span class="line">--lock-path=/var/lock/nginx.lock \</span><br><span class="line">--error-log-path=/var/log/nginx/error.log \</span><br><span class="line">--http-log-path=/var/log/nginx/access.log \</span><br><span class="line">--with-http_gzip_static_module \</span><br><span class="line">--http-client-body-temp-path=/var/temp/nginx/client \</span><br><span class="line">--http-proxy-temp-path=/var/temp/nginx/proxy \</span><br><span class="line">--http-fastcgi-temp-path=/var/temp/nginx/fastcgi \</span><br><span class="line">--http-uwsgi-temp-path=/var/temp/nginx/uwsgi \</span><br><span class="line">--http-scgi-temp-path=/var/temp/nginx/scgi</span><br></pre></td></tr></table></figure>
+<p>执行后可以看到Makefile文件</p>
+</li>
+<li><p>编译：<code>make</code></p>
+</li>
+<li><p>安装：<code>make install</code></p>
+</li>
+</ol>
+<p><span style="color:red ; font-size: 25px">Tips：</span></p>
+<p>Makefile是一种配置文件， Makefile 一个工程中的源文件不计数，其按类型、功能、模块分别放在若干个目录中，makefile定义了一系列的规则来指定，哪些文件需要先编译，哪些文件需要后编译，哪些文件需要重新编译，甚至于进行更复杂的功能操作，因为 makefile就像一个Shell脚本一样，其中也可以执行操作系统的命令。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">configure参数</span><br><span class="line">./configure \</span><br><span class="line">--prefix=/usr \                                            指向安装目录</span><br><span class="line">--sbin-path=/usr/sbin/nginx \                              指向（执行）程序文件（nginx）</span><br><span class="line">--conf-path=/etc/nginx/nginx.conf \                        指向配置文件</span><br><span class="line">--error-log-path=/var/log/nginx/error.log \                指向log</span><br><span class="line">--http-log-path=/var/log/nginx/access.log \                指向http-log</span><br><span class="line">--pid-path=/var/run/nginx/nginx.pid \                      指向pid</span><br><span class="line">--lock-path=/var/lock/nginx.lock \   （安装文件锁定，防止安装文件被别人利用，或自己误操作。）</span><br><span class="line">--user=nginx \</span><br><span class="line">--group=nginx \</span><br><span class="line">--with-http_ssl_module \ 	 	启用ngx_http_ssl_module支持（使支持https请求，需已安装openssl）</span><br><span class="line">--with-http_flv_module \  		启用ngx_http_flv_module支持（提供寻求内存使用基于时间的偏移量文件）</span><br><span class="line">--with-http_stub_status_module \     启用ngx_http_stub_status_module支持（获取nginx自上次启动以来的工作状态）</span><br><span class="line">--with-http_gzip_static_module \   启用ngx_http_gzip_static_module支持（在线实时压缩输出数据流）</span><br><span class="line">--http-client-body-temp-path=/var/tmp/nginx/client/ \ 	设定http客户端请求临时文件路径</span><br><span class="line">--http-proxy-temp-path=/var/tmp/nginx/proxy/ \ 		设定http代理临时文件路径</span><br><span class="line">--http-fastcgi-temp-path=/var/tmp/nginx/fcgi/ \ 	设定http fastcgi临时文件路径</span><br><span class="line">--http-uwsgi-temp-path=/var/tmp/nginx/uwsgi \ 		设定http uwsgi临时文件路径</span><br><span class="line">--http-scgi-temp-path=/var/tmp/nginx/scgi \ 		设定http scgi临时文件路径</span><br><span class="line">--with-pcre 	启用pcre库</span><br></pre></td></tr></table></figure>
+<h3 id="Nginx启动与访问"><a href="#Nginx启动与访问" class="headerlink" title="Nginx启动与访问"></a>Nginx启动与访问</h3><p>注意：启动nginx 之前，上边将临时文件目录指定为/var/temp/nginx/client， 需要在/var 下创建此目录</p>
+<p><code>mkdir /var/temp/nginx/client -p</code></p>
+<p>进入到Nginx目录下的sbin目录：<code>cd /usr/local/ngiux/sbin</code></p>
+<p>输入命令启动Nginx：<code>./nginx</code></p>
+<p>启动后查看进程：<code>ps aux|grep nginx</code></p>
+<p>地址栏输入虚拟机的IP即可访问（默认为80端口）</p>
+<p>关闭Nginx：<code>./nginx -s stop</code> 或者 <code>./nginx -s quit</code></p>
+<p>重启Nginx：</p>
+<ol>
+<li>先关闭后启动</li>
+<li>刷新配置文件：<code>./nginx -s reload</code></li>
+</ol>
+<h2 id="在Windows-10下安装Nginx"><a href="#在Windows-10下安装Nginx" class="headerlink" title="在Windows 10下安装Nginx"></a>在Windows 10下安装Nginx</h2><ol>
+<li>去官网下载Nginx的压缩包</li>
+<li>解压</li>
+<li>以管理员身份运行该目录下的Nginx.exe</li>
+</ol>
+<p>运行起来之后，在浏览器中输入localhost即可看到Nginx欢迎页面！（Nginx的默认端口是80）</p>
+<p><img src="/images/img/image-20191209161523385.png" alt="image-20191209161523385"></p>
+<p>附带：windows下使用cmd快速操作nginx的命令（需要进入到nginx的根目录下！）</p>
+<ul>
+<li>查看nginx的版本号：<code>nginx -v</code></li>
+<li>启动nginx：<code>start nginx</code></li>
+<li>快速停止或关闭nginx：<code>nginx -s stop</code></li>
+<li>正常停止或关闭nginx：<code>nginx -s quit</code></li>
+<li>配置文件nginx.conf修改重装载命令：<code>nginx -s reload</code></li>
+</ul>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p><span style="color:red ; font-size: 25px">说明：</span>方便起见，我用的是本机部署nginx，如果各位有需要，将ip改成自己的即可！</p>
+<h2 id="功能一：静态网站部署"><a href="#功能一：静态网站部署" class="headerlink" title="功能一：静态网站部署"></a>功能一：静态网站部署</h2><p>将静态页面放至nginx根目录下的html文件夹中即可访问（Linux同）。</p>
+<p>例：</p>
+<p><img src="/images/img/image-20191209161908161.png" alt="image-20191209161908161"></p>
+<h2 id="功能二：配置虚拟主机"><a href="#功能二：配置虚拟主机" class="headerlink" title="功能二：配置虚拟主机"></a>功能二：配置虚拟主机</h2><p>虚拟主机，也叫“网站空间”，就是把一台运行在互联网上的物理服务器划分成多个“虚拟”服务器。虚拟主机技术极大的促进了网络技术的应用和普及。同时虚拟主机的租用服务也成了网络时代的一种新型经济形式。</p>
+<h3 id="端口绑定"><a href="#端口绑定" class="headerlink" title="端口绑定"></a>端口绑定</h3><ol>
+<li><p>上传静态网站</p>
+<p>在nginx根目录中新建两个文件夹：index、regist，并添加 index.html和regist.html。</p>
+<p><img src="/images/img/image-20191209165627773.png" alt="image-20191209165627773"></p>
+</li>
+<li><p>修改Nginx的配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">       listen       10081; # 监听的端口</span><br><span class="line">       server_name  localhost; # 域名或ip</span><br><span class="line">       location / &#123;	# 访问路径配置</span><br><span class="line">           root   index;# 根目录</span><br><span class="line">           index  index.html index.htm; # 默认首页</span><br><span class="line">       &#125;</span><br><span class="line">       error_page   500 502 503 504  /50x.html;	# 错误页面</span><br><span class="line">       location = /50x.html &#123;</span><br><span class="line">           root   html;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">    server &#123;</span><br><span class="line">       listen       10082; # 监听的端口</span><br><span class="line">       server_name  localhost; # 域名或ip</span><br><span class="line">       location / &#123;	# 访问路径配置</span><br><span class="line">           root   regist;# 根目录</span><br><span class="line">           index  regist.html; # 默认首页</span><br><span class="line">       &#125;</span><br><span class="line">       error_page   500 502 503 504  /50x.html;	# 错误页面</span><br><span class="line">       location = /50x.html &#123;</span><br><span class="line">           root   html;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol start="3">
+<li>访问测试</li>
+</ol>
+<p><img src="/images/img/image-20191209165007417.png" alt="image-20191209165007417"></p>
+<h3 id="域名绑定"><a href="#域名绑定" class="headerlink" title="域名绑定"></a>域名绑定</h3><h4 id="什么是域名"><a href="#什么是域名" class="headerlink" title="什么是域名"></a>什么是域名</h4><p><a href="https://baike.baidu.com/item/域名" target="_blank" rel="noopener">域名</a>（<a href="https://baike.baidu.com/item/Domain Name" target="_blank" rel="noopener">Domain Name</a>），是由一串用“点”分隔的<a href="https://baike.baidu.com/item/字符" target="_blank" rel="noopener">字符</a>组成的Internet上某一台计算机或计算机组的名称，用于在数据传输时标识计算机的电子方位（有时也指地理位置，地理上的域名，指代有行政自主权的一个地方区域）。域名是一个<a href="https://baike.baidu.com/item/IP地址" target="_blank" rel="noopener">IP地址</a>上有“面具” 。域名的目的是便于记忆和沟通的一组服务器的地址（<a href="https://baike.baidu.com/item/网站/155722" target="_blank" rel="noopener">网站</a>，电子邮件，<a href="https://baike.baidu.com/item/FTP/13839" target="_blank" rel="noopener">FTP</a>等）。域名作为力所能及难忘的互联网参与者的名称。域名按<a href="https://baike.baidu.com/item/域名系统" target="_blank" rel="noopener">域名系统</a>（DNS）的规则流程组成。在<a href="https://baike.baidu.com/item/DNS/427444" target="_blank" rel="noopener">DNS</a>中注册的任何名称都是域名。域名用于各种网络环境和应用程序特定的命名和寻址目的。通常，域名表示<a href="https://baike.baidu.com/item/互联网协议" target="_blank" rel="noopener">互联网协议</a>（IP）资源，例如用于访问因特网的个人计算机，托管网站的服务器计算机，或网站本身或通过因特网传送的任何其他服务。世界上第一个注册的域名是在1985年1月注册的。</p>
+<h4 id="域名级别"><a href="#域名级别" class="headerlink" title="域名级别"></a>域名级别</h4><h5 id="顶级域名"><a href="#顶级域名" class="headerlink" title="顶级域名"></a>顶级域名</h5><p>顶级域名又分为两类：</p>
+<p>一是国家顶级域名（national top-level domainnames，简称nTLDs），200多个国家都按照ISO3166国家代码分配了顶级域名，例如中国是cn，美国是us，日本是jp等；</p>
+<p>二是国际顶级域名（international top-level domain names，简称iTDs），例如表示工商企业的 .Com .Top，表示网络提供商的.net，表示非盈利组织的.org，表示教育的.edu，以及没有限制的中性域名如.xyz等。大多数域名争议都发生在com的顶级域名下，因为多数公司上网的目的都是为了赢利。但因为自2014年以来新顶级域名的发展，域名争议案件数量增长幅度越来越大[5] 。为加强域名管理，解决域名资源的紧张，Internet协会、Internet分址机构及世界知识产权组织（WIPO）等国际组织经过广泛协商， 在原来三个国际通用顶级域名：（com）的基础上，新增加了7个国际通用顶级域名：firm（公司企业）、store（销售公司或企业）、Web（突出WWW活动的单位）、arts（突出文化、娱乐活动的单位）、rec (突出消遣、娱乐活动的单位）、info(提供信息服务的单位）、nom(个人），并在世界范围内选择新的注册机构来受理域名注册申请。</p>
+<p>例如：baidu.com</p>
+<h5 id="二级域名"><a href="#二级域名" class="headerlink" title="二级域名"></a>二级域名</h5><p>二级域名是指顶级域名之下的域名，在国际顶级域名下，它是指域名注册人的网上名称，例如 ibm，yahoo，microsoft等；在国家顶级域名下，它是表示注册企业类别的符号，例如.top，com，edu，gov，net等。</p>
+<p>中国在国际互联网络信息中心（Inter NIC） 正式注册并运行的顶级域名是CN，这也是中国的一级域名。在顶级域名之下，中国的二级域名又分为类别域名和行政区域名两类。类别域名共7个， 包括用于科研机构的ac；用于工商金融企业的com、top；用于教育机构的edu；用于政府部门的 gov；用于互联网络信息中心和运行中心的net；用于非盈利组织的org。而行政区域名有34个，分别对应于中国各省、自治区和直辖市。</p>
+<p>例如：map.baidu.com</p>
+<h5 id="三级域名"><a href="#三级域名" class="headerlink" title="三级域名"></a>三级域名</h5><p>三级域名用字母（ A～Z，a～z，大小写等）、数字（0～9）和连接符（－）组成， 各级域名之间用实点（.）连接，三级域名的长度不能超过20个字符。如无特殊原因，建议采用申请人的英文名（或者缩写）或者汉语拼音名 （或者缩写） 作为三级域名，以保持域名的清晰性和简洁性。</p>
+<p>例如：</p>
+<p>item.map.baidu.com</p>
+<h4 id="域名与IP绑定"><a href="#域名与IP绑定" class="headerlink" title="域名与IP绑定"></a>域名与IP绑定</h4><p>一个域名对应一个 ip 地址，一个 ip 地址可以被多个域名绑定。</p>
+<p>本地测试可以修改 hosts 文件（C:\Windows\System32\drivers\etc）</p>
+<p>可以配置域名和 ip 的映射关系，如果 hosts 文件中配置了域名和 ip 的对应关系，不需要走dns 服务器。</p>
+<p>localhost    index.skywalkerkkkk.cn</p>
+<p>localhost    regist.skywalkerkkkk.cn</p>
+<p> <img src="/images/img/image-20191209173047387.png" alt="image-20191209173047387"></p>
+<p>做好域名指向后，修改nginx配置文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">       listen       80;</span><br><span class="line">       server_name  index.skywalkerkkkk.cn;</span><br><span class="line"></span><br><span class="line">       location / &#123;</span><br><span class="line">           root   index;</span><br><span class="line">           index  index.html index.htm;</span><br><span class="line">       &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line">       listen       80;</span><br><span class="line">       server_name  regist.skywalkerkkkk.cn;</span><br><span class="line"></span><br><span class="line">       location / &#123;</span><br><span class="line">           root   regist;</span><br><span class="line">           index  regist.html regist.htm;</span><br><span class="line">       &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="功能三：反向代理与负载均衡"><a href="#功能三：反向代理与负载均衡" class="headerlink" title="功能三：反向代理与负载均衡"></a>功能三：反向代理与负载均衡</h2><h3 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h3><h4 id="什么是反向代理"><a href="#什么是反向代理" class="headerlink" title="什么是反向代理"></a>什么是反向代理</h4><p>反向代理（Reverse Proxy）方式是指以<a href="http://baike.baidu.com/item/代理服务器" target="_blank" rel="noopener">代理服务器</a>来接受internet上的连接请求，然后将请求转发给内部网络上的服务器，并将从服务器上得到的结果返回给internet上请求连接的客户端，此时代理服务器对外就表现为一个反向代理服务器。</p>
+<p>首先我们先理解<span style="color:red">正向代理</span>，如下图：</p>
+<p><img src="/images/img/image-20191209173333196.png" alt="image-20191209173333196"></p>
+<p>正向代理是针对你的客户端，而反向代理是针对服务器的，如下图</p>
+<p><img src="/images/img/image-20191209173349089.png" alt="image-20191209173349089"></p>
+<p><img src="/images/img/image-20191209173400745.png" alt="image-20191209173400745"></p>
+<h4 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h4><ol>
+<li>将一个web项目部署到tomcat中（ROOT目录），上传到服务器。</li>
+<li>启动tomcat，在浏览器中访问<a href="http://localhost:8080" target="_blank" rel="noopener">http://localhost:8080</a> ，可以看到网站首页。</li>
+</ol>
+<h4 id="配置反向代理"><a href="#配置反向代理" class="headerlink" title="配置反向代理"></a>配置反向代理</h4><ol>
+<li><p>在Nginx主机修改 Nginx配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">upstream tomcat-myweb&#123;</span><br><span class="line">   server localhost:8080;</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br><span class="line">   server &#123;</span><br><span class="line">       listen       80; # 监听的端口</span><br><span class="line">       server_name  www.myweb.com; # 域名或ip</span><br><span class="line">       location / &#123;	# 访问路径配置</span><br><span class="line">           # root   index;# 根目录</span><br><span class="line">    	proxy_pass http://tomcat-myweb;</span><br><span class="line">           index  index.html index.htm; # 默认首页</span><br><span class="line">       &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol start="2">
+<li>重新启动Nginx 然后用浏览器测试：<a href="http://www.myweb.com" target="_blank" rel="noopener">http://www.myweb.com</a>  （此域名须在host文件配置域名指向）</li>
+</ol>
+<h3 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h3><h4 id="什么是负载均衡"><a href="#什么是负载均衡" class="headerlink" title="什么是负载均衡"></a>什么是负载均衡</h4><p>负载均衡 建立在现有网络结构之上，它提供了一种廉价有效透明的方法扩展<a href="http://baike.baidu.com/item/网络设备" target="_blank" rel="noopener">网络设备</a>和<a href="http://baike.baidu.com/item/服务器" target="_blank" rel="noopener">服务器</a>的带宽、增加<a href="http://baike.baidu.com/item/吞吐量" target="_blank" rel="noopener">吞吐量</a>、加强网络数据处理能力、提高网络的灵活性和可用性。</p>
+<p>负载均衡，英文名称为Load Balance，其意思就是分摊到多个操作单元上进行执行，例如Web<a href="http://baike.baidu.com/item/服务器" target="_blank" rel="noopener">服务器</a>、<a href="http://baike.baidu.com/item/FTP服务器" target="_blank" rel="noopener">FTP服务器</a>、<a href="http://baike.baidu.com/item/企业" target="_blank" rel="noopener">企业</a>关键应用服务器和其它关键任务服务器等，从而共同完成工作任务。</p>
+<h4 id="准备工作-1"><a href="#准备工作-1" class="headerlink" title="准备工作"></a>准备工作</h4><ol>
+<li>将刚才的存放工程的tomcat复制三份，修改端口分别为8080 ，8081，8082 。</li>
+<li>分别启动这三个tomcat服务。</li>
+<li>为了能够区分是访问哪个服务器的网站，可以在首页标题加上标记以便区分。</li>
+</ol>
+<h4 id="配置负载均衡"><a href="#配置负载均衡" class="headerlink" title="配置负载均衡"></a>配置负载均衡</h4><p>修改 Nginx配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">upstream tomcat-myweb &#123;</span><br><span class="line">  server localhost:8080;</span><br><span class="line">  server localhost:8081;</span><br><span class="line">  server localhost:8082;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  server &#123;</span><br><span class="line">      listen       80; # 监听的端口</span><br><span class="line">      server_name  www.myweb.com; # 域名或ip</span><br><span class="line">      location / &#123;	# 访问路径配置</span><br><span class="line">          # root   index;# 根目录</span><br><span class="line">   	proxy_pass http://tomcat-myweb;</span><br><span class="line">          index  index.html index.htm; # 默认首页</span><br><span class="line">      &#125;</span><br><span class="line">      error_page   500 502 503 504  /50x.html;	# 错误页面</span><br><span class="line">      location = /50x.html &#123;</span><br><span class="line">          root   html;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>地址栏输入http:// <a href="http://www.myweb.com" target="_blank" rel="noopener">www.myweb.com</a> / 刷新观察每个网页的标题，看是否不同。</p>
+<p>经过测试，三台服务器出现的概率各为33.3333333%，交替显示。</p>
+<p>如果其中一台服务器性能比较好，想让其承担更多的压力，可以设置权重。</p>
+<p>比如想让NO.1出现次数是其它服务器的2倍，则修改配置如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">upstream tomcat-travel &#123;</span><br><span class="line">server localhost:8080;</span><br><span class="line">server localhost:8081 weight=2;</span><br><span class="line">server localhost:8082;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>经过测试，每刷新四次，有两次是8081。</p>
+
       
     </div>
     
@@ -546,7 +688,7 @@
   <p><span>本文标题:</span><a href="/Nginx/15_Nginx/">Nginx</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 SkyWalker 的个人博客">SkyWalker</a></p>
   <p><span>发布时间:</span>2019年08月31日 - 19:08</p>
-  <p><span>最后更新:</span>2019年09月16日 - 09:09</p>
+  <p><span>最后更新:</span>2019年12月09日 - 22:12</p>
   <p><span>原始链接:</span><a href="/Nginx/15_Nginx/" title="Nginx">http://SkyWalkerKKKK.cn/Nginx/15_Nginx/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://SkyWalkerKKKK.cn/Nginx/15_Nginx/" aria-label="复制成功！"></i></span>
   </p>
@@ -677,8 +819,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -698,7 +849,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -709,7 +860,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -720,7 +871,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -759,6 +910,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是Nginx"><span class="nav-number">1.1.</span> <span class="nav-text">什么是Nginx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nginx的应用场景"><span class="nav-number">1.2.</span> <span class="nav-text">Nginx的应用场景</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#在Linux下安装Nginx"><span class="nav-number">2.1.</span> <span class="nav-text">在Linux下安装Nginx</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#环境准备"><span class="nav-number">2.1.1.</span> <span class="nav-text">环境准备</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装-gcc-的环境"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">安装 gcc 的环境</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第三方的开发包"><span class="nav-number">2.1.1.2.</span> <span class="nav-text">第三方的开发包</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#PCRE"><span class="nav-number">2.1.1.2.1.</span> <span class="nav-text">PCRE</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#zlib"><span class="nav-number">2.1.1.2.2.</span> <span class="nav-text">zlib</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#OpenSSL"><span class="nav-number">2.1.1.2.3.</span> <span class="nav-text">OpenSSL</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Nginx压缩包下载"><span class="nav-number">2.1.1.3.</span> <span class="nav-text">Nginx压缩包下载</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Nginx"><span class="nav-number">2.1.2.</span> <span class="nav-text">安装Nginx</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Nginx启动与访问"><span class="nav-number">2.1.3.</span> <span class="nav-text">Nginx启动与访问</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在Windows-10下安装Nginx"><span class="nav-number">2.2.</span> <span class="nav-text">在Windows 10下安装Nginx</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用"><span class="nav-number">3.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#功能一：静态网站部署"><span class="nav-number">3.1.</span> <span class="nav-text">功能一：静态网站部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#功能二：配置虚拟主机"><span class="nav-number">3.2.</span> <span class="nav-text">功能二：配置虚拟主机</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#端口绑定"><span class="nav-number">3.2.1.</span> <span class="nav-text">端口绑定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#域名绑定"><span class="nav-number">3.2.2.</span> <span class="nav-text">域名绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是域名"><span class="nav-number">3.2.2.1.</span> <span class="nav-text">什么是域名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#域名级别"><span class="nav-number">3.2.2.2.</span> <span class="nav-text">域名级别</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#顶级域名"><span class="nav-number">3.2.2.2.1.</span> <span class="nav-text">顶级域名</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#二级域名"><span class="nav-number">3.2.2.2.2.</span> <span class="nav-text">二级域名</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#三级域名"><span class="nav-number">3.2.2.2.3.</span> <span class="nav-text">三级域名</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#域名与IP绑定"><span class="nav-number">3.2.2.3.</span> <span class="nav-text">域名与IP绑定</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#功能三：反向代理与负载均衡"><span class="nav-number">3.3.</span> <span class="nav-text">功能三：反向代理与负载均衡</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#反向代理"><span class="nav-number">3.3.1.</span> <span class="nav-text">反向代理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是反向代理"><span class="nav-number">3.3.1.1.</span> <span class="nav-text">什么是反向代理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#准备工作"><span class="nav-number">3.3.1.2.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置反向代理"><span class="nav-number">3.3.1.3.</span> <span class="nav-text">配置反向代理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#负载均衡"><span class="nav-number">3.3.2.</span> <span class="nav-text">负载均衡</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是负载均衡"><span class="nav-number">3.3.2.1.</span> <span class="nav-text">什么是负载均衡</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#准备工作-1"><span class="nav-number">3.3.2.2.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置负载均衡"><span class="nav-number">3.3.2.3.</span> <span class="nav-text">配置负载均衡</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -806,7 +973,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共75.2k字</span>
+  <span class="post-count">博客全站共95.9k字</span>
 </div>
 
 
