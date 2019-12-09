@@ -113,7 +113,7 @@
 <meta property="og:site_name" content="SkyWalker的博客">
 <meta property="og:description" content=".imp{         color:red;     }     .lg{     font-size:25px; }       概念  Redis是一款高性能的NoSQL系列的非关系型数据库      什么是NoSQL&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;NoSQL(NoSQL = Not Only SQL)，意即“不仅仅是SQL”，是一项全新的数据库理念，泛指非关">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-26T13:07:23.653Z">
+<meta property="og:updated_time" content="2019-12-09T15:19:24.170Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Redis">
 <meta name="twitter:description" content=".imp{         color:red;     }     .lg{     font-size:25px; }       概念  Redis是一款高性能的NoSQL系列的非关系型数据库      什么是NoSQL&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;NoSQL(NoSQL = Not Only SQL)，意即“不仅仅是SQL”，是一项全新的数据库理念，泛指非关">
@@ -397,8 +397,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建时间" itemprop="dateCreated datePublished" datetime="2019-07-27T19:32:28+08:00">
-                2019-07-27
+              <time title="创建时间" itemprop="dateCreated datePublished" datetime="2018-09-27T13:32:28+08:00">
+                2018-09-27
               </time>
             
 
@@ -511,8 +511,31 @@
 </li>
 </ul>
 </blockquote>
-<h2 id="什么是NoSQL"><a href="#什么是NoSQL" class="headerlink" title="什么是NoSQL"></a>什么是NoSQL</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;NoSQL(NoSQL = Not Only SQL)，意即“不仅仅是SQL”，是一项全新的数据库理念，泛指非关系型的数据库。</p><br><p>&nbsp;&nbsp;&nbsp;&nbsp;随着互联网web2.0网站的兴起，传统的关系数据库在应付web2.0网站，特别是超大规模和高并发的SNS类型的web2.0纯动态网站已经显得力不从心，暴露了很多难以克服的问题，而非关系型的数据库则由于其本身的特点得到了非常迅速的发展。NoSQL数据库的产生就是为了解决大规模数据集合多重数据种类带来的挑战，尤其是大数据应用难题。</p><br>### NOSQL和关系型数据库比较<br>优点：<br><br>1. 成本：nosql数据库简单易部署，基本都是开源软件，不需要像使用oracle那样花费大量成本购买使用，相比关系型数据库价格便宜。<br>2. 查询速度：nosql数据库将数据存储于缓存之中，关系型数据库将数据存储在硬盘中，自然查询速度远不及nosql数据库。<br>3. 存储数据的格式：nosql的存储格式是key,value形式、文档形式、图片形式等等，所以可以存储基础类型以及对象或者是集合等各种格式，而数据库则只支持基础类型。<br>4. 扩展性：关系型数据库有类似join这样的多表查询机制的限制导致扩展很艰难。<br><br>缺点：<br><br>1. 维护的工具和资料有限，因为nosql是属于新的技术，不能和关系型数据库10几年的技术同日而语。<br>2. 不提供对sql的支持，如果不支持sql这样的工业标准，将产生一定用户的学习和使用成本。<br>3. 不提供关系型数据库对事务的处理。<br><br><br><br><a id="more"></a><br><br>### 非关系型数据库的优势<br>1. 性能NOSQL是基于键值对的，可以想象成表中的主键和值的对应关系，而且不需要经过SQL层的解析，所以性能非常高。<br>2. 可扩展性同样也是因为基于键值对，数据之间没有耦合性，所以非常容易水平扩展。<br><br><br><br>### 关系型数据库的优势<br>1. 复杂查询可以用SQL语句方便的在一个表以及多个表之间做非常复杂的数据查询。<br>2. 事务支持使得对于安全性能很高的数据访问要求得以实现。对于这两类数据库，对方的优势就是自己的弱势，反之亦然。<br><br><br><br>### 总结<br><p>&nbsp;&nbsp;&nbsp;&nbsp;关系型数据库与NoSQL数据库并非对立而是互补的关系，即通常情况下使用关系型数据库，在适合使用NoSQL的时候使用NoSQL数据库，让NoSQL数据库对关系型数据库的不足进行弥补。一般会将数据存储在关系型数据库中，在nosql数据库中备份存储关系型数据库的数据。</p>
-
+<h2 id="什么是NoSQL"><a href="#什么是NoSQL" class="headerlink" title="什么是NoSQL"></a>什么是NoSQL</h2><p></p><p>&nbsp;&nbsp;&nbsp;&nbsp;NoSQL(NoSQL = Not Only SQL)，意即“不仅仅是SQL”，是一项全新的数据库理念，泛指非关系型的数据库。</p><p></p>
+<p></p><p>&nbsp;&nbsp;&nbsp;&nbsp;随着互联网web2.0网站的兴起，传统的关系数据库在应付web2.0网站，特别是超大规模和高并发的SNS类型的web2.0纯动态网站已经显得力不从心，暴露了很多难以克服的问题，而非关系型的数据库则由于其本身的特点得到了非常迅速的发展。NoSQL数据库的产生就是为了解决大规模数据集合多重数据种类带来的挑战，尤其是大数据应用难题。</p><p></p>
+<h3 id="NOSQL和关系型数据库比较"><a href="#NOSQL和关系型数据库比较" class="headerlink" title="NOSQL和关系型数据库比较"></a>NOSQL和关系型数据库比较</h3><p>优点：</p>
+<ol>
+<li>成本：nosql数据库简单易部署，基本都是开源软件，不需要像使用oracle那样花费大量成本购买使用，相比关系型数据库价格便宜。</li>
+<li>查询速度：nosql数据库将数据存储于缓存之中，关系型数据库将数据存储在硬盘中，自然查询速度远不及nosql数据库。</li>
+<li>存储数据的格式：nosql的存储格式是key,value形式、文档形式、图片形式等等，所以可以存储基础类型以及对象或者是集合等各种格式，而数据库则只支持基础类型。</li>
+<li>扩展性：关系型数据库有类似join这样的多表查询机制的限制导致扩展很艰难。</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li>维护的工具和资料有限，因为nosql是属于新的技术，不能和关系型数据库10几年的技术同日而语。</li>
+<li>不提供对sql的支持，如果不支持sql这样的工业标准，将产生一定用户的学习和使用成本。</li>
+<li>不提供关系型数据库对事务的处理。</li>
+</ol>
+<a id="more"></a>
+<h3 id="非关系型数据库的优势"><a href="#非关系型数据库的优势" class="headerlink" title="非关系型数据库的优势"></a>非关系型数据库的优势</h3><ol>
+<li>性能NOSQL是基于键值对的，可以想象成表中的主键和值的对应关系，而且不需要经过SQL层的解析，所以性能非常高。</li>
+<li>可扩展性同样也是因为基于键值对，数据之间没有耦合性，所以非常容易水平扩展。</li>
+</ol>
+<h3 id="关系型数据库的优势"><a href="#关系型数据库的优势" class="headerlink" title="关系型数据库的优势"></a>关系型数据库的优势</h3><ol>
+<li>复杂查询可以用SQL语句方便的在一个表以及多个表之间做非常复杂的数据查询。</li>
+<li>事务支持使得对于安全性能很高的数据访问要求得以实现。对于这两类数据库，对方的优势就是自己的弱势，反之亦然。</li>
+</ol>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p></p><p>&nbsp;&nbsp;&nbsp;&nbsp;关系型数据库与NoSQL数据库并非对立而是互补的关系，即通常情况下使用关系型数据库，在适合使用NoSQL的时候使用NoSQL数据库，让NoSQL数据库对关系型数据库的不足进行弥补。一般会将数据存储在关系型数据库中，在nosql数据库中备份存储关系型数据库的数据。</p><p></p>
 <h2 id="主流的NoSQL产品"><a href="#主流的NoSQL产品" class="headerlink" title="主流的NoSQL产品"></a>主流的NoSQL产品</h2><h3 id="键值-Key-Value-存储数据库"><a href="#键值-Key-Value-存储数据库" class="headerlink" title="键值(Key-Value)存储数据库"></a>键值(Key-Value)存储数据库</h3><ol>
 <li>相关产品： Tokyo Cabinet/Tyrant、Redis、Voldemort、Berkeley DB</li>
 <li>典型应用： 内容缓存，主要用于处理大量数据的高访问负载。 </li>
@@ -803,8 +826,8 @@
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <p><span>本文标题:</span><a href="/Database/12_redis/">Redis</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 SkyWalker 的个人博客">SkyWalker</a></p>
-  <p><span>发布时间:</span>2019年07月27日 - 19:07</p>
-  <p><span>最后更新:</span>2019年08月26日 - 21:08</p>
+  <p><span>发布时间:</span>2018年09月27日 - 13:09</p>
+  <p><span>最后更新:</span>2019年12月09日 - 23:12</p>
   <p><span>原始链接:</span><a href="/Database/12_redis/" title="Redis">http://SkyWalkerKKKK.cn/Database/12_redis/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://SkyWalkerKKKK.cn/Database/12_redis/" aria-label="复制成功！"></i></span>
   </p>
@@ -862,8 +885,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/uncategorized/10_jQuery3-0/" rel="next" title="jQuery3.0">
-                <i class="fa fa-chevron-left"></i> jQuery3.0
+              <a href="/JavaScript/11_Ajax/" rel="next" title="Ajax&Json">
+                <i class="fa fa-chevron-left"></i> Ajax&Json
               </a>
             
           </div>
@@ -872,8 +895,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/Java/04_JDBC/" rel="prev" title="JDBC">
-                JDBC <i class="fa fa-chevron-right"></i>
+              <a href="/Maven/13_maven/" rel="prev" title="Maven">
+                Maven <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -963,7 +986,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1034,7 +1057,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概念"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是NoSQL"><span class="nav-number">1.1.</span> <span class="nav-text">什么是NoSQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主流的NoSQL产品"><span class="nav-number">1.2.</span> <span class="nav-text">主流的NoSQL产品</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#键值-Key-Value-存储数据库"><span class="nav-number">1.2.1.</span> <span class="nav-text">键值(Key-Value)存储数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列存储数据库"><span class="nav-number">1.2.2.</span> <span class="nav-text">列存储数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文档型数据库"><span class="nav-number">1.2.3.</span> <span class="nav-text">文档型数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图形-Graph-数据库"><span class="nav-number">1.2.4.</span> <span class="nav-text">图形(Graph)数据库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是Redis"><span class="nav-number">1.3.</span> <span class="nav-text">什么是Redis</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#redis的应用场景"><span class="nav-number">1.3.1.</span> <span class="nav-text">redis的应用场景</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#下载安装"><span class="nav-number">2.</span> <span class="nav-text">下载安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#命令操作"><span class="nav-number">3.</span> <span class="nav-text">命令操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#redis的数据结构"><span class="nav-number">3.1.</span> <span class="nav-text">redis的数据结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串类型-string"><span class="nav-number">3.2.</span> <span class="nav-text">字符串类型 string</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#哈希类型-hash"><span class="nav-number">3.3.</span> <span class="nav-text">哈希类型 hash</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表类型-list"><span class="nav-number">3.4.</span> <span class="nav-text">列表类型 list</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集合类型-set"><span class="nav-number">3.5.</span> <span class="nav-text">集合类型 set</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有序集合类型-sortedset"><span class="nav-number">3.6.</span> <span class="nav-text">有序集合类型 sortedset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通用命令"><span class="nav-number">3.7.</span> <span class="nav-text">通用命令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#持久化"><span class="nav-number">4.</span> <span class="nav-text">持久化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#redis持久化机制"><span class="nav-number">4.1.</span> <span class="nav-text">redis持久化机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RDB"><span class="nav-number">4.2.</span> <span class="nav-text">RDB</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AOF"><span class="nav-number">4.3.</span> <span class="nav-text">AOF</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java客户端-Jedis"><span class="nav-number">5.</span> <span class="nav-text">Java客户端 Jedis</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用步骤"><span class="nav-number">5.1.</span> <span class="nav-text">使用步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jedis操作各种redis中的数据结构"><span class="nav-number">5.2.</span> <span class="nav-text">Jedis操作各种redis中的数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串类型String"><span class="nav-number">5.2.1.</span> <span class="nav-text">字符串类型String</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#哈希类型Hash"><span class="nav-number">5.2.2.</span> <span class="nav-text">哈希类型Hash</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列表类型List"><span class="nav-number">5.2.3.</span> <span class="nav-text">列表类型List</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#集合类型Set"><span class="nav-number">5.2.4.</span> <span class="nav-text">集合类型Set</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有序集合类型SortedSet"><span class="nav-number">5.2.5.</span> <span class="nav-text">有序集合类型SortedSet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通用的操作方法"><span class="nav-number">5.2.6.</span> <span class="nav-text">通用的操作方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jedis连接池"><span class="nav-number">5.3.</span> <span class="nav-text">Jedis连接池</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用步骤-1"><span class="nav-number">5.3.1.</span> <span class="nav-text">使用步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#连接池工具类"><span class="nav-number">5.3.2.</span> <span class="nav-text">连接池工具类</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注意事项"><span class="nav-number">6.</span> <span class="nav-text">注意事项</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概念"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是NoSQL"><span class="nav-number">1.1.</span> <span class="nav-text">什么是NoSQL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#NOSQL和关系型数据库比较"><span class="nav-number">1.1.1.</span> <span class="nav-text">NOSQL和关系型数据库比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#非关系型数据库的优势"><span class="nav-number">1.1.2.</span> <span class="nav-text">非关系型数据库的优势</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关系型数据库的优势"><span class="nav-number">1.1.3.</span> <span class="nav-text">关系型数据库的优势</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">1.1.4.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主流的NoSQL产品"><span class="nav-number">1.2.</span> <span class="nav-text">主流的NoSQL产品</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#键值-Key-Value-存储数据库"><span class="nav-number">1.2.1.</span> <span class="nav-text">键值(Key-Value)存储数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列存储数据库"><span class="nav-number">1.2.2.</span> <span class="nav-text">列存储数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文档型数据库"><span class="nav-number">1.2.3.</span> <span class="nav-text">文档型数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图形-Graph-数据库"><span class="nav-number">1.2.4.</span> <span class="nav-text">图形(Graph)数据库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是Redis"><span class="nav-number">1.3.</span> <span class="nav-text">什么是Redis</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#redis的应用场景"><span class="nav-number">1.3.1.</span> <span class="nav-text">redis的应用场景</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#下载安装"><span class="nav-number">2.</span> <span class="nav-text">下载安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#命令操作"><span class="nav-number">3.</span> <span class="nav-text">命令操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#redis的数据结构"><span class="nav-number">3.1.</span> <span class="nav-text">redis的数据结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串类型-string"><span class="nav-number">3.2.</span> <span class="nav-text">字符串类型 string</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#哈希类型-hash"><span class="nav-number">3.3.</span> <span class="nav-text">哈希类型 hash</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表类型-list"><span class="nav-number">3.4.</span> <span class="nav-text">列表类型 list</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集合类型-set"><span class="nav-number">3.5.</span> <span class="nav-text">集合类型 set</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有序集合类型-sortedset"><span class="nav-number">3.6.</span> <span class="nav-text">有序集合类型 sortedset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通用命令"><span class="nav-number">3.7.</span> <span class="nav-text">通用命令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#持久化"><span class="nav-number">4.</span> <span class="nav-text">持久化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#redis持久化机制"><span class="nav-number">4.1.</span> <span class="nav-text">redis持久化机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RDB"><span class="nav-number">4.2.</span> <span class="nav-text">RDB</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AOF"><span class="nav-number">4.3.</span> <span class="nav-text">AOF</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java客户端-Jedis"><span class="nav-number">5.</span> <span class="nav-text">Java客户端 Jedis</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用步骤"><span class="nav-number">5.1.</span> <span class="nav-text">使用步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jedis操作各种redis中的数据结构"><span class="nav-number">5.2.</span> <span class="nav-text">Jedis操作各种redis中的数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串类型String"><span class="nav-number">5.2.1.</span> <span class="nav-text">字符串类型String</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#哈希类型Hash"><span class="nav-number">5.2.2.</span> <span class="nav-text">哈希类型Hash</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#列表类型List"><span class="nav-number">5.2.3.</span> <span class="nav-text">列表类型List</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#集合类型Set"><span class="nav-number">5.2.4.</span> <span class="nav-text">集合类型Set</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有序集合类型SortedSet"><span class="nav-number">5.2.5.</span> <span class="nav-text">有序集合类型SortedSet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通用的操作方法"><span class="nav-number">5.2.6.</span> <span class="nav-text">通用的操作方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jedis连接池"><span class="nav-number">5.3.</span> <span class="nav-text">Jedis连接池</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用步骤-1"><span class="nav-number">5.3.1.</span> <span class="nav-text">使用步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#连接池工具类"><span class="nav-number">5.3.2.</span> <span class="nav-text">连接池工具类</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注意事项"><span class="nav-number">6.</span> <span class="nav-text">注意事项</span></a></li></ol></div>
             
 
           </div>
@@ -1087,7 +1110,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共95.9k字</span>
+  <span class="post-count">博客全站共88.1k字</span>
 </div>
 
 
