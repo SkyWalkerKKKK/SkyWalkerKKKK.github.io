@@ -2104,7 +2104,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #1f2db4;
+  background: #c7cdc7;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3404,6 +3404,12 @@ img:hover {
 }
 .site-meta {
   background: #0684bd;
+}
+* {
+  cursor: url("/images/cursor_1.png"), auto !important;
+}
+:active {
+  cursor: url("/images/cursor_10.cur"), auto !important;
 }
 a:hover {
   cursor: url("images/cursor_7.png"), auto;
