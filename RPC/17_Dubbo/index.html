@@ -113,20 +113,21 @@
 <meta property="og:site_name" content="SkyWalker的博客">
 <meta property="og:description" content="软件架构的演进过程软件架构的发展经历了由单体架构、垂直架构、SOA架构到微服务架构的演进过程，下面我们分别了解一下这几个架构。 单体架构 架构说明： ​      全部功能集中在一个项目内（All in one）。 架构优点： ​      架构简单，前期开发成本低、开发周期短，适合小型项目。 架构缺点： ​       全部功能集成在一个工程中，对于大型项目不易开发、扩展和维护。 ​">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://skywalkerkkkk.cn/images/1.png">
-<meta property="og:image" content="http://skywalkerkkkk.cn/images/18.png">
-<meta property="og:image" content="http://skywalkerkkkk.cn/images/19.png">
-<meta property="og:image" content="http://skywalkerkkkk.cn/images/20.png">
-<meta property="og:image" content="http://skywalkerkkkk.cn/images/2.png">
-<meta property="og:image" content="http://skywalkerkkkk.cn/images/3.png">
-<meta property="og:image" content="http://skywalkerkkkk.cn/images/image-20191216170626908.png">
-<meta property="og:image" content="http://skywalkerkkkk.cn/images/image-20191216172731080.png">
-<meta property="og:image" content="http://skywalkerkkkk.cn/images/image-20191216172642757.png">
-<meta property="og:updated_time" content="2019-12-16T11:05:23.889Z">
+<meta property="og:image" content="http://skywalkerkkkk.cn/images/img/1.png">
+<meta property="og:image" content="http://skywalkerkkkk.cn/images/img/18.png">
+<meta property="og:image" content="http://skywalkerkkkk.cn/images/img/19.png">
+<meta property="og:image" content="http://skywalkerkkkk.cn/images/img/20.png">
+<meta property="og:image" content="http://skywalkerkkkk.cn/images/img/2.png">
+<meta property="og:image" content="http://skywalkerkkkk.cn/images/img/3.png">
+<meta property="og:image" content="http://skywalkerkkkk.cn/images/img/image-20191216170626908.png">
+<meta property="og:image" content="http://skywalkerkkkk.cn/images/img/image-20191217095253265.png">
+<meta property="og:image" content="http://skywalkerkkkk.cn/images/img/image-20191216172731080.png">
+<meta property="og:image" content="http://skywalkerkkkk.cn/images/img/image-20191216172642757.png">
+<meta property="og:updated_time" content="2019-12-17T12:56:00.755Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Dubbo">
 <meta name="twitter:description" content="软件架构的演进过程软件架构的发展经历了由单体架构、垂直架构、SOA架构到微服务架构的演进过程，下面我们分别了解一下这几个架构。 单体架构 架构说明： ​      全部功能集中在一个项目内（All in one）。 架构优点： ​      架构简单，前期开发成本低、开发周期短，适合小型项目。 架构缺点： ​       全部功能集成在一个工程中，对于大型项目不易开发、扩展和维护。 ​">
-<meta name="twitter:image" content="http://skywalkerkkkk.cn/images/1.png">
+<meta name="twitter:image" content="http://skywalkerkkkk.cn/images/img/1.png">
 
 
 
@@ -459,7 +460,7 @@
 
       
         <h1 id="软件架构的演进过程"><a href="#软件架构的演进过程" class="headerlink" title="软件架构的演进过程"></a>软件架构的演进过程</h1><p>软件架构的发展经历了由单体架构、垂直架构、SOA架构到微服务架构的演进过程，下面我们分别了解一下这几个架构。</p>
-<h2 id="单体架构"><a href="#单体架构" class="headerlink" title="单体架构"></a>单体架构</h2><p><img src="/images/1.png" alt="1"></p>
+<h2 id="单体架构"><a href="#单体架构" class="headerlink" title="单体架构"></a>单体架构</h2><p><img src="/images/img/1.png" alt="1"></p>
 <p>架构说明：</p>
 <p>​      全部功能集中在一个项目内（All in one）。</p>
 <p>架构优点：</p>
@@ -468,7 +469,8 @@
 <p>​       全部功能集成在一个工程中，对于大型项目不易开发、扩展和维护。</p>
 <p>​       技术栈受限，只能使用一种语言开发。</p>
 <p>​       系统性能扩展只能通过扩展集群节点，成本高。</p>
-<h2 id="垂直架构"><a href="#垂直架构" class="headerlink" title="垂直架构"></a>垂直架构</h2><p><img src="/images/18.png" alt="18"></p>
+<a id="more"></a>
+<h2 id="垂直架构"><a href="#垂直架构" class="headerlink" title="垂直架构"></a>垂直架构</h2><p><img src="/images/img/18.png" alt="18"></p>
 <p>架构说明：       </p>
 <p>​      按照业务进行切割，形成小的单体项目。</p>
 <p>架构优点：</p>
@@ -479,7 +481,7 @@
 <p>​       项目之间功能冗余、数据冗余、耦合性强。</p>
 <h2 id="SOA架构"><a href="#SOA架构" class="headerlink" title="SOA架构"></a>SOA架构</h2><p>SOA全称为Service-Oriented Architecture，即面向服务的架构。它可以根据需求通过网络对松散耦合的粗粒度应用组件(服务)进行分布式部署、组合和使用。一个服务通常以独立的形式存在于操作系统进程中。</p>
 <p>站在功能的角度，把业务逻辑抽象成可复用的服务，通过服务的编排实现业务的快速再生，目的：把原先固有的业务功能转变为通用的业务服务，实现业务逻辑的快速复用。</p>
-<p><img src="/images/19.png" alt="19"></p>
+<p><img src="/images/img/19.png" alt="19"></p>
 <p>架构说明：</p>
 <p>​      将重复功能或模块抽取成组件的形式，对外提供服务，在项目与服务之间使用ESB（企业服务总线）的形式作为通信的桥梁。</p>
 <p>架构优点：</p>
@@ -490,7 +492,7 @@
 <p>​       各系统之间业务不同，很难确认功能或模块是重复的。</p>
 <p>​       抽取服务的粒度大。</p>
 <p>​       系统和服务之间耦合度高。</p>
-<h2 id="微服务架构"><a href="#微服务架构" class="headerlink" title="微服务架构"></a>微服务架构</h2><p><img src="/images/20.png" alt="20"></p>
+<h2 id="微服务架构"><a href="#微服务架构" class="headerlink" title="微服务架构"></a>微服务架构</h2><p><img src="/images/img/20.png" alt="20"></p>
 <p>架构说明：</p>
 <p>​       将系统服务层完全独立出来，抽取为一个一个的微服务。</p>
 <p>​       抽取的粒度更细，遵循单一原则。</p>
@@ -510,7 +512,7 @@
 <p>Dubbo官网地址：<a href="http://dubbo.apache.org" target="_blank" rel="noopener">http://dubbo.apache.org</a></p>
 <p>Dubbo提供了三大核心能力：面向接口的远程方法调用，智能容错和负载均衡，以及服务自动注册和发现。</p>
 <h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><p>Dubbo架构图（Dubbo官方提供）如下：</p>
-<p><img src="/images/2.png" alt="2"></p>
+<p><img src="/images/img/2.png" alt="2"></p>
 <p>节点角色说明：</p>
 <table>
 <thead>
@@ -557,7 +559,7 @@
 <h1 id="服务注册中心Zookeeper"><a href="#服务注册中心Zookeeper" class="headerlink" title="服务注册中心Zookeeper"></a>服务注册中心Zookeeper</h1><p>通过前面的Dubbo架构图可以看到，Registry（服务注册中心）在其中起着至关重要的作用。Dubbo官方推荐使用Zookeeper作为服务注册中心。</p>
 <h2 id="简介-1"><a href="#简介-1" class="headerlink" title="简介"></a>简介</h2><p>Zookeeper 是 Apache Hadoop 的子项目，是一个树型的目录服务，支持变更推送，适合作为 Dubbo 服务的注册中心，工业强度较高，可用于生产环境，并推荐使用 。</p>
 <p>Zookeeper树型目录服务：</p>
-<p><img src="/images/3.png" alt="3"></p>
+<p><img src="/images/img/3.png" alt="3"></p>
 <p>流程说明：</p>
 <ul>
 <li>服务提供者(Provider)启动时: 向 <code>/dubbo/com.foo.BarService/providers</code> 目录下写入自己的 URL 地址</li>
@@ -608,7 +610,7 @@
 <h3 id="创建服务实现类"><a href="#创建服务实现类" class="headerlink" title="创建服务实现类"></a>创建服务实现类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.skywalker.service.impl;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cn.skywalker.service.HelloService;</span><br><span class="line"><span class="keyword">import</span> com.alibaba.dubbo.config.annotation.Service;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Service</span> <span class="comment">// alibaba包下的注解</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloServiceImpl</span> <span class="keyword">implements</span> <span class="title">HelloService</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">sayHello</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"hello, "</span> + name + <span class="string">"!"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><span style="color:red; font-size:25px">注意：服务实现类上使用的Service注解是Dubbo提供的，用于对外发布服务</span></p>
 <h3 id="发布服务"><a href="#发布服务" class="headerlink" title="发布服务"></a>发布服务</h3><p>我们在pom.xml中已经配置了tomcat的插件，直接在idea的maven面板，Plugins选项卡中找到tomcat—&gt;run，运行或者使用maven命令<code>tomcat7:run</code>运行即可。</p>
-<p><img src="/images/image-20191216170626908.png" alt="image-20191216170626908"></p>
+<p><img src="/images/img/image-20191216170626908.png" alt="image-20191216170626908"></p>
 <h2 id="dubbo-service-consumer"><a href="#dubbo-service-consumer" class="headerlink" title="dubbo-service-consumer"></a>dubbo-service-consumer</h2><h3 id="pom-xml-2"><a href="#pom-xml-2" class="headerlink" title="pom.xml"></a>pom.xml</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">project</span> <span class="attr">xmlns</span>=<span class="string">"http://maven.apache.org/POM/4.0.0"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>dubbo-test<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>cn.skywalker<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="name">modelVersion</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>dubbo-service-consumer<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">packaging</span>&gt;</span>war<span class="tag">&lt;/<span class="name">packaging</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-compiler-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.3.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">source</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">source</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">target</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">target</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.tomcat.maven<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>tomcat7-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">                    <span class="comment">&lt;!-- 指定端口 --&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">port</span>&gt;</span>8082<span class="tag">&lt;/<span class="name">port</span>&gt;</span></span><br><span class="line">                    <span class="comment">&lt;!-- 请求路径 --&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">path</span>&gt;</span>/<span class="tag">&lt;/<span class="name">path</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h3 id="web-xml-1"><a href="#web-xml-1" class="headerlink" title="web.xml"></a>web.xml</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE web-app PUBLIC</span></span><br><span class="line"><span class="meta">        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"</span></span><br><span class="line"><span class="meta">        "http://java.sun.com/dtd/web-app_2_3.dtd" &gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">web-app</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">display-name</span>&gt;</span>Dubbo Consumer<span class="tag">&lt;/<span class="name">display-name</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--spring mvc前端控制器--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>spring-mvc<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>org.springframework.web.servlet.DispatcherServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 指定加载的配置文件 ，通过参数contextConfigLocation加载 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>contextConfigLocation<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>classpath:applicationContext-web.xml<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">load-on-startup</span>&gt;</span>1<span class="tag">&lt;/<span class="name">load-on-startup</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>spring-mvc<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>*.do<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">web-app</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h3 id="核心配置文件-1"><a href="#核心配置文件-1" class="headerlink" title="核心配置文件"></a>核心配置文件</h3><p>在resources下新建applicationContext-web.xml，添加以下配置：</p>
@@ -627,7 +629,8 @@
 <h1 id="Dubbo管理控制台"><a href="#Dubbo管理控制台" class="headerlink" title="Dubbo管理控制台"></a>Dubbo管理控制台</h1><p>我们在开发时，需要知道Zookeeper注册中心都注册了哪些服务，有哪些消费者来消费这些服务。我们可以通过部署一个管理中心来实现。其实管理中心就是一个web应用，部署到tomcat即可。</p>
 <h2 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h2><p>安装步骤：</p>
 <ol>
-<li><p>下载<a href="https://github.com/apache/dubbo/releases/tag/dubbo-2.6.0" target="_blank" rel="noopener">dubbo-2.6.0</a>压缩包（下载地址：<a href="https://codeload.github.com/apache/dubbo/zip/dubbo-2.6.0）" target="_blank" rel="noopener">https://codeload.github.com/apache/dubbo/zip/dubbo-2.6.0）</a></p>
+<li><p>下载<a href="https://github.com/apache/dubbo/releases/tag/dubbo-2.6.0" target="_blank" rel="noopener">dubbo-2.6.0</a>压缩包（下载地址：<a href="https://github.com/apache/dubbo/releases/tag/dubbo-2.6.0）" target="_blank" rel="noopener">https://github.com/apache/dubbo/releases/tag/dubbo-2.6.0）</a></p>
+<p><img src="/images/img/image-20191217095253265.png" alt="image-20191217095253265"></p>
 </li>
 <li><p>解压</p>
 </li>
@@ -646,8 +649,8 @@
 <li>在浏览器中输入：<a href="http://localhost:8080/，用户名root，密码root，登录" target="_blank" rel="noopener">http://localhost:8080/，用户名root，密码root，登录</a></li>
 <li>启动服务提供方和消费方工程，在governance—&gt;services和applications能查看到对应的信息</li>
 </ol>
-<p><img src="/images/image-20191216172731080.png" alt="image-20191216172731080"></p>
-<p><img src="/images/image-20191216172642757.png" alt="image-20191216172642757"></p>
+<p><img src="/images/img/image-20191216172731080.png" alt="image-20191216172731080"></p>
+<p><img src="/images/img/image-20191216172642757.png" alt="image-20191216172642757"></p>
 <h1 id="Dubbo相关配置说明"><a href="#Dubbo相关配置说明" class="headerlink" title="Dubbo相关配置说明"></a>Dubbo相关配置说明</h1><h2 id="包扫描"><a href="#包扫描" class="headerlink" title="包扫描"></a>包扫描</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dubbo:annotation</span> <span class="attr">package</span>=<span class="string">"cn.skywalker.service"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
 <p>服务提供者和服务消费者都需要配置，表示包扫描，作用是扫描指定包(包括子包)下的类。</p>
 <p>如果不使用包扫描，也可以通过如下配置的方式来发布服务：</p>
